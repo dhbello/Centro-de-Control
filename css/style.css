@@ -1,0 +1,140 @@
+.nav-underline {
+    position: sticky;
+    top: 60px;
+    z-index: 10;
+    background: #fff;
+}
+
+.nav-link.active {
+    color: #007bff;
+}
+
+.containerIgac {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.iframe {
+    width: 100%;
+}
+
+.resourses-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.resourses-title h2 {
+    width: 100%;
+}
+
+.home-icons {
+    background-color: #EAEFF2;
+    text-align: center;
+    border-radius: 20px;
+    padding: 40px 20px;
+    cursor: pointer;
+    height: 360px;
+    margin-bottom: 20px;
+    border-bottom: 5px solid #d2d8db;
+}
+
+.home-icons p {
+    font-size: 25px;
+    color: #3c3c3b;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.home-icons .span {
+    opacity: 0.5;
+    max-width: 230px;
+    display: block;
+    margin: auto;
+    line-height: 1.2;
+}
+
+.faqs {
+    width: 100%;
+    margin: auto;
+    background: #282359;
+    padding: 65px 0;
+    border-radius: 25px;
+    color: #fff;
+    text-align: center;
+    border-bottom: 5px solid #5045b1;
+    position: relative;
+}
+
+.faqs .title {
+    font-size: 26px;
+}
+
+.faqs .resume {
+    color: #fff;
+    opacity: 0.6;
+    width: 600px;
+    margin: auto;
+    margin-top: 18px;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.faqs .boton-faqs {
+    margin-top: 30px;
+}
+
+.boton-faqs {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+
+.boton-faqs a {
+    font-size: 14px;
+    background-color: #3595e0;
+    color: #fff;
+    border-radius: 5px;
+    padding: 11px 0;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table {
+    margin: auto;
+    margin-top: 30px;    
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #86868624;
+}
+
+thead th {
+    padding: 10px 18px;
+    border-bottom: 1px solid #111;
+    text-align: center;
+    font-size: 16px;
+}
+
+tbody td {
+    padding: 10px 18px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.lead {
+    line-height: normal;
+}
+
+li {
+    list-style: decimal;
+}
