@@ -274,6 +274,7 @@ a:hover {
 
 /*footer main*/
 footer {
+    margin-top: 80px;
     font-size: 1rem;
     background: #3c3c3b;
     color: #fff;
@@ -311,7 +312,8 @@ footer.cem .footer-container .bird-image {
     width: 120px;
 }
 footer.origen .footer-container .bird-image {
-    width: 117px;
+    width: 100px;
+    margin-top: -225px;
 }
 footer .footer-container .row-footer .content-footer {
     width: 68%;
@@ -466,12 +468,14 @@ footer .footer-container .row-footer .content-footer .sub-title {
     justify-content: space-between;
     position: relative;
 }
-.serviciosMaestra .portada-igac.portadaSub.origen,
 .geodesicaMaestra .portada-igac.portadaSub.origen {
-    background: #e8f2ec;
+    background: #e0e5f2;
     background-repeat: no-repeat;
     background-position: right bottom;
     background-size: 45%;
+}
+.serviciosMaestra .portada-igac.portadaSub.origen {
+    background: #fef8e2;
 }
 .aplicacionesMaestra .portada-igac.portadaSub.origen,
 .gavimetricaMaestra .portada-igac.portadaSub.origen {

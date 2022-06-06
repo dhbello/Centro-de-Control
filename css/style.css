@@ -1,17 +1,28 @@
+body {
+    overflow-x: hidden;
+}
+
 .nav-underline {
     position: sticky;
     top: 60px;
     z-index: 10;
-    background: #fff;
+    background: #333333;
+    justify-content: center;    
+}
+
+.nav-underline a {
+    color: #fff;
+    font-size: 13px;
 }
 
 .nav-link.active {
-    color: #007bff;
+    color: #f4a833;
 }
 
 .containerIgac {
     max-width: 1170px;
     margin: auto;
+    padding: 0;
 }
 
 .section {
@@ -28,37 +39,35 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 50px;
+    color: #000;
+    opacity: 0.7;
 }
 
 .resourses-title h2 {
     width: 100%;
 }
-
-.home-icons {
-    background-color: #EAEFF2;
-    text-align: center;
-    border-radius: 20px;
-    padding: 40px 20px;
-    cursor: pointer;
-    height: 360px;
-    margin-bottom: 20px;
-    border-bottom: 5px solid #d2d8db;
+/*botones*/
+.btn-group {
+    display: flex;
+    justify-content: center;
+}
+.btn-default {
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid #606060b0;
+    color: #606060;
+    width: 100%;
+}
+/*titulos*/
+.section .title {
+    font-size: 35px;
+    margin-bottom: 40px;
+    width: 100%;
+    opacity: 0.8;
+    color: #000;
 }
 
-.home-icons p {
-    font-size: 25px;
-    color: #3c3c3b;
-    line-height: 1;
-    margin-bottom: 10px;
-}
-
-.home-icons .span {
-    opacity: 0.5;
-    max-width: 230px;
-    display: block;
-    margin: auto;
-    line-height: 1.2;
-}
+/*banners de call to action*/
 
 .faqs {
     width: 100%;
@@ -74,6 +83,8 @@
 
 .faqs .title {
     font-size: 26px;
+    color: #fff;
+    opacity: 1;
 }
 
 .faqs .resume {
@@ -109,6 +120,54 @@
     margin-right: auto;
 }
 
+.faqs .title {
+    font-size: 26px;
+    color: #fff;
+    opacity: 1;
+}
+
+
+/*banners de segundo tipo*/
+.faqs.type2 {
+    background-color: #6445e1;
+    position: relative;
+}
+
+.faqs.type2:before {
+    content: '';
+    background-image: url('/images/images-redes/grafica-de-mano.svg');
+    width: 214px;
+    height: 175px;
+    position: absolute;
+    right: 35px;
+    bottom: 0;
+}
+
+/*banners dobles*/
+.dobles.faqs {
+    height: 265px;
+    display: flex;
+    align-items: center;
+}
+
+.dobles.faqs .title {
+    font-size: 26px;
+    color: #fff;
+    opacity: 1;
+    margin-bottom: 0;
+}
+
+.dobles.faqs.tipo-a {
+    background-image: url('/images/images-redes/background-card1.svg');
+    background-size: cover;
+}
+
+.dobles.faqs.tipo-b {
+    background-image: url('/images/images-redes/background-card2.svg');
+    background-size: cover;
+}
+/*tablas*/
+
 table {
     margin: auto;
     margin-top: 30px;    
@@ -137,4 +196,157 @@ tbody td {
 
 li {
     list-style: decimal;
+}
+
+.row.container-cards {
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+/*slider*/
+.carousel-control-prev {
+    position: absolute;
+    left: -10%;
+}
+.carousel-control-prev-icon {
+    width: 15px;
+    background-image: url('/images/images-inicio/arrow.svg');
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 100;
+    display: block;
+    transform: rotate(180deg);
+}
+
+.carousel-control-next {
+    position: absolute;
+    right: -10%;
+    width: ;
+}
+.carousel-control-next-icon {
+    width: 15px;
+    background-image: url('/images/images-inicio/arrow.svg');
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 100;
+    display: block;
+}
+
+/*tarjetas sección que estas buscando*/
+
+.row.container-cards .title {
+    padding: 0 5px;
+}
+
+.card-container {
+    padding: 0 5px;
+}
+
+.card.card-content {
+    height: 360px;
+    border-radius: 20px;
+    background-color: #EAEFF2;
+    border: 0;
+    border-bottom: 5px solid #d2d8db;
+    cursor: pointer;
+    padding: 40px 20px;
+    display: flex;
+    align-items: center;
+    transition: 1s ease;
+}
+
+.card.card-content:hover {
+    background: #fff8e8;
+    transition: 1s ease;
+}
+
+.card.card-content img {
+    width: 212px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+}
+
+.card.card-content p {
+    font-size: 25px;
+    color: #3c3c3b;
+    line-height: 1;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.card .card-header {
+    border-radius: 5px 5px 0 0;
+    border: 0;
+    
+}
+
+.card.blue .card-header {
+    background-color: #183f80;    
+}
+
+.card.blue {
+    color: #183f80;
+}
+
+.card.orange .card-header {
+    background-color: #cc5809;
+    color: #cc5809;
+}
+
+.card.orange {
+    color: #cc5809;
+}
+
+.card.purple .card-header {
+    background-color: #6445e1;    
+}
+
+.card.purple {
+    color: #6445e1;
+}
+
+.card h5{
+    font-size: 13px;
+}
+
+.card h6 {
+    font-size: 16px;
+    height: 16px;
+    color: #000;
+    opacity: 0.7;
+    line-height: normal;
+}
+
+.card .card-text {
+    line-height: normal;
+}
+
+.card .card-text {
+    font-size: 14px;
+    color: #000;
+    opacity: 0.7;
+}
+
+/*cards sin borden*/
+.card-no-border {
+    cursor: pointer;
+}
+.card-no-border img {
+    width: 85px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.card-no-border h2 {
+    font-size: 23px;
+    color: #414042;
+}
+
+.card-no-border .text-center {
+    padding: 0 40px;
 }

@@ -5,6 +5,9 @@ if (document.querySelector(".navbarigac")) {
         <div class="navbar-brand-igac">
             <a href='https://www.igac.gov.co' target='_blank'><img alt='Logo IGAC' src='../images/logo-igac.svg'/></a>
         </div>
+        <div class="logoigac">
+            <a href="/index.html"><img src="../images/logo.svg" alt="Logo Origen Nacional"></a>
+        </div>
     </div>
     <button class='nav-bar-toggle-igac'>
         <div class='icon-bar'></div>
