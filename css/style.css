@@ -1,7 +1,3 @@
-body {
-    overflow-x: hidden;
-}
-
 .nav-underline {
     position: sticky;
     top: 60px;
@@ -27,6 +23,30 @@ body {
 
 .containercolor {
     background: #f4f7fe;
+    overflow: hidden;
+}
+
+.containercolor.typeb {
+    background: #fff;
+}
+
+.containerbg {
+    background-image: url('/images/images-redes/backgrountypea.svg');
+    background-size: cover;
+}
+
+.containerbg .card::after {
+    content: '';
+    background: url('/images/images-redes/ilustracion_que_es.svg');
+    width: 360px;
+    height: 241px;
+    right: -140px;
+    bottom: -110px;
+    position: absolute;
+}
+
+.containerbg .card {
+    margin-bottom: 140px;
 }
 
 .section {
@@ -69,6 +89,10 @@ body {
     width: 100%;
     opacity: 0.8;
     color: #000;
+}
+
+.section .title.w-divider {
+    margin-bottom: 30px;
 }
 
 /*banners de call to action*/
@@ -182,15 +206,17 @@ table {
     margin-top: 30px;    
 }
 
-tbody tr:nth-child(odd) {
-    background-color: #86868624;
+tbody tr {
+    border-bottom: 1px solid #1111112b;
 }
 
 thead th {
     padding: 10px 18px;
-    border-bottom: 1px solid #111;
+    border-bottom: 1px solid #1111112b;
     text-align: center;
     font-size: 16px;
+    padding-bottom: 20px;
+    font-weight: 400;
 }
 
 tbody td {
@@ -211,6 +237,11 @@ li {
     flex-wrap: wrap;
     margin-left: -5px;
     margin-right: -5px;
+}
+
+td a {
+    color: #3595e0;
+    text-decoration: underline;
 }
 
 /*slider*/
@@ -340,7 +371,7 @@ li {
     opacity: 0.7;
 }
 
-/*cards sin borden*/
+/*cards sin borde*/
 .card-no-border {
     cursor: pointer;
 }
@@ -359,14 +390,121 @@ li {
     padding: 0 40px;
 }
 
+/*cards sin borde mapas de  la red*/
+.cardLosMapas .card {
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.cardLosMapas .card .card-header {
+    background: #f5ce44;
+    color: #0e243f;
+}
+
+.cardLosMapas .typeb .card-header {
+    background: #3595e0;
+}
+
+.cardLosMapas .typec .card-header {
+    background: #07aa7d;
+}
+
+.cardLosMapas .typed .card-header {
+    background: #0e243f;
+    color: #fff !important;    
+}
+
+.cardLosMapas .typed .card-header .title {
+    color: #fff !important;
+    opacity: 1;
+}
+
+.cardLosMapas .card .card-header .title, .cta {
+    font-size: 16px;
+    width: 50%;
+    margin-bottom: 0;
+}
+
+.cardLosMapas .card .card-header .cta {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cardLosMapas .card .image {
+    position: relative;
+}
+
+.cardLosMapas .card .gradient {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(255,255,255,0) 50%, rgba(245,206,68,1) 100%);
+    position: absolute;
+    top: 0;
+}
+
+.cardLosMapas .typeb .card .gradient {
+    background: linear-gradient(0deg, rgba(255,255,255,0) 50%, rgba(53,149,224,1) 100%);
+}
+
+.cardLosMapas .typec .card .gradient {
+    background: linear-gradient(0deg, rgba(255,255,255,0) 50%, rgba(7,170,125,1) 100%);
+}
+
+.cardLosMapas .typed .card .gradient {
+    background: linear-gradient(0deg, rgba(255,255,255,0) 50%, rgba(14,36,63,1) 100%);
+}
+
+/*cards sin borde mapas de  la red*/
+.card-contain {
+    position: relative;
+}
+
+.cardTypeb {
+    border: 0;
+    background: #f4f7fe;
+    padding: 70px;
+    margin-top: 55px;
+    z-index: 1;
+}
+
+.card-contain::after {
+    content: '';
+    width: 360px;
+    height: 360px;
+    top: 0;
+    left: -113px;
+    border-radius: 360px;
+    background-color: #f5ce44;
+    position: absolute;
+}
+
+.cardTypeb h2 {
+    font-size: 15px;
+    color: #58595b;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.cardTypeb .block h2 {
+    font-size: 35px;
+}
+
+.cardTypeb .block p {
+    font-size: 19px;
+    line-height: normal;
+    color: #58595b;
+}
+
+.cardTypeb .block p:first-of-type {
+    margin-bottom: 40px;
+}
+
+
 /*bloque contextual*/
 .context {
-    width: 450px;
-    min-width: 450px;
     border-radius: 5px;
     border-left: 5px solid #6445e1;
     padding-left: 25px;
-    padding-right: 60px;
 }
 
 .context .text {

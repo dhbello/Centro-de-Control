@@ -86,6 +86,9 @@ button:focus {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+.divider.w-title {
+    margin-bottom: 60px;
+}
 img {
     width: 100%;
     display: block;
