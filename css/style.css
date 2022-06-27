@@ -1,3 +1,6 @@
+p {
+    line-height: normal;
+}
 .nav-underline {
     position: sticky;
     top: 60px;
@@ -49,13 +52,30 @@
     margin-bottom: 140px;
 }
 
+/*secciones*/
 .section {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 80px;
+    padding-bottom: 80px;
 }
 
 .iframe {
     width: 100%;
+}
+
+.section.registrarReportar {
+    position: relative;
+}
+
+.section.registrarReportar::before {
+    content: '';
+    background: url(/images/images-redes/ranaBefore.svg);
+    background-size: cover;
+    width: 200px;
+    height: 160px;
+    position: absolute;
+    right: 0;
+    top: -20px;
+    z-index: 1;
 }
 
 .resourses-title {
@@ -82,6 +102,53 @@
     color: #606060;
     width: 100%;
 }
+.get-back {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    font-family: 'Gill Sans Std Italic';
+    margin-top: 70px;
+    opacity: 1;
+    color: #58595b;
+    display: flex;
+    align-items: center;
+}
+.get-back img {
+    width: 5px;
+    margin-right: 10px;
+    margin-top: -4px;
+}
+/*botones estados*/
+.status div {
+    margin-right: 20px;
+    color: #878787;
+    font-size: 14px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.status div::before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+    border: 1px solid #000;
+    opacity: 0.2;
+    position: absolute;
+}
+.status .active::before {
+    background: #3595e0;
+    border: 0;
+    opacity: 1;
+}
+.status p {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 0;
+}
+.status div:last-child {
+    margin-right: 0;
+}
 /*titulos*/
 .section .title {
     font-size: 35px;
@@ -96,7 +163,6 @@
 }
 
 /*banners de call to action*/
-
 .faqs {
     width: 100%;
     margin: auto;
@@ -154,11 +220,59 @@
     opacity: 1;
 }
 
+.containerFaqs.typeB {
+    display: flex;
+    width: 50%;
+    padding: 0 10px;
+}
+
+.containerFaqs.typeB .faqs {
+    border-radius: 5px;    
+    border-bottom: 0;
+    padding: 35px 40px;
+    background-color: #002735;
+}
+
+.containerFaqs.typeB .faqs .title {
+    text-align: left;
+    font-size: 25px;
+}
+
+.containerFaqs.typeB .faqs .boton-faqs {
+    margin-top: 0;
+    margin-left: 0;
+}
+
+.containerFaqs.typeB .faqs a {
+    font-size: 14px;
+}
+
+.containerFaqs.typeB .faqs.typeA {
+    border-top: 5px solid #ee4a36;
+}
+
+.containerFaqs.typeB .faqs.typeB {
+    border-top: 5px solid #f2a742;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.containerFaqs.typeB .faqs.typeC {
+    border-top: 5px solid #6445e1;
+}
+
+.containerFaqs.typeB .faqs.typeD {
+    border-top: 5px solid #10acd5;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
 /*boton type2*/
 .boton-faqs.type2 a{
     margin-left: 30px;
 }
-
 
 /*banners de segundo tipo*/
 .faqs.type2 {
@@ -191,38 +305,19 @@
 }
 
 .dobles.faqs.tipo-a {
-    background: #6445e1;
+    background: url('/images/images-redes/redActivaLabel.svg'), #6445e1;
+    background-size: 480px;
+    background-repeat: no-repeat;
+    background-position: bottom center;
     border-bottom: 5px solid #3595e0;
 }
 
 .dobles.faqs.tipo-b {
-    background: #07aa7d;
+    background: url('/images/images-redes/redPasivaLavel.svg'), #07aa7d;
+    background-size: 480px;
+    background-repeat: no-repeat;
+    background-position: right bottom;
     border-bottom: 5px solid #6445e1;
-}
-/*tablas*/
-
-table {
-    margin: auto;
-    margin-top: 30px;    
-}
-
-tbody tr {
-    border-bottom: 1px solid #1111112b;
-}
-
-thead th {
-    padding: 10px 18px;
-    border-bottom: 1px solid #1111112b;
-    text-align: center;
-    font-size: 16px;
-    padding-bottom: 20px;
-    font-weight: 400;
-}
-
-tbody td {
-    padding: 10px 18px;
-    text-align: center;
-    font-size: 14px;
 }
 
 .lead {
@@ -237,11 +332,6 @@ li {
     flex-wrap: wrap;
     margin-left: -5px;
     margin-right: -5px;
-}
-
-td a {
-    color: #3595e0;
-    text-decoration: underline;
 }
 
 /*slider*/
@@ -274,8 +364,196 @@ td a {
     display: block;
 }
 
-/*tarjetas sección que estas buscando*/
+/*tablas*/
+thead input {
+    width: 100%;
+}
 
+thead {
+    position: relative;
+}
+
+thead .filterContainer {
+    height: 50px;
+}
+
+thead .filters {
+    position: absolute;
+    top: 0;
+}
+
+thead .filters th:first-child{
+    display: none;
+}
+
+thead .filters th:last-child{
+    display: none;
+}
+
+table.dataTable thead th, table.dataTable tbody td {
+    white-space: nowrap;
+    text-align: center;
+    box-shadow: none !important;
+}
+
+#redTable_filter {
+    width: 100%;
+}
+
+#redTable_filter label {
+    width: 100%;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyAgIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIiAgIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIgICB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgICB2ZXJzaW9uPSIxLjEiICAgaWQ9InN2ZzQ0ODUiICAgdmlld0JveD0iMCAwIDIxLjk5OTk5OSAyMS45OTk5OTkiICAgaGVpZ2h0PSIyMiIgICB3aWR0aD0iMjIiPiAgPGRlZnMgICAgIGlkPSJkZWZzNDQ4NyIgLz4gIDxtZXRhZGF0YSAgICAgaWQ9Im1ldGFkYXRhNDQ5MCI+ICAgIDxyZGY6UkRGPiAgICAgIDxjYzpXb3JrICAgICAgICAgcmRmOmFib3V0PSIiPiAgICAgICAgPGRjOmZvcm1hdD5pbWFnZS9zdmcreG1sPC9kYzpmb3JtYXQ+ICAgICAgICA8ZGM6dHlwZSAgICAgICAgICAgcmRmOnJlc291cmNlPSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvU3RpbGxJbWFnZSIgLz4gICAgICAgIDxkYzp0aXRsZT48L2RjOnRpdGxlPiAgICAgIDwvY2M6V29yaz4gICAgPC9yZGY6UkRGPiAgPC9tZXRhZGF0YT4gIDxnICAgICB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLC0xMDMwLjM2MjIpIiAgICAgaWQ9ImxheWVyMSI+ICAgIDxnICAgICAgIHN0eWxlPSJvcGFjaXR5OjAuNSIgICAgICAgaWQ9ImcxNyIgICAgICAgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNjAuNCw4NjYuMjQxMzQpIj4gICAgICA8cGF0aCAgICAgICAgIGlkPSJwYXRoMTkiICAgICAgICAgZD0ibSAtNTAuNSwxNzkuMSBjIC0yLjcsMCAtNC45LC0yLjIgLTQuOSwtNC45IDAsLTIuNyAyLjIsLTQuOSA0LjksLTQuOSAyLjcsMCA0LjksMi4yIDQuOSw0LjkgMCwyLjcgLTIuMiw0LjkgLTQuOSw0LjkgeiBtIDAsLTguOCBjIC0yLjIsMCAtMy45LDEuNyAtMy45LDMuOSAwLDIuMiAxLjcsMy45IDMuOSwzLjkgMi4yLDAgMy45LC0xLjcgMy45LC0zLjkgMCwtMi4yIC0xLjcsLTMuOSAtMy45LC0zLjkgeiIgICAgICAgICBjbGFzcz0ic3Q0IiAvPiAgICAgIDxyZWN0ICAgICAgICAgaWQ9InJlY3QyMSIgICAgICAgICBoZWlnaHQ9IjUiICAgICAgICAgd2lkdGg9IjAuODk5OTk5OTgiICAgICAgICAgY2xhc3M9InN0NCIgICAgICAgICB0cmFuc2Zvcm09Im1hdHJpeCgwLjY5NjQsLTAuNzE3NiwwLjcxNzYsMC42OTY0LC0xNDIuMzkzOCwyMS41MDE1KSIgICAgICAgICB5PSIxNzYuNjAwMDEiICAgICAgICAgeD0iLTQ2LjIwMDAwMSIgLz4gICAgPC9nPiAgPC9nPjwvc3ZnPg==);
+    background-repeat: no-repeat;
+    background-color: #e6e6e6;
+    background-position: 0px 3px !important;
+    height: 100%;
+    margin: 0%;
+    width: 100%;
+    padding: 5px 20px;
+    font-size: 14px;
+    border: 0;
+    border-radius: 5px;
+}
+
+.dataTables_wrapper .dataTables_filter input:focus {
+    background-image: none;
+}
+
+table.dataTable thead > tr > th.sorting {
+    padding: 0 15px 0 0;
+    position: relative;
+    border-bottom: 0;
+    font-size: 14px;    
+}
+
+table.dataTable thead > tr > th.sorting input {
+    padding: 0 25px 0 10px;
+    min-width: 100px;
+    border-radius: 5px;
+    border: 1px solid #e6e6e6;
+}
+
+table.dataTable thead > tr > th.sorting::before {
+    content: '';
+    box-sizing: border-box;
+    height: 5px;
+    width: 5px;
+    margin-left: 10px;
+    margin-top: -4px;
+    border-style: solid;
+    border-color: #000;
+    border-width: 0px 1px 1px 0px;
+    border-top-width: 0px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 0px;
+    transform: rotate(225deg);
+    right: 25px;
+}
+
+table.dataTable thead > tr > th.sorting::after {
+    content: '';
+    box-sizing: border-box;
+    height: 5px;
+    width: 5px;
+    margin-left: 10px;
+    margin-top: 0;
+    border-style: solid;
+    border-color: #000;
+    border-width: 0px 1px 1px 0px;
+    border-top-width: 0px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 0px;
+    transform: rotate(45deg);
+    right: 25px;
+}
+
+table.dataTable thead th {
+    font-size: 16px;
+    border-bottom: 0;
+    font-family: 'Gill Sans Std semi Bold';
+}
+
+table.dataTable.display tbody tr td {
+    font-size: 14px;
+}
+
+table.dataTable.display tbody a {
+    color: #3595e0;
+    text-decoration: underline;
+}
+
+table.dataTable.no-footer {
+    border-bottom: none;
+    margin-bottom: 80px;
+}
+
+.dataTables_wrapper .dataTables_paginate {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.paginate_button {
+    background: transparent !important;
+    border: 0 !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    color: #3595e0 !important;
+}
+
+td.activa, td.pasiva {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    min-width: 45px;
+}
+
+td.activa::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    background: #6445e1;
+    left: 10px;
+}
+
+td.pasiva::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    background: #07aa7d;
+    left: 10px;
+}
+
+td .inactivo {
+    background: #fdebe9;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    display: block;
+    border-radius: 25px;
+    padding: 0 10px;
+}
+
+td .activo {    
+    background: #f0fff5;
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+    display: block;
+    border-radius: 25px;
+    padding: 0 10px;
+}
+
+/*tarjetas sección que estas buscando*/
 .row.container-cards .title {
     padding: 0 5px;
 }
@@ -520,4 +798,440 @@ td a {
     color: #58595b;
     font-size: 19px;
     line-height: normal;
+}
+
+/*modales*/
+.modal-backdrop {
+    background: #bbbbbb63;
+}
+
+.modal.maestraModalRedes .modal-dialog {
+    position: relative;
+    width: 100%;
+    max-width: 1170px;
+    display: flex;
+    align-items: center;
+    height: calc(100vh - 60px);
+}
+
+.modal.maestraModalRedes .modal-content {
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    width: 800px;
+    height: calc(100vh - 200px);
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px #00000057;
+}
+
+.modal.maestraModalRedes .modal-content .content {
+    width: 100%;
+}
+
+.modal.maestraModalRedes .modal-content .tables {
+    margin-bottom: 25px;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.modal.maestraModalRedes .modal-content .tables .sub-title {
+    margin-bottom: 18px;
+    margin-top: 25px;
+    padding: 0 5px;
+}
+
+.modal.maestraModalRedes .modal-content .tables .item {
+    border-top: 1px solid #dee2e6;
+    padding: 3px 5px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.modal.maestraModalRedes .modal-content .tables .item:first-of-type {
+    border-top: 0;
+}
+
+.modal.maestraModalRedes .modal-content .tables:last-child .item:first-child {
+    border-top: 0;
+}
+
+.modal.maestraModalRedes .modal-content .tables .item:last-child {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.modal.maestraModalRedes .modal-content .tables .item span {
+    width: 50%;
+}
+
+.modal.maestraModalRedes .modal-content .tables .item .title {
+    font-family: 'Gill Sans Std';
+    font-size: 14px;
+}
+
+.modal.maestraModalRedes .modal-header {
+    background: #3595e0;
+    border-radius: 0px;
+    padding: 10px;    
+}
+
+.modal.maestraModalRedes .modal-body {
+    padding: 40px 30px;
+}
+
+.modal.maestraModalRedes .modal-body {
+    text-align: left;
+    color: #000;
+    opacity: 1;
+    overflow: auto;
+}
+
+.modal.maestraModalRedes .modal-body .title {
+    font-size: 18px;
+    margin-bottom: 0;
+    font-family: 'Gill Sans Std semi Bold';
+}
+
+.modal.maestraModalRedes .modal-body .sub-title {
+    font-size: 14px;
+    margin-bottom: 0;
+    font-family: 'Gill Sans Std semi Bold';
+}
+
+.modal.maestraModalRedes .modal-body .d-flex.value {
+    justify-content: space-between;
+    width: 100%;
+}
+
+.modal.maestraModalRedes .modal-body .d-flex.value p {
+    width: 50%;
+}
+
+.modal.maestraModalRedes .modalSection {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #dee2e6;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.modal.maestraModalRedes .modalSection.noBorder {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.modal.maestraModalRedes .cta {
+    width: 100%;
+    font-family: 'Gill Sans Std Bold';
+    font-size: 14px;
+}
+
+.modal.maestraModalRedes .cta a {
+    color: #3595e0;
+}
+
+.modal.maestraModalRedes .modal-body p {
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.modal.maestraModalRedes .modal-body .entiti span {
+    color: #3595e0;
+    text-decoration: underline;
+}
+
+.modal.maestraModalRedes .modal-body .button {
+    display: flex;
+    align-items: center;
+    padding: 7px 20px;
+    background: #3595e0;
+    color: #fff;
+    height: fit-content;
+    border-radius: 5px;
+}
+
+.modal.maestraModalRedes .modal-body .button.typeB {
+    font-size: 10px;
+    margin-top: 15px;
+}
+
+.modal.maestraModalRedes .modal-body .button.typeB {
+    margin-right: 15px;
+}
+
+.modal.maestraModalRedes .modal-body .button.typeB:last-child {
+    margin-right: 0;
+}
+
+.modal.maestraModalRedes .modal-header .close {
+    opacity: 1;
+}
+
+.modal.maestraModalRedes .modal-header .close img {
+    width: 9px;
+}
+
+.modal.maestraModalRedes .datos {
+    margin-top: 20px;
+}
+
+.modal.maestraModalRedes .datos p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-family: 'Gill Sans Std Bold';
+}
+
+/*sección red activa*/
+.indicadoresActiva {
+    background: #fdfbf0;
+    position: relative;    
+}
+
+.indicadoresActiva .borderB {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.indicadoresActiva .indicadores {
+    width: 40%;
+    padding-right: 30px;
+}
+
+.indicadoresActiva .indicadores img {
+    width: 165px;
+    margin-top: 95px;
+}
+
+.indicadoresActiva .text .title {
+    margin-bottom: 25px;
+}
+
+.indicadoresActiva .text p {
+    opacity: 0.6;
+}
+
+.indicadoresActiva .board {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    padding-top: 80px;
+    width: 50%;
+    padding-left: 30px;
+}
+
+.indicadoresActiva .board .card {
+    border-radius: 10px 0 0 10px;
+    padding: 60px;
+    border: 0;
+    background-color: #6445e1;
+    color: #fff;
+    position: relative;
+}
+
+.indicadoresActiva .board .card::before {
+    content: '';
+    width: 330px;
+    height: 330px;
+    background-color: #fde89a;
+    border-radius: 100%;
+    position: absolute;
+    left: -105px;
+    bottom: -100px;
+    z-index: -1;
+}
+
+.indicadoresActiva .board .card::after {
+    content: '';
+    background-image: url('/images/images-redes/graficaIndicadores.svg');
+    background-size: cover;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 105px;
+    height: 120px;
+    position: absolute;
+    bottom: -60px;
+    left: -60px;
+    z-index: 1;
+}
+
+.indicadoresActiva .board .card > .d-flex:first-of-type {
+    margin-bottom: 20px;
+}
+
+.indicadoresActiva .board .card .item {
+    width: 200px;
+}
+
+.indicadoresActiva .board .card .icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.indicadoresActiva .board .card .number {
+    font-size: 45px;
+    height: 40px;
+    display: flex;
+    align-items: center;    
+}
+
+.indicadoresActiva .board .card .text {
+    width: 100%;
+    opacity: 0.6;
+    line-height: normal;
+    font-size: 18px;
+}
+
+/*Mapa de la red activa*/
+.indicadoresActiva a.buttonCem {
+    background-color: #3595e0;
+    color: #fff;
+    font-size: 14px;
+}
+
+/*sección red pasiva*/
+.indicadoresPasiva {
+    background: #fdfbf0;
+    position: relative;    
+}
+
+.indicadoresPasiva .borderB {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.indicadoresPasiva .indicadores {
+    width: 40%;
+    padding-right: 30px;
+}
+
+.indicadoresPasiva .indicadores img {
+    width: 165px;
+    margin-top: 95px;
+}
+
+.indicadoresPasiva .text .title {
+    margin-bottom: 25px;
+}
+
+.indicadoresPasiva .text p {
+    opacity: 0.6;
+}
+
+.indicadoresPasiva .board {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    padding-top: 80px;
+    width: 50%;
+    padding-left: 30px;
+}
+
+.indicadoresPasiva .board .card {
+    border-radius: 10px 0 0 10px;
+    padding: 60px;
+    border: 0;
+    background-color: #3595e0;
+    color: #fff;
+    position: relative;
+}
+
+.indicadoresPasiva .board .card::before {
+    content: '';
+    width: 330px;
+    height: 330px;
+    background-color: #fde89a;
+    border-radius: 100%;
+    position: absolute;
+    left: -105px;
+    bottom: -100px;
+    z-index: -1;
+}
+
+.indicadoresPasiva .board .card::after {
+    content: '';
+    background-image: url('/images/images-redes/graficaIndicadoresPasiva.svg');
+    background-size: cover;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 105px;
+    height: 120px;
+    position: absolute;
+    bottom: -60px;
+    left: -60px;
+    z-index: 1;
+}
+
+.indicadoresPasiva .board .card > .d-flex:first-of-type {
+    margin-bottom: 20px;
+}
+
+.indicadoresPasiva .board .card .item {
+    width: 200px;
+}
+
+.indicadoresPasiva .board .card .icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.indicadoresPasiva .board .card .number {
+    font-size: 45px;
+    height: 40px;
+    display: flex;
+    align-items: center;    
+}
+
+.indicadoresPasiva .board .card .text {
+    width: 100%;
+    opacity: 0.6;
+    line-height: normal;
+    font-size: 18px;
+}
+
+/*Mapa de la red Pasiva*/
+.indicadoresPasiva a.buttonCem {
+    background-color: #3595e0;
+    color: #fff;
+    font-size: 14px;
+}
+
+
+.sectionEstaciones {
+    border-bottom: 1px solid #000;
+    position: relative;
+    padding-bottom: 200px;
+}
+
+.sectionEstaciones::after {
+    content: '';
+    background: url('/images/images-redes/leaftEstaciones.svg');
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 195px;
+    height: 222px;
+    top: 0;
+    right: -54px;
+    top: -10px;
+}
+
+.sectionEstaciones::before {
+    content: '';
+    position: absolute;
+    background: url('/images/images-redes/graficaEstacionesRed.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    width: 95%;
+    height: 238px;
+    bottom: 0;
+}
+
+.redActivaPagina .section.registrarReportar::before {
+    background: none;
 }

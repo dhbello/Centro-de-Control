@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Control Geod&eacute;sico Nacional</title>
+    <link rel="icon" href="images-home/logos/favicon.png">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+    <link href="../../css/style.css" rel="stylesheet">
+    <link href="../../css/maestra.css" rel="stylesheet">
+</head>
+<body class="main redes geodesicaMaestra redActivaPagina">
+    <nav class="navbarigac origen">        
+    </nav>
+    <nav class="nav nav-underline">        
+    </nav>
+    <section class="portada-igac portadaSub redPasiva">
+        <div class="container block-igac">
+            <div class="d-flex contenido-portada">
+                <a class="get-back" href="../red_geodesica.html"><img src="/images/iconos/arrow-back.svg" alt=""> Volver a la Red Geodesica</a>
+                <div class="texto-portada">
+                    <h1>Red Pasiva y de Nivelación</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi possimus, voluptatibus, soluta illo similique asperiores cupiditate id hic praesentium eligendi reiciendis esse dignissimos consequuntur laboriosam culpa, nulla ratione sit magni.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="containercolor indicadoresPasiva">
+        <div class="container containerIgac borderB">
+            <section class="section indicadores">
+                <div class="d-fex">
+                    <div class="text">
+                        <div class="title">
+                            Indicadores
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi </p>
+                    </div>
+                </div>
+                <img src="/images/images-redes/flowerIndicadores.svg" alt="">
+            </section>            
+        </div>
+        <div class="board">
+            <div class="card">
+                <div class="d-flex">
+                    <div class="item">
+                        <div class="d-flex">
+                            <div class="icon">
+                                <img src="/images/iconos/mapIcon.svg" alt="">
+                            </div>
+                            <div class="content">
+                                <div class="number">62</div>
+                                <div class="text">Monumentos (mojones)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="d-flex">
+                            <div class="icon">
+                                <img src="/images/iconos/moveIcon.svg" alt="">
+                            </div>
+                            <div class="content">
+                                <div class="number">16</div>
+                                <div class="text">Red geodinámica CASA</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="item">
+                        <div class="d-flex">
+                            <div class="icon">
+                                <img src="/images/iconos/tableIcon.svg" alt="">
+                            </div>
+                            <div class="content">
+                                <div class="number">8</div>
+                                <div class="text">V&eacute;rtices SIRGAS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="d-flex">
+                            <div class="icon">
+                                <img src="/images/iconos/dataIcon.svg" alt="">
+                            </div>
+                            <div class="content">
+                                <div class="number">8.979</div>
+                                <div class="text">V&eacute;rtices de densificaci&oacute;n</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container containerIgac">
+            <section class="section visor row">
+                <div class="iframe col-md-12">
+                    <div class="d-flex position-relative align-items-center justify-content-end">
+                        <h2 class="title w-divider text-center">Mapa de la red Pasiva y de nivelación</h2>
+                        <div class="status d-flex position-absolute">
+                            <a class="btn mb-4 text-center buttonCem">Ver en CEM</a>
+                        </div>
+                    </div>
+                    <img src="../../images/mapa.png" alt="mapa">
+                </div>
+            </section>
+        </div>
+    </div>
+    <section class="section overflow-hidden sectionEstaciones">
+        <div class="resourses-title" style="text-align: center;">
+            <h2>V&eacute;rtices de la red</h2>
+        </div>
+        <div class="row">
+            <div class="m-auto">
+                <table id="redTable" class="display">
+                    <thead>
+                        <tr class="filterContainer"></tr>
+                        <tr>
+                            <th>ID</th>
+                            <th>Municipio, departamento</th>
+                            <th>Estado</th>
+                            <th>Nombre de la red</th>
+                            <th>Entidad</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AMTE00BRA</td>
+                            <td>Nari&ntilde;o</td>
+                            <td>Inactivo</td>
+                            <td>IGb14-Core, ITRF2014</td>
+                            <td>EABB</td>
+                            <td><a href="" class="modalButton" data-toggle="modal" data-target="#exampleModal">M&aacute;s</a></td>
+                        </tr>
+                        <tr>
+                            <td>AMTE00BRA</td>
+                            <td>Nari&ntilde;o</td>
+                            <td>Activo</td>
+                            <td>IGb14-Core, ITRF2014</td>
+                            <td>EABB</td>
+                            <td><a href="" class="modalButton" data-toggle="modal" data-target="#exampleModal">M&aacute;s</a></td>
+                        </tr>
+                        <tr>
+                            <td>AMTE00BRA</td>
+                            <td>Antioquia</td>
+                            <td>Activo</td>
+                            <td>IGb14-Core, ITRF2014</td>
+                            <td>EABB</td>
+                            <td><a href="" class="modalButton" data-toggle="modal" data-target="#exampleModal">M&aacute;s</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <section class="section registrarReportar">
+        <div class="container containerIgac">
+            <div class="d-flex">
+                <div class="containerFaqs typeB">
+                    <div class="faqs typeC">
+                        <div class="title">
+                            Registra una nueva estaci&oacute;n
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div class="boton-faqs">
+                                <a href="#">Iniciar formulario</a>            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="containerFaqs typeB">
+                    <div class="faqs typeD">
+                        <div class="title">
+                            Reporta una novedad
+                        </div>
+                        <div class="boton-faqs">
+                            <a href="#">Iniciar formulario</a>            
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </section>
+    <div class="containercolor">
+        <div class="container containerIgac">
+            <section class="section sumary">
+                <h2 class="title w-divider">Recursos destacados</h2>
+                <div class="divider w-title"></div>
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card shadow-sm blue">
+                                    <div class="card-header"></div>                                      
+                                    <div class="card-body">
+                                        <h5>Aplicaciones y Herramientas</h5>
+                                        <h6>Magna PRO</h6>
+                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <div class="d-flex align-items-center justify-content-center">
+                                            <button type="button" class="btn btn-sm btn-default">Visitar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card shadow-sm orange">
+                                    <div class="card-header"></div>                                      
+                                    <div class="card-body">
+                                        <h5>Modelos</h5>
+                                        <h6>Modelo Geoidal</h6>
+                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <div class="d-flex align-items-center justify-content-center">
+                                            <button type="button" class="btn btn-sm btn-default">Visitar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card shadow-sm purple">
+                                    <div class="card-header"></div>                                      
+                                    <div class="card-body">
+                                        <h5>Servicios</h5>
+                                        <h6>Servicios en tiempo real</h6>
+                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <div class="d-flex align-items-center justify-content-center">
+                                            <button type="button" class="btn btn-sm btn-default">Visitar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card shadow-sm blue">
+                                    <div class="card-header"></div>                                      
+                                    <div class="card-body">
+                                        <h5>Aplicaciones y Herramientas</h5>
+                                        <h6>Magna PRO</h6>
+                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <div class="d-flex align-items-center justify-content-center">
+                                            <button type="button" class="btn btn-sm btn-default">Visitar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card shadow-sm orange">
+                                    <div class="card-header"></div>                                      
+                                    <div class="card-body">
+                                        <h5>Modelos</h5>
+                                        <h6>Modelo Geoidal</h6>
+                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <div class="d-flex align-items-center justify-content-center">
+                                            <button type="button" class="btn btn-sm btn-default">Visitar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card shadow-sm purple">
+                                    <div class="card-header"></div>                                      
+                                    <div class="card-body">
+                                        <h5>Servicios</h5>
+                                        <h6>Servicios en tiempo real</h6>
+                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <div class="d-flex align-items-center justify-content-center">
+                                            <button type="button" class="btn btn-sm btn-default">Visitar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div>
+            </section>            
+        </div>
+    </div>
+
+    <footer class="footer origen">
+        
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+    <script src="/index.js"></script>
+    <script>
+        
+    </script>
+</body>
+</html>

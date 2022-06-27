@@ -3,10 +3,10 @@ if (document.querySelector(".navbarigac")) {
     navbarigac.innerHTML = `
     <div class="logos">
         <div class="navbar-brand-igac">
-            <a href='https://www.igac.gov.co' target='_blank'><img alt='Logo IGAC' src='../images/logo-igac.svg'/></a>
+            <a href='https://www.igac.gov.co' target='_blank'><img alt='Logo IGAC' src='../../images/logo-igac.svg'/></a>
         </div>
         <div class="logoigac">
-            <a href="/index.html"><img src="../images/logo.svg" alt="Logo Origen Nacional"></a>
+            <a href="/index.html"><img src="../../images/logo.svg" alt="Logo Origen Nacional"></a>
         </div>
     </div>
     <button class='nav-bar-toggle-igac'>
@@ -47,12 +47,12 @@ if (document.querySelector(".navbarigac")) {
 if (document.querySelector(".nav-underline")) {
     const navUnderline = document.querySelector(".nav-underline");
     navUnderline.innerHTML = `
-    <a class='nav-link geodesica' href='red_geodesica.html'>Red Geod&eacute;sica</a>
-    <a class='nav-link gavimetrica' href='red_gavimetrica.html'>Red Gravim&eacute;trica</a>
-    <a class='nav-link geomagnetica' href='red_geomagnetica.html'>Red Geomagn&eacute;tica</a>
-    <a class='nav-link d-none' href='red_gnss.html'>Red GNSS Magna Sirgas</a>
-    <a class='nav-link d-none' href='red_vertices_nivelacion.html'>Red de V&eacute;rtices y Redes de Nivelaci&oacute;n</a>
-    <a class='nav-link tablero' href='tablero_control.html'>Tablero de control</a>
+    <a class='nav-link geodesica' href='/redes/red_geodesica.html'>Red Geod&eacute;sica</a>
+    <a class='nav-link gavimetrica' href='/redes/red_gavimetrica.html'>Red Gravim&eacute;trica</a>
+    <a class='nav-link geomagnetica' href='/redes/red_geomagnetica.html'>Red Geomagn&eacute;tica</a>
+    <a class='nav-link d-none' href='/redes/red_gnss.html'>Red GNSS Magna Sirgas</a>
+    <a class='nav-link d-none' href='/redes/red_vertices_nivelacion.html'>Red de V&eacute;rtices y Redes de Nivelaci&oacute;n</a>
+    <a class='nav-link tablero' href='/redes/tablero_control.html'>Tablero de control</a>
     `
 };
 
@@ -74,7 +74,7 @@ if (document.querySelector(".footer")) {
     <div class='footer-container container'>
         <div class='row-footer'>
             <div class='bird-image'>
-                <img src='../images/pajaro_igac.svg' alt=''>
+                <img src='../../images/pajaro_igac.svg' alt=''>
             </div>
             <div class='content-footer'>
                 <div class='title'>
@@ -190,4 +190,232 @@ if (document.querySelector(".guiasMaestra")) {
     $('a.guias').addClass('active')
 }
 
+/*maestra popUp*/
+if (document.querySelector(".modalButton")) {
+    var modalButton = (document.querySelector(".modalButton"));
+    var modalContent = innerHTML = `
+    <div class='modal maestraModalRedes fade' id='exampleModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+        <div class='modal-dialog' role='document'>
+        <div class='modal-content'>
+            <div class='modal-header'>
+                <button type='button' class='close' data-dismiss='modal' aria-label='Close'>                
+                    <span aria-hidden='true'><img src='/../../images/iconos/closeIcon.svg' alt='cerrar'></span>
+                </button>
+            </div>
+            <div class='modal-body'>                
+                <div class='sumary modalSection'>
+                    <div class='content'>
+                        <div class='title'>ID :  AA CR00CRI</div>
+                        <p class='locationField'>Location: <span>Bogota, Cundinamarca</span></p>
+                        <p class='status'>Estado: <span>Activa</span></p>
+                        <p class='entiti'>Eatidad: <span>EABB</span></p>
+                        <p class='nameOfRed'>Nombre de la red: <span>Magna Eco</span></p>
+                        <p class='red'>Red: <span>Activa</span></p>
+                    </div>
+                    <div class='button'>Editar</div>
+                </div>
+                <div class='sumary modalSection'>
+                    <div class='content'>
+                        <p class='dateInstalation'>Fecha de instalación: <span>DD/MM/AAAA</span></p>
+                        <p class='dateActivation'>Fecha e activación en la red: <span>DD/MM/AAAA</span></p>
+                        <p class='lastModify'>Última modificación: <span>DD/MM/AAAA</span></p>
+                        <div class='d-flex'>
+                            <div class='button typeB'>Descargar archivo de registro</div>
+                            <div class='button typeB'>Mapa de la Red</div>
+                        </div>
+                    </div>
+                </div>
+                <div class='sumary modalSection noBorder'>
+                    <div class='content'>
+                        <p class='sub-title'>Coordenadas y velocidades</p>
+                        <div class='d-flex'>
+                            <p class='solution'>Solution:</p>
+                            <p class='value'>value</p>
+                        </div>
+                        <div class='d-flex'>
+                            <p class='reference'>Reference Epoch:</p>
+                            <p class='value'>2015.0</p>
+                        </div>
+                        <div class='d-flex mt-4' style='align-items: flex-end; width: 100%; justify-content: space-around;'>
+                            <div class='tables w-50' style='padding-right: 10px;'>
+                                <div class='item'>
+                                    <span class='title'>X:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m</span>
+                                </div>
+                                <div class='item'>
+                                    <span class='title'>Y:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m</span>
+                                </div>
+                                <div class='item'>
+                                    <span class='title'>Z:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m</span>
+                                </div>
+                            </div>
+                            <div class='tables w-50' style='padding-left: 10px;'>
+                                <div class='item'>
+                                    <span class='title'>Vx:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m/a</span>
+                                </div>
+                                <div class='item'>
+                                    <span class='title'>Vy:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m/a</span>
+                                </div>
+                                <div class='item'>
+                                    <span class='title'>Vz:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m/a</span>
+                                </div>
+                            </div>                        
+                        </div>
+                        <div class='d-flex' style='align-items: flex-end; width: 100%; justify-content: space-around;'>
+                            <div class='tables w-50' style='padding-right: 10px;'>
+                                <div class='item'>
+                                    <span class='title'>X:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m</span>
+                                </div>
+                                <div class='item'>
+                                    <span class='title'>Y:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m</span>
+                                </div>
+                                <div class='item'>
+                                    <span class='title'>Z:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m</span>
+                                </div>
+                            </div>
+                            <div class='tables w-50' style='padding-left: 10px;'>
+                                <div class='item'>
+                                    <span class='title'>V-north:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m/a</span>
+                                </div>
+                                <div class='item'>
+                                    <span class='title'>V-east:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m/a</span>
+                                </div>
+                                <div class='item'>
+                                    <span class='title'>V-up:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m/a</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='suamry cta'>Consulta las <a>coordenadas semanales</a></div> 
+                <div class='datos'>
+                    <p>Datos de la estación</p>
+                    <div class='chards'>
+                        <img src="/images/images-redes/chardExample.svg" alt="">
+                    </div>
+                </div>                
+            </div>
+        </div>
+        </div>
+    </div>
+    `
+    $(modalButton).append(modalContent)
+}
+
+/*data tables*/
+if (document.querySelector("#redTable")) {
+    $(document).ready(function () {
+        // Setup - add a text input to each footer cell
+        $('#redTable thead tr')
+            .clone(true)
+            .addClass('filters')
+            .insertAfter('.filterContainer');
+            
+     
+        var table = $('#redTable').DataTable({
+            'colums': [
+                {'data': 'id'},
+                {'data': 'Municipio, departamento'},
+                {'data': 'Estado'},
+                {'data': 'Nombre de la red'},
+                {'data': 'Entidad'},
+            ],
+            orderCellsTop: true,
+            fixedHeader: true,
+            language: {
+                search: "_INPUT_",
+                searchPlaceholder: "Busca una estación",
+                paginate: {
+                    next: '<i class="fa fa-angle-right"></i>',
+                    previous: '<i class="fa fa-angle-left"></i>'
+                }
+            },
+            "columnDefs": [
+                { className: "estados", "targets": [ 2 ] },
+                { className: "redes", "targets": [ 4 ] }
+            ],
+            "bInfo": false,
+            "bLengthChange": false,
+            initComplete: function () {
+                var api = this.api();
+     
+                // For each column
+                api
+                    .columns()
+                    .eq(0)
+                    .each(function (colIdx) {
+                        // Set the header cell to contain the input element
+                        var cell = $('.filters th').eq(
+                            $(api.column(colIdx).header()).index()
+                        );
+                        var title = $(cell).text();
+                        $(cell).html('<input type="text" placeholder="' + title + '" />');
+     
+                        // On every keypress in this input
+                        $(
+                            'input',
+                            $('.filters th').eq($(api.column(colIdx).header()).index())
+                        )
+                            .off('keyup change')
+                            .on('change', function (e) {
+                                // Get the search value
+                                $(this).attr('title', $(this).val());
+                                var regexr = '({search})'; //$(this).parents('th').find('select').val();
+     
+                                var cursorPosition = this.selectionStart;
+                                // Search the column for that value
+                                api
+                                    .column(colIdx)
+                                    .search(
+                                        this.value != ''
+                                            ? regexr.replace('{search}', '(((' + this.value + ')))')
+                                            : '',
+                                        this.value != '',
+                                        this.value == ''
+                                    )
+                                    .draw();
+                            })
+                            .on('keyup', function (e) {
+                                e.stopPropagation();
+     
+                                $(this).trigger('change');
+                                $(this)
+                                    .focus()[0]
+                            });
+                    });
+            },
+            
+        });
+    });
+
+}
+
+/*selector de estados de redes*/
+$(function () {
+    $('td.redes:contains(Activa)').addClass('activa')
+});
+
+$(function () {
+    $('td.redes:contains(Pasiva)').addClass('pasiva')
+});
+
+/*selector de estados de redes*/
+$(function () {
+    $('td.estados:contains(Inactivo)').html('<span class="inactivo">Inactivo</span>')
+});
+
+$(function () {
+    $('td.estados:contains(Activo)').html('<span class="activo">Activo</span>')
+});
 
