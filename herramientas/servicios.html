@@ -11,7 +11,7 @@
     <link href="../css/style.css" rel="stylesheet">
     <link href="../css/maestra.css" rel="stylesheet">
 </head>
-<body class="main recursos serviciosMaestra">
+<body class="main recursos herramientasMaestra serviciosMaestra">
     <nav class="navbarigac origen">        
     </nav>
     <nav class="nav nav-underline navHerramientas">        
@@ -30,76 +30,277 @@
     </section>
     <div class="container containerIgac">
         <section class="section">
-            <h1 class="mt-5">Servicio 1</h1>
-            <div class="row">
-                <p class="lead col-md-6">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptatem culpa accusantium nostrum debitis dignissimos quae voluptas.</p>
-            </div>
-            <div class="card-deck mb-5">
-                <div class="card mb-6 box-shadow">
-                    <div class="box-inner p-5"></div>
+            <div class="forms-container">
+                <div class="form-container">
+                    <label for="convertCoordIn2"><strong>Sistema de referencia:</strong></label>
+                    <div class="form">
+                        <div class="content">
+                            <div class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <label>Seleccione el sistema de referencia:</label>
+                                            <select id="convertCoordIn2" class="form-control">
+                                                <option value="EPSG:4326">WGS 84 (EPSG:4326)</option>
+                                                <option value="EPSG:3857">WGS84 Web Mercator (EPSG:3857)</option>
+                                                <option value="EPSG:4686">MAGNA-SIRGAS (EPSG:4686)</option>
+                                                <option value="EPSG:3114">MAGNA-SIRGAS / Colombia Far West zone (EPSG:3114)</option>
+                                                <option value="EPSG:3115">MAGNA-SIRGAS / Colombia West zone (EPSG:3115)</option>
+                                                <option value="EPSG:3116">MAGNA-SIRGAS / Colombia Bogota zone (EPSG:3116)</option>
+                                                <option value="EPSG:3117">MAGNA-SIRGAS / Colombia East Central zone (EPSG:3117)</option>
+                                                <option value="EPSG:3118">MAGNA-SIRGAS / Colombia East zone (EPSG:3118)</option>
+                                                <option value="EPSG:21894">Bogota 1975 / Colombia East (EPSG:21894)</option>
+                                                <option value="EPSG:21896">Bogota 1975 / Colombia West zone (EPSG:21896)</option>
+                                                <option value="EPSG:21897">Bogota 1975 / Colombia Bogota zone (EPSG:21897)</option>
+                                                <option value="EPSG:21898">Bogota 1975 / Colombia East Central zone (EPSG:21898)</option>
+                                                <option value="EPSG:21899">Bogota 1975 / Colombia East zone (EPSG:21899)</option>
+                                                <option value="EPSG:6244">MAGNA-SIRGAS / Arauca urban grid (EPSG:6244)</option>
+                                                <option value="EPSG:6245">MAGNA-SIRGAS / Armenia urban grid (EPSG:6245)</option>
+                                                <option value="EPSG:6246">MAGNA-SIRGAS / Barranquilla urban grid (EPSG:6246)</option>
+                                                <option value="EPSG:6247">MAGNA-SIRGAS / Bogota urban grid (EPSG:6247)</option>
+                                                <option value="EPSG:6248">MAGNA-SIRGAS / Bucaramanga urban grid (EPSG:6248)</option>
+                                                <option value="EPSG:6249">MAGNA-SIRGAS / Cali urban grid (EPSG:6249)</option>
+                                                <option value="EPSG:6250">MAGNA-SIRGAS / Cartagena urban grid (EPSG:6250)</option>
+                                                <option value="EPSG:6251">MAGNA-SIRGAS / Cucuta urban grid (EPSG:6251)</option>
+                                                <option value="EPSG:6252">MAGNA-SIRGAS / Florencia urban grid (EPSG:6252)</option>
+                                                <option value="EPSG:6253">MAGNA-SIRGAS / Ibague urban grid (EPSG:6253)</option>
+                                                <option value="EPSG:6254">MAGNA-SIRGAS / Inirida urban grid (EPSG:6254)</option>
+                                                <option value="EPSG:6255">MAGNA-SIRGAS / Leticia urban grid (EPSG:6255)</option>
+                                                <option value="EPSG:6256">MAGNA-SIRGAS / Manizales urban grid (EPSG:6256)</option>
+                                                <option value="EPSG:6257">MAGNA-SIRGAS / Medellin urban grid (EPSG:6257)</option>
+                                                <option value="EPSG:6258">MAGNA-SIRGAS / Mitu urban grid (EPSG:6258)</option>
+                                                <option value="EPSG:6259">MAGNA-SIRGAS / Mocoa urban grid (EPSG:6259)</option>
+                                                <option value="EPSG:6260">MAGNA-SIRGAS / Monteria urban grid (EPSG:6260)</option>
+                                                <option value="EPSG:6261">MAGNA-SIRGAS / Neiva urban grid (EPSG:6261)</option>
+                                                <option value="EPSG:6262">MAGNA-SIRGAS / Pasto urban grid (EPSG:6262)</option>
+                                                <option value="EPSG:6263">MAGNA-SIRGAS / Pereira urban grid (EPSG:6263)</option>
+                                                <option value="EPSG:6264">MAGNA-SIRGAS / Popayan urban grid (EPSG:6264)</option>
+                                                <option value="EPSG:6265">MAGNA-SIRGAS / Puerto Carreno urban grid (EPSG:6265)</option>
+                                                <option value="EPSG:6266">MAGNA-SIRGAS / Quibdo urban grid (EPSG:6266)</option>
+                                                <option value="EPSG:6267">MAGNA-SIRGAS / Riohacha urban grid (EPSG:6267)</option>
+                                                <option value="EPSG:6268">MAGNA-SIRGAS / San Andres urban grid (EPSG:6268)</option>
+                                                <option value="EPSG:6269">MAGNA-SIRGAS / San Jose del Guaviare urban grid (EPSG:6269)</option>
+                                                <option value="EPSG:6270">MAGNA-SIRGAS / Santa Marta urban grid (EPSG:6270)</option>
+                                                <option value="EPSG:6271">MAGNA-SIRGAS / Sucre urban grid (EPSG:6271)</option>
+                                                <option value="EPSG:6272">MAGNA-SIRGAS / Tunja urban grid (EPSG:6272)</option>
+                                                <option value="EPSG:6273">MAGNA-SIRGAS / Valledupar urban grid (EPSG:6273)</option>
+                                                <option value="EPSG:6274">MAGNA-SIRGAS / Villavicencio urban grid (EPSG:6274)</option>
+                                                <option value="EPSG:6275">MAGNA-SIRGAS / Yopal urban grid (EPSG:6275)</option>
+                                                <option value="EPSG:32617">WGS 84 / UTM zone 17N (EPSG:32617)</option>
+                                                <option value="EPSG:32618">WGS 84 / UTM zone 18N (EPSG:32618)</option>
+                                                <option value="EPSG:32619">WGS 84 / UTM zone 19N (EPSG:32619)</option>
+                                                <option value="EPSG:32717">WGS 84 / UTM zone 17S (EPSG:32717)</option>
+                                                <option value="EPSG:32718">WGS 84 / UTM zone 18S (EPSG:32718)</option>
+                                                <option value="EPSG:32719">WGS 84 / UTM zone 19S (EPSG:32719)</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </div>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <label id="inputCoordinateLatitudLabel" for="inputCoordinateLatitud">Latitud (Norte con signo +, Sur con signo -)</label>
+                                            <div class="btn-group">
+                                                <input id="inputCoordinateLatitud" type="text" class="form-control" style="width: 100%;" placeholder="Ej: 4.668730">
+                                                <span class="clearTextBtn glyphicon glyphicon-remove-circle" onclick="$('#inputCoordinateLatitud').val('');"></span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <label id="inputCoordinateLongitudLabel" for="inputCoordinateLongitud">Longitud (Este con signo +, Oeste con signo -)</label>
+                                            <div class="btn-group">
+                                                <input id="inputCoordinateLongitud" type="text" class="form-control" style="width: 100%;" placeholder="Ej: -74.100403">
+                                                <span class="clearTextBtn glyphicon glyphicon-remove-circle" onclick="$('#inputCoordinateLongitud').val('');"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>                            
+                    </div>
+                    <a href="#" class="btn btn-default" onclick="buscarCoordenada(); return false;">Convertir a Origen Nacional</a>
                 </div>
-                <div class="card mb-6 box-shadow">
-                    <div class="box-inner p-5"></div>
+                <div class="form-container">
+                    <label><strong>Proyecci&oacute;n para Colombia:</strong></label>
+                    <div class="form">
+                        <div class="content">
+                            <div class="table">
+                                <tbody>
+                                    <tr>
+                                        <label>Sistema de proyecci&oacute;n para Colombia:</label>
+                                        <div class="form-control slected">Origen Nacional</div>        
+                                    </tr>
+                                </tbody>
+                            </div>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <label for="outputCoordinateLatitud">Norte (m)<br /></label>
+                                            <div class="btn-group">
+                                                <input id="outputCoordinateLatitud" type="text" class="form-control" style="width: 100%;" placeholder="Ej: 2000000">
+                                                <span class="clearTextBtn glyphicon glyphicon-remove-circle" onclick="$('#outputCoordinateLatitud').val('');"></span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <label for="outputCoordinateLongitud">Este (m)<br /></label>
+                                            <div class="btn-group">
+                                                <input id="outputCoordinateLongitud" type="text" class="form-control" style="width: 100%;" placeholder="Ej: 5000000">
+                                                <span class="clearTextBtn glyphicon glyphicon-remove-circle" onclick="$('#outputCoordinateLongitud').val('');"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>                  
+                    <a href="#" class="btn btn-default" onclick="buscarCoordenada2(); return false;">Convertir desde Origen Nacional</a>
                 </div>
+            </div>                
+        </section>
+        <section class="section">
+            <div class="sumary">
+                <div class="sumarycontent">
+                    <div class="title">
+                        <h2>&iquest;Qui&eacute;nes deben adoptar el uso <br>
+                            del origen nacional?</h2>                                                 
+                    </div>
+                    <div class="resume">
+                        <ol>
+                            <li class="list-element"><img src="/images/iconos/numero_1.svg" alt="numero 1 igac"><p>Si tiene un conjunto de datos en datum MAGNA-SIRGAS o Bogot&aacute; 1975, en la proyecci&oacute;n Gauss-Kr&uuml;ger en cualquiera de sus diferentes or&iacute;genes</p></li>
+                            <li class="list-element"><img src="/images/iconos/numero_2.svg" alt="numero 2 igac"><p>Si tiene un conjunto de datos en MAGNA-SIRGAS en coordenadas geogr&aacute;ficas</p></li>
+                            <li class="list-element"><img src="/images/iconos/numero_3.svg" alt="numero 1 igac"><p>Si tiene un conjunto de datos en WGS84 en coordenadas geogr&aacute;ficas o en la proyecci&oacute;n TM</p></li>
+                            <div class="divider"></div>
+                            <p class="paragraph">Como resultado, retornar&aacute; sus datos en la nueva proyecci&oacute;n para Colombia, con origen nacional, en el formato que haya seleccionado.</p>                                
+                        </ol>                    
+                    </div>                       
+                </div>
+                <div class="sumarycontent">
+                    <div class="sumaryfooter">
+                        <div class="form-section">
+                            <label for="convertCoordIn"><strong>1. Seleccione el sistema de referencia en el cual se encuentran los datos</strong></label>
+                            <select id="convertCoordIn" class="form-control">
+                                <option value="EPSG:4326">WGS 84 (EPSG:4326)</option>
+                                <option value="EPSG:3857">WGS84 Web Mercator (EPSG:3857)</option>
+                                <option value="EPSG:4686">MAGNA-SIRGAS (EPSG:4686)</option>
+                                <option value="EPSG:3114">MAGNA-SIRGAS / Colombia Far West zone (EPSG:3114)</option>
+                                <option value="EPSG:3115">MAGNA-SIRGAS / Colombia West zone (EPSG:3115)</option>
+                                <option value="EPSG:3116">MAGNA-SIRGAS / Colombia Bogota zone (EPSG:3116)</option>
+                                <option value="EPSG:3117">MAGNA-SIRGAS / Colombia East Central zone (EPSG:3117)</option>
+                                <option value="EPSG:3118">MAGNA-SIRGAS / Colombia East zone (EPSG:3118)</option>
+                                <option value="EPSG:21894">Bogota 1975 / Colombia East (EPSG:21894)</option>
+                                <option value="EPSG:21896">Bogota 1975 / Colombia West zone (EPSG:21896)</option>
+                                <option value="EPSG:21897">Bogota 1975 / Colombia Bogota zone (EPSG:21897)</option>
+                                <option value="EPSG:21898">Bogota 1975 / Colombia East Central zone (EPSG:21898)</option>
+                                <option value="EPSG:21899">Bogota 1975 / Colombia East zone (EPSG:21899)</option>
+                                <option value="EPSG:32617">WGS 84 / UTM zone 17N (EPSG:32617)</option>
+                                <option value="EPSG:32618">WGS 84 / UTM zone 18N (EPSG:32618)</option>
+                                <option value="EPSG:32619">WGS 84 / UTM zone 19N (EPSG:32619)</option>
+                                <option value="EPSG:32717">WGS 84 / UTM zone 17S (EPSG:32717)</option>
+                                <option value="EPSG:32718">WGS 84 / UTM zone 18S (EPSG:32718)</option>
+                                <option value="EPSG:32719">WGS 84 / UTM zone 19S (EPSG:32719)</option>
+                            </select>
+                        </div>
+                        <div class="form-section">
+                            <form id="convertFileData" method="post" enctype="multipart/form-data">
+                                <label for="convertFile" aria-hidden="true" data-container="body" data-toggle="popover" data-placement="bottom" data-content="<p style='font-size: x-small;'>Los formatos permitidos son: csv, xls, shp (.zip), itf, gpkg, geojson, kml, gml, gdb (.zip), dxf, rss, gpx, sqlite. </p><p style='font-size: x-small;'>En el caso de los formatos SHP y GDB, el archivo zip debe estar nombrado como <i>nombre.shp.zip</i> o <i>nombre.gdb.zip</i>. Dicho archivo debe contener los archivos que componen este formato, pero no debe contener la carpeta que contiene los archivos.</p><p style='font-size: x-small;'>En el caso de los formatos tabulares Excel y CSV, las coordenadas deben estar en grados decimales y ubicadas en las columnas con encabezado 'X' y 'Y'.</p>" data-html="true" data-trigger="hover">
+                                    <strong>2. Cargue el archivo&nbsp;
+                                        <span class="glyphicon glyphicon-question-sign"></span>
+                                    </strong>
+                                </label>
+                                <input name="convertFile" id="convertFile" type="file" class="form-control" />
+                            </form>
+                        </div>
+                        <div class="form-section">
+                            <label for="convertFormat"><strong>3. Seleccione el formato de salida</strong></label>
+                            <select id="convertFormat" class="form-control">
+                                <option value="CSV">Comma Separated Value (.csv) </option>
+                                <option value="DXF">AutoCAD DXF (.dxf)</option>
+                                <option value="FileGDB">ESRI File Geodatabase (FileGDB) (.gdb.zip)</option>
+                                <option value="GeoJSON">GeoJSON (.geojson)</option>
+                                <option value="KML">Keyhole Markup Language (KML) (.kml)</option>
+                                <option value="GeoRSS">Geographically Encoded Objects for RSS feeds (GeoRSS) (.rss)</option>
+                                <option value="GML">Geography Markup Language (.gml)</option>
+                                <option value="GPKG">GeoPackage vector (.gpkg)</option>
+                                <option value="SQLite">SQLite / Spatialite RDBMS (.sqlite)</option>
+                                <option value="GPX">GPS Exchange Format (.gpx)</option>
+                                <option value="Interlis 1">INTERLIS 1 (.itf)</option>
+                                <option value="Interlis 2">INTERLIS 2 (.xtf)</option>
+                                <option value="ESRI Shapefile">ESRI Shapefile (.shp.zip)</option>
+                                <option value="XLSX">MS Office Open XML spreadsheet (.xlsx)</option>
+                            </select>
+                        </div>
+                        <a href="#" class="btn btn-default" onclick="convertirCoordenada();return false;">Convertir</a> 
+                    </div>
+                </div>                    
             </div>
         </section>
-        <div class="divider"></div>
+    </div>
+    <div class="containercolor typec">
+        <div class="container containerIgac">
+            <section class="section">            
+                <div class="content-sumary">
+                    <div class="sumary">
+                        <div class="sumary-inside">
+                            <h2>Otras formas de conversi&oacute;n masiva</h2>
+                            <p>Para realizar conversiones de manera masiva utilice <a href="MAGNA-SIRGAS_Origen-Nacional.prj" download> este archivo PRJ</a> o el c&oacute;digo WKT (EPSG:9377) que encontrar&aacute; a la derecha.</p>               
+                        </div>                   
+                    </div>
+                    <div class="resume">
+                        <div class="content-pre">
+                            <div class="copy-button-container">
+                                <img id="button" src="/images/iconos/copy.svg" alt="">
+                            </div>
+                            <pre id="copyProjcs">PROJCS["MAGNA-SIRGAS / Origen-Nacional",
+                GEOGCS["MAGNA-SIRGAS",
+                DATUM["Marco_Geocentrico_Nacional_de_Referencia",
+                SPHEROID["GRS 1980",6378137,298.257222101,
+                AUTHORITY["EPSG","7019"]],
+                TOWGS84[0,0,0,0,0,0,0],
+                AUTHORITY["EPSG","6686"]],
+                PRIMEM["Greenwich",0,
+                AUTHORITY["EPSG","8901"]],
+                UNIT["degree",0.0174532925199433,
+                AUTHORITY["EPSG","9122"]],
+                AUTHORITY["EPSG","4686"]],
+                PROJECTION["Transverse_Mercator"],
+                PARAMETER["latitude_of_origin",4.0],
+                PARAMETER["central_meridian",-73.0],
+                PARAMETER["scale_factor",0.9992],
+                PARAMETER["false_easting",5000000],
+                PARAMETER["false_northing",2000000],
+                UNIT["metre",1,
+                AUTHORITY["EPSG","9001"]],
+                AUTHORITY["EPSG","9377"]]</pre>
+                        </div>
+                        <div class="content-pre2">
+                            <p>O la siguiente cadena Proj4:</p>
+                            <div class="copy-button-container">
+                                <img id="button2" src="/images/iconos/copy.svg" alt="">
+                            </div>
+                            <pre id="copyProjtm">+proj=tmerc +lat_0=4.0 +lon_0=-73.0 +k=0.9992 +x_0=5000000 +y_0=2000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</pre>
+                        </div>
+                    </div>                    
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="container containerIgac">
         <section class="section">
-            <h1 class="mt-5">Servicio 2</h1>
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptatem culpa accusantium nostrum debitis dignissimos quae voluptas.</p>
-                    <ul>
-                        <li>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quam debitis iure vero saepe nulla cum. Veniam quas voluptas, vitae ratione eum quos alias expedita nesciunt recusandae quisquam assumenda incidunt.
-                        </li>
-                        <li>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quam debitis iure vero saepe nulla cum. Veniam quas voluptas, vitae ratione eum quos alias expedita nesciunt recusandae quisquam assumenda incidunt.
-                        </li>
-                        <li>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quam debitis iure vero saepe nulla cum. Veniam quas voluptas, vitae ratione eum quos alias expedita nesciunt recusandae quisquam assumenda incidunt.
-                        </li>                
-                    </ul>
+            <div class="faqs type2">
+                <div class="title">
+                    Aplicativo MAGNA SIRGAS
                 </div>
-                <div class="col-md-6">
-                    <form class="card p-3 box-shadow">
-                        <div class="form-group">
-                          <label for="exampleInputEmail1">Email address</label>
-                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Password</label>
-                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                        </div>
-                        <div class="form-check">
-                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                          <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Guardar</button>
-                      </form>
+                <div class="resume">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus fugiat a perferendis deserunt. Aspernatur delectus excepturi expedita beatae nobis tempore magni fugit! Adipisci labore impedit natus placeat atque numquam! Deserunt?
                 </div>
-            </div>
-
-        </section>
-        <div class="divider"></div>
-        <section class="section">
-            <h1 class="mt-5">Servicio 3</h1>
-            <div class="row">
-                <p class="lead col-md-6">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptatem culpa accusantium nostrum debitis dignissimos quae voluptas.</p>
-            </div>
-            <div class="card-deck mb-5">
-                <div class="card mb-6 box-shadow">
-                    <div class="box-inner p-5"></div>
-                </div>
-                <div class="card mb-6 box-shadow">
-                    <div class="box-inner p-5"></div>
+                <div class="boton-faqs">
+                    <a href="#">Consulta los datos</a>            
                 </div>
             </div>
         </section>
     </div>
-
-
 
     <footer class="footer origen">
         

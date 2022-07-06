@@ -6,21 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centro de Control Geod&eacute;sico Nacional</title>
     <link rel="icon" href="images-home/logos/favicon.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/maestra.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+    <link href="../../css/style.css" rel="stylesheet">
+    <link href="../../css/maestra.css" rel="stylesheet">
 </head>
 <body class="main redes tableroMaestra">
     <nav class="navbarigac origen">        
     </nav>
     <nav class="nav nav-underline">        
     </nav>
-    <section class="portada-igac portadaSub origen">
+    <section class="portada-igac portadaSub portadaTable origen">
         <div class="container block-igac">
             <div class="d-flex contenido-portada">
-                <div class="texto-portada">
-                    <h1>Tablero de control</h1>
+                <div class="texto-portada">                  
+                  <h1>Tablero de control</h1>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi possimus, voluptatibus, soluta illo similique asperiores cupiditate id hic praesentium eligendi reiciendis esse dignissimos consequuntur laboriosam culpa, nulla ratione sit magni.
                     </p>
@@ -28,82 +30,88 @@
             </div>
         </div>
     </section>
-    <section>
-        <div class="row">
-            <div class="col-md-4 mb-5">
-                <div class="p-3">
-                    <div class="card mb-6 box-shadow">
-                        <div class="card-header">
-                            <h4 class="my-0 font-weight-normal">.</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-3">
-                    <div class="card mb-6 box-shadow">
-                        <div class="card-header">
-                            <h4 class="my-0 font-weight-normal">.</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-3">
-                    <div class="card mb-6 box-shadow">
-                        <div class="card-header">
-                            <h4 class="my-0 font-weight-normal">.</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-3">
-                    <div class="card mb-6 box-shadow">
-                        <div class="card-header">
-                            <h4 class="my-0 font-weight-normal">.</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-3">
-                    <div class="card mb-6 box-shadow">
-                        <div class="card-header">
-                            <h4 class="my-0 font-weight-normal">.</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-3">
-                    <div class="card mb-6 box-shadow">
-                        <div class="card-header">
-                            <h4 class="my-0 font-weight-normal">.</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-3">
-                    <div class="card mb-6 box-shadow">
-                        <div class="card-header">
-                            <h4 class="my-0 font-weight-normal">.</h4>
-                        </div>
-                    </div>
+    <div class="containercolor">
+      <div class="container containerIgac">
+        <section class="tabs-hojas">
+          <div class="container block-igac container-tabs">
+            <div class="tab-cont">
+                <label>ESCALAS</label>
+                <div class="content-but">
+                    <button class="but active" onclick="city(event, 'escala500000')"><p>1:500.000</p></button>
+                    <button class="but" onclick="city(event, 'escala200000')"><p>1:200.000</p></button>
                 </div>
             </div>
-            <div class="col-md-8">
-                <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
-                    <li class="nav-item mt-5">
-                      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Gravim&eacute;trica</a>
-                    </li>
-                    <li class="nav-item mt-5">
-                      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Geomagn&eacute;tica</a>
-                    </li>
-                    <li class="nav-item mt-5">
-                      <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Geod&eacute;sica</a>
-                    </li>
-                  </ul>
-                <div class="p-5 w-100" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <div id="chartdiv"></div>
-                    </div>
-                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                    </div>
-                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+            <div class="tab-content" id="escala500000" style="display: block;">
+              <section id="escala-a" class="escala">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                  </li>
+                </ul>
+                <div id="myTabContent">
+                  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati iure ipsam distinctio, corrupti enim ab assumenda amet perferendis. Commodi esse culpa ad, odio temporibus accusamus ipsa exercitationem doloribus architecto fugit.</div>
+                  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+                  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
                 </div>
+              </section>
             </div>
-        </div>
-    </section>
+            <div style="display: none;" class="tab-content" id="escala200000">
+                <section id="escala-a" class="escala">
+                    <div class="escala-content">
+                        <div class="text">
+                            <div class="title">
+                                1:200.000
+                            </div>                                
+                            <p>
+                                Su numeración parte de norte a sur, con números arábigos e inicia desde 1 y termina en 274, incluyendo la zona marítima colombiana. 
+                            </p>
+                            <div class="divider no2"></div>
+                            <div class="check">
+                                <div class="icon">
+                                    <img src="images-home/assets/check.svg" alt="">
+                                </div>
+                                <div class="compo-text">
+                                    <h3>Área x hoja (hectáreas)</h3>
+                                    <p>960.000</p>   
+                                </div>
+                            </div>
+                            <div class="divider no3"></div>
+                            <div class="check">
+                                <div class="icon">
+                                    <img src="images-home/assets/check.svg" alt="">
+                                </div>
+                                <div class="compo-text">
+                                    <h3>Área x hoja (ancho x alto)</h3>
+                                    <p>60 cm x 40 cm</p>   
+                                </div>
+                            </div>
+                            <div class="divider no3"></div>
+                            <div class="check">
+                                <div class="icon">
+                                    <img src="images-home/assets/check.svg" alt="">
+                                </div>
+                                <div class="compo-text">
+                                    <h3>Distancia</h3>
+                                    <p>2.000 m</p>   
+                                </div>
+                            </div>
+                        </div>
+                        <div class="img">
+                            <img src="images/img/1_200.000/200k.png">
+                        </div>            
+                    </div>         
+                </section>
+            </div>
+          </div>
+        </section>           
+      </div>
+    </div>
 
     <footer class="footer origen">
         
@@ -112,202 +120,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="/index.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+    <script src="../../index.js"></script>
 
-    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
-    <style>
-        #chartdiv {
-          width: 100%;
-          height: 500px;
-        }
-        #chartdiv2 {
-          width: 100%;
-          height: 500px;
-        }
-    </style>
-    <script>
-        am5.ready(function() {
-        
-        // Create root element
-        // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-        var root = am5.Root.new("chartdiv");
-        
-        
-        // Set themes
-        // https://www.amcharts.com/docs/v5/concepts/themes/
-        root.setThemes([
-          am5themes_Animated.new(root)
-        ]);
-        
-        
-        // Create chart
-        // https://www.amcharts.com/docs/v5/charts/xy-chart/
-        var chart = root.container.children.push(am5xy.XYChart.new(root, {
-          panX: true,
-          panY: true,
-          wheelX: "panX",
-          wheelY: "zoomX",
-          pinchZoomX:true
-        }));
-        
-        
-        // Add cursor
-        // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
-        var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
-        cursor.lineX.set("forceHidden", true);
-        cursor.lineY.set("forceHidden", true);
-        
-        // Generate random data
-        var date = new Date();
-        date.setHours(0, 0, 0, 0);
-        var value = 100;
-        
-        function generateData() {
-          value = Math.round((Math.random() * 10 - 5) + value);
-          am5.time.add(date, "day", 1);
-          return {
-            date: date.getTime(),
-            value: value
-          };
-        }
-        
-        function generateDatas(count) {
-          var data = [];
-          for (var i = 0; i < count; ++i) {
-            data.push(generateData());
-          }
-          return data;
-        }
-        
-        
-        // Create axes
-        // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
-        var xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
-          baseInterval: {
-            timeUnit: "day",
-            count: 1
-          },
-          renderer: am5xy.AxisRendererX.new(root, {})
-        }));
-        
-        var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-          renderer: am5xy.AxisRendererY.new(root, {})
-        }));
-        
-        
-        // Add series
-        // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
-        var series = chart.series.push(am5xy.LineSeries.new(root, {
-          name: "Series",
-          xAxis: xAxis,
-          yAxis: yAxis,
-          valueYField: "value",
-          valueXField: "date",
-          tooltip: am5.Tooltip.new(root, {
-            labelText: "{valueY}"
-          })
-        }));
-        
-        series.fills.template.setAll({
-          fillOpacity: 0.2,
-          visible: true
-        });
-        
-        
-        // Add scrollbar
-        // https://www.amcharts.com/docs/v5/charts/xy-chart/scrollbars/
-        chart.set("scrollbarX", am5.Scrollbar.new(root, {
-          orientation: "horizontal"
-        }));
-        
-        
-        // Set data
-        var data = generateDatas(1200);
-        series.data.setAll(data);
-        
-        
-        var rangeDate = new Date();
-        am5.time.add(rangeDate, "day", Math.round(series.dataItems.length / 2));
-        var rangeTime = rangeDate.getTime();
-        
-        // add series range
-        var seriesRangeDataItem = xAxis.makeDataItem({});
-        var seriesRange = series.createAxisRange(seriesRangeDataItem);
-        seriesRange.fills.template.setAll({
-          visible: true,
-          opacity: 0.3
-        });
-        
-        seriesRange.fills.template.set("fillPattern", am5.LinePattern.new(root, {
-          color: am5.color(0xff0000),
-          rotation: 45,
-          strokeWidth: 2,
-          width: 2000,
-          height: 2000,
-          fill:am5.color(0xffffff)
-        }));
-        
-        seriesRange.strokes.template.set("stroke", am5.color(0xff0000));
-        
-        xAxis.onPrivate("max", function (value) {
-          seriesRangeDataItem.set("endValue", value);
-          seriesRangeDataItem.set("value", rangeTime);
-        });
-        
-        // add axis range
-        var range = xAxis.createAxisRange(xAxis.makeDataItem({}));
-        var color = root.interfaceColors.get("primaryButton");
-        
-        range.set("value", rangeDate.getTime());
-        range.get("grid").setAll({
-          strokeOpacity: 1,
-          stroke: color
-        });
-        
-        var resizeButton = am5.Button.new(root, {
-          themeTags: ["resize", "horizontal"],
-          icon: am5.Graphics.new(root, {
-            themeTags: ["icon"]
-          })
-        });
-        
-        // restrict from being dragged vertically
-        resizeButton.adapters.add("y", function () {
-          return 0;
-        });
-        
-        // restrict from being dragged outside of plot
-        resizeButton.adapters.add("x", function (x) {
-          return Math.max(0, Math.min(chart.plotContainer.width(), x));
-        });
-        
-        // change range when x changes
-        resizeButton.events.on("dragged", function () {
-          var x = resizeButton.x();
-          var position = xAxis.toAxisPosition(x / chart.plotContainer.width());
-        
-          var value = xAxis.positionToValue(position);
-        
-          range.set("value", value);
-        
-          seriesRangeDataItem.set("value", value);
-          seriesRangeDataItem.set("endValue", xAxis.getPrivate("max"));
-        });
-        
-        // set bullet for the range
-        range.set("bullet", am5xy.AxisBullet.new(root, {
-          sprite: resizeButton
-        }));
-        
-        
-        // Make stuff animate on load
-        // https://www.amcharts.com/docs/v5/concepts/animations/
-        series.appear(1000);
-        chart.appear(1000, 100);
-        
-        }); // end am5.ready()
-    </script>
 </body>
 </html>
