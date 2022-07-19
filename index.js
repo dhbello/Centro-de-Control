@@ -16,7 +16,7 @@ if (document.querySelector(".navbarigac")) {
     </button>
     <div class='navbarnavigac'>
         <li>
-            <a href='/index.html'>Inicio</a>
+            <a class='inicio' href='/index.html'>Inicio</a>
         </li>
         <li>
             <a class='redes' href='/redes/red_geodesica.html'>Redes</a>
@@ -129,17 +129,6 @@ if (document.querySelector(".footer")) {
     `
 };
 
-$(function(){
-    var current = location.pathname;
-    $('.navbarnavigac li a').each(function(){
-        var $this = $(this);
-        // if the current path is like this link, make it active
-        if($this.attr('href').indexOf(current) !== -1){
-            $this.addClass('active');
-        }
-    })
-})
-
 if (document.querySelector (".nav-bar-toggle-igac")) {
     const dropDownButon = document.querySelector (".nav-bar-toggle-igac");
     const dropDownMenu = document.querySelector (".navbarnavigac");
@@ -151,6 +140,10 @@ if (document.querySelector (".nav-bar-toggle-igac")) {
     dropDowntoggle.addEventListener('click', function handleClick(event) {
         dropDown.classList.toggle('expandMenuDrop');
     });
+}
+
+if (document.querySelector(".main.inicio")) {
+    $('a.inicio').addClass('active')
 }
 
 if (document.querySelector(".main.redes")) {
@@ -436,3 +429,8 @@ if (document.querySelector(".tab-content")) {
         e.currentTarget.classList.add('active');
     }
 };
+
+/*carousel*/
+$('.carousel').carousel({
+    interval: false,
+}); 

@@ -418,7 +418,7 @@ footer .footer-container .row-footer .content-footer .sub-title {
     background-color: #f7fdd2;
 }
 .origen .section-portada {
-    background-color: #daefff;
+    background-color: #e4f2eb;
 }
 .container-portada {
     background-repeat: no-repeat;
@@ -472,7 +472,7 @@ footer .footer-container .row-footer .content-footer .sub-title {
 }
 /*colores de portadas de subsecciones*/
 .geodesicaMaestra .portada-igac.portadaSub.origen {
-    background: #e0e5f2;
+    background: #fdfbf0;
     background-repeat: no-repeat;
     background-position: right bottom;
     background-size: 45%;
@@ -511,7 +511,7 @@ footer .footer-container .row-footer .content-footer .sub-title {
     background: #f9f1f0;
 }
 .geodesicaMaestra .portada-igac.portadaSub.portadaTable.origen {
-    background-color: #e4f2ec;
+    background-color: #e4f2ea;
 }
 .tableroMaestra .portada-igac.portadaSub.portadaTable.origen {
     background: #f9ede0;
@@ -606,6 +606,25 @@ footer .footer-container .row-footer .content-footer .sub-title {
     width: 80%;
     animation: anime 1s;
     padding: 0 0 0 40px;
+}
+.nav-tabs .nav-item {
+    margin-bottom: 0;
+}
+.tab-content li {
+    list-style: none;
+}
+.tab-content .nav-link {
+    color: #fff;
+    border: 0;
+    padding-bottom: 30px;
+}
+.tab-content .nav-link:hover {
+    border: 0;
+    text-decoration: none;
+}
+.tab-content .nav-link.active {
+    color: #2abbff;
+    border: 0;
 }
 .colombiaMapas .tab-content {
     width: 72%;

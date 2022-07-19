@@ -1,6 +1,9 @@
 p {
     line-height: normal;
 }
+.lead {
+    font-size: 19px;
+}
 .nav-underline {
     position: sticky;
     top: 60px;
@@ -35,8 +38,61 @@ p {
 
 .containercolor.typec {
     background: #1a2e35;
+    position: relative;
 }
 
+.containercolor.typec::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-image: url('/images/images-redes/graficaBloqueServicios.svg');
+    background-repeat: no-repeat;
+    width: 632px;
+    height: 402px;
+}
+
+.beforeImage {
+    position: relative;
+}
+
+.beforeImage::before {
+    content: '';
+    background: url('/images/images-redes/buhoTabla.svg');
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 190px;
+    height: 277px;
+    left: 0;
+    bottom: 0;
+}
+
+.beforeImage::after {
+    content: '';
+    background: url('/images/images-redes/pajaroTabla.svg');
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 118px;
+    height: 125px;
+    right: 60px;
+    top: 80px;
+}
+
+.beforeImage.typeB::before {
+    content: '';
+    background: url('/images/images-redes/perroTabla.svg');
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 318px;
+    height: 266px;
+    left: inherit;
+    right: 0;
+    bottom: 0;
+}
+
+.beforeImage.typeB::after {
+    background: url('');
+}
 
 .containerbg {
     background-image: url('/images/images-redes/backgrountypea.svg');
@@ -61,6 +117,10 @@ p {
 .section {
     padding-top: 80px;
     padding-bottom: 0;
+}
+
+.section.paddingLast {
+    padding-bottom: 80px;
 }
 
 .section:last-child {
@@ -165,7 +225,8 @@ p {
 /*titulos*/
 .section .title {
     font-size: 35px;
-    margin-bottom: 40px;
+    line-height: normal;
+    margin-bottom: 30px;
     width: 100%;
     opacity: 0.8;
     color: #000;
@@ -189,7 +250,8 @@ p {
 }
 
 .faqs .title {
-    font-size: 26px;
+    font-size: 35px;
+    height: 35px;
     color: #fff;
     opacity: 1;
 }
@@ -220,15 +282,14 @@ p {
     background-color: #3595e0;
     color: #fff;
     border-radius: 5px;
-    padding: 11px 0;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 10px 40px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .faqs .title {
-    font-size: 26px;
+    font-size: 35px;
+    height: 35px;
     color: #fff;
     opacity: 1;
 }
@@ -296,11 +357,35 @@ p {
 .faqs.type2:before {
     content: '';
     background-image: url('/images/images-redes/grafica-de-mano.svg');
-    width: 214px;
-    height: 175px;
+    width: 153px;
+    height: 207px;
     position: absolute;
     right: 35px;
+    top: 45px;
+}
+
+/*banners de tercer tipo*/
+.faqs.type3 {
+    background-color: #002735;
+    position: relative;
+}
+
+.faqs.type3:before {
+    content: '';
+    background-image: url('/images/images-redes/mapaWorldColombia.svg');
+    background-repeat: no-repeat;
+    width: 202px;
+    height: 242px;
+    position: absolute;
+    right: 35px;
+    top: inherit;
     bottom: 0;
+}
+
+/*banners no before tipo*/
+.faqs.typenobefore {
+    background-color: #002735;
+    position: relative;
 }
 
 /*banners dobles*/
@@ -318,7 +403,7 @@ p {
 }
 
 .dobles.faqs.tipo-a {
-    background: url('/images/images-redes/redActivaLabel.svg'), #6445e1;
+    background: url('/images/images-redes/redActivaLabel.svg'), #5f46d9;
     background-size: 480px;
     background-repeat: no-repeat;
     background-position: bottom center;
@@ -327,7 +412,7 @@ p {
 
 .dobles.faqs.tipo-b {
     background: url('/images/images-redes/redPasivaLavel.svg'), #07aa7d;
-    background-size: 480px;
+    background-size: 47%;
     background-repeat: no-repeat;
     background-position: right bottom;
     border-bottom: 5px solid #6445e1;
@@ -612,7 +697,7 @@ td .activo {
 .card .card-header {
     border-radius: 5px 5px 0 0;
     border: 0;
-    
+    padding: 10px 15px;
 }
 
 .card.blue .card-header {
@@ -640,8 +725,10 @@ td .activo {
     color: #6445e1;
 }
 
-.card h5{
-    font-size: 13px;
+.card h5 {
+    color: #fff;
+    margin-bottom: 0;
+    font-size: 12px;
 }
 
 .card h6 {
@@ -654,6 +741,7 @@ td .activo {
 
 .card .card-text {
     line-height: normal;
+    margin-bottom: 30px;
 }
 
 .card .card-text {
@@ -1059,7 +1147,7 @@ td .activo {
 
 .indicadoresMaestraRedes .board .card::after {
     content: '';
-    background-image: url('/images/images-redes/graficaindicadoresGravimetrica.svg');
+    background-image: url('/images/images-redes/graficaIndicadores.svg');
     background-size: cover;
     border-radius: 8px;
     overflow: hidden;
@@ -1247,10 +1335,6 @@ td .activo {
 }
 
 /*tablero de control*/
-.tableroMaestra .containercolor {
-    background: #002735;
-}
-
 .tableroMaestra .escala .escala-content .text .title {
     color: #fff;
 }
