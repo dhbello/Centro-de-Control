@@ -163,6 +163,70 @@ p {
 .resourses-title h2 {
     width: 100%;
 }
+
+/*formulario*/
+.form-row .form-title {    
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.form-row .form-title h2 {
+    font-size: 18px;
+    margin-bottom: 0px;
+    font-family: "Gill Sans Std semi Bold";
+}
+
+.form-row .form-component {
+    margin-bottom: 15px;
+}
+
+.form-row label {
+    width: 100%;
+    font-size: 14px;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+    line-height: normal;
+    color: #878787;
+    display: flex;
+    align-items: center;
+}
+
+.form-row label.type2 {
+    height: 48px;
+    align-items: flex-start;    
+}
+
+.form-row .form-control, textarea, input[type=date], input[type=datetime-local], input[type=month], input[type=time] {
+    width: 100%;
+    height: 30px;
+    font-size: 14px;
+    color: #878787;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+.checkList .label {
+    font-size: 14px;
+    margin-bottom: 10px;
+    line-height: normal;
+    color: #878787;
+    margin-bottom: 0;
+}
+
+.checkList input {
+    margin-right: 10px;
+}
+
+.checkList input[type="file"] {
+    display: none;
+}
+
+.checkList .check {
+    margin-bottom: 15px;
+    display: flex;
+}
+
 /*botones*/
 .btn-group {
     display: flex;
@@ -472,11 +536,11 @@ thead {
 }
 
 thead .filterContainer {
-    height: 50px;
+    height: 0px;
 }
 
 thead .filters {
-    position: absolute;
+    position: relative;
     top: 0;
 }
 
@@ -486,6 +550,10 @@ thead .filters th:first-child{
 
 thead .filters th:last-child{
     display: none;
+}
+
+table.dataTable thead th {
+    padding-top: 60px;
 }
 
 table.dataTable thead th, table.dataTable tbody td {
@@ -610,7 +678,8 @@ td.activa, td.pasiva {
     display: flex;
     align-items: center;
     justify-content: right;
-    min-width: 45px;
+    min-width: 60px;
+    justify-content: space-evenly;
 }
 
 td.activa::before {
@@ -962,19 +1031,21 @@ td .activo {
     border-bottom: 1px solid #dee2e6;
 }
 
-.modal.maestraModalRedes .modal-content .tables .item span {
-    width: 50%;
-}
-
-.modal.maestraModalRedes .modal-content .tables .item .title {
+.modal.maestraModalRedes .modal-content .tables .item span.title {
     font-family: 'Gill Sans Std';
     font-size: 14px;
+    width: 45%;
+}
+
+.modal.maestraModalRedes .modal-content .tables .item span.value {
+    width: 55%;
 }
 
 .modal.maestraModalRedes .modal-header {
     background: #3595e0;
     border-radius: 0px;
-    padding: 10px;    
+    padding: 10px;
+    height: 30px;    
 }
 
 .modal.maestraModalRedes .modal-body {
@@ -1022,6 +1093,10 @@ td .activo {
 .modal.maestraModalRedes .modalSection.noBorder {
     margin-bottom: 0;
     padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.noBorder {
     border-bottom: 0;
 }
 

@@ -183,6 +183,188 @@ if (document.querySelector(".guiasMaestra")) {
     $('a.guias').addClass('active')
 }
 
+if (document.querySelector(".modalButtonReportar")) {
+    var modalButton = (document.querySelector(".modalButtonReportar"));
+    var modalContent = innerHTML = ` 
+        <div class='modal maestraModalRedes fade' id='reportarModal' tabindex='-1' role='dialog' aria-labelledby='reportarModalLabel' aria-hidden='true'>
+            <div class='modal-dialog' role='document'>
+                <div class='modal-content'>
+                    <div class='modal-header'>
+                        <button type='button' class='close' data-dismiss='modal' aria-label='Close'>                
+                            <span aria-hidden='true'><img src='/../../images/iconos/closeIcon.svg' alt='cerrar'></span>
+                        </button>
+                    </div>
+                    <div class='modal-body'>                
+                        <div class='sumary modalSection'>
+                            <div class='content'>
+                                <div class='row form-row'>
+                                    <div class='form-title col-12'>
+                                        <h2>Datos personales</h2>
+                                    </div>
+                                    <div class='form-component col-md-6'>
+                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Fecha de diligenciamiento del formulario</label>
+                                        <input type='date' id='start' name='trip-start' value='2018-07-22' min='2018-01-01' max='2018-12-31'>
+                                    </div>
+                                    <div class='form-component col-md-6'>
+                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Nombre</label>
+                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Nombre'>
+                                    </div>
+                                    <div class='form-component col-md-6'>
+                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Correo electr&oacute;nico</label>
+                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Correo electr&oacute;nico'>
+                                    </div>
+                                    <div class='form-component col-md-6'>
+                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Tel&eacute;fono de contacto</label>
+                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Tel&eacute;fono de contacto'>
+                                    </div>
+                                    <div class='form-component col-md-6'>
+                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Empresa a la que est&aacute; vinculado</label>
+                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Empresa a la que est&aacute; vinculado'>
+                                    </div>
+                                    <div class='form-component col-md-6'>
+                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Direcci&oacute;n empresa</label>
+                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Direcci&oacute;n empresa'>
+                                    </div>
+                                    <div class='form-component col-md-6'>
+                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Municipio empresa</label>
+                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Municipio empresa'>
+                                    </div>
+                                    <div class='form-component col-md-6'>
+                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Departamento empresa</label>
+                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Departamento empresa'>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class='sumary modalSection noBorder'>
+                            <div class='content'>
+                                <div class='row form-row'>
+                                    <div class='form-title col-12'>
+                                        <h2>Reporte de novedad sobre un vértice</h2>
+                                    </div>
+                                    <div class='text modalSection'>
+                                        <p class='mb-0'>Los v&eacute;rtices (mojones, monumentos, pilastras, obeliscos o incrustaciones) que hacen parte de la red geod&eacute;sica nacional proveen datos para la ejecuci&oacute;n de proyectos en beneficio la comunidad que adelanten tanto instituciones gubernamentales como entes privados. Su preservaci&oacute;n garantiza la disponibilidad de datos en beneficio de la ciudadan&iacute;a.</p>
+                                    </div>
+                                    <div class='form-component col-md-6'>
+                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Departamento</label>
+                                        <select id='Municipios' class='form-control'>
+                                            <option value='Antioquia'>Antioquia</option>
+                                            <option value='Atalntico'>Atalntico</option>
+                                            <option value='Bogota D.C'>Bogota D.C</option>
+                                        </select>
+                                    </div>
+                                    <div class='form-component col-md-6'>
+                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Municipio</label>
+                                        <select id='Departamentos' class='form-control'>
+                                            <option value='Abejorral'>Abejorral</option>
+                                            <option value='Atalntico'>Abriaqui</option>
+                                            <option value='Bogota D.C'>Alejandria</option>
+                                        </select>
+                                    </div>
+                                    <div class='form-component col-md-6'>
+                                        <label class='type2' id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Ingrese informaci&oacute;n adicional de ubicaci&oacute;n (Vereda, construcciones cercanas, direcci&oacute;n, etc)</label>
+                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder=''>
+                                    </div>
+                                    <div class='form-component col-md-6'>
+                                        <label class='type2' id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Ingrese identificaci&oacute;n del v&eacute;rtice o nomenclatura (siempre y cuando sea legible)&rdquo;: Campo de texto en el que se ingresa el n&uacute;mero o identificaci&oacute;n (Nomenclatura) de la placa, siempre que sea legible.</label>
+                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder=''>
+                                    </div>
+                                    <div class='form-component col-md-6'>
+                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Tipo de Novedad</label>
+                                        <div class='checkList'>
+                                            <div class='check'>
+                                                <input type='checkbox'><div class='label'>Destrucción de vértice</div>
+                                            </div>
+                                            <div class='check'>
+                                                <input type='checkbox'><div class='label'>Vértice sin placa</div>
+                                            </div>
+                                            <div class='check'>
+                                                <input type='checkbox'><div class='label'>Modificación Horizonte</div>
+                                            </div>
+                                            <div class='check'>
+                                                <input type='checkbox'><div class='label'>Vértice inclinado</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='form-component col-md-6'>
+                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Otra novedad</label>
+                                        <textarea style='width: 100%;'></textarea>
+                                        <div class='form-component mt-2'>
+                                            <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Subir foto del v&eacute;rtice</label>
+                                            <input type='file'>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='d-flex justify-content-end w-100 mb-5'>
+                            <div class='button'>Enviar y reportar otro vertice</div>
+                            <div class='button ml-2'>Enviar y salir</div>
+                        </div>
+                        <div class='sumary modalSection noBorder'>
+                            <div class='content'>
+                                <div class='row form-row'>
+                                    <div class='form-title col-12'>
+                                        <h2>Reporte para movimiento de vértices</h2>
+                                    </div>
+                                    <div class='text modalSection'>
+                                        <p class='mb-0'>Tenga en cuenta que el traslado de un v&eacute;rtice sin la aprobaci&oacute;n o conocimiento del IGAC puede generar graves afectaciones a cualquier obra civil, de topograf&iacute;a o de planeaci&oacute;n territorial que lo utilice. En este sentido est&aacute; completamente prohibido realizar traslados o cambios de ubicaci&oacute;n por parte de personal ajeno al IGAC y en caso de ser destruidos debe reportarse a la entidad para su recuperaci&oacute;n.
+                                            </br>
+                                            Relacione a continuaci&oacute;n la informaci&oacute;n de proyecto y los v&eacute;rtices que requiere trasladar. El IGAC realizar&aacute; las gestiones correspondientes:</p>
+                                    </div>
+                                    <div class='form-component col-md-12'>
+                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Nombre del proyecto por el que se requiere mover los v&eacute;rtices</label>
+                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Nombre'>
+                                    </div>
+                                    <div class='form-component col-md-12'>
+                                        <table id='table_id' class='display mt-2 mb-0'>
+                                            <thead>
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>Nombre o Identificador del vértice (nomenclatura)”: </th>
+                                                    <th>Departamento</th>
+                                                    <th>Municipio</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Row 1 Data 1</td>
+                                                    <td>Row 1 Data 2</td>
+                                                    <td>Row 1 Data 1</td>
+                                                    <td>Row 1 Data 2</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Row 2 Data 1</td>
+                                                    <td>Row 2 Data 2</td>
+                                                    <td>Row 2 Data 1</td>
+                                                    <td>Row 2 Data 2</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Row 3 Data 1</td>
+                                                    <td>Row 3 Data 2</td>
+                                                    <td>Row 3 Data 1</td>
+                                                    <td>Row 3 Data 2</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                                <div class='d-flex justify-content-end w-100'>
+                                    <div class='button ml-2'>Enviar</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `
+    $(modalButton).append(modalContent)
+}
+
 /*maestra popUp*/
 if (document.querySelector(".modalButton")) {
     var modalButton = (document.querySelector(".modalButton"));
@@ -305,6 +487,8 @@ if (document.querySelector(".modalButton")) {
     `
     $(modalButton).append(modalContent)
 }
+
+/*reporta novedades popUp*/
 
 /*data tables*/
 if (document.querySelector("#redTable")) {

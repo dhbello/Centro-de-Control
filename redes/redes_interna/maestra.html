@@ -120,14 +120,16 @@
                         <div class="title">
                             Reporta una novedad
                         </div>
-                        <div class="boton-faqs">
-                            <a href="#">Iniciar formulario</a>            
+                        <div class="boton-faqs modalButtonReportar" data-toggle="modal" data-target="#reportarModal">
+                            <a>Iniciar formulario</a>            
                         </div>
                     </div>
                 </div>                
             </div>
         </div>
     </section>
+
+    
 
     <footer class="footer origen">
         
@@ -138,5 +140,15 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
     <script src="../../index.js"></script>
+    <script>
+        $(document).ready( function () {
+            $('#table_id').dataTable( {
+                "searching": false,
+                "paging": false,
+                "info": false
+
+            } );
+        } );
+    </script>
 </body>
 </html>

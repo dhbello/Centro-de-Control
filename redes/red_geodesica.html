@@ -87,7 +87,7 @@
                         <img src="/images/images-redes/bullets-grafico2.svg" alt="">              
                         <h2 class="fw-normal">Registra y postula un nuevo v&eacute;rtice de la Red</h2>
                     </div>
-                    <div class="col-md-4 text-center mb-5">
+                    <div class="col-md-4 text-center mb-5 modalButtonReportar" data-toggle="modal" data-target="#reportarModal">
                         <img src="/images/images-redes/bullets-grafico3.svg" alt="">             
                         <h2 class="fw-normal">Reporta novedades sobre v&eacute;rtices de la Red</h2>                    
                     </div>
@@ -359,5 +359,15 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
     <script src="/index.js"></script>
+    <script>
+        $(document).ready( function () {
+            $('#table_id').dataTable( {
+                "searching": false,
+                "paging": false,
+                "info": false
+
+            } );
+        } );
+    </script>
 </body>
 </html>
