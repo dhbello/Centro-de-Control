@@ -362,7 +362,7 @@ if (document.querySelector(".modalButtonReportar")) {
             </div>
         </div>
     `
-    $(modalButton).append(modalContent)
+    $('body').append(modalContent)
 }
 
 /*maestra popUp*/
@@ -485,7 +485,7 @@ if (document.querySelector(".modalButton")) {
         </div>
     </div>
     `
-    $(modalButton).append(modalContent)
+    $('body').append(modalContent)
 }
 
 /*reporta novedades popUp*/
