@@ -78,14 +78,6 @@
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'Bodoni Moda Regular';
-    src: url(/fonts/GillSansStd-ExtraBold.eot);
-    src: url(/fonts/BodoniModa_72pt-Regular.ttf) format('truetype');
-    font-weight: 800;
-    font-style: normal;
-}
-
 body {
     line-height: 1.5;
     font-family: 'Gill Sans Std';
