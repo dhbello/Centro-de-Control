@@ -208,6 +208,7 @@ p {
 
 .checkList .label {
     font-size: 14px;
+    height: 14px;
     margin-bottom: 10px;
     line-height: normal;
     color: #878787;
@@ -527,7 +528,7 @@ li {
 }
 
 /*tablas*/
-thead input {
+/* thead input {
     width: 100%;
 }
 
@@ -718,7 +719,7 @@ td .activo {
     display: block;
     border-radius: 25px;
     padding: 0 10px;
-}
+} */
 
 /*tarjetas sección que estas buscando*/
 .row.container-cards .title {
@@ -820,9 +821,6 @@ td .activo {
 }
 
 /*cards sin borde*/
-.card-no-border {
-    cursor: pointer;
-}
 .card-no-border img {
     width: 85px;
     margin: auto;
@@ -1161,6 +1159,10 @@ td .activo {
     font-family: 'Gill Sans Std Bold';
 }
 
+div[data-toggle='modal'] {
+    cursor: pointer;
+}
+
 /*maestra sección redes*/
 .indicadoresMaestraRedes {
     background: #fdfbf0;
@@ -1416,11 +1418,6 @@ td .activo {
 
 .tableroMaestra .escala .tab-pane {
     color: #fff;
-}
-
-.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody>table>tbody>tr>td {
-    display: flex;
-    justify-content: center;
 }
 
 /*Cards generales*/

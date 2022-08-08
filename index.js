@@ -34,12 +34,6 @@ if (document.querySelector(".navbarigac")) {
                 <li><a href='/preguntas_frecuentes/otras-preguntas-frecuentes.html'>Otras preguntas frecuentes</a></li>
             </ul>
         </li>
-        <li>
-            <a id='loginBtn' onclick='gotoLogin();'>
-                <img id='userPhoto' src='/images/user.png' onerror='defaultUserPhoto();' alt='Iniciar sesion'>
-                <span id='userName' style='display: none;'>Iniciar sesion</span>
-            </a>
-        </li>
     </div>
     `
 };
@@ -183,6 +177,130 @@ if (document.querySelector(".guiasMaestra")) {
     $('a.guias').addClass('active')
 }
 
+/*maestra popUp*/
+if (document.querySelector(".modalButton")) {
+    var modalButton = (document.querySelector(".modalButton"));
+    var modalContent = innerHTML = `
+    <div class='modal maestraModalRedes fade' id='exampleModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+        <div class='modal-dialog' role='document'>
+        <div class='modal-content'>
+            <div class='modal-header'>
+                <button type='button' class='close' data-dismiss='modal' aria-label='Close'>                
+                    <span aria-hidden='true'><img src='/../../images/iconos/closeIcon.svg' alt='cerrar'></span>
+                </button>
+            </div>
+            <div class='modal-body'>                
+                <div class='sumary modalSection'>
+                    <div class='content'>
+                        <div class='title'>ID :  AA CR00CRI</div>
+                        <p class='locationField'>Location: <span>Bogota, Cundinamarca</span></p>
+                        <p class='status'>Estado: <span>Activa</span></p>
+                        <p class='entiti'>Eatidad: <span>EABB</span></p>
+                        <p class='nameOfRed'>Nombre de la red: <span>Magna Eco</span></p>
+                        <p class='red'>Red: <span>Activa</span></p>
+                    </div>
+                    <div class='button'>Editar</div>
+                </div>
+                <div class='sumary modalSection'>
+                    <div class='content'>
+                        <p class='dateInstalation'>Fecha de instalación: <span>DD/MM/AAAA</span></p>
+                        <p class='dateActivation'>Fecha e activación en la red: <span>DD/MM/AAAA</span></p>
+                        <p class='lastModify'>Última modificación: <span>DD/MM/AAAA</span></p>
+                        <div class='d-flex'>
+                            <div class='button typeB'>Descargar archivo de registro</div>
+                            <div class='button typeB'>Mapa de la Red</div>
+                        </div>
+                    </div>
+                </div>
+                <div class='sumary modalSection noBorder'>
+                    <div class='content'>
+                        <p class='sub-title'>Coordenadas y velocidades</p>
+                        <div class='d-flex'>
+                            <p class='solution'>Solution:</p>
+                            <p class='value'>value</p>
+                        </div>
+                        <div class='d-flex'>
+                            <p class='reference'>Reference Epoch:</p>
+                            <p class='value'>2015.0</p>
+                        </div>
+                        <div class='d-flex mt-4' style='align-items: flex-end; width: 100%; justify-content: space-around;'>
+                            <div class='tables w-50' style='padding-right: 10px;'>
+                                <div class='item'>
+                                    <span class='title'>X:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m</span>
+                                </div>
+                                <div class='item'>
+                                    <span class='title'>Y:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m</span>
+                                </div>
+                                <div class='item'>
+                                    <span class='title'>Z:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m</span>
+                                </div>
+                            </div>
+                            <div class='tables w-50' style='padding-left: 10px;'>
+                                <div class='item'>
+                                    <span class='title'>Vx:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m/a</span>
+                                </div>
+                                <div class='item'>
+                                    <span class='title'>Vy:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m/a</span>
+                                </div>
+                                <div class='item'>
+                                    <span class='title'>Vz:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m/a</span>
+                                </div>
+                            </div>                        
+                        </div>
+                        <div class='d-flex' style='align-items: flex-end; width: 100%; justify-content: space-around;'>
+                            <div class='tables w-50' style='padding-right: 10px;'>
+                                <div class='item'>
+                                    <span class='title'>X:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m</span>
+                                </div>
+                                <div class='item'>
+                                    <span class='title'>Y:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m</span>
+                                </div>
+                                <div class='item'>
+                                    <span class='title'>Z:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m</span>
+                                </div>
+                            </div>
+                            <div class='tables w-50' style='padding-left: 10px;'>
+                                <div class='item'>
+                                    <span class='title'>V-north:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m/a</span>
+                                </div>
+                                <div class='item'>
+                                    <span class='title'>V-east:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m/a</span>
+                                </div>
+                                <div class='item'>
+                                    <span class='title'>V-up:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m/a</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='suamry cta'>Consulta las <a>coordenadas semanales</a></div> 
+                <div class='datos'>
+                    <p>Datos de la estación</p>
+                    <div class='chards'>
+                        <img src="/images/images-redes/chardExample.svg" alt="">
+                    </div>
+                </div>                
+            </div>
+        </div>
+        </div>
+    </div>
+    `
+    $('body').append(modalContent)
+}
+
+/*reporta novedades popUp*/
 if (document.querySelector(".modalButtonReportar")) {
     var modalButton = (document.querySelector(".modalButtonReportar"));
     var modalContent = innerHTML = ` 
@@ -365,130 +483,206 @@ if (document.querySelector(".modalButtonReportar")) {
     $('body').append(modalContent)
 }
 
-/*maestra popUp*/
-if (document.querySelector(".modalButton")) {
-    var modalButton = (document.querySelector(".modalButton"));
-    var modalContent = innerHTML = `
-    <div class='modal maestraModalRedes fade' id='exampleModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
-        <div class='modal-dialog' role='document'>
-        <div class='modal-content'>
-            <div class='modal-header'>
-                <button type='button' class='close' data-dismiss='modal' aria-label='Close'>                
-                    <span aria-hidden='true'><img src='/../../images/iconos/closeIcon.svg' alt='cerrar'></span>
-                </button>
-            </div>
-            <div class='modal-body'>                
-                <div class='sumary modalSection'>
-                    <div class='content'>
-                        <div class='title'>ID :  AA CR00CRI</div>
-                        <p class='locationField'>Location: <span>Bogota, Cundinamarca</span></p>
-                        <p class='status'>Estado: <span>Activa</span></p>
-                        <p class='entiti'>Eatidad: <span>EABB</span></p>
-                        <p class='nameOfRed'>Nombre de la red: <span>Magna Eco</span></p>
-                        <p class='red'>Red: <span>Activa</span></p>
+/*reporta novedades popUp*/
+if (document.querySelector(".modalButtonReportar")) {
+    var modalButton = (document.querySelector(".modalButtonReportar"));
+    var modalContent = innerHTML = ` 
+        <div class='modal maestraModalRedes fade' id='modalIntEstaciones' tabindex='-1' role='dialog' aria-labelledby='modalIntEstaciones' aria-hidden='true'>
+            <div class='modal-dialog' role='document'>
+                <div class='modal-content'>
+                    <div class='modal-header'>
+                        <button type='button' class='close' data-dismiss='modal' aria-label='Close'>                
+                            <span aria-hidden='true'><img src='/../../images/iconos/closeIcon.svg' alt='cerrar'></span>
+                        </button>
                     </div>
-                    <div class='button'>Editar</div>
-                </div>
-                <div class='sumary modalSection'>
-                    <div class='content'>
-                        <p class='dateInstalation'>Fecha de instalación: <span>DD/MM/AAAA</span></p>
-                        <p class='dateActivation'>Fecha e activación en la red: <span>DD/MM/AAAA</span></p>
-                        <p class='lastModify'>Última modificación: <span>DD/MM/AAAA</span></p>
-                        <div class='d-flex'>
-                            <div class='button typeB'>Descargar archivo de registro</div>
-                            <div class='button typeB'>Mapa de la Red</div>
-                        </div>
-                    </div>
-                </div>
-                <div class='sumary modalSection noBorder'>
-                    <div class='content'>
-                        <p class='sub-title'>Coordenadas y velocidades</p>
-                        <div class='d-flex'>
-                            <p class='solution'>Solution:</p>
-                            <p class='value'>value</p>
-                        </div>
-                        <div class='d-flex'>
-                            <p class='reference'>Reference Epoch:</p>
-                            <p class='value'>2015.0</p>
-                        </div>
-                        <div class='d-flex mt-4' style='align-items: flex-end; width: 100%; justify-content: space-around;'>
-                            <div class='tables w-50' style='padding-right: 10px;'>
-                                <div class='item'>
-                                    <span class='title'>X:</span>
-                                    <span class='value'>644009 0097 + 0.00366 m</span>
-                                </div>
-                                <div class='item'>
-                                    <span class='title'>Y:</span>
-                                    <span class='value'>644009 0097 + 0.00366 m</span>
-                                </div>
-                                <div class='item'>
-                                    <span class='title'>Z:</span>
-                                    <span class='value'>644009 0097 + 0.00366 m</span>
+                    <div class='modal-body'>                
+                        <div class='sumary modalSection'>
+                            <div class='content'>
+                                <div class='row form-row'>
+                                    <div class='form-title col-12'>
+                                        <h2>Datos personales</h2>
+                                    </div>
+                                    <div class='form-component col-md-6'>
+                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Fecha de diligenciamiento del formulario</label>
+                                        <input type='date' id='start' name='trip-start' value='2018-07-22' min='2018-01-01' max='2018-12-31'>
+                                    </div>
+                                    <div class='form-component col-md-6'>
+                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Nombre</label>
+                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Nombre'>
+                                    </div>
+                                    <div class='form-component col-md-6'>
+                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Correo electr&oacute;nico</label>
+                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Correo electr&oacute;nico'>
+                                    </div>
+                                    <div class='form-component col-md-6'>
+                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Tel&eacute;fono de contacto</label>
+                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Tel&eacute;fono de contacto'>
+                                    </div>
+                                    <div class='form-component col-md-6'>
+                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Empresa a la que est&aacute; vinculado</label>
+                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Empresa a la que est&aacute; vinculado'>
+                                    </div>
+                                    <div class='form-component col-md-6'>
+                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Direcci&oacute;n empresa</label>
+                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Direcci&oacute;n empresa'>
+                                    </div>
+                                    <div class='form-component col-md-6'>
+                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Municipio empresa</label>
+                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Municipio empresa'>
+                                    </div>
+                                    <div class='form-component col-md-6'>
+                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Departamento empresa</label>
+                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Departamento empresa'>
+                                    </div>
+                                    <div class='text modalSection noBorder d-block'>
+                                        <p class='mb-0'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates quas voluptatum, modi et dolorem asperiores a quidem aliquid laudantium, nesciunt, exercitationem quasi sed! A excepturi nobis corporis quo! Earum, delectus!</p>
+                                        <div class='checkList mt-2'>
+                                            <div class='check'>
+                                                <input type='checkbox'><div class='label'>Acepto t&eacute;rminos</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
-                            <div class='tables w-50' style='padding-left: 10px;'>
-                                <div class='item'>
-                                    <span class='title'>Vx:</span>
-                                    <span class='value'>644009 0097 + 0.00366 m/a</span>
-                                </div>
-                                <div class='item'>
-                                    <span class='title'>Vy:</span>
-                                    <span class='value'>644009 0097 + 0.00366 m/a</span>
-                                </div>
-                                <div class='item'>
-                                    <span class='title'>Vz:</span>
-                                    <span class='value'>644009 0097 + 0.00366 m/a</span>
-                                </div>
-                            </div>                        
                         </div>
-                        <div class='d-flex' style='align-items: flex-end; width: 100%; justify-content: space-around;'>
-                            <div class='tables w-50' style='padding-right: 10px;'>
-                                <div class='item'>
-                                    <span class='title'>X:</span>
-                                    <span class='value'>644009 0097 + 0.00366 m</span>
-                                </div>
-                                <div class='item'>
-                                    <span class='title'>Y:</span>
-                                    <span class='value'>644009 0097 + 0.00366 m</span>
-                                </div>
-                                <div class='item'>
-                                    <span class='title'>Z:</span>
-                                    <span class='value'>644009 0097 + 0.00366 m</span>
-                                </div>
-                            </div>
-                            <div class='tables w-50' style='padding-left: 10px;'>
-                                <div class='item'>
-                                    <span class='title'>V-north:</span>
-                                    <span class='value'>644009 0097 + 0.00366 m/a</span>
-                                </div>
-                                <div class='item'>
-                                    <span class='title'>V-east:</span>
-                                    <span class='value'>644009 0097 + 0.00366 m/a</span>
-                                </div>
-                                <div class='item'>
-                                    <span class='title'>V-up:</span>
-                                    <span class='value'>644009 0097 + 0.00366 m/a</span>
+                        <div class='sumary modalSection noBorder'>
+                            <div class='content popUpTable'>
+                                <table style='width: 100%;' id='example' style='width: 100%;' class='display mt-2 mb-0'>
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Nombre o Identificador del vértice (nomenclatura)”: </th>
+                                            <th>Departamento</th>
+                                            <th>Municipio</th>
+                                            <th>Nombre o Identificador del vértice (nomenclatura)”: </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Row 1 Data 1</td>
+                                            <td>Row 1 Data 2</td>
+                                            <td>Row 1 Data 1</td>
+                                            <td>Row 1 Data 2</td>
+                                            <td>Row 1 Data 2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Row 2 Data 1</td>
+                                            <td>Row 2 Data 2</td>
+                                            <td>Row 2 Data 1</td>
+                                            <td>Row 2 Data 2</td>
+                                            <td>Row 2 Data 2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Row 3 Data 1</td>
+                                            <td>Row 3 Data 2</td>
+                                            <td>Row 3 Data 1</td>
+                                            <td>Row 3 Data 2</td>
+                                            <td>Row 3 Data 2</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class='d-flex justify-content-end w-100'>
+                                    <div class='button ml-2'>Enviar</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class='suamry cta'>Consulta las <a>coordenadas semanales</a></div> 
-                <div class='datos'>
-                    <p>Datos de la estación</p>
-                    <div class='chards'>
-                        <img src="/images/images-redes/chardExample.svg" alt="">
-                    </div>
-                </div>                
             </div>
         </div>
-        </div>
-    </div>
     `
-    $('body').append(modalContent)
+    $('body').append(modalContent);
 }
 
-/*reporta novedades popUp*/
+/*data tables*/
+if (document.querySelector("#redTable2")) {
+    $(document).ready(function () {
+        // Setup - add a text input to each footer cell
+        $('#redTable2 thead tr')
+            .clone(true)
+            .addClass('filters')
+            .insertAfter('.filterContainer');
+            
+     
+        var table = $('#redTable2').DataTable({
+            'colums': [
+                {'data': 'id'},
+                {'data': 'Municipio, departamento'},
+                {'data': 'Estado'},
+                {'data': 'Nombre de la red'},
+                {'data': 'Entidad'},
+            ],
+            orderCellsTop: true,
+            fixedHeader: true,
+            scrollX: true,
+            language: {
+                search: "_INPUT_",
+                searchPlaceholder: "Busca una estación",
+                paginate: {
+                    next: '<i class="fa fa-angle-right"></i>',
+                    previous: '<i class="fa fa-angle-left"></i>'
+                }
+            },
+            "columnDefs": [
+                { className: "estados", "targets": [ 2 ] },
+                { className: "redes", "targets": [ 4 ] }
+            ],
+            "bInfo": false,
+            "bLengthChange": false,
+            initComplete: function () {
+                var api = this.api();
+     
+                // For each column
+                api
+                    .columns()
+                    .eq(0)
+                    .each(function (colIdx) {
+                        // Set the header cell to contain the input element
+                        var cell = $('.filters th').eq(
+                            $(api.column(colIdx).header()).index()
+                        );
+                        var title = $(cell).text();
+                        $(cell).html('<input type="text" placeholder="' + title + '" />');
+     
+                        // On every keypress in this input
+                        $(
+                            'input',
+                            $('.filters th').eq($(api.column(colIdx).header()).index())
+                        )
+                            .off('keyup change')
+                            .on('change', function (e) {
+                                // Get the search value
+                                $(this).attr('title', $(this).val());
+                                var regexr = '({search})'; //$(this).parents('th').find('select').val();
+     
+                                var cursorPosition = this.selectionStart;
+                                // Search the column for that value
+                                api
+                                    .column(colIdx)
+                                    .search(
+                                        this.value != ''
+                                            ? regexr.replace('{search}', '(((' + this.value + ')))')
+                                            : '',
+                                        this.value != '',
+                                        this.value == ''
+                                    )
+                                    .draw();
+                            })
+                            .on('keyup', function (e) {
+                                e.stopPropagation();
+     
+                                $(this).trigger('change');
+                                $(this)
+                                    .focus()[0]
+                            });
+                    });
+            },
+            
+        });
+    });
+
+}
 
 /*data tables*/
 if (document.querySelector("#redTable")) {
