@@ -190,7 +190,7 @@ if (document.querySelector(".modalButton")) {
                 </button>
             </div>
             <div class='modal-body'>                
-                <div class='sumary modalSection'>
+                <div class='sumary modalSection mt-4'>
                     <div class='content'>
                         <div class='title'>ID :  AA CR00CRI</div>
                         <p class='locationField'>Location: <span>Bogota, Cundinamarca</span></p>
@@ -312,54 +312,63 @@ if (document.querySelector(".modalButtonReportar")) {
                             <span aria-hidden='true'><img src='/../../images/iconos/closeIcon.svg' alt='cerrar'></span>
                         </button>
                     </div>
-                    <div class='modal-body'>                
-                        <div class='sumary modalSection'>
-                            <div class='content'>
-                                <div class='row form-row'>
-                                    <div class='form-title col-12'>
-                                        <h2>Datos personales</h2>
-                                    </div>
-                                    <div class='form-component col-md-6'>
-                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Fecha de diligenciamiento del formulario</label>
-                                        <input type='date' id='start' name='trip-start' value='2018-07-22' min='2018-01-01' max='2018-12-31'>
-                                    </div>
-                                    <div class='form-component col-md-6'>
-                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Nombre</label>
-                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Nombre'>
-                                    </div>
-                                    <div class='form-component col-md-6'>
-                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Correo electr&oacute;nico</label>
-                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Correo electr&oacute;nico'>
-                                    </div>
-                                    <div class='form-component col-md-6'>
-                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Tel&eacute;fono de contacto</label>
-                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Tel&eacute;fono de contacto'>
-                                    </div>
-                                    <div class='form-component col-md-6'>
-                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Empresa a la que est&aacute; vinculado</label>
-                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Empresa a la que est&aacute; vinculado'>
-                                    </div>
-                                    <div class='form-component col-md-6'>
-                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Direcci&oacute;n empresa</label>
-                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Direcci&oacute;n empresa'>
-                                    </div>
-                                    <div class='form-component col-md-6'>
-                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Municipio empresa</label>
-                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Municipio empresa'>
-                                    </div>
-                                    <div class='form-component col-md-6'>
-                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Departamento empresa</label>
-                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Departamento empresa'>
-                                    </div>
-
-                                </div>
-                            </div>
+                    <div style='padding: 20px 30px 0;'>
+                        <div class='content'>
+                            <select class='selectRedReporta' name="Seleccionar Red">
+                                <option value="Seleccionar Red" selected>Seleccionar</option>
+                                <option value="reportanovedades1">Reporte de novedad sobre un vértice</option>
+                                <option value="reportanovedades2">Reporte para movimiento de vértices</option>
+                            </select>
                         </div>
+                    </div>
+                    <div class='modal-body pt-4 reportaNovedades1'>
                         <div class='sumary modalSection noBorder'>
                             <div class='content'>
+                                <div class="form-title mainTitle">
+                                    <h2>Reporte de novedad sobre un vértice</h2>
+                                </div>
                                 <div class='row form-row'>
-                                    <div class='form-title col-12'>
-                                        <h2>Reporte de novedad sobre un vértice</h2>
+                                    <div class='sumary modalSection'>
+                                        <div class='content'>
+                                            <div class='row form-row'>
+                                                <div class='form-title col-12'>
+                                                    <h2>Datos personales</h2>
+                                                </div>
+                                                <div class='form-component col-md-6'>
+                                                    <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Fecha de diligenciamiento del formulario</label>
+                                                    <input type='date' id='start' name='trip-start' value='2018-07-22' min='2018-01-01' max='2018-12-31'>
+                                                </div>
+                                                <div class='form-component col-md-6'>
+                                                    <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Nombre</label>
+                                                    <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Nombre'>
+                                                </div>
+                                                <div class='form-component col-md-6'>
+                                                    <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Correo electr&oacute;nico</label>
+                                                    <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Correo electr&oacute;nico'>
+                                                </div>
+                                                <div class='form-component col-md-6'>
+                                                    <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Tel&eacute;fono de contacto</label>
+                                                    <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Tel&eacute;fono de contacto'>
+                                                </div>
+                                                <div class='form-component col-md-6'>
+                                                    <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Empresa a la que est&aacute; vinculado</label>
+                                                    <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Empresa a la que est&aacute; vinculado'>
+                                                </div>
+                                                <div class='form-component col-md-6'>
+                                                    <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Direcci&oacute;n empresa</label>
+                                                    <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Direcci&oacute;n empresa'>
+                                                </div>
+                                                <div class='form-component col-md-6'>
+                                                    <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Municipio empresa</label>
+                                                    <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Municipio empresa'>
+                                                </div>
+                                                <div class='form-component col-md-6'>
+                                                    <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Departamento empresa</label>
+                                                    <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Departamento empresa'>
+                                                </div>
+
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class='text modalSection'>
                                         <p class='mb-0'>Los v&eacute;rtices (mojones, monumentos, pilastras, obeliscos o incrustaciones) que hacen parte de la red geod&eacute;sica nacional proveen datos para la ejecuci&oacute;n de proyectos en beneficio la comunidad que adelanten tanto instituciones gubernamentales como entes privados. Su preservaci&oacute;n garantiza la disponibilidad de datos en beneficio de la ciudadan&iacute;a.</p>
@@ -414,67 +423,112 @@ if (document.querySelector(".modalButtonReportar")) {
                                         </div>
                                     </div>
                                 </div>
+                                <div class='d-flex justify-content-end w-100'>
+                                    <div class='button'>Enviar y reportar otro vertice</div>
+                                    <div class='button ml-2'>Enviar y salir</div>
+                                </div>
                             </div>
                         </div>
-                        <div class='d-flex justify-content-end w-100 mb-5'>
-                            <div class='button'>Enviar y reportar otro vertice</div>
-                            <div class='button ml-2'>Enviar y salir</div>
-                        </div>
-                        <div class='sumary modalSection noBorder'>
-                            <div class='content'>
-                                <div class='row form-row'>
-                                    <div class='form-title col-12'>
+                    </div>    
+                        <div class='modal-body pt-4 reportaNovedades2'>
+                            <div class='sumary modalSection noBorder'>
+                                <div class='content'>
+                                    <div class="form-title mainTitle">
                                         <h2>Reporte para movimiento de vértices</h2>
                                     </div>
-                                    <div class='text modalSection'>
-                                        <p class='mb-0'>Tenga en cuenta que el traslado de un v&eacute;rtice sin la aprobaci&oacute;n o conocimiento del IGAC puede generar graves afectaciones a cualquier obra civil, de topograf&iacute;a o de planeaci&oacute;n territorial que lo utilice. En este sentido est&aacute; completamente prohibido realizar traslados o cambios de ubicaci&oacute;n por parte de personal ajeno al IGAC y en caso de ser destruidos debe reportarse a la entidad para su recuperaci&oacute;n.
-                                            </br>
-                                            Relacione a continuaci&oacute;n la informaci&oacute;n de proyecto y los v&eacute;rtices que requiere trasladar. El IGAC realizar&aacute; las gestiones correspondientes:</p>
-                                    </div>
-                                    <div class='form-component col-md-12'>
-                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Nombre del proyecto por el que se requiere mover los v&eacute;rtices</label>
-                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Nombre'>
-                                    </div>
-                                    <div class='form-component col-md-12'>
-                                        <table id='table_id' class='display mt-2 mb-0'>
-                                            <thead>
-                                                <tr>
-                                                    <th>No</th>
-                                                    <th>Nombre o Identificador del vértice (nomenclatura)”: </th>
-                                                    <th>Departamento</th>
-                                                    <th>Municipio</th>
+                                    <div class='row form-row'>
+                                        <div class='sumary modalSection'>
+                                            <div class='content'>
+                                                <div class='row form-row'>
+                                                    <div class='form-title col-12'>
+                                                        <h2>Datos personales</h2>
+                                                    </div>
+                                                    <div class='form-component col-md-6'>
+                                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Fecha de diligenciamiento del formulario</label>
+                                                        <input type='date' id='start' name='trip-start' value='2018-07-22' min='2018-01-01' max='2018-12-31'>
+                                                    </div>
+                                                    <div class='form-component col-md-6'>
+                                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Nombre</label>
+                                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Nombre'>
+                                                    </div>
+                                                    <div class='form-component col-md-6'>
+                                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Correo electr&oacute;nico</label>
+                                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Correo electr&oacute;nico'>
+                                                    </div>
+                                                    <div class='form-component col-md-6'>
+                                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Tel&eacute;fono de contacto</label>
+                                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Tel&eacute;fono de contacto'>
+                                                    </div>
+                                                    <div class='form-component col-md-6'>
+                                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Empresa a la que est&aacute; vinculado</label>
+                                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Empresa a la que est&aacute; vinculado'>
+                                                    </div>
+                                                    <div class='form-component col-md-6'>
+                                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Direcci&oacute;n empresa</label>
+                                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Direcci&oacute;n empresa'>
+                                                    </div>
+                                                    <div class='form-component col-md-6'>
+                                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Municipio empresa</label>
+                                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Municipio empresa'>
+                                                    </div>
+                                                    <div class='form-component col-md-6'>
+                                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Departamento empresa</label>
+                                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Departamento empresa'>
+                                                    </div>
 
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Row 1 Data 1</td>
-                                                    <td>Row 1 Data 2</td>
-                                                    <td>Row 1 Data 1</td>
-                                                    <td>Row 1 Data 2</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Row 2 Data 1</td>
-                                                    <td>Row 2 Data 2</td>
-                                                    <td>Row 2 Data 1</td>
-                                                    <td>Row 2 Data 2</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Row 3 Data 1</td>
-                                                    <td>Row 3 Data 2</td>
-                                                    <td>Row 3 Data 1</td>
-                                                    <td>Row 3 Data 2</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class='text modalSection'>
+                                            <p class='mb-0'>Tenga en cuenta que el traslado de un v&eacute;rtice sin la aprobaci&oacute;n o conocimiento del IGAC puede generar graves afectaciones a cualquier obra civil, de topograf&iacute;a o de planeaci&oacute;n territorial que lo utilice. En este sentido est&aacute; completamente prohibido realizar traslados o cambios de ubicaci&oacute;n por parte de personal ajeno al IGAC y en caso de ser destruidos debe reportarse a la entidad para su recuperaci&oacute;n.
+                                                </br>
+                                                Relacione a continuaci&oacute;n la informaci&oacute;n de proyecto y los v&eacute;rtices que requiere trasladar. El IGAC realizar&aacute; las gestiones correspondientes:</p>
+                                        </div>
+                                        <div class='form-component col-md-12'>
+                                            <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Nombre del proyecto por el que se requiere mover los v&eacute;rtices</label>
+                                            <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Nombre'>
+                                        </div>
+                                        <div class='form-component col-md-12'>
+                                            <table id='table_id' class='display mt-2 mb-0'>
+                                                <thead>
+                                                    <tr>
+                                                        <th>No</th>
+                                                        <th>Nombre o Identificador del vértice (nomenclatura)”: </th>
+                                                        <th>Departamento</th>
+                                                        <th>Municipio</th>
 
-                                </div>
-                                <div class='d-flex justify-content-end w-100'>
-                                    <div class='button ml-2'>Enviar</div>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Row 1 Data 1</td>
+                                                        <td>Row 1 Data 2</td>
+                                                        <td>Row 1 Data 1</td>
+                                                        <td>Row 1 Data 2</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Row 2 Data 1</td>
+                                                        <td>Row 2 Data 2</td>
+                                                        <td>Row 2 Data 1</td>
+                                                        <td>Row 2 Data 2</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Row 3 Data 1</td>
+                                                        <td>Row 3 Data 2</td>
+                                                        <td>Row 3 Data 1</td>
+                                                        <td>Row 3 Data 2</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                    <div class='d-flex justify-content-end w-100'>
+                                        <div class='button ml-2'>Enviar</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>    
                     </div>
                 </div>
             </div>
@@ -1075,6 +1129,78 @@ if (document.querySelector(".tab-content")) {
         e.currentTarget.classList.add('active');
     }
 };
+
+$(document).ready(function() {          
+            
+    $("#example").DataTable({
+        scrollX: true,
+        searching: false, 
+        paging: false, 
+        info: false
+    });
+
+    $("#example2").DataTable({
+        scrollX: true,
+        searching: false, 
+        paging: false, 
+        info: false
+    });
+
+    $( ".modalIntEstaciones" ).one("click", function() {
+        setTimeout(() => {
+            $('#example_wrapper .sorting').last().trigger( "click" );    
+        }, 500 );
+    });
+    
+    /*registra y postula un nuevo vertice*/
+    $('.bodyTarget1').hide(); 
+    $('.bodyTarget2').hide(); 
+    $('.selectRed').change(function(){
+        if($('.selectRed').val() == 'redactiva') {
+            $('.bodyTarget1').show()
+        } else {
+            $('.bodyTarget1').hide()
+        } 
+
+        if($('.selectRed').val() == 'redpasiva') {
+            $('.bodyTarget2').show()
+        } else {
+            $('.bodyTarget2').hide()
+        } 
+    });
+
+    /*Reporta novedades*/
+    $('.reportaNovedades1').hide(); 
+    $('.reportaNovedades2').hide(); 
+    $('.selectRedReporta').change(function(){
+        if($('.selectRedReporta').val() == 'reportanovedades1') {
+            $('.reportaNovedades1').show()
+        } else {
+            $('.reportaNovedades1').hide()
+        } 
+
+        if($('.selectRedReporta').val() == 'reportanovedades2') {
+            $('.reportaNovedades2').show()
+        } else {
+            $('.reportaNovedades2').hide()
+        } 
+    });
+
+    $("#table_id").DataTable({
+        scrollX: true,
+        searching: false, 
+        paging: false, 
+        info: false
+    });
+
+    $( ".maestraModalRedes" ).one("click", function() {
+        setTimeout(() => {
+            $('#table_id_wrapper .sorting').last().trigger( "click" );    
+        }, 500 );
+    });
+
+
+} );
 
 /*carousel*/
 $('.carousel').carousel({

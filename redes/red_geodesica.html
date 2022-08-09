@@ -369,50 +369,5 @@
     <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
     <script src="/index.js"></script>
-    <script>
-
-
-        $(document).ready(function() {          
-            
-            $("#example").DataTable({
-                scrollX: true,
-                searching: false, 
-                paging: false, 
-                info: false
-            });
-
-            $("#example2").DataTable({
-                scrollX: true,
-                searching: false, 
-                paging: false, 
-                info: false
-            });
-
-            $( ".modalIntEstaciones" ).one("click", function() {
-                setTimeout(() => {
-                    $('#example_wrapper .sorting').last().trigger( "click" );    
-                }, 500 );
-            });
-            
-            $('.bodyTarget1').hide(); 
-            $('.bodyTarget2').hide(); 
-            $('.selectRed').change(function(){
-                if($('.selectRed').val() == 'redactiva') {
-                    $('.bodyTarget1').show()
-                } else {
-                    $('.bodyTarget1').hide()
-                } 
-
-                if($('.selectRed').val() == 'redpasiva') {
-                    $('.bodyTarget2').show()
-                } else {
-                    $('.bodyTarget2').hide()
-                } 
-            });
-
-
-        } );
-
-    </script>
 </body>
 </html>

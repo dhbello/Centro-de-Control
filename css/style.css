@@ -179,7 +179,16 @@ p {
     color: #878787;
     border: 1px solid #ced4da;
     border-radius: 0.25rem;
+}
 
+.selectRedReporta {
+    margin-bottom: 30px;
+    min-width: 400px;
+    height: 30px;
+    font-size: 14px;
+    color: #878787;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
 }
 
 .mainTitle h2 {
