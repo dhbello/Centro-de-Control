@@ -588,6 +588,10 @@ table.dataTable thead th, table.dataTable tbody td {
     box-shadow: none !important;
 }
 
+.redTable2 #redTable_filter {
+    display: none;
+}
+
 #redTable_filter {
     width: 100%;
 }
