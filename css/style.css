@@ -528,7 +528,7 @@ li {
 }
 
 /*tablas*/
-/* thead input {
+thead input {
     width: 100%;
 }
 
@@ -590,7 +590,7 @@ table.dataTable thead th, table.dataTable tbody td {
 }
 
 table.dataTable thead > tr > th.sorting {
-    padding: 0 15px 0 0;
+    padding: 0 50px 0 50px;
     position: relative;
     border-bottom: 0;
     font-size: 14px;    
@@ -618,7 +618,7 @@ table.dataTable thead > tr > th.sorting::before {
     border-bottom-width: 2px;
     border-left-width: 0px;
     transform: rotate(225deg);
-    right: 25px;
+    right: 10px;
 }
 
 table.dataTable thead > tr > th.sorting::after {
@@ -636,7 +636,7 @@ table.dataTable thead > tr > th.sorting::after {
     border-bottom-width: 2px;
     border-left-width: 0px;
     transform: rotate(45deg);
-    right: 25px;
+    right: 10px;
 }
 
 table.dataTable thead th {
@@ -719,7 +719,7 @@ td .activo {
     display: block;
     border-radius: 25px;
     padding: 0 10px;
-} */
+}
 
 /*tarjetas sección que estas buscando*/
 .row.container-cards .title {
