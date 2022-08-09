@@ -381,12 +381,34 @@
                 info: false
             });
 
-            $( ".modalIntEstaciones" ).one("click", function() {
-                setTimeout(() => {
-                    $('#example_wrapper .sorting').first().trigger( "click" );    
-                }, 500 );
+            $("#example2").DataTable({
+                scrollX: true,
+                searching: false, 
+                paging: false, 
+                info: false
             });
 
+            $( ".modalIntEstaciones" ).one("click", function() {
+                setTimeout(() => {
+                    $('#example_wrapper .sorting').last().trigger( "click" );    
+                }, 500 );
+            });
+            
+            $('.bodyTarget1').hide(); 
+            $('.bodyTarget2').hide(); 
+            $('.selectRed').change(function(){
+                if($('.selectRed').val() == 'redactiva') {
+                    $('.bodyTarget1').show()
+                } else {
+                    $('.bodyTarget1').hide()
+                } 
+
+                if($('.selectRed').val() == 'redpasiva') {
+                    $('.bodyTarget2').show()
+                } else {
+                    $('.bodyTarget2').hide()
+                } 
+            });
 
 
         } );

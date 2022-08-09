@@ -495,9 +495,21 @@ if (document.querySelector(".modalButtonReportar")) {
                             <span aria-hidden='true'><img src='/../../images/iconos/closeIcon.svg' alt='cerrar'></span>
                         </button>
                     </div>
-                    <div class='modal-body'>                
+                    <div style='padding: 20px 30px 0;'>
+                        <div class='content'>
+                            <select class='selectRed' name="Seleccionar Red">
+                                <option value="Seleccionar Red" selected>Seleccionar Red</option>
+                                <option value="redactiva">Red Activa</option>
+                                <option value="redpasiva">Red Pasiva</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class='modal-body bodyTarget1'>                
                         <div class='sumary modalSection'>
                             <div class='content'>
+                                <div class='form-title mainTitle'>
+                                    <h2>Red Activa</h2>
+                                </div>
                                 <div class='row form-row'>
                                     <div class='form-title col-12'>
                                         <h2>Datos personales</h2>
@@ -534,7 +546,7 @@ if (document.querySelector(".modalButtonReportar")) {
                                         <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Departamento empresa</label>
                                         <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Departamento empresa'>
                                     </div>
-                                    <div class='text modalSection noBorder d-block'>
+                                    <div class='text modalSection noBorder d-block mt-2'>
                                         <p class='mb-0'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates quas voluptatum, modi et dolorem asperiores a quidem aliquid laudantium, nesciunt, exercitationem quasi sed! A excepturi nobis corporis quo! Earum, delectus!</p>
                                         <div class='checkList mt-2'>
                                             <div class='check'>
@@ -548,41 +560,297 @@ if (document.querySelector(".modalButtonReportar")) {
                         </div>
                         <div class='sumary modalSection noBorder'>
                             <div class='content popUpTable'>
-                                <table style='width: 100%;' id='example' style='width: 100%;' class='display mt-2 mb-0'>
+                                <table style='width: 100%;' id='example' style='width: 100%;' class='display mt-2  mb-0'>
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Nombre o Identificador del vértice (nomenclatura)”: </th>
+                                            <th>Nombre o identificador de la estación</th>
+                                            <th>Fecha de monumentacion de la estacion</th>
+                                            <th>Edad en años</th>
+                                            <th>Entidad que materializó</th>
                                             <th>Departamento</th>
                                             <th>Municipio</th>
-                                            <th>Nombre o Identificador del vértice (nomenclatura)”: </th>
+                                            <th>Latitud</th>
+                                            <th>Longitud</th>
+                                            <th>Sitio donde se ubica (edificio, predio o lugar)</th>
+                                            <th>Tipo de monumentación</th>
+                                            <th>Altura instrumental</th>
+                                            <th>Tipo de antena</th>
+                                            <th>Serial de antena</th>
+                                            <th>Tipo de receptor</th>
+                                            <th>Serial de receptor</th>
+                                            <th>Estado actual de la estación</th>
+                                            <th>Sistema de telecomuicación</th>
+                                            <th>IP</th>
+                                            <th>Sistema electrico</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>Row 1 Data 1</td>
-                                            <td>Row 1 Data 2</td>
-                                            <td>Row 1 Data 1</td>
-                                            <td>Row 1 Data 2</td>
-                                            <td>Row 1 Data 2</td>
+                                            <td>1</td>
+                                            <td><input style="width: 100%;" type="text" value="Nombre o identificador de la estación"></td>
+                                            <td><input style="width: 100%;" type="text" value="Fecha de monumentacion de la estacion"></td>
+                                            <td><input style="width: 100%;" type="text" value="Edad en años"></td>
+                                            <td><input style="width: 100%;" type="text" value="Entidad que materializó"></td>
+                                            <td><input style="width: 100%;" type="text" value="Departamento"></td>
+                                            <td><input style="width: 100%;" type="text" value="Municipio"></td>
+                                            <td><input style="width: 100%;" type="text" value="Latitud"></td>
+                                            <td><input style="width: 100%;" type="text" value="Longitud"></td>
+                                            <td><input style="width: 100%;" type="text" value="Sitio donde se ubica (edificio, predio o lugar)"></td>
+                                            <td><input style="width: 100%;" type="text" value="Tipo de monumentación"></td>
+                                            <td><input style="width: 100%;" type="text" value="Altura instrumental"></td>
+                                            <td><input style="width: 100%;" type="text" value="Tipo de antena"></td>
+                                            <td><input style="width: 100%;" type="text" value="Serial de antena"></td>
+                                            <td><input style="width: 100%;" type="text" value="Tipo de receptor"></td>
+                                            <td><input style="width: 100%;" type="text" value="Serial de receptor"></td>
+                                            <td><input style="width: 100%;" type="text" value="Estado actual de la estación"></td>
+                                            <td>
+                                                <select style="width: 100%; height: 25px;" name="Sistema de telecomuicación">
+                                                    <option value="value1">Celular</option>
+                                                    <option value="value2">Satelital</option>
+                                                    <option value="value3">Radio enlace</option>
+                                                    <option value="value3">Otro</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <select style="width: 100%; height: 25px;" name="IP">
+                                                    <option value="value1">Direccion estatica</option>
+                                                    <option value="value2">Puerto TCP/IP</option>
+                                                    <option value="value3">Puerto HTTP</option>
+                                                    <option value="value3">Puerto FTP</option>
+                                                    <option value="value3">Puerto NTRIP</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <select style="width: 100%; height: 25px;" name="Sistema electrico">
+                                                    <option value="value1">Fotovoltaico</option>
+                                                    <option value="value2">Corriente electrica</option>
+                                                    <option value="value2">Hibrido</option>
+                                                </select>
+                                            </td>
                                         </tr>
                                         <tr>
-                                            <td>Row 2 Data 1</td>
-                                            <td>Row 2 Data 2</td>
-                                            <td>Row 2 Data 1</td>
-                                            <td>Row 2 Data 2</td>
-                                            <td>Row 2 Data 2</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Row 3 Data 1</td>
-                                            <td>Row 3 Data 2</td>
-                                            <td>Row 3 Data 1</td>
-                                            <td>Row 3 Data 2</td>
-                                            <td>Row 3 Data 2</td>
+                                            <td>2</td>
+                                            <td><input style="width: 100%;" type="text" value="Nombre o identificador de la estación"></td>
+                                            <td><input style="width: 100%;" type="text" value="Fecha de monumentacion de la estacion"></td>
+                                            <td><input style="width: 100%;" type="text" value="Edad en años"></td>
+                                            <td><input style="width: 100%;" type="text" value="Entidad que materializó"></td>
+                                            <td><input style="width: 100%;" type="text" value="Departamento"></td>
+                                            <td><input style="width: 100%;" type="text" value="Municipio"></td>
+                                            <td><input style="width: 100%;" type="text" value="Latitud"></td>
+                                            <td><input style="width: 100%;" type="text" value="Longitud"></td>
+                                            <td><input style="width: 100%;" type="text" value="Sitio donde se ubica (edificio, predio o lugar)"></td>
+                                            <td><input style="width: 100%;" type="text" value="Tipo de monumentación"></td>
+                                            <td><input style="width: 100%;" type="text" value="Altura instrumental"></td>
+                                            <td><input style="width: 100%;" type="text" value="Tipo de antena"></td>
+                                            <td><input style="width: 100%;" type="text" value="Serial de antena"></td>
+                                            <td><input style="width: 100%;" type="text" value="Tipo de receptor"></td>
+                                            <td><input style="width: 100%;" type="text" value="Serial de receptor"></td>
+                                            <td><input style="width: 100%;" type="text" value="Estado actual de la estación"></td>
+                                            <td>
+                                                <select style="width: 100%; height: 25px;" name="Sistema de telecomuicación">
+                                                    <option value="value1">Celular</option>
+                                                    <option value="value2">Satelital</option>
+                                                    <option value="value3">Radio enlace</option>
+                                                    <option value="value3">Otro</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <select style="width: 100%; height: 25px;" name="IP">
+                                                    <option value="value1">Direccion estatica</option>
+                                                    <option value="value2">Puerto TCP/IP</option>
+                                                    <option value="value3">Puerto HTTP</option>
+                                                    <option value="value3">Puerto FTP</option>
+                                                    <option value="value3">Puerto NTRIP</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <select style="width: 100%; height: 25px;" name="Sistema electrico">
+                                                    <option value="value1">Fotovoltaico</option>
+                                                    <option value="value2">Corriente electrica</option>
+                                                    <option value="value2">Hibrido</option>
+                                                </select>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
-                                <div class='d-flex justify-content-end w-100'>
+                                <div class='d-flex justify-content-end w-100 mt-4'>
+                                    <div class='button ml-2'>Enviar</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='modal-body bodyTarget2'>                
+                        <div class='sumary modalSection'>
+                            <div class='content'>
+                                <div class='form-title mainTitle'>
+                                    <h2>Red Pasiva</h2>
+                                </div>
+                                <div class='row form-row'>
+                                    <div class='form-title col-12'>
+                                        <h2>Datos personales</h2>
+                                    </div>
+                                    <div class='form-component col-md-6'>
+                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Fecha de diligenciamiento del formulario</label>
+                                        <input type='date' id='start' name='trip-start' value='2018-07-22' min='2018-01-01' max='2018-12-31'>
+                                    </div>
+                                    <div class='form-component col-md-6'>
+                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Nombre</label>
+                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Nombre'>
+                                    </div>
+                                    <div class='form-component col-md-6'>
+                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Correo electr&oacute;nico</label>
+                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Correo electr&oacute;nico'>
+                                    </div>
+                                    <div class='form-component col-md-6'>
+                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Tel&eacute;fono de contacto</label>
+                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Tel&eacute;fono de contacto'>
+                                    </div>
+                                    <div class='form-component col-md-6'>
+                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Empresa a la que est&aacute; vinculado</label>
+                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Empresa a la que est&aacute; vinculado'>
+                                    </div>
+                                    <div class='form-component col-md-6'>
+                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Direcci&oacute;n empresa</label>
+                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Direcci&oacute;n empresa'>
+                                    </div>
+                                    <div class='form-component col-md-6'>
+                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Municipio empresa</label>
+                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Municipio empresa'>
+                                    </div>
+                                    <div class='form-component col-md-6'>
+                                        <label id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Departamento empresa</label>
+                                        <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Departamento empresa'>
+                                    </div>
+                                    <div class='text modalSection noBorder d-block mt-2'>
+                                        <p class='mb-0'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates quas voluptatum, modi et dolorem asperiores a quidem aliquid laudantium, nesciunt, exercitationem quasi sed! A excepturi nobis corporis quo! Earum, delectus!</p>
+                                        <div class='checkList mt-2'>
+                                            <div class='check'>
+                                                <input type='checkbox'><div class='label'>Acepto t&eacute;rminos</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class='sumary modalSection noBorder'>
+                            <div class='content popUpTable'>
+                                <table style='width: 100%;' id='example2' style='width: 100%;' class='display mt-2  mb-0'>
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Nombre o identificador de la estación</th>
+                                            <th>Fecha de monumentacion de la estacion</th>
+                                            <th>Edad en años</th>
+                                            <th>Entidad que materializó</th>
+                                            <th>Departamento</th>
+                                            <th>Municipio</th>
+                                            <th>Latitud</th>
+                                            <th>Longitud</th>
+                                            <th>Sitio donde se ubica (edificio, predio o lugar)</th>
+                                            <th>Tipo de monumentación</th>
+                                            <th>Altura instrumental</th>
+                                            <th>Tipo de antena</th>
+                                            <th>Serial de antena</th>
+                                            <th>Tipo de receptor</th>
+                                            <th>Serial de receptor</th>
+                                            <th>Estado actual de la estación</th>
+                                            <th>Sistema de telecomuicación</th>
+                                            <th>IP</th>
+                                            <th>Sistema electrico</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td><input style="width: 100%;" type="text" value="Nombre o identificador de la estación"></td>
+                                            <td><input style="width: 100%;" type="text" value="Fecha de monumentacion de la estacion"></td>
+                                            <td><input style="width: 100%;" type="text" value="Edad en años"></td>
+                                            <td><input style="width: 100%;" type="text" value="Entidad que materializó"></td>
+                                            <td><input style="width: 100%;" type="text" value="Departamento"></td>
+                                            <td><input style="width: 100%;" type="text" value="Municipio"></td>
+                                            <td><input style="width: 100%;" type="text" value="Latitud"></td>
+                                            <td><input style="width: 100%;" type="text" value="Longitud"></td>
+                                            <td><input style="width: 100%;" type="text" value="Sitio donde se ubica (edificio, predio o lugar)"></td>
+                                            <td><input style="width: 100%;" type="text" value="Tipo de monumentación"></td>
+                                            <td><input style="width: 100%;" type="text" value="Altura instrumental"></td>
+                                            <td><input style="width: 100%;" type="text" value="Tipo de antena"></td>
+                                            <td><input style="width: 100%;" type="text" value="Serial de antena"></td>
+                                            <td><input style="width: 100%;" type="text" value="Tipo de receptor"></td>
+                                            <td><input style="width: 100%;" type="text" value="Serial de receptor"></td>
+                                            <td><input style="width: 100%;" type="text" value="Estado actual de la estación"></td>
+                                            <td>
+                                                <select style="width: 100%; height: 25px;" name="Sistema de telecomuicación">
+                                                    <option value="value1">Celular</option>
+                                                    <option value="value2">Satelital</option>
+                                                    <option value="value3">Radio enlace</option>
+                                                    <option value="value3">Otro</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <select style="width: 100%; height: 25px;" name="IP">
+                                                    <option value="value1">Direccion estatica</option>
+                                                    <option value="value2">Puerto TCP/IP</option>
+                                                    <option value="value3">Puerto HTTP</option>
+                                                    <option value="value3">Puerto FTP</option>
+                                                    <option value="value3">Puerto NTRIP</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <select style="width: 100%; height: 25px;" name="Sistema electrico">
+                                                    <option value="value1">Fotovoltaico</option>
+                                                    <option value="value2">Corriente electrica</option>
+                                                    <option value="value2">Hibrido</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td><input style="width: 100%;" type="text" value="Nombre o identificador de la estación"></td>
+                                            <td><input style="width: 100%;" type="text" value="Fecha de monumentacion de la estacion"></td>
+                                            <td><input style="width: 100%;" type="text" value="Edad en años"></td>
+                                            <td><input style="width: 100%;" type="text" value="Entidad que materializó"></td>
+                                            <td><input style="width: 100%;" type="text" value="Departamento"></td>
+                                            <td><input style="width: 100%;" type="text" value="Municipio"></td>
+                                            <td><input style="width: 100%;" type="text" value="Latitud"></td>
+                                            <td><input style="width: 100%;" type="text" value="Longitud"></td>
+                                            <td><input style="width: 100%;" type="text" value="Sitio donde se ubica (edificio, predio o lugar)"></td>
+                                            <td><input style="width: 100%;" type="text" value="Tipo de monumentación"></td>
+                                            <td><input style="width: 100%;" type="text" value="Altura instrumental"></td>
+                                            <td><input style="width: 100%;" type="text" value="Tipo de antena"></td>
+                                            <td><input style="width: 100%;" type="text" value="Serial de antena"></td>
+                                            <td><input style="width: 100%;" type="text" value="Tipo de receptor"></td>
+                                            <td><input style="width: 100%;" type="text" value="Serial de receptor"></td>
+                                            <td><input style="width: 100%;" type="text" value="Estado actual de la estación"></td>
+                                            <td>
+                                                <select style="width: 100%; height: 25px;" name="Sistema de telecomuicación">
+                                                    <option value="value1">Celular</option>
+                                                    <option value="value2">Satelital</option>
+                                                    <option value="value3">Radio enlace</option>
+                                                    <option value="value3">Otro</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <select style="width: 100%; height: 25px;" name="IP">
+                                                    <option value="value1">Direccion estatica</option>
+                                                    <option value="value2">Puerto TCP/IP</option>
+                                                    <option value="value3">Puerto HTTP</option>
+                                                    <option value="value3">Puerto FTP</option>
+                                                    <option value="value3">Puerto NTRIP</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <select style="width: 100%; height: 25px;" name="Sistema electrico">
+                                                    <option value="value1">Fotovoltaico</option>
+                                                    <option value="value2">Corriente electrica</option>
+                                                    <option value="value2">Hibrido</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class='d-flex justify-content-end w-100 mt-4'>
                                     <div class='button ml-2'>Enviar</div>
                                 </div>
                             </div>
