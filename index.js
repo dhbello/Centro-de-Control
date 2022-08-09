@@ -3,7 +3,7 @@ if (document.querySelector(".navbarigac")) {
     navbarigac.innerHTML = `
     <div class="logos">
         <div class="navbar-brand-igac">
-            <a href='https://www.igac.gov.co' target='_blank'><img alt='Logo IGAC' src='../../images/logo-igac.svg'/></a>
+            <a href='https://www.igac.gov.co' target='_blank'><img alt='Logo IGAC' src='../../images/logo-igac.png'/></a>
         </div>
         <div class="logoigac">
             <a href="/index.html"><img src="../../images/logo.svg" alt="Logo Origen Nacional"></a>
