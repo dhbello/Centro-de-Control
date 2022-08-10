@@ -147,8 +147,9 @@ p {
     z-index: 1;
 }
 
-.section.registrarReportar.noBefore::before {
-    background: none;
+.typec.noBefore::before {
+    content: '';
+    background-image: inherit;
 }
 
 .resourses-title {
@@ -251,6 +252,26 @@ p {
 .checkList .check {
     margin-bottom: 15px;
     display: flex;
+}
+
+.inputMap {
+    position: relative;
+}
+
+.inputMap #mapView {
+    position: absolute;
+    top: 0;
+    margin-top: 0;
+    right: 0;
+    border: 0;
+    background: transparent;
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.inputMap #mapView i::before {
+    color: #3595e0;
 }
 
 /*botones*/
@@ -1076,8 +1097,33 @@ td .activo {
     height: 30px;    
 }
 
+.modal.maestraModalRedes .navTabs {
+    margin-bottom: 40px;
+    display: flex;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.modal.maestraModalRedes .navTabs button {
+    margin-bottom: -1px;
+    background: 0 0;
+    border: 1px solid transparent;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #3595e0;
+    text-decoration: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+
+.modal.maestraModalRedes .navTabs button.active {
+    color: #495057;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+}
+
 .modal.maestraModalRedes .modal-body {
-    padding: 0 30px 40px 30px;
+    padding: 40px 30px;
 }
 
 .modal.maestraModalRedes .modal-body {
