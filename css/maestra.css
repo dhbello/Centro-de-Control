@@ -134,6 +134,7 @@ a:hover {
     max-height: 34.4px;
     height: 34.4px;
     min-height: 34.4px;
+    width: auto;
 }
 .navbarigac .logos .logoigac {
     padding: 13px 15px;
@@ -143,6 +144,7 @@ a:hover {
 }
 .navbarigac .logos .logoigac img {
     height: 34.4px;
+    width: auto;
 }
 .navbarigac.cem .logos .logoigac {
     padding: 13px 15px;
