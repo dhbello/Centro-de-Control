@@ -538,15 +538,16 @@ footer .footer-container .row-footer .content-footer .sub-title {
     margin-top: 0;
     color: #0052ae;
     font-size: 40px;
-    line-height: 40px;
+    height: 35px;
+    line-height: normal;
     margin-bottom: 0;
 }
 .portada-igac.portadaSub p {
     color: #3a80c2;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 0;
     font-size: 18px;
-    line-height: 22px;
+    line-height: normal;
 }
 .portada-igac .texto-portada {
     width: 485px;

@@ -1,9 +1,6 @@
 p {
     line-height: normal;
 }
-.lead {
-    font-size: 19px;
-}
 .nav-underline {
     position: sticky;
     top: 60px;
@@ -156,13 +153,14 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     color: #000;
     opacity: 0.7;
 }
 
 .resourses-title h2 {
     width: 100%;
+    margin-bottom: 0;
 }
 
 /*formulario*/
@@ -279,6 +277,7 @@ p {
     display: flex;
     justify-content: center;
 }
+
 .btn-default {
     background: #fff;
     border-radius: 5px;
@@ -286,22 +285,25 @@ p {
     color: #606060;
     width: 100%;
 }
+
 .get-back {
     position: absolute;
     top: 0;
     font-size: 14px;
     font-family: 'Gill Sans Std Italic';
-    margin-top: 70px;
+    margin-top: 50px;
     opacity: 1;
     color: #58595b;
     display: flex;
     align-items: center;
 }
+
 .get-back img {
     width: 5px;
     margin-right: 10px;
     margin-top: -4px;
 }
+
 /*botones estados*/
 .status div {
     margin-right: 20px;
@@ -311,6 +313,7 @@ p {
     display: flex;
     align-items: center;
 }
+
 .status div::before {
     content: '';
     width: 15px;
@@ -320,16 +323,19 @@ p {
     opacity: 0.2;
     position: absolute;
 }
+
 .status .active::before {
     background: #3595e0;
     border: 0;
     opacity: 1;
 }
+
 .status p {
     position: relative;
     padding-left: 25px;
     margin-bottom: 0;
 }
+
 .status div:last-child {
     margin-right: 0;
 }
@@ -361,8 +367,12 @@ p {
 }
 
 .faqs .title {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 70%;
+    line-height: normal;
     font-size: 35px;
-    height: 35px;
     color: #fff;
     opacity: 1;
 }
@@ -398,13 +408,6 @@ p {
     margin-right: auto;
 }
 
-.faqs .title {
-    font-size: 35px;
-    height: 35px;
-    color: #fff;
-    opacity: 1;
-}
-
 .containerFaqs.typeB {
     display: flex;
     width: 50%;
@@ -421,6 +424,7 @@ p {
 .containerFaqs.typeB .faqs .title {
     text-align: left;
     font-size: 25px;
+    justify-content: flex-start;
 }
 
 .containerFaqs.typeB .faqs .boton-faqs {
@@ -511,6 +515,9 @@ p {
     color: #fff;
     opacity: 1;
     margin-bottom: 0;
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
 }
 
 .dobles.faqs.tipo-a {
@@ -531,6 +538,8 @@ p {
 
 .lead {
     line-height: normal;
+    font-size: 19px;
+    color: #58595b;
 }
 
 li {
@@ -814,6 +823,18 @@ td .activo {
     text-align: center;
 }
 
+.card {
+    display: flex;
+    height: 100%;
+}
+
+.card .d-flex.align-items-center.justify-content-center {
+    position: absolute;
+    right: 20px;
+    left: 20px;
+    bottom: 20px;
+}
+
 .card .card-header {
     border-radius: 5px 5px 0 0;
     border: 0;
@@ -861,7 +882,7 @@ td .activo {
 
 .card .card-text {
     line-height: normal;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
 }
 
 .card .card-text {
@@ -989,10 +1010,11 @@ td .activo {
     font-size: 19px;
     line-height: normal;
     color: #58595b;
+    margin-bottom: 40px;
 }
 
-.cardTypeb .block p:first-of-type {
-    margin-bottom: 40px;
+.cardTypeb .block p:last-of-type {
+    margin-bottom: 0px;
 }
 
 
@@ -1502,6 +1524,8 @@ div[data-toggle='modal'] {
     overflow: hidden;
     background: #fff;
     box-shadow: 0 0 10px #00000014;
+    display: flex;
+    height: 100%;
 }
 
 .card-component .card a {
@@ -1550,6 +1574,7 @@ div[data-toggle='modal'] {
 .card-component .card .sumary-card {
     padding: 20px 15px 15px;
     margin: 0;
+    height: 100%;
 }
 
 .card-component .card .sub-title h5 {
@@ -1561,7 +1586,7 @@ div[data-toggle='modal'] {
     -webkit-box-orient: vertical;
     overflow: hidden;
     display: -webkit-box;
-    height: 50px;
+    height: 46px;
     max-height: 50px;
     margin: 0px;
     color: #000;
@@ -1580,6 +1605,10 @@ div[data-toggle='modal'] {
     opacity: 0.6;
 }
 
+.card-component .card .sumary-card .detail {
+    margin-bottom: 60px;
+}
+
 .card-component .card .sumary-card .detail strong {
     color: #000;
     opacity: 1;
@@ -1589,11 +1618,6 @@ div[data-toggle='modal'] {
     line-height: auto;
 }
 
-.card-component .card .sumary-card .detail {
-    height: 110px;
-    margin-bottom: 20px;
-}
-
 .card-component .card .sumary-card .detail ul {
     margin-top: 15px;
     margin-bottom: 0;
@@ -1601,25 +1625,34 @@ div[data-toggle='modal'] {
     color: #666666;
     opacity: 0.8;
     font-size: 14px !important;
+    line-height: normal;
+}
+
+.card-component .card .sumary-card .detail ul li {
+    margin-bottom: 5px;
+}
+
+.card-component .card .sumary-card .detail ul li:last-child {
+    margin-bottom: 0;
 }
 
 .card-component .card .sumary-card .ver-masbtn {
     color: #333;
     background-color: #fff;
-    border-color: #ccc;
     display: inline-block;
     margin-bottom: 0;
     font-weight: 400;
     text-align: center;
-    vertical-align: middle;
-    touch-action: manipulation;
     cursor: pointer;
-    border: 1px solid transparent;
+    border: 1px solid #ccc;
     white-space: nowrap;
     padding: 6px 12px;
-    border-color: #ccc;
-    width: 100%;
-    border-radius: 5px;
+    border-radius: 5px;    
+    position: absolute;
+    right: 15px;
+    left: 15px;
+    width: auto;
+    bottom: 15px;
 }
 /* Maestra aplicaciones herramientas */
 .forms-container {

@@ -483,7 +483,7 @@ if (document.querySelector(".modalButtonReportar")) {
                                             <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Departamento'>
                                         </div>
                                         <div class='text modalSection noBorder d-block mt-2'>
-                                            <p class='mb-0'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates quas voluptatum, modi et dolorem asperiores a quidem aliquid laudantium, nesciunt, exercitationem quasi sed! A excepturi nobis corporis quo! Earum, delectus!</p>
+                                            <p class='mb-0'>Con el diligenciamiento del presente formulario, usted manifiesta el inter&eacute;s de integrar las estaciones de referencia continua CORS que relaciona a continuaci&oacute;n y entiende que el IGAC exige est&aacute;ndares de calidad definidos en la resoluci&oacute;n XXX, raz&oacute;n por la cual tiene la potestad de aprobar o no la integraci&oacute;n de estaciones de la red Geodesica Nacional y se exonera de [&#8230;] y que la informaci&oacute;n que relaciona en el presente formulario &ldquo;es real&rdquo; y autoriza su uso para fines de verificaci&oacute;n del estado de la estaci&oacute;n (Carta de intenci&oacute;n de vinculaci&oacute;n de estaciones CORS a la red Geod&eacute;sica Nacional)&#8230;</p>
                                             <div class='checkList mt-2'>
                                                 <div class='check'>
                                                     <input type='checkbox'><div class='label'>Acepto t&eacute;rminos</div>
