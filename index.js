@@ -41,7 +41,7 @@ if (document.querySelector(".navbarigac")) {
 if (document.querySelector(".nav-underline")) {
     const navUnderline = document.querySelector(".nav-underline");
     navUnderline.innerHTML = `
-    <a class='nav-link geodesica' href='/redes/red_geodesica.html'>Red Geod&eacute;sica</a>
+    <a class='nav-link geodesica' href='/redes/red_geodesica.html'>Red Geod&eacute;sica GNSS</a>
     <a class='nav-link gavimetrica' href='/redes/red_gavimetrica.html'>Red Gravim&eacute;trica</a>
     <a class='nav-link geomagnetica' href='/redes/red_geomagnetica.html'>Red Geomagn&eacute;tica</a>
     <a class='nav-link d-none' href='/redes/red_gnss.html'>Red GNSS Magna Sirgas</a>
@@ -116,8 +116,11 @@ if (document.querySelector(".footer")) {
                 <a href='https://co.linkedin.com/company/igac'><i class='fab fa-linkedin-in'></i><span>LinkedIn</span></a>
                 <a href='https://es-la.facebook.com/IgacColombia/'><i class='fab fa-facebook-f'></i><span>Facebook</span></a>
                 <a href='https://twitter.com/igacColombia?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor'><i class='fab fa-twitter'></i><span>Twitter</span></a>
-                <a href='https://www.instagram.com/igaccolombia/"><i class="fab fa-instagram'></i><span>Instagram</span></a>
+                <a href='https://www.instagram.com/igaccolombia/'><i class='fab fa-instagram'></i><span>Instagram</span></a>
             </div>
+        </div>
+        <div class='botonAccesoContainer'>
+            <div class='botonAcceso'>Acceso al centro de administraci&oacute;n</div>
         </div>
     </div>
     `

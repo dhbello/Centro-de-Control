@@ -428,6 +428,33 @@ footer .footer-container .row-footer .content-footer .sub-title {
     font-size: 16px;
 }
 
+footer .footer-container .botonAccesoContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+footer .footer-container .botonAcceso {
+    cursor: pointer;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    line-height: normal;
+    opacity: 0.4;
+    font-size: 13px;
+    padding: 5px 20px 2px;
+    transition: all 0.5s ease;
+}
+
+footer .footer-container .botonAcceso:hover {
+    background: #f5ce43;
+    opacity: 1;
+    color: #3c3c3b;
+    border-color: #3c3c3b;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.343);
+    transition: all 0.5s ease;
+}
 
 /*bloque igac*/
 .block-igac {
