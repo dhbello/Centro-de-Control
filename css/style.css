@@ -1323,10 +1323,6 @@ div[data-toggle='modal'] {
     position: relative;    
 }
 
-.indicadoresMaestraRedes .borderB {
-    border-bottom: 1px solid #dee2e6;
-}
-
 .indicadoresMaestraRedes .indicadores {
     width: 40%;
     padding-right: 30px;

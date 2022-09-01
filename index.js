@@ -102,26 +102,31 @@ if (document.querySelector(".footer")) {
                 </ul>
             </div>
             <div class='content-footer cla-a'>
-                <div class='sub-title'>
-                    Nuestras plataformas
+                <div class='contents'>
+                    <div class='sub-title'>
+                        Nuestras plataformas
+                    </div>
+                    <a href='https://www.colombiaot.gov.co/'>Colombia OT</a>
+                    <a href='https://www.colombiaenmapas.gov.co/'>Colombia en Mapas</a>
+                    <a href='https://diccionario.igac.gov.co/'>Diccionario Geogr&aacute;fico</a>                
                 </div>
-                <a href='https://www.colombiaot.gov.co/'>Colombia OT</a>
-                <a href='https://www.colombiaenmapas.gov.co/'>Colombia en Mapas</a>
-                <a href='https://diccionario.igac.gov.co/'>Diccionario Geogr&aacute;fico</a>
+                <div class='botonAccesoContainer'>
+                    <div class='botonAcceso'>Acceso Admin</div>
+                </div>
             </div>
             <div class='content-footer cla-a cla-b'>
-                <div class='sub-title'>
-                    Síguenos
+                <div class='conatin'>
+                    <div class='sub-title'>
+                        Síguenos
+                    </div>
+                    <a href='https://co.linkedin.com/company/igac'><i class='fab fa-linkedin-in'></i><span>LinkedIn</span></a>
+                    <a href='https://es-la.facebook.com/IgacColombia/'><i class='fab fa-facebook-f'></i><span>Facebook</span></a>
+                    <a href='https://twitter.com/igacColombia?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor'><i class='fab fa-twitter'></i><span>Twitter</span></a>
+                    <a href='https://www.instagram.com/igaccolombia/'><i class='fab fa-instagram'></i><span>Instagram</span></a>
                 </div>
-                <a href='https://co.linkedin.com/company/igac'><i class='fab fa-linkedin-in'></i><span>LinkedIn</span></a>
-                <a href='https://es-la.facebook.com/IgacColombia/'><i class='fab fa-facebook-f'></i><span>Facebook</span></a>
-                <a href='https://twitter.com/igacColombia?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor'><i class='fab fa-twitter'></i><span>Twitter</span></a>
-                <a href='https://www.instagram.com/igaccolombia/'><i class='fab fa-instagram'></i><span>Instagram</span></a>
+
             </div>
-        </div>
-        <div class='botonAccesoContainer'>
-            <div class='botonAcceso'>Acceso al centro de administraci&oacute;n</div>
-        </div>
+        </div>        
     </div>
     `
 };
