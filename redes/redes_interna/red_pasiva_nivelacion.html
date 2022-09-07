@@ -6,90 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centro de Control Geod&eacute;sico Nacional</title>
     <link rel="icon" href="images-home/logos/favicon.png">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
     <link href="../../css/style.css" rel="stylesheet">
     <link href="../../css/maestra.css" rel="stylesheet">
 </head>
-<body class="main redes geodesicaMaestra redActivaPagina">
-    <nav class="navbarigac origen">        
+<body class="main redes geodesicaMaestra redPasivaPagina">
+    <nav class="navbarigac origen">
     </nav>
-    <nav class="nav nav-underline">        
+    <nav class="nav nav-underline">
     </nav>
     <section class="portada-igac portadaSub redPasiva">
         <div class="container block-igac">
             <div class="d-flex contenido-portada">
-                <a class="get-back" href="../red_geodesica.html"><img src="/images/iconos/arrow-back.svg" alt="">Volver a la Red Geodésica GNSS</a>
+                <a class="get-back" href="../red_geodesica.html"><img src="/images/iconos/arrow-back.svg" alt="">Volver
+                    a la Red Geodésica GNSS</a>
                 <div class="texto-portada">
                     <h1>Red Pasiva y de Nivelaci&oacute;n</h1>
                     <p>
-                        Es la red compuesta de v&eacute;rtices materializados en campo en monumentaciones tipo mojones, pilastras, incrustaciones y obeliscos. En el caso colombiano, los datos coordenados de la Red Geod&eacute;sica GNSS Nacional Pasiva, se encuentran vinculados al IRTF 2014, &eacute;poca de referencia 2018.0 y elipsoide GRS-80.
+                        Es la red compuesta de v&eacute;rtices materializados en campo en monumentaciones tipo mojones,
+                        pilastras, incrustaciones y obeliscos. En el caso colombiano, los datos coordenados de la Red
+                        Geod&eacute;sica GNSS Nacional Pasiva, se encuentran vinculados al IRTF 2014, &eacute;poca de
+                        referencia 2018.0 y elipsoide GRS-80.
                     </p>
                 </div>
             </div>
         </div>
     </section>
-    <div class="container containerIgac">
-        <section class="section visor row pb-0">
-            <div class="iframe col-md-12">
-                <div class="d-flex position-relative align-items-center justify-content-end">
-                    <h2 class="title w-divider text-center">Mapa de la red Pasiva y de nivelaci&oacute;n</h2>
-                    <div class="status d-flex position-absolute">
-                        <a class="btn mb-4 text-center buttonCem">Ver en CEM</a>
-                    </div>
-                </div>
-                <img src="../../images/mapa.png" alt="mapa">
-            </div>
-        </section>
-    </div>
-    <div class="typeB">
-        <div class="container containerIgac">        
-            <section class="section">
-                <div class="m-auto w-100">
-                    <table id="redTable" class="display tableRedes" style="width: 100%;">
-                        <thead>
-                            <tr class="filterContainer"></tr>
-                            <tr>
-                                <th>ID</th>
-                                <th>Municipio, departamento</th>
-                                <th>Estado</th>
-                                <th>Nombre de la red</th>
-                                <th>Entidad</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>AMTE00BRA</td>
-                                <td>Nariño</td>
-                                <td>Activo</td>
-                                <td>IGb14-Core, ITRF2014</td>
-                                <td>EABB</td>
-                                <td><a href="interna_red_pasiva.html">M&aacute;s</a></td>
-                            </tr>
-                            <tr>
-                                <td>AMTE00BRA</td>
-                                <td>Caldas</td>
-                                <td>Inactivo</td>
-                                <td>IGb14, ITRF2014</td>
-                                <td>IGAC, SGC</td>
-                                <td><a href="interna_red_pasiva.html">M&aacute;s</a></td>
-                            </tr>
-                            <tr>
-                                <td>AMTE00BRA</td>
-                                <td>Bolívar</td>
-                                <td>Removida</td>
-                                <td>IGb14, ITRF2014</td>
-                                <td>DGFI</td>
-                                <td><a href="interna_red_pasiva.html">M&aacute;s</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-        </div>
-    </div>
     <div class="containercolor indicadoresMaestraRedes">
         <div class="position-relative">
             <div class="container containerIgac borderB">
@@ -99,11 +45,12 @@
                             <div class="title">
                                 Indicadores
                             </div>
-                            <p>A continuaci&oacute;n, encontraras algunas cifras importantes respecto al estado y funcionamiento la Red GNSS Pasiva materializada en el territorio colombiano:</p>
+                            <p>A continuaci&oacute;n, encontraras algunas cifras importantes respecto al estado y
+                                funcionamiento la Red GNSS Pasiva materializada en el territorio colombiano:</p>
                         </div>
                     </div>
                     <img src="/images/images-redes/flowerIndicadores.svg" alt="">
-                </section>            
+                </section>
             </div>
             <div class="board">
                 <div class="card">
@@ -158,22 +105,41 @@
                 </div>
             </div>
         </div>
+        <div class="container containerIgac">
+            <section class="section visor row">
+                <div class="iframe col-md-12">
+                    <div class="d-flex position-relative align-items-center justify-content-end">
+                        <h2 class="title w-divider text-center">Mapa de la red Pasiva y de nivelación</h2>
+                        <div class="status d-flex position-absolute">
+                            <a class="btn mb-4 text-center buttonCem">Ver en CEM</a>
+                        </div>
+                    </div>
+                    <div id="viewDiv"></div>
+                </div>
+            </section>
+        </div>
     </div>
-    <div class="container block-igac">
-        <section class="section pb-0">
-            <div class="faqs type2">
-                <div class="title">
-                    Explora y consulta los servicios en tiempo real disponibles para todos
-                </div>
-                <div class="resume">
-                    Con&eacute;ctate y usalos servicios de procesamiento en l&iacute;nea de tipo diferencial y los servicios de posicionamiento en tiempo real via caster NTRIP para las estaciones de la Red Activa del Territorio Colombiano. &iquest;Qu&eacute; esperas?
-                </div>
-                <div class="boton-faqs">
-                    <a href="/herramientas/servicios.html">Explora estos recursos</a>            
-                </div>
+    <section class="section sectionEstaciones">
+        <div class="resourses-title" style="text-align: center;">
+            <h2>V&eacute;rtices de la red</h2>
+        </div>
+        <div class="row">
+            <div class="m-auto">
+                <table id="tbl" class="display">
+                    <thead>
+                        <tr>
+                            <th>Identificador</th>
+                            <th>Municipio, departamento</th>
+                            <th>Estado</th>
+                            <th>Nombre de la red</th>
+                            <th>Entidad</th>
+                            <th>Ver</th>
+                        </tr>
+                    </thead>
+                </table>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
     <section class="section registrarReportar noBefore paddingLast">
         <div class="container containerIgac">
             <div class="d-flex">
@@ -182,9 +148,10 @@
                         <div class="title m-0 mb-3">
                             Registra una nueva estaci&oacute;n
                         </div>
-                        <div class="d-flex align-items-center modalIntEstacionesPasiva" data-toggle="modal" data-target="#modalIntEstacionesPasiva">
+                        <div class="d-flex align-items-center modalIntEstacionesPasiva" data-toggle="modal"
+                            data-target="#modalIntEstacionesPasiva">
                             <div class="boton-faqs">
-                                <a>Iniciar formulario</a>            
+                                <a>Iniciar formulario</a>
                             </div>
                         </div>
                     </div>
@@ -194,11 +161,13 @@
                         <div class="title m-0 mb-3">
                             Reporta una novedad
                         </div>
-                        <div style="white-space: nowrap;" class="p-0 col-md-4 text-center modalButtonReportar boton-faqs" data-toggle="modal" data-target="#reportarModal">
-                            <a>Iniciar formulario</a>            
+                        <div style="white-space: nowrap;"
+                            class="p-0 col-md-4 text-center modalButtonReportar boton-faqs" data-toggle="modal"
+                            data-target="#reportarModal">
+                            <a>Iniciar formulario</a>
                         </div>
                     </div>
-                </div>                
+                </div>
             </div>
         </div>
     </section>
@@ -215,10 +184,13 @@
                                     <div class="card shadow-sm blue">
                                         <div class="card-header">
                                             <h5>Aplicaciones y Herramientas</h5>
-                                        </div>                                      
+                                        </div>
                                         <div class="card-body">
                                             <h6>MAGNA SIRGAS PRO 5.1</h6>
-                                            <p class="card-text">Esta herramienta permite la conversión y transformación de coordenadas, cálculo de ondulación geoidal, nivelación GPS, cálculos elipsoidales, cálculo de velocidades y cambio de época para un conjunto de coordenadas especificadas.</p>
+                                            <p class="card-text">Esta herramienta permite la conversión y transformación
+                                                de coordenadas, cálculo de ondulación geoidal, nivelación GPS, cálculos
+                                                elipsoidales, cálculo de velocidades y cambio de época para un conjunto
+                                                de coordenadas especificadas.</p>
                                             <div class="d-flex align-items-center justify-content-center">
                                                 <button type="button" class="btn btn-sm btn-default">Visitar</button>
                                             </div>
@@ -229,10 +201,12 @@
                                     <div class="card shadow-sm orange">
                                         <div class="card-header">
                                             <h5>Modelos</h5>
-                                        </div>                                      
+                                        </div>
                                         <div class="card-body">
                                             <h6>Modelo Geoidal</h6>
-                                            <p class="card-text">Acá, podrás descargar el modelo GEOCOL más reciente para visualizar las alturas geoidales que se usan en la determinación de altura físicas en el Territorio Colombiano.</p>
+                                            <p class="card-text">Acá, podrás descargar el modelo GEOCOL más reciente
+                                                para visualizar las alturas geoidales que se usan en la determinación de
+                                                altura físicas en el Territorio Colombiano.</p>
                                             <div class="d-flex align-items-center justify-content-center">
                                                 <button type="button" class="btn btn-sm btn-default">Visitar</button>
                                             </div>
@@ -243,10 +217,13 @@
                                     <div class="card shadow-sm purple">
                                         <div class="card-header">
                                             <h5>Servicios</h5>
-                                        </div>                                      
+                                        </div>
                                         <div class="card-body">
                                             <h6>Servicios en tiempo real</h6>
-                                            <p class="card-text">Este módulo direcciona al usuario a la central de servicios de procesamiento en línea de tipo diferencial y los servicios de posicionamiento en tiempo real via caster NTRIP para las estaciones de la Red Activa del Territorio Colombiano.</p>
+                                            <p class="card-text">Este módulo direcciona al usuario a la central de
+                                                servicios de procesamiento en línea de tipo diferencial y los servicios
+                                                de posicionamiento en tiempo real via caster NTRIP para las estaciones
+                                                de la Red Activa del Territorio Colombiano.</p>
                                             <div class="d-flex align-items-center justify-content-center">
                                                 <button type="button" class="btn btn-sm btn-default">Visitar</button>
                                             </div>
@@ -261,10 +238,13 @@
                                     <div class="card shadow-sm blue">
                                         <div class="card-header">
                                             <h5>Aplicaciones y Herramientas</h5>
-                                        </div>                                      
+                                        </div>
                                         <div class="card-body">
                                             <h6>MAGNA SIRGAS PRO 5.1</h6>
-                                            <p class="card-text">Esta herramienta permite la conversión y transformación de coordenadas, cálculo de ondulación geoidal, nivelación GPS, cálculos elipsoidales, cálculo de velocidades y cambio de época para un conjunto de coordenadas especificadas.</p>
+                                            <p class="card-text">Esta herramienta permite la conversión y transformación
+                                                de coordenadas, cálculo de ondulación geoidal, nivelación GPS, cálculos
+                                                elipsoidales, cálculo de velocidades y cambio de época para un conjunto
+                                                de coordenadas especificadas.</p>
                                             <div class="d-flex align-items-center justify-content-center">
                                                 <button type="button" class="btn btn-sm btn-default">Visitar</button>
                                             </div>
@@ -275,10 +255,12 @@
                                     <div class="card shadow-sm orange">
                                         <div class="card-header">
                                             <h5>Modelos</h5>
-                                        </div>                                      
+                                        </div>
                                         <div class="card-body">
                                             <h6>Modelo Geoidal</h6>
-                                            <p class="card-text">Acá, podrás descargar el modelo GEOCOL más reciente para visualizar las alturas geoidales que se usan en la determinación de altura físicas en el Territorio Colombiano.</p>
+                                            <p class="card-text">Acá, podrás descargar el modelo GEOCOL más reciente
+                                                para visualizar las alturas geoidales que se usan en la determinación de
+                                                altura físicas en el Territorio Colombiano.</p>
                                             <div class="d-flex align-items-center justify-content-center">
                                                 <button type="button" class="btn btn-sm btn-default">Visitar</button>
                                             </div>
@@ -289,10 +271,13 @@
                                     <div class="card shadow-sm purple">
                                         <div class="card-header">
                                             <h5>Servicios</h5>
-                                        </div>                                      
+                                        </div>
                                         <div class="card-body">
                                             <h6>Servicios en tiempo real</h6>
-                                            <p class="card-text">Este módulo direcciona al usuario a la central de servicios de procesamiento en línea de tipo diferencial y los servicios de posicionamiento en tiempo real via caster NTRIP para las estaciones de la Red Activa del Territorio Colombiano.</p>
+                                            <p class="card-text">Este módulo direcciona al usuario a la central de
+                                                servicios de procesamiento en línea de tipo diferencial y los servicios
+                                                de posicionamiento en tiempo real via caster NTRIP para las estaciones
+                                                de la Red Activa del Territorio Colombiano.</p>
                                             <div class="d-flex align-items-center justify-content-center">
                                                 <button type="button" class="btn btn-sm btn-default">Visitar</button>
                                             </div>
@@ -303,29 +288,285 @@
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Previous</span>
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
                     </a>
                     <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Next</span>
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
                     </a>
-                  </div>
-            </section>            
+                </div>
+            </section>
         </div>
     </div>
-
     <footer class="footer origen">
-        
     </footer>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
-    <script src="/index.js"></script>
-    <script>
-        
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js">
+    </script>
+    <script src="/index.js"></script>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.24/esri/themes/light/main.css">
+    <script src="https://js.arcgis.com/4.24/"></script>
+    <script>
+        require([
+            "esri/config",
+            "esri/Map",
+            "esri/views/MapView",
+            "esri/widgets/Home",
+            "esri/widgets/ScaleBar",
+            "esri/widgets/LayerList",
+            "esri/widgets/Legend",
+            "esri/widgets/Expand",
+            "esri/widgets/Compass",
+            "esri/geometry/Extent",
+            "esri/layers/MapImageLayer"
+        ], (
+            esriConfig, Map, MapView, Home, ScaleBar, LayerList, Legend,
+            Expand, Compass, Extent, MapImageLayer
+        ) => {
+            esriConfig.apiKey =
+                "AAPK2a2e861a0c794bfdb29a1b4ce47b1583OBbY7CvHSkUPhQ20FG1hZEbAl5GmTTZcs-cyoy2tw5to5j_pJiiTW6J_KRbBx-qS";
+            const layer = new MapImageLayer({
+                url: "https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer",
+                sublayers: [{
+                    id: 0,
+                    visible: true,
+                    definitionExpression: "es_pasiva_gnss=1"
+                }]
+            });
+            const map = new Map({
+                layers: [layer],
+                basemap: "arcgis-topographic"
+            });
+            const view = new MapView({
+                container: "viewDiv",
+                map: map
+            });
+            const homeBtn = new Home({
+                view: view
+            });
+            const scaleBar = new ScaleBar({
+                view: view,
+                unit: "dual"
+            });
+            const layerList = new LayerList({
+                view: view
+            });
+            const legend = new Legend({
+                view: view
+            });
+            const layerListExpand = new Expand({
+                view: view,
+                content: layerList,
+                expanded: false,
+                expandTooltip: "Expand LayerList"
+            });
+            const legendExpand = new Expand({
+                view: view,
+                content: legend,
+                expandTooltip: "Expand Legend",
+                expanded: false
+            });
+            const compass = new Compass({
+                view: view,
+                visible: false
+            });
+            view.ui.add(homeBtn, "top-left");
+            view.ui.add(scaleBar, "bottom-right");
+            view.ui.add(layerListExpand, "top-right");
+            view.ui.add(legendExpand, "bottom-left");
+            view.ui.add(compass, "top-left");
+            layer.when(() => {
+                const initialExtent = Extent.fromJSON(layer.sourceJSON.initialExtent);
+                view.goTo(initialExtent);
+            });
+            // load the Compass only when the view is rotated
+            view.watch('rotation', function (rotation) {
+                if (rotation && !compass.visible) {
+                    compass.visible = true;
+                }
+            });
+        });
+    </script>
+    <script type="module">
+        $('#tbl').DataTable({
+        orderCellsTop: true,
+            serverSide: true,
+            ajax: {
+                url: 'https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer/0/query?where=es_pasiva_gnss=1&outFields=identificador%2Cmunicipio%2Cestado%2Credes%2Cagencia_sigla&returnGeometry=false&f=pjson',
+                data: function (d) {
+                    d.resultRecordCount = d.length;
+                    d.resultOffset=d.start
+                },
+                "dataSrc": function ( json ) {
+                    var obj=json.features;
+                    var arr1=[]
+                    Object.keys(obj).forEach(function(key, index) {
+                        obj[key].attributes["id"] = index;
+                        obj[key].attributes["ir"] = '/redes/redes_interna/maestra.html?estacion=' + obj[key].attributes.agencia_sigla;
+                        arr1.push(obj[key].attributes)
+                    });
+                    return arr1;
+                    },
+            },
+            columns: [
+                {
+                    data: 'identificador'
+                },
+                {
+                    data: 'municipio'
+                },
+                {
+                    data: 'estado',
+                    render: function (dataField) {
+                        var clase="inactivo"
+                        if(dataField==("Activa")){
+                            clase="activo"
+                        }else if(dataField==null){
+                            clase="vacio";
+                            dataField=""
+                        }
+                        return '<span class="'+clase+'">'+dataField+'</span>';
+                    }
+                },
+                {
+                    data: 'redes'
+                },
+                {
+                    data: 'agencia_sigla'
+                },
+                {
+                    data: 'ir',
+                    render: function (dataField) {
+                        return '<a href="" class="modalButton" data-toggle="modal"                                    data-target="#exampleModal">M&aacute;s</a>';
+                    }
+                }
+            ],
+        });
+        var modalContent = innerHTML = `
+    <div class='modal maestraModalRedes fade' id='exampleModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+        <div class='modal-dialog' role='document'>
+        <div class='modal-content'>
+            <div class='modal-header'>
+                <button type='button' class='close' data-dismiss='modal' aria-label='Close'>                
+                    <span aria-hidden='true'><img src='/../../images/iconos/closeIcon.svg' alt='cerrar'></span>
+                </button>
+            </div>
+            <div class='modal-body'>                
+                <div class='sumary modalSection mt-4'>
+                    <div class='content'>
+                        <div class='title'>ID :  AA CR00CRI</div>
+                        <p class='locationField'>Locación: <span>Bogota, Cundinamarca</span></p>
+                        <p class='status'>Estado: <span>Activa</span></p>
+                        <p class='entiti'>Entidad: <span>EABB</span></p>
+                        <p class='nameOfRed'>Nombre de la red: <span>Magna Eco</span></p>
+                        <p class='red'>Red: <span>Activa</span></p>
+                    </div>
+                    <div class='button'>Editar</div>
+                </div>
+                <div class='sumary modalSection'>
+                    <div class='content'>
+                        <p class='dateInstalation'>Fecha de instalación: <span>DD/MM/AAAA</span></p>
+                        <p class='dateActivation'>Fecha de activación: <span>DD/MM/AAAA</span></p>
+                        <p class='lastModify'>Última modificación: <span>DD/MM/AAAA</span></p>
+                        <div class='d-flex'>
+                            <div class='button typeB'>Descargar archivo de registro</div>
+                            <div class='button typeB'>Mapa de la Red</div>
+                        </div>
+                    </div>
+                </div>
+                <div class='sumary modalSection noBorder'>
+                    <div class='content'>
+                        <p class='sub-title'>Coordenadas y velocidades</p>
+                        <div class='d-flex'>
+                            <p class='solution'>Solution:</p>
+                            <p class='value'>value</p>
+                        </div>
+                        <div class='d-flex'>
+                            <p class='reference'>Reference Epoch:</p>
+                            <p class='value'>2015.0</p>
+                        </div>
+                        <div class='d-flex mt-4' style='align-items: flex-end; width: 100%; justify-content: space-around;'>
+                            <div class='tables w-50' style='padding-right: 10px;'>
+                                <div class='item'>
+                                    <span class='title'>X:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m</span>
+                                </div>
+                                <div class='item'>
+                                    <span class='title'>Y:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m</span>
+                                </div>
+                                <div class='item'>
+                                    <span class='title'>Z:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m</span>
+                                </div>
+                            </div>
+                            <div class='tables w-50' style='padding-left: 10px;'>
+                                <div class='item'>
+                                    <span class='title'>Vx:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m/a</span>
+                                </div>
+                                <div class='item'>
+                                    <span class='title'>Vy:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m/a</span>
+                                </div>
+                                <div class='item'>
+                                    <span class='title'>Vz:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m/a</span>
+                                </div>
+                            </div>                        
+                        </div>
+                        <div class='d-flex' style='align-items: flex-end; width: 100%; justify-content: space-around;'>
+                            <div class='tables w-50' style='padding-right: 10px;'>
+                                <div class='item'>
+                                    <span class='title'>X:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m</span>
+                                </div>
+                                <div class='item'>
+                                    <span class='title'>Y:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m</span>
+                                </div>
+                                <div class='item'>
+                                    <span class='title'>Z:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m</span>
+                                </div>
+                            </div>
+                            <div class='tables w-50' style='padding-left: 10px;'>
+                                <div class='item'>
+                                    <span class='title'>V-north:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m/a</span>
+                                </div>
+                                <div class='item'>
+                                    <span class='title'>V-east:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m/a</span>
+                                </div>
+                                <div class='item'>
+                                    <span class='title'>V-up:</span>
+                                    <span class='value'>644009 0097 + 0.00366 m/a</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='suamry cta'>Consulta las <a>coordenadas semanales</a></div> 
+                <div class='datos'>
+                    <p>Datos de la estación</p>
+                    <div class='chards'>
+                        <img src="/images/images-redes/chardExample.svg" alt="">
+                    </div>
+                </div>                
+            </div>
+        </div>
+        </div>
+    </div>
+    `
+    $('body').append(modalContent)
+</script>
 </body>
 </html>
