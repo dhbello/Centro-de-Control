@@ -29,209 +29,284 @@
         </div>
     </section>
     <div class="container containerIgac">
-        <section class="section">
-            <div class="forms-container">
-                <div class="form-container">
-                    <label for="convertCoordIn2"><strong>Sistema de referencia:</strong></label>
-                    <div class="form">
-                        <div class="content">
-                            <div class="table">
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <label>Seleccione el sistema de referencia:</label>
-                                            <select id="convertCoordIn2" class="form-control">
-                                                <option value="EPSG:4326">WGS 84 (EPSG:4326)</option>
-                                                <option value="EPSG:3857">WGS84 Web Mercator (EPSG:3857)</option>
-                                                <option value="EPSG:4686">MAGNA-SIRGAS (EPSG:4686)</option>
-                                                <option value="EPSG:3114">MAGNA-SIRGAS / Colombia Far West zone (EPSG:3114)</option>
-                                                <option value="EPSG:3115">MAGNA-SIRGAS / Colombia West zone (EPSG:3115)</option>
-                                                <option value="EPSG:3116">MAGNA-SIRGAS / Colombia Bogota zone (EPSG:3116)</option>
-                                                <option value="EPSG:3117">MAGNA-SIRGAS / Colombia East Central zone (EPSG:3117)</option>
-                                                <option value="EPSG:3118">MAGNA-SIRGAS / Colombia East zone (EPSG:3118)</option>
-                                                <option value="EPSG:21894">Bogota 1975 / Colombia East (EPSG:21894)</option>
-                                                <option value="EPSG:21896">Bogota 1975 / Colombia West zone (EPSG:21896)</option>
-                                                <option value="EPSG:21897">Bogota 1975 / Colombia Bogota zone (EPSG:21897)</option>
-                                                <option value="EPSG:21898">Bogota 1975 / Colombia East Central zone (EPSG:21898)</option>
-                                                <option value="EPSG:21899">Bogota 1975 / Colombia East zone (EPSG:21899)</option>
-                                                <option value="EPSG:6244">MAGNA-SIRGAS / Arauca urban grid (EPSG:6244)</option>
-                                                <option value="EPSG:6245">MAGNA-SIRGAS / Armenia urban grid (EPSG:6245)</option>
-                                                <option value="EPSG:6246">MAGNA-SIRGAS / Barranquilla urban grid (EPSG:6246)</option>
-                                                <option value="EPSG:6247">MAGNA-SIRGAS / Bogota urban grid (EPSG:6247)</option>
-                                                <option value="EPSG:6248">MAGNA-SIRGAS / Bucaramanga urban grid (EPSG:6248)</option>
-                                                <option value="EPSG:6249">MAGNA-SIRGAS / Cali urban grid (EPSG:6249)</option>
-                                                <option value="EPSG:6250">MAGNA-SIRGAS / Cartagena urban grid (EPSG:6250)</option>
-                                                <option value="EPSG:6251">MAGNA-SIRGAS / Cucuta urban grid (EPSG:6251)</option>
-                                                <option value="EPSG:6252">MAGNA-SIRGAS / Florencia urban grid (EPSG:6252)</option>
-                                                <option value="EPSG:6253">MAGNA-SIRGAS / Ibague urban grid (EPSG:6253)</option>
-                                                <option value="EPSG:6254">MAGNA-SIRGAS / Inirida urban grid (EPSG:6254)</option>
-                                                <option value="EPSG:6255">MAGNA-SIRGAS / Leticia urban grid (EPSG:6255)</option>
-                                                <option value="EPSG:6256">MAGNA-SIRGAS / Manizales urban grid (EPSG:6256)</option>
-                                                <option value="EPSG:6257">MAGNA-SIRGAS / Medellin urban grid (EPSG:6257)</option>
-                                                <option value="EPSG:6258">MAGNA-SIRGAS / Mitu urban grid (EPSG:6258)</option>
-                                                <option value="EPSG:6259">MAGNA-SIRGAS / Mocoa urban grid (EPSG:6259)</option>
-                                                <option value="EPSG:6260">MAGNA-SIRGAS / Monteria urban grid (EPSG:6260)</option>
-                                                <option value="EPSG:6261">MAGNA-SIRGAS / Neiva urban grid (EPSG:6261)</option>
-                                                <option value="EPSG:6262">MAGNA-SIRGAS / Pasto urban grid (EPSG:6262)</option>
-                                                <option value="EPSG:6263">MAGNA-SIRGAS / Pereira urban grid (EPSG:6263)</option>
-                                                <option value="EPSG:6264">MAGNA-SIRGAS / Popayan urban grid (EPSG:6264)</option>
-                                                <option value="EPSG:6265">MAGNA-SIRGAS / Puerto Carreno urban grid (EPSG:6265)</option>
-                                                <option value="EPSG:6266">MAGNA-SIRGAS / Quibdo urban grid (EPSG:6266)</option>
-                                                <option value="EPSG:6267">MAGNA-SIRGAS / Riohacha urban grid (EPSG:6267)</option>
-                                                <option value="EPSG:6268">MAGNA-SIRGAS / San Andres urban grid (EPSG:6268)</option>
-                                                <option value="EPSG:6269">MAGNA-SIRGAS / San Jose del Guaviare urban grid (EPSG:6269)</option>
-                                                <option value="EPSG:6270">MAGNA-SIRGAS / Santa Marta urban grid (EPSG:6270)</option>
-                                                <option value="EPSG:6271">MAGNA-SIRGAS / Sucre urban grid (EPSG:6271)</option>
-                                                <option value="EPSG:6272">MAGNA-SIRGAS / Tunja urban grid (EPSG:6272)</option>
-                                                <option value="EPSG:6273">MAGNA-SIRGAS / Valledupar urban grid (EPSG:6273)</option>
-                                                <option value="EPSG:6274">MAGNA-SIRGAS / Villavicencio urban grid (EPSG:6274)</option>
-                                                <option value="EPSG:6275">MAGNA-SIRGAS / Yopal urban grid (EPSG:6275)</option>
-                                                <option value="EPSG:32617">WGS 84 / UTM zone 17N (EPSG:32617)</option>
-                                                <option value="EPSG:32618">WGS 84 / UTM zone 18N (EPSG:32618)</option>
-                                                <option value="EPSG:32619">WGS 84 / UTM zone 19N (EPSG:32619)</option>
-                                                <option value="EPSG:32717">WGS 84 / UTM zone 17S (EPSG:32717)</option>
-                                                <option value="EPSG:32718">WGS 84 / UTM zone 18S (EPSG:32718)</option>
-                                                <option value="EPSG:32719">WGS 84 / UTM zone 19S (EPSG:32719)</option>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </div>
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <label id="inputCoordinateLatitudLabel" for="inputCoordinateLatitud">Latitud (Norte con signo +, Sur con signo -)</label>
-                                            <div class="btn-group">
-                                                <input id="inputCoordinateLatitud" type="text" class="form-control" style="width: 100%;" placeholder="Ej: 4.668730">
-                                                <span class="clearTextBtn glyphicon glyphicon-remove-circle" onclick="$('#inputCoordinateLatitud').val('');"></span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <label id="inputCoordinateLongitudLabel" for="inputCoordinateLongitud">Longitud (Este con signo +, Oeste con signo -)</label>
-                                            <div class="btn-group">
-                                                <input id="inputCoordinateLongitud" type="text" class="form-control" style="width: 100%;" placeholder="Ej: -74.100403">
-                                                <span class="clearTextBtn glyphicon glyphicon-remove-circle" onclick="$('#inputCoordinateLongitud').val('');"></span>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>                            
-                    </div>
-                    <a href="#" class="btn btn-default" onclick="buscarCoordenada(); return false;">Convertir a Origen Nacional</a>
-                </div>
-                <div class="form-container">
-                    <label><strong>Proyecci&oacute;n para Colombia:</strong></label>
-                    <div class="form">
-                        <div class="content">
-                            <div class="table">
-                                <tbody>
-                                    <tr>
-                                        <label>Sistema de proyecci&oacute;n para Colombia:</label>
-                                        <div class="form-control slected">Origen Nacional</div>        
-                                    </tr>
-                                </tbody>
-                            </div>
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <label for="outputCoordinateLatitud">Norte (m)<br /></label>
-                                            <div class="btn-group">
-                                                <input id="outputCoordinateLatitud" type="text" class="form-control" style="width: 100%;" placeholder="Ej: 2000000">
-                                                <span class="clearTextBtn glyphicon glyphicon-remove-circle" onclick="$('#outputCoordinateLatitud').val('');"></span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <label for="outputCoordinateLongitud">Este (m)<br /></label>
-                                            <div class="btn-group">
-                                                <input id="outputCoordinateLongitud" type="text" class="form-control" style="width: 100%;" placeholder="Ej: 5000000">
-                                                <span class="clearTextBtn glyphicon glyphicon-remove-circle" onclick="$('#outputCoordinateLongitud').val('');"></span>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>                  
-                    <a href="#" class="btn btn-default" onclick="buscarCoordenada2(); return false;">Convertir desde Origen Nacional</a>
-                </div>
-            </div>                
-        </section>
+
         <section class="section">
             <div class="sumary">
                 <div class="sumarycontent">
                     <div class="title">
-                        <h2>Principales ventajas de los servicios en tiempo real:</h2>                                                 
+                        <h2>El acceso a los servicios de correcciones tiempo real<span class="spanText"> (NTRIP/VRS)</span></h2>                                                 
                     </div>
                     <div class="resume">
                         <ol>
-                            <li class="list-element"><img src="/images/iconos/numero_1.svg" alt="numero 1 igac"><p>No es necesario hacer c&aacute;lculos o postprocesamiento para obtener coordenadas referidas al Marco de Referencia Terrestre de las estaciones de las cuales se reciben correcciones y funcionan con NTRIP.</p></li>
-                            <li class="list-element"><img src="/images/iconos/numero_2.svg" alt="numero 2 igac"><p>El usuario m&oacute;vil puede conectarse al servicio de conexi&oacute;n que sea m&aacute;s relevante para su ubicaci&oacute;n geogr&aacute;fica, siempre y cuando tenga cobertura de internet.</p></li>
-                            <li class="list-element"><img src="/images/iconos/numero_3.svg" alt="numero 1 igac"><p>Permite transmitir los datos de una red de referencia al m&oacute;vil de una forma muy compacta, representando datos de observaci&oacute;n corregidos por la ambig&uuml;edad, as&iacute; como diferencias de datos de correcci&oacute;n dispersivos y no dispersivos.</p></li>
-                            <div class="divider"></div>
-                            <p class="paragraph">Este servicio permite reducir tiempo y presupuesto para la planeación y desarrollo de actividades en campo que requirieran el uso de correcciones GNSS.</p>                                
+                            <li class="list-element"><img src="/images/iconos/numero_1.svg" alt="numero 1 igac"><p>Crear un usuario (ver el documento crear un usuario.pdf) en la plataforma Spider : <br><a href="https://redgeodesica.igac.gov.co/sbc/spider-business-center">https://redgeodesica.igac.gov.co/sbc/spider-business-center</a></p></li>
+                            <li class="list-element"><img src="/images/iconos/numero_2.svg" alt="numero 2 igac"><p>Confirmar el usuario con el correo recibido en la direcci&oacute;n electr&oacute;nica registrada en la previa etapa y solicitar una suscripci&oacute;n</p></li>
+                            <li class="list-element"><img src="/images/iconos/numero_3.svg" alt="numero 3 igac"><p>Desde su receptor GNSS conectarse al NTRIP caster en la URL: <br><a href="serviciosredgeodesica.igac.gov.com">serviciosredgeodesica.igac.gov.com</a> con el puerto: 2101 usando sus credenciales definidos previamente.</p></li>
+                            <li class="list-element"><img src="/images/iconos/numero_4.svg" alt="numero 4 igac"><p>Elegir en la tabla de Mountpoint el producto lo m&aacute;s adecuado y adaptado a su receptor y localizaci&oacute;n</p></li>                              
                         </ol>                    
                     </div>                       
                 </div>
                 <div class="sumarycontent">
-                    <div class="sumaryfooter">
-                        <div class="form-section">
-                            <label for="convertCoordIn"><strong>1. Seleccione el sistema de referencia en el cual se encuentran los datos</strong></label>
-                            <select id="convertCoordIn" class="form-control">
-                                <option value="EPSG:4326">WGS 84 (EPSG:4326)</option>
-                                <option value="EPSG:3857">WGS84 Web Mercator (EPSG:3857)</option>
-                                <option value="EPSG:4686">MAGNA-SIRGAS (EPSG:4686)</option>
-                                <option value="EPSG:3114">MAGNA-SIRGAS / Colombia Far West zone (EPSG:3114)</option>
-                                <option value="EPSG:3115">MAGNA-SIRGAS / Colombia West zone (EPSG:3115)</option>
-                                <option value="EPSG:3116">MAGNA-SIRGAS / Colombia Bogota zone (EPSG:3116)</option>
-                                <option value="EPSG:3117">MAGNA-SIRGAS / Colombia East Central zone (EPSG:3117)</option>
-                                <option value="EPSG:3118">MAGNA-SIRGAS / Colombia East zone (EPSG:3118)</option>
-                                <option value="EPSG:21894">Bogota 1975 / Colombia East (EPSG:21894)</option>
-                                <option value="EPSG:21896">Bogota 1975 / Colombia West zone (EPSG:21896)</option>
-                                <option value="EPSG:21897">Bogota 1975 / Colombia Bogota zone (EPSG:21897)</option>
-                                <option value="EPSG:21898">Bogota 1975 / Colombia East Central zone (EPSG:21898)</option>
-                                <option value="EPSG:21899">Bogota 1975 / Colombia East zone (EPSG:21899)</option>
-                                <option value="EPSG:32617">WGS 84 / UTM zone 17N (EPSG:32617)</option>
-                                <option value="EPSG:32618">WGS 84 / UTM zone 18N (EPSG:32618)</option>
-                                <option value="EPSG:32619">WGS 84 / UTM zone 19N (EPSG:32619)</option>
-                                <option value="EPSG:32717">WGS 84 / UTM zone 17S (EPSG:32717)</option>
-                                <option value="EPSG:32718">WGS 84 / UTM zone 18S (EPSG:32718)</option>
-                                <option value="EPSG:32719">WGS 84 / UTM zone 19S (EPSG:32719)</option>
-                            </select>
-                        </div>
-                        <div class="form-section">
-                            <form id="convertFileData" method="post" enctype="multipart/form-data">
-                                <label for="convertFile" aria-hidden="true" data-container="body" data-toggle="popover" data-placement="bottom" data-content="<p style='font-size: x-small;'>Los formatos permitidos son: csv, xls, shp (.zip), itf, gpkg, geojson, kml, gml, gdb (.zip), dxf, rss, gpx, sqlite. </p><p style='font-size: x-small;'>En el caso de los formatos SHP y GDB, el archivo zip debe estar nombrado como <i>nombre.shp.zip</i> o <i>nombre.gdb.zip</i>. Dicho archivo debe contener los archivos que componen este formato, pero no debe contener la carpeta que contiene los archivos.</p><p style='font-size: x-small;'>En el caso de los formatos tabulares Excel y CSV, las coordenadas deben estar en grados decimales y ubicadas en las columnas con encabezado 'X' y 'Y'.</p>" data-html="true" data-trigger="hover">
-                                    <strong>2. Cargue el archivo&nbsp;
-                                        <span class="glyphicon glyphicon-question-sign"></span>
-                                    </strong>
-                                </label>
-                                <input name="convertFile" id="convertFile" type="file" class="form-control" />
-                            </form>
-                        </div>
-                        <div class="form-section">
-                            <label for="convertFormat"><strong>3. Seleccione el formato de salida</strong></label>
-                            <select id="convertFormat" class="form-control">
-                                <option value="CSV">Comma Separated Value (.csv) </option>
-                                <option value="DXF">AutoCAD DXF (.dxf)</option>
-                                <option value="FileGDB">ESRI File Geodatabase (FileGDB) (.gdb.zip)</option>
-                                <option value="GeoJSON">GeoJSON (.geojson)</option>
-                                <option value="KML">Keyhole Markup Language (KML) (.kml)</option>
-                                <option value="GeoRSS">Geographically Encoded Objects for RSS feeds (GeoRSS) (.rss)</option>
-                                <option value="GML">Geography Markup Language (.gml)</option>
-                                <option value="GPKG">GeoPackage vector (.gpkg)</option>
-                                <option value="SQLite">SQLite / Spatialite RDBMS (.sqlite)</option>
-                                <option value="GPX">GPS Exchange Format (.gpx)</option>
-                                <option value="Interlis 1">INTERLIS 1 (.itf)</option>
-                                <option value="Interlis 2">INTERLIS 2 (.xtf)</option>
-                                <option value="ESRI Shapefile">ESRI Shapefile (.shp.zip)</option>
-                                <option value="XLSX">MS Office Open XML spreadsheet (.xlsx)</option>
-                            </select>
-                        </div>
-                        <a href="#" class="btn btn-default" onclick="convertirCoordenada();return false;">Convertir</a> 
-                    </div>
+                    <table class="customeTable">
+                        <tbody>
+                            <tr>
+                                <th class="pt-0">Nombre del producto</th>
+                                <th class="pt-0">Tipo producto RT</th>
+                                <th class="pt-0">Tipo de mensaje</th>
+                                <th class="pt-0">NTRIP Mount Point</th>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Leica Nearest (GG) NTRIP
+                                </td>
+                                <td>
+                                    Sitio m&aacute;s cercano
+                                </td>
+                                <td>
+                                    Leica 4G
+                                </td>
+                                <td>
+                                    Leica4G_NEAR
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    CMR+ Nearest (GG) NTRIP
+                                </td>
+                                <td>
+                                    Sitio m&aacute;s cercano
+                                </td>
+                                <td>
+                                    CMR+
+                                </td>
+                                <td>
+                                    CMRP_NEAR
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    CMR Nearest (GPS) NTRIP
+                                </td>
+                                <td>
+                                    Sitio m&aacute;s cercano
+                                </td>
+                                <td>
+                                    CMR
+                                </td>
+                                <td>
+                                    CMR_NEAR
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    RTCM 2.3 DGPS Nearest (GPS)
+                                </td>
+                                <td>
+                                    Sitio m&aacute;s cercano
+                                </td>
+                                <td>
+                                    RTCM 2.x (Type 9;2)
+                                </td>
+                                <td>
+                                    RTCM2_DGPS
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    NTRIP
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    RTCM 2.3 Nearest (GPS) NTRIP
+                                </td>
+                                <td>
+                                    Sitio m&aacute;s cercano
+                                </td>
+                                <td>
+                                    RTCM 2.x (Type 1;2;18;19)
+                                </td>
+                                <td>
+                                    RTCM2_NEAR
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    RTCM 3.1 Nearest (GG) NTRIP
+                                </td>
+                                <td>
+                                    Sitio m&aacute;s cercano
+                                </td>
+                                <td>
+                                    RTCM 3.x (Extended)
+                                </td>
+                                <td>
+                                    RTCM3_NEAR
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    MSM Nearest (GNSS) NTRIP
+                                </td>
+                                <td>
+                                    Sitio m&aacute;s cercano
+                                </td>
+                                <td>
+                                    RTCM 3.x (MSM4)
+                                </td>
+                                <td>
+                                    MSM_NEAR
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    CMR+ iMAX (GG) NTRIP
+                                </td>
+                                <td>
+                                    Celdas autom&aacute;ticas
+                                </td>
+                                <td>
+                                    i-MAX CMR+
+                                </td>
+                                <td>
+                                    CMRP_IMAX
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    CMR+ ViRS (GG) NTRIP
+                                </td>
+                                <td>
+                                    Celdas autom&aacute;ticas
+                                </td>
+                                <td>
+                                    Virtual RS CMR+
+                                </td>
+                                <td>
+                                    CMRP_VIRS
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    RTCM 2.3 DGPS ViRS (GPS) NTRIP
+                                </td>
+                                <td>
+                                    Celdas autom&aacute;ticas
+                                </td>
+                                <td>
+                                    Virtual RS RTCM 2.x (Type 9;2)
+                                </td>
+                                <td>
+                                    RTCM2_DGPS_VIRS
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    RTCM 2.3 DGPS iMAX (GPS) NTRIP
+                                </td>
+                                <td>
+                                    Celdas autom&aacute;ticas
+                                </td>
+                                <td>
+                                    i-MAX RTCM 2.x (Type 9;2)
+                                </td>
+                                <td>
+                                    RTCM2_DGPS_IMAX
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    RTCM 2.3 ViRS (GPS) NTRVIP
+                                </td>
+                                <td>
+                                    Celdas autom&aacute;ticas
+                                </td>
+                                <td>
+                                    Virtual RS RTCM 2.x (Type 18;19)
+                                </td>
+                                <td>
+                                    RTCM2_VIRS
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    RTCM 2.3 iMAX (GPS) NTRIP
+                                </td>
+                                <td>
+                                    Celdas autom&aacute;ticas
+                                </td>
+                                <td>
+                                    i-MAX RTCM 2.x (Type 18;19)
+                                </td>
+                                <td>
+                                    RTCM2_IMAX
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    RTCM 3.1 ViRS (GG) NTRIP
+                                </td>
+                                <td>
+                                    Celdas autom&aacute;ticas
+                                </td>
+                                <td>
+                                    Virtual RS RTCM 3.x (Extended)
+                                </td>
+                                <td>
+                                    RTCM3_VIRS
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    RTCM 3.1 iMAX (GG) NTRIP
+                                </td>
+                                <td>
+                                    Celdas autom&aacute;ticas
+                                </td>
+                                <td>
+                                    i-MAX RTCM 3.x (Extended)
+                                </td>
+                                <td>
+                                    RTCM3_IMAX
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    MSM ViRS (GNSS) NTRIP
+                                </td>
+                                <td>
+                                    Celdas autom&aacute;ticas
+                                </td>
+                                <td>
+                                    Virtual RS RTCM 3.x (MSM4)
+                                </td>
+                                <td>
+                                    MSM_VIRS
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    MSM iMAX (GNSS) NTRIP
+                                </td>
+                                <td>
+                                    Celdas autom&aacute;ticas
+                                </td>
+                                <td>
+                                    i-MAX RTCM 3.x (MSM4)
+                                </td>
+                                <td>
+                                    MSM_IMAX
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>                    
             </div>
         </section>
@@ -241,46 +316,22 @@
             <section class="section">            
                 <div class="content-sumary">
                     <div class="sumary">
-                        <div class="sumary-inside">
-                            <h2>Metodolog&iacute;a b&aacute;sica del NTRIP</h2>
-                            <p>La generación de las correcciones diferenciales se realiza mediante un conjunto de observaciones  de una red GNSS. Los datos son enviados a un servidor y, mediante la configuración de un protocolo adecuado cualquier usuario puede accederlos  en tiempo real  desde un receptor en campo.</p>               
-                        </div>                   
-                    </div>
-                    <div class="resume">
-                        <div class="content-pre">
-                            <div class="copy-button-container">
-                                <img id="button" src="/images/iconos/copy.svg" alt="">
-                            </div>
-                            <pre id="copyProjcs">PROJCS["MAGNA-SIRGAS / Origen-Nacional",
-                GEOGCS["MAGNA-SIRGAS",
-                DATUM["Marco_Geocentrico_Nacional_de_Referencia",
-                SPHEROID["GRS 1980",6378137,298.257222101,
-                AUTHORITY["EPSG","7019"]],
-                TOWGS84[0,0,0,0,0,0,0],
-                AUTHORITY["EPSG","6686"]],
-                PRIMEM["Greenwich",0,
-                AUTHORITY["EPSG","8901"]],
-                UNIT["degree",0.0174532925199433,
-                AUTHORITY["EPSG","9122"]],
-                AUTHORITY["EPSG","4686"]],
-                PROJECTION["Transverse_Mercator"],
-                PARAMETER["latitude_of_origin",4.0],
-                PARAMETER["central_meridian",-73.0],
-                PARAMETER["scale_factor",0.9992],
-                PARAMETER["false_easting",5000000],
-                PARAMETER["false_northing",2000000],
-                UNIT["metre",1,
-                AUTHORITY["EPSG","9001"]],
-                AUTHORITY["EPSG","9377"]]</pre>
+                        <div class="sumary-inside pb-4">
+                            <h2>El acceso a los servicios de post procesamiento</h2>
+                            <span class="descripcion">(descarga de datos Rinex y calculo de coordenada)</span>
+                            <div class="spander mb-3"></div>
+                            <h2>se hace en 3 etapas</h2>
+                            <span class="descripcion">((las etapas 1 a 2 se hacen solamente una vez)</span>
                         </div>
-                        <div class="content-pre2">
-                            <p>O la siguiente cadena Proj4:</p>
-                            <div class="copy-button-container">
-                                <img id="button2" src="/images/iconos/copy.svg" alt="">
-                            </div>
-                            <pre id="copyProjtm">+proj=tmerc +lat_0=4.0 +lon_0=-73.0 +k=0.9992 +x_0=5000000 +y_0=2000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</pre>
+                        <div class="resume p-0 mt-5">
+                            <ol>
+                                <li class="list-element"><img src="/images/iconos/numero_1.svg" alt="numero 1 igac"><p>Crear un usuario (ver el documento crear un usuario.pdf) en la plataforma Spider : <br><a href="https://redgeodesica.igac.gov.co/sbc/spider-business-center">https://redgeodesica.igac.gov.co/sbc/spider-business-center</a></p></li>
+                                <li class="list-element"><img src="/images/iconos/numero_2.svg" alt="numero 2 igac"><p>Confirmar el usuario con el correo recibido en la dirección electrónica registrada en la previa etapa y solicitar una suscripción</p></li>
+                                <li class="list-element"><img src="/images/iconos/numero_3.svg" alt="numero 3 igac"><p>Acceder a la plataforma <a href="https://redgeodesica.igac.gov.co/sbc/spider-business-center">https://redgeodesica.igac.gov.co/sbc/spider-business-center</a> con las credenciales y usarla siguiendo el documento servicios web.pdf</p></li>                              
+                            </ol>                  
+
                         </div>
-                    </div>                    
+                    </div>                 
                 </div>
             </section>
         </div>
