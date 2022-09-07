@@ -12,7 +12,7 @@
     <link href="../../css/style.css" rel="stylesheet">
     <link href="../../css/maestra.css" rel="stylesheet">
 </head>
-<body class="main redes geodesicaMaestra redPasivaPagina">
+<body class="main redes geodesicaMaestra redActivaPagina">
     <nav class="navbarigac origen">        
     </nav>
     <nav class="nav nav-underline">        
@@ -30,20 +30,67 @@
             </div>
         </div>
     </section>
-    <div class="containercolor indicadoresMaestraRedes">
-        <div class="container containerIgac">
-            <section class="section visor row">
-                <div class="iframe col-md-12">
-                    <div class="d-flex position-relative align-items-center justify-content-end">
-                        <h2 class="title w-divider text-center">Mapa de la red Pasiva y de nivelación</h2>
-                        <div class="status d-flex position-absolute">
-                            <a class="btn mb-4 text-center buttonCem">Ver en CEM</a>
-                        </div>
+    <div class="container containerIgac">
+        <section class="section visor row pb-0">
+            <div class="iframe col-md-12">
+                <div class="d-flex position-relative align-items-center justify-content-end">
+                    <h2 class="title w-divider text-center">Mapa de la red Pasiva y de nivelaci&oacute;n</h2>
+                    <div class="status d-flex position-absolute">
+                        <a class="btn mb-4 text-center buttonCem">Ver en CEM</a>
                     </div>
-                    <img src="../../images/mapa.png" alt="mapa">
+                </div>
+                <img src="../../images/mapa.png" alt="mapa">
+            </div>
+        </section>
+    </div>
+    <div class="typeB">
+        <div class="container containerIgac">        
+            <section class="section">
+                <div class="m-auto w-100">
+                    <table id="redTable" class="display tableRedes" style="width: 100%;">
+                        <thead>
+                            <tr class="filterContainer"></tr>
+                            <tr>
+                                <th>ID</th>
+                                <th>Municipio, departamento</th>
+                                <th>Estado</th>
+                                <th>Nombre de la red</th>
+                                <th>Entidad</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>AMTE00BRA</td>
+                                <td>Nariño</td>
+                                <td>Activo</td>
+                                <td>IGb14-Core, ITRF2014</td>
+                                <td>EABB</td>
+                                <td><a href="interna_red_pasiva.html">M&aacute;s</a></td>
+                            </tr>
+                            <tr>
+                                <td>AMTE00BRA</td>
+                                <td>Caldas</td>
+                                <td>Inactivo</td>
+                                <td>IGb14, ITRF2014</td>
+                                <td>IGAC, SGC</td>
+                                <td><a href="interna_red_pasiva.html">M&aacute;s</a></td>
+                            </tr>
+                            <tr>
+                                <td>AMTE00BRA</td>
+                                <td>Bolívar</td>
+                                <td>Removida</td>
+                                <td>IGb14, ITRF2014</td>
+                                <td>DGFI</td>
+                                <td><a href="interna_red_pasiva.html">M&aacute;s</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </section>
         </div>
+    </div>
+    <div class="containercolor indicadoresMaestraRedes">
         <div class="position-relative">
             <div class="container containerIgac borderB">
                 <section class="section indicadores">
@@ -112,54 +159,21 @@
             </div>
         </div>
     </div>
-    <section class="section sectionEstaciones">
-        <div class="resourses-title" style="text-align: center;">
-            <h2>V&eacute;rtices de la red</h2>
-        </div>
-        <div class="row">
-            <div class="m-auto">
-                <table id="redTable" class="display">
-                    <thead>
-                        <tr class="filterContainer"></tr>
-                        <tr>
-                            <th>ID</th>
-                            <th>Municipio, departamento</th>
-                            <th>Estado</th>
-                            <th>Nombre de la red</th>
-                            <th>Entidad</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>AMTE00BRA</td>
-                            <td>Nari&ntilde;o</td>
-                            <td>Inactivo</td>
-                            <td>IGb14-Core, ITRF2014</td>
-                            <td>EABB</td>
-                            <td><a href="" class="modalButton" data-toggle="modal" data-target="#exampleModal">M&aacute;s</a></td>
-                        </tr>
-                        <tr>
-                            <td>AMTE00BRA</td>
-                            <td>Nari&ntilde;o</td>
-                            <td>Activo</td>
-                            <td>IGb14-Core, ITRF2014</td>
-                            <td>EABB</td>
-                            <td><a href="" class="modalButton" data-toggle="modal" data-target="#exampleModal">M&aacute;s</a></td>
-                        </tr>
-                        <tr>
-                            <td>AMTE00BRA</td>
-                            <td>Antioquia</td>
-                            <td>Activo</td>
-                            <td>IGb14-Core, ITRF2014</td>
-                            <td>EABB</td>
-                            <td><a href="" class="modalButton" data-toggle="modal" data-target="#exampleModal">M&aacute;s</a></td>
-                        </tr>
-                    </tbody>
-                </table>
+    <div class="container block-igac">
+        <section class="section pb-0">
+            <div class="faqs type2">
+                <div class="title">
+                    Explora y consulta los servicios en tiempo real disponibles para todos
+                </div>
+                <div class="resume">
+                    Con&eacute;ctate y usalos servicios de procesamiento en l&iacute;nea de tipo diferencial y los servicios de posicionamiento en tiempo real via caster NTRIP para las estaciones de la Red Activa del Territorio Colombiano. &iquest;Qu&eacute; esperas?
+                </div>
+                <div class="boton-faqs">
+                    <a href="/herramientas/servicios.html">Explora estos recursos</a>            
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
     <section class="section registrarReportar noBefore paddingLast">
         <div class="container containerIgac">
             <div class="d-flex">

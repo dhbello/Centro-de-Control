@@ -342,6 +342,10 @@ input::placeholder, select {
     width: 100%;
 }
 
+.get-backContainer {
+    top: 0;
+}
+
 .get-back {
     position: absolute;
     top: 0;
@@ -653,19 +657,40 @@ thead .filterContainer {
 
 thead .filters {
     position: relative;
-    top: 0;
+    top: 18px;
+    left: 30px;
+    background: #f9f9f9;
+    z-index: 1;    
 }
 
-thead .filters th:first-child{
+.tableGeodesica thead .filters th {
+    width: 200px !important;
+    max-width: 200px !important;
+}
+
+.tableGeodesica thead .filters th:first-child{
     display: none;
 }
 
-thead .filters th:last-child{
+.tableGeodesica thead .filters th:nth-child(5n), thead .filters th:nth-child(6n) {
+    display: none;
+}
+
+.tableGeodesica thead .filters th:last-child{
+    display: none;
+}
+
+.tableRinex thead .filters th:first-child,
+.tableRinex thead .filters th:nth-child(2) {
+    display: none;
+}
+
+.tableRedes thead .filters th:first-child {
     display: none;
 }
 
 table.dataTable thead th {
-    padding-top: 60px;
+    padding-top: 100px;
 }
 
 table.dataTable thead th, table.dataTable tbody td {
@@ -680,6 +705,9 @@ table.dataTable thead th, table.dataTable tbody td {
 
 #redTable_filter {
     width: 100%;
+    padding: 30px 40px;
+    padding-bottom: 0px;
+    background: #f9f9f9;
 }
 
 #redTable_filter label {
@@ -705,7 +733,7 @@ table.dataTable thead th, table.dataTable tbody td {
 }
 
 table.dataTable thead > tr > th.sorting {
-    padding: 0 30px 0 30px;
+    padding: 0 5px 0 5px;
     position: relative;
     border-bottom: 0;
     font-size: 15px;    
@@ -764,6 +792,11 @@ table.dataTable.display tbody tr td {
     font-size: 15px;
 }
 
+table.dataTable.display tbody tr td a {
+    display: flex;
+    justify-content: center;
+}
+
 table.dataTable.display tbody a {
     color: #3595e0;
     text-decoration: underline;
@@ -772,6 +805,22 @@ table.dataTable.display tbody a {
 table.dataTable.no-footer {
     border-bottom: none;
     margin-bottom: 80px;
+}
+
+.dataTables_info#redTable_info {
+    position: absolute !important;
+    top: 50px;
+    padding: 30px 40px;
+    right: 0;
+    background: #f9f9f9;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    z-index: -1;
+}
+
+.dataTables_empty {
+    width: 100%;
 }
 
 .dataTables_wrapper .dataTables_paginate {
@@ -825,6 +874,7 @@ td .inactivo {
     display: block;
     border-radius: 25px;
     padding: 0 10px;
+    height: 22px;
 }
 
 td .activo {    
@@ -834,8 +884,50 @@ td .activo {
     display: block;
     border-radius: 25px;
     padding: 0 10px;
+    height: 22px;
 }
 
+td .removido {
+    background: #f0f0f0;
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+    display: block;
+    border-radius: 25px;
+    padding: 0 10px;
+    height: 22px;
+}
+
+table.dataTable .img-folder {
+    width: 20px;
+}
+
+table.customeTable {
+    width: 100%;
+}
+
+table.customeTable th {
+    text-align: center;
+    padding: 30px 0;
+    border-bottom: 1px solid #0000003b;
+    font-size: 14px;
+    font-family: 'Gill Sans Std semi Bold';
+}
+
+table.customeTable td {
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #0000003b;
+    font-size: 14px;
+}
+
+table.customeTable.type2 th {
+    padding-top: 10px;
+    text-align: left;
+}
+
+table.customeTable.type2 td {
+    text-align: left;
+}
 /*tarjetas sección que estas buscando*/
 .row.container-cards .title {
     padding: 0 5px;
@@ -1419,9 +1511,9 @@ div[data-toggle='modal'] {
     font-size: 18px;
 }
 
-.indicadoresMaestraRedes a.buttonCem {
+a.buttonCem {
     background-color: #3595e0;
-    color: #fff;
+    color: #fff !important;
     font-size: 14px;
 }
 
@@ -2087,6 +2179,38 @@ label {
 .floatingMenu a.info::before {
     content: 'Info';
 }
+
+/*interna redes*/
+.infoUbicacionContainer .divider {
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+
+.infoUbicacion {
+    line-height: normal;
+}
+
+.infoUbicacion h3 {
+    font-size: 18px;
+    font-family: "Gill Sans Std semi Bold";
+    margin-bottom: 60px;
+}
+
+.infoUbicacion .title {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-family: "Gill Sans Std semi Bold";
+}
+
+.infoUbicacion .item {
+    font-size: 15px;
+}
+
+.infoUbicacion p {
+    margin-top: 25px;
+    font-size: 14px;
+}
+
 
 
 
