@@ -818,6 +818,28 @@ td.pasiva::before {
     left: 10px;
 }
 
+
+span.inactivo {
+    background: #fdebe9;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    display: block;
+    border-radius: 25px;
+    padding: 0 10px;
+}
+
+span.activo {    
+    background: #f0fff5;
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+    display: block;
+    border-radius: 25px;
+    padding: 0 10px;
+}
+
+
+
+
 td .inactivo {
     background: #fdebe9;
     padding-top: 2px;
@@ -2088,6 +2110,13 @@ label {
     content: 'Info';
 }
 
+
+#viewDiv {
+    padding: 0;
+    margin: 0;
+    height: 400px;
+    width: 100%;
+}
 
 
 
