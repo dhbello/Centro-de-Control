@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
     <link href="../../css/style.css" rel="stylesheet">
     <link href="../../css/maestra.css" rel="stylesheet">
+    
 </head>
 <body class="main redes geodesicaMaestra redActivaPagina">
     <nav class="navbarigac origen">
@@ -51,53 +52,32 @@
             </div>
         </section>
     </div>
+    
     <div class="typeB">
         <div class="container containerIgac">        
             <section class="section">
                 <div class="m-auto w-100">
-                    <table id="redTable" class="display tableRedes" style="width: 100%;">
+                    <table id="tbl" class="display">
                         <thead>
-                            <tr class="filterContainer"></tr>
                             <tr>
                                 <th>ID</th>
-                                <th>Municipio, departamento</th>
+                                <th>Municipio,departamento</th>
                                 <th>Estado</th>
                                 <th>Nombre de la red</th>
                                 <th>Entidad</th>
                                 <th></th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>AMTE00BRA</td>
-                                <td>Nariño</td>
-                                <td>Activo</td>
-                                <td>IGb14-Core, ITRF2014</td>
-                                <td>EABB</td>
-                                <td><a href="interna_red_activa.html">M&aacute;s</a></td>
-                            </tr>
-                            <tr>
-                                <td>AMTE00BRA</td>
-                                <td>Caldas</td>
-                                <td>Inactivo</td>
-                                <td>IGb14, ITRF2014</td>
-                                <td>IGAC, SGC</td>
-                                <td><a href="interna_red_activa.html">M&aacute;s</a></td>
-                            </tr>
-                            <tr>
-                                <td>AMTE00BRA</td>
-                                <td>Bolívar</td>
-                                <td>Removida</td>
-                                <td>IGb14, ITRF2014</td>
-                                <td>DGFI</td>
-                                <td><a href="interna_red_activa.html">M&aacute;s</a></td>
-                            </tr>
-                        </tbody>
                     </table>
+                    
                 </div>
             </section>
         </div>
-    </div>    
+    </div>
+
+
+
+
     <div class="containercolor indicadoresMaestraRedes">
         <div class="container containerIgac borderB">
             <section class="section indicadores">
@@ -193,7 +173,7 @@
                         <tr class="filterContainer"></tr>
                         <tr>
                             <th>ID</th>
-                            <th>Municipio, departamento</th>
+                            <th>municipio</th>
                             <th>Estado</th>
                             <th>Nombre de la red</th>
                             <th>Entidad</th>
@@ -236,7 +216,7 @@
             <div class="m-auto">
             <table id="tbl" class="display">
                 <thead>
-                    <tr >
+                    <tr>
                         <th>Identificador</th>
                         <th>Municipio, departamento</th>
                         <th>Estado</th>
@@ -257,8 +237,8 @@
                         <div class="title m-0 mb-3">
                             Registra una nueva estaci&oacute;n
                         </div>
-                        <div class="d-flex align-items-center modalIntEstacionesActiva" data-toggle="modal"
-                            data-target="#modalIntEstacionesActiva">
+                        <div class="d-flex align-items-center modalEstaciones" data-toggle="modal"
+                            data-target="#modalEstaciones">
                             <div class="boton-faqs">
                                 <a>Iniciar formulario</a>
                             </div>
@@ -442,11 +422,10 @@
             esriConfig.apiKey =
                 "AAPK2a2e861a0c794bfdb29a1b4ce47b1583OBbY7CvHSkUPhQ20FG1hZEbAl5GmTTZcs-cyoy2tw5to5j_pJiiTW6J_KRbBx-qS";
             const layer = new MapImageLayer({
-                url: "https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer",
+                url: "https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGNSS/Mapserver",
                 sublayers: [{
                     id: 0,
-                    visible: true,
-                    definitionExpression: "es_activa_gnss =1"
+                    visible: true
                 }]
             });
             const map = new Map({
@@ -503,62 +482,181 @@
             });
         });
     </script>
-    <script type="module">
-        $('#tbl').DataTable({
-            orderCellsTop: true,
-                serverSide: true,
-                ajax: {
-                    url: 'https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer/0/query?where=es_activa_gnss=1&outFields=identificador%2Cmunicipio%2Cestado%2Credes%2Cagencia_sigla&returnGeometry=false&f=pjson',
-                    data: function (d) {
-                        d.resultRecordCount = d.length;
-                        d.resultOffset=d.start
-                    },
-                    "dataSrc": function ( json ) {
-                        var obj=json.features;
-                        var arr1=[]
-                        Object.keys(obj).forEach(function(key, index) {
-                            obj[key].attributes["id"] = index;
-                            obj[key].attributes["ir"] = '/redes/redes_interna/maestra.html?estacion=' + obj[key].attributes.agencia_sigla;
-                            arr1.push(obj[key].attributes)
-                        });
-                        return arr1;
+
+
+<script type="module">
+
+    var table;
+    
+    import {queryFeatures}  from "https://cdn.skypack.dev/@esri/arcgis-rest-feature-service@4.0.3";
+        /* consulta indicador 1 */
+        queryFeatures({
+            url: "https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer/0",
+            where: "es_activa_gnss =1",
+            returnGeometry:'false',
+            outStatistics:[{
+                    statisticType: "sum",
+                    onStatisticField: "es_activa_gnss ",
+                    outStatisticFieldName: "out"
+                }
+                ]
+            })
+            .then((result)=>{
+                var draw= result.features[0].attributes.out;
+    
+                let texto='';
+    
+                var uri='https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer/0/query?where=es_activa_gnss=1 '+texto+'&outFields=identificador%2Cagencia_sigla%2Cmunicipio%2Credes%2Cestado&returnGeometry=false&f=pjson';
+    
+            table= $('#tbl').DataTable({
+                    orderCellsTop: true,
+                    serverSide: true,
+                    fixedHeader: true,
+                   searching: false,
+                    ajax: {
+                        url: uri,
+                        data: function (d) {
+                            d.resultRecordCount = d.length;
+                            d.resultOffset=d.start;
                         },
-                },
-                columns: [
-                    {
-                        data: 'identificador'
+                        "dataSrc": function ( json ) {
+                            console.log(json)
+                            var obj=json.features;
+                            var arr1=[]
+                            Object.keys(obj).forEach(function(key, index) {
+                                obj[key].attributes["id"] = index;
+                                obj[key].attributes["ir"] = 'interna_red_activa.html?estacion=' + obj[key].attributes.identificador+'&nombre='+obj[key].attributes.redes
+                                
+                                var item=[]
+    
+                                Object.keys(obj[key].attributes).forEach(function(key2, index) {
+                                    item.push(obj[key].attributes[key2])   
+                                })
+                            
+                                arr1.push(obj[key].attributes)
+                            });
+                           
+                            json.recordsTotal = draw
+                            json.recordsFiltered = draw
+                            json.data=arr1;
+     
+                            return json.data;
+                            },
                     },
-                    {
-                        data: 'municipio'
-                    },
-                    {
-                        data: 'estado',
-                        render: function (dataField) {
-                            var clase="inactivo"
-                            if(dataField==("Activa")){
-                                clase="activo"
-                            }else if(dataField==null){
-                            clase="vacio";
-                            dataField=""
+                    columns: [
+                        {
+                            data: 'identificador'
+                        },
+                        {
+                            data: 'municipio'
+                        },
+                        {
+                            data: 'estado',
+                            render: function (dataField) {
+                                var clase="inactivo"
+                                if(dataField==("Activa")){
+                                    clase="activo"
+                                }else if(dataField==null){
+                                clase="vacio";
+                                dataField=""
+                            }
+                                return '<span class="'+clase+'">'+dataField+'</span>';
+                            }
+                        },
+                        {
+                            data: 'redes',
+                        },
+                        {
+                            data: 'agencia_sigla',
+                        },
+                        {
+                            data: 'ir',
+                            render: function (dataField) {
+                                return '<a href="'+dataField+'">Más</a>';
+                            }
                         }
-                            return '<span class="'+clase+'">'+dataField+'</span>';
-                        }
-                    },
-                    {
-                        data: 'redes'
-                    },
-                    {
-                        data: 'agencia_sigla'
-                    },
-                    {
-                        data: 'ir',
-                        render: function (dataField) {
-                            return '<a href="" class="modalButton" data-toggle="modal"                                    data-target="#exampleModal">M&aacute;s</a>';
-                        }
-                    }
-                ],
+                    ],
+    
+    
+            language: {
+                "decimal": "",
+                "emptyTable": "No hay información",
+                "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+                "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+                "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+                "infoPostFix": "",
+                "thousands": ",",
+                "lengthMenu": "Mostrar _MENU_ Entradas",
+                "loadingRecords": "Cargando...",
+                "processing": "Procesando...",
+                "search": "Buscar:",
+                "zeroRecords": "Sin resultados encontrados",
+                "paginate": {
+                    "first": "Primero",
+                    "last": "Ultimo",
+                    "next": "Siguiente",
+                    "previous": "Anterior"
+                }
+            },
+    
+    
+                });
+    
+                $('#tbl thead th').each(function () {
+                var title = $(this).text();
+                $(this).html(title+' <input type="text" class="col-search-input" placeholder="Search ' + title + '" />');
             });
-</script>
+            
+            table.columns().every(function (i) {
+                var table = this;
+                $('input', this.header()).on('keyup change', function () {
+                    if (table.search() !== this.value) {
+    
+                        var column="";
+
+                        switch(i){
+                            case 0:
+                            column="identificador"
+                            break;
+                            case 1:
+                            column="municipio"
+                            break;
+                            case 2:
+                            column="estado"
+                            break;
+                            case 3:
+                            column="redes"
+                            break;
+                            case 4:
+                            column="agencia_sigla"
+                            break;
+                        }
+    
+                            texto="+and+"+column+"+like+upper%28%27%25"+this.value+"%25%27%29"
+    
+                            var uri='https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer/0/query?where=es_activa_gnss=1'+texto+'&outFields=identificador%2Cmunicipio%2Cestado%2Credes%2Cagencia_sigla&returnGeometry=false&f=pjson';
+    
+                            table.ajax.url(uri).load();
+    
+                           table.search(this.value).draw();
+                           console.log(uri)
+                    }
+                });
+            });
+    
+                
+            })
+    
+              
+    </script>
+
+
+
+
+
+
+
+
 <script type="module">
     import {queryFeatures}  from "https://cdn.skypack.dev/@esri/arcgis-rest-feature-service@4.0.3";
     /* consulta indicador 1 */
@@ -636,4 +734,5 @@
         })
 </script>
 </body>
+
 </html>

@@ -57,57 +57,30 @@
         <section id="visor" class="section">
             <div id="viewDiv"></div>
         </section>
+
         <div class="typeB">
             <div class="container containerIgac">        
                 <section class="section">
                     <div class="m-auto w-100">
-                        <table id="redTable" class="display tableGeodesica" style="width: 100%;">
+                        <table id="tbl" class="display">
                             <thead>
-                                <tr class="filterContainer"></tr>
                                 <tr>
                                     <th>ID</th>
                                     <th>Contribuyente</th>
-                                    <th>Ubicaci&oacute;n</th>
+                                    <th>Ubicación</th>
                                     <th>Estado</th>
-                                    <th></th>
                                     <th></th>
                                     <th></th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>AMTE00BRA</td>
-                                    <td>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet</td>
-                                    <td>IGb14-Core, ITRF2014</td>
-                                    <td>Inactivo</td>
-                                    <td>Pasiva</td>
-                                    <td><a href="">M&aacute;s</a></td>
-                                    <td><a href="redes_interna/rinex.html">Archivo Rinex</a></td>
-                                </tr>
-                                <tr>
-                                    <td>AMTE00BRA</td>
-                                    <td>Aliquam varius magna in urna semper</td>
-                                    <td>IGb14-Core, ITRF2014</td>
-                                    <td>Activo</td>
-                                    <td>Pasiva</td>
-                                    <td><a href="">M&aacute;s</a></td>
-                                    <td><a href="redes_interna/rinex.html">Archivo Rinex</a></td>
-                                </tr>
-                                <tr>
-                                    <td>AMTE00BRA</td>
-                                    <td>Nam cursus purus at ante accumsan ac vehicula lorem semper</td>
-                                    <td>IGb14-Core, ITRF2014</td>
-                                    <td>Activo</td>
-                                    <td>Activa</td>
-                                    <td><a href="">M&aacute;s</a></td>
-                                    <td><a href="redes_interna/rinex.html">Archivo Rinex</a></td>
-                                </tr>
-                            </tbody>
                         </table>
+                        
                     </div>
                 </section>
             </div>
         </div>
+
+
     </div>
     <div class="containercolor">
         <div class="container containerIgac">
@@ -421,58 +394,179 @@
             });
         });
     </script>
-    <script type="module">
-        import {queryFeatures}  from "https://cdn.skypack.dev/@esri/arcgis-rest-feature-service@4.0.3";
+
+
+<script type="module">
+
+    var table;
+    
+    import {queryFeatures}  from "https://cdn.skypack.dev/@esri/arcgis-rest-feature-service@4.0.3";
+        /* consulta indicador 1 */
         queryFeatures({
             url: "https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer/0",
-            where: "1 = 1",
+            where: "es_activa_gnss+es_pasiva_gnss>0",
             returnGeometry:'false',
-            groupByFieldsForStatistics:'agencia_sigla',
             outStatistics:[{
-                    statisticType: "sum",
-                    onStatisticField: "es_activa_gnss ",
-                    outStatisticFieldName: "es_activa_gnss"
-                },{
-                    statisticType: "sum",
-                    onStatisticField: "es_pasiva_gnss ",
-                    outStatisticFieldName: "es_pasiva_gnss"
-                },
+                    statisticType: "count",
+                    onStatisticField: "es_activa_gnss",
+                    outStatisticFieldName: "out"
+                }
                 ]
             })
             .then((result)=>{
-                var obj= result.features[0].attributes;
-                console.log(obj)
-                var arr1 = []
-                    obj["id"] = 1;
-                    obj["ir"] = '/redes/redes_interna/maestra.html?estacion=' + obj.agencia_sigla;
-                    console.log(obj)
-                    arr1.push(obj)
-                $('#tbl').DataTable({
-                    data: arr1,
-                    columns: [{
-                            data: 'id'
+                var draw= result.features[0].attributes.out;
+    
+                let texto='';
+    
+                var uri='https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer/0/query?where=es_activa_gnss%2Bes_pasiva_gnss>0'+texto+'&outFields=t_id%2Cidentificador%2Cagencia_sigla%2Credes%2Cestado&returnGeometry=false&f=pjson';
+                console.log(uri)
+    
+            table= $('#tbl').DataTable({
+                    orderCellsTop: true,
+                    serverSide: true,
+                    fixedHeader: true,
+                   searching: false,
+                    ajax: {
+                        url: uri,
+                        data: function (d) {
+                            d.resultRecordCount = d.length;
+                            d.resultOffset=d.start;
+                        },
+                        "dataSrc": function ( json ) {
+                            console.log(json)
+                            var obj=json.features;
+                            var arr1=[]
+                            Object.keys(obj).forEach(function(key, index) {
+                                obj[key].attributes["id"] = index;
+                                obj[key].attributes["ir"] = '/redes/redes_interna/rinex.html?estacion=' + obj[key].attributes.identificador+'&id='+ obj[key].attributes.t_id;
+                                
+                                var item=[]
+    
+                                Object.keys(obj[key].attributes).forEach(function(key2, index) {
+                                    item.push(obj[key].attributes[key2])   
+                                })
+                            
+                                arr1.push(obj[key].attributes)
+                            });
+                           
+                            json.recordsTotal = draw
+                            json.recordsFiltered = draw
+                            json.data=arr1;
+     
+                            return json.data;
+                            },
+                    },
+                    columns: [
+                        {
+                            data: 'identificador'
                         },
                         {
                             data: 'agencia_sigla'
                         },
                         {
-                            data: 'es_activa_gnss'
+                            data: 'redes'
                         },
                         {
-                            data: 'es_pasiva_gnss'
+                            data: 'estado',
+                            render: function (dataField) {
+                                var clase="inactivo"
+                                if(dataField==("Activa")){
+                                    clase="activo"
+                                }else if(dataField==null){
+                                clase="vacio";
+                                dataField=""
+                            }
+                                return '<span class="'+clase+'">'+dataField+'</span>';
+                            }
                         },
                         {
                             data: 'ir',
                             render: function (dataField) {
-                                return '<a href="' + dataField + '">Ir</a>';
+                                return '<a href="">Más</a>';
+                            }
+                        },
+                        {
+                            data: 'ir',
+                            render: function (dataField) {
+                                return '<a href="'+dataField+'">Archivo Rinex</a>';
                             }
                         }
                     ],
-                    "bInfo": false,
-                    searching: false,
-                    info: false
+    
+    
+            language: {
+                "decimal": "",
+                "emptyTable": "No hay información",
+                "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+                "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+                "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+                "infoPostFix": "",
+                "thousands": ",",
+                "lengthMenu": "Mostrar _MENU_ Entradas",
+                "loadingRecords": "Cargando...",
+                "processing": "Procesando...",
+                "search": "Buscar:",
+                "zeroRecords": "Sin resultados encontrados",
+                "paginate": {
+                    "first": "Primero",
+                    "last": "Ultimo",
+                    "next": "Siguiente",
+                    "previous": "Anterior"
+                }
+            },
+    
+    
                 });
+    
+                $('#tbl thead th').each(function () {
+                var title = $(this).text();
+                $(this).html(title+' <input type="text" class="col-search-input" placeholder="Search ' + title + '" />');
+            });
+            
+            table.columns().every(function (i) {
+                var table = this;
+                $('input', this.header()).on('keyup change', function () {
+                    if (table.search() !== this.value) {
+    
+                        var column="";
+
+                        switch(i){
+                            case 0:
+                            column="identificador"
+                            break;
+                            case 1:
+                            column="municipio"
+                            break;
+                            case 2:
+                            column="estado"
+                            break;
+                            case 3:
+                            column="redes"
+                            break;
+                            case 4:
+                            column="agencia_sigla"
+                            break;
+                        }
+    
+                            texto="+and+"+column+"+like+upper%28%27%25"+this.value+"%25%27%29"
+    
+                            var uri='https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer/0/query?where=es_activa_gnss=1'+texto+'&outFields=identificador%2Cmunicipio%2Cestado%2Credes%2Cagencia_sigla&returnGeometry=false&f=pjson';
+    
+                            table.ajax.url(uri).load();
+    
+                           table.search(this.value).draw();
+                           console.log(uri)
+                    }
+                });
+            });
+    
+                
             })
-  </script>
+    
+              
+    </script>
+
+
+
 </body>
 </html>
