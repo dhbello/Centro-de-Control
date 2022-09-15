@@ -11,6 +11,14 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
     <link href="../../css/style.css" rel="stylesheet">
     <link href="../../css/maestra.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
+     
+
+
 </head>
 <body class="main redes geodesicaMaestra redActivaPagina">
     <nav class="navbarigac origen">        
@@ -25,7 +33,7 @@
                 </div>
                 <div class="col-md-12">
                     <div class="texto-portada">
-                        <h1>Nombre de la red y el ID</h1>
+                        <h1 id="titulo">Nombre de la red y el ID</h1>
                         <p>
                             (Marco Geoc&eacute;ntrico Nacional de Estaciones Continuas) (GNSS: &ldquo;Global Navigation Satellite System&rdquo; - Sistema Global de Navegaci&oacute;n Satelital)
                         </p>
@@ -33,14 +41,14 @@
                 </div>
                 <div class="col-md-12 position-absolute identifiers">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-6" id="sigla">
                             <p>
-                                Nombre (Identificaci&oacute;n seg&uacute;n IGS SIRGAS): LIPA
+                                
                             </p>
                         </div>
                         <div class="col-md-6">
                             <p>
-                                Identificaci&oacute;n seg&uacute;n el ITRF: 44470M001
+                                Identificaci&oacute;n seg&uacute;n el ITRF:
                             </p>
                         </div>
                     </div>
@@ -55,19 +63,19 @@
                     <div class="title">
                         Informaci&oacute;n de ubicaci&oacute;n
                     </div>
-                    <div class="item">
-                        Departamento:  Arauca
+                    <div class="item" id="departamento">
+                        Departamento:
                     </div>
-                    <div class="item">
+                    <div class="item" id="municipio">
                         Municipio:  Arauquita
                     </div>
-                    <div class="item">
+                    <div class="item" id="barrio">
                         Barrio o Sector: Caserio Selvas de Lipa
                     </div>
-                    <div class="item">
+                    <div class="item" id="localizacion">
                         Localizaci&oacute;n: Base Militar LIPA
                     </div>
-                    <div class="item">
+                    <div class="item" id="divipola">
                         C&oacute;digo Divipola (Divisi&oacute;n Pol&iacute;tico-Administrativa): 81065
                     </div>
                 </section>
@@ -76,19 +84,19 @@
                     <div class="title">
                         Informaci&oacute;n de instalaci&oacute;n
                     </div>
-                    <div class="item">
+                    <div class="item" id="tipo_materializacion">
                         Tipo de Monumento:  Piso
                     </div>
-                    <div class="item">
+                    <div class="item" id="fecha_materializacion">
                         Fecha Monumentaci&oacute;n: 3/22/2021
                     </div>
-                    <div class="item">
+                    <div class="item" id="altura_referencia_antena">
                         Altura Instrumental (m): 0,0350
                     </div>
-                    <div class="item">
+                    <div class="item" id="lugar_materializacion">
                         Localizaci&oacute;n: Base Militar LIPA
                     </div>
-                    <div class="item">
+                    <div class="item" id="divipola">
                         C&oacute;digo Divipola (Divisi&oacute;n Pol&iacute;tico-Administrativa): 81065
                     </div>
                 </section>
@@ -111,13 +119,13 @@
                                 <td>
                                     Antena GNSS:
                                 </td>
-                                <td>
+                                <td id="antena_tipo">
                                     TRM159900.00 SCIS
                                 </td>
-                                <td>
+                                <td id="antena_marca">
                                     TRIMBLE
                                 </td>
-                                <td>
+                                <td id="antena_serial">
                                     5942338804
                                 </td>
                             </tr>
@@ -125,13 +133,13 @@
                                 <td>
                                     Receptor GNSS:
                                 </td>
-                                <td>
+                                <td id="receptor_modelo">
                                     ALLOY
                                 </td>
-                                <td>
+                                <td id="receptor_marca">
                                     TRIMBLE
                                 </td>
-                                <td>
+                                <td id="receptor_serial">
                                     5947R40164
                                 </td>
                             </tr>
@@ -159,27 +167,27 @@
                         </tbody>
                         <tbody>
                             <tr>
-                                <td>
-                                    Latitud: 06°47'16.34708"N
+                                <td id="latitud">
+                                    
                                 </td>
-                                <td>
-                                    X(m): 2059459.3182
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Altura:129.443 (m)
-                                </td>
-                                <td>
-                                    Z(m): 748860.0853
+                                <td id="x">
+                                    
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    Longitud: 71°01'30.98792"W
+                                <td id="altura">
+                                   
                                 </td>
-                                <td>
-                                    Y(m): -5989686.0796
+                                <td id="z">
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="longitud">
+                                   
+                                </td>
+                                <td id="y">
+                                    
                                 </td>
                             </tr>
                         </tbody>
@@ -223,22 +231,36 @@
                         Ubicaci&oacute;n en Planta de la Estaci&oacute;n
                     </div>
                     <div class="item">
-                        <img src="/images/images-redes/carouselRedactiva/Recurso 8.png" alt="">
+                        
+                        <section id="slideshow">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="slick slideshow">
+                                            <div><img id="img1" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="" /></div>
+                                            <div><img id="img2" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="" /></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+
+
                     </div>
                 </section>
                 <section class="section infoUbicacion pt-5">
                     <div class="title">
                         Contacto
                     </div>
-                    <div class="item">
-                        Oficina: Instituto Geogr&aacute;fico Agust&iacute;n Codazzi / MAGNA-ECO
-                        Servicio Geologico Colombiano - GeoRED
+                    <div class="item" id="oficina">
+                       
                     </div>
-                    <div class="item">
-                        Direcci&oacute;n: Bogot&aacute; - Carrera 30 N&ordm; 48-51 (Colombia)
+                    <div class="item" id="direccion">
+                        
                     </div>
-                    <div class="item">
-                        Email de contacto: magnaeco@igac.gov.co – geored@sgc.gov.co
+                    <div class="item" id="agencia_correo_electronico">
+                  
                     </div>
                 </section>
                 <div class="divider"></div>
@@ -255,13 +277,120 @@
         
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
     <script src="/index.js"></script>
-    <script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
+    <script type="module">
+
+        import {queryFeatures}  from "https://cdn.skypack.dev/@esri/arcgis-rest-feature-service@4.0.3";
+
+         function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+        var estacion = getParameterByName('estacion');
+        var nombre = getParameterByName('nombre');
+
+        document.getElementById('titulo').innerHTML='Red '+nombre+' - '+estacion
+
+
+
         
-    </script>
+    /* consulta indicador 1 */
+    queryFeatures({
+        url: "https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer/0",
+        where: "identificador='"+estacion+"'",
+        returnGeometry:'false',
+        outFields:'*'
+        
+        })
+        .then((result)=>{
+            var obj= result.features[0].attributes;
+            console.log(obj)
+
+
+            document.getElementById('sigla').innerHTML="Nombre (Identificaci&oacute;n seg&uacute;n IGS SIRGAS): "+obj.identificador;
+
+            document.getElementById('departamento').innerHTML="Departamento: "+obj.departamento;
+            document.getElementById('municipio').innerHTML="Municipio: "+obj.municipio;
+            document.getElementById('barrio').innerHTML="Barrio: "+obj.agencia_direccion;
+            document.getElementById('localizacion').innerHTML="Localizacion: "+obj.agencia_direccion;
+            document.getElementById('divipola').innerHTML="Código Divipola: "+obj.codigo_municipio;
+
+
+            document.getElementById('tipo_materializacion').innerHTML="Tipo de Monumento: "+obj.tipo_materializacion;
+            document.getElementById('fecha_materializacion').innerHTML="Fecha Monumentación: "+obj.fecha_materializacion;
+            document.getElementById('altura_referencia_antena').innerHTML="Altura Instrumental (m): "+obj.altura_referencia_antena;
+            document.getElementById('lugar_materializacion').innerHTML="Localización: "+obj.lugar_materializacion;
+            document.getElementById('divipola').innerHTML="Código Divipola: "+obj.codigo_municipio;
+
+
+            document.getElementById('antena_tipo').innerHTML=obj.antena_modelo;
+            document.getElementById('antena_marca').innerHTML=obj.antena_marca;
+            document.getElementById('antena_serial').innerHTML=obj.antena_serial;
+
+            document.getElementById('receptor_modelo').innerHTML=obj.receptor_modelo;
+            document.getElementById('receptor_marca').innerHTML=obj.receptor_marca;
+            document.getElementById('receptor_serial').innerHTML=obj.receptor_serial;
+
+            document.getElementById('oficina').innerHTML="Oficina: "+obj.agencia_nombre;
+            document.getElementById('direccion').innerHTML="Dirección: "+obj.agencia_direccion;
+            document.getElementById('agencia_correo_electronico').innerHTML="Email de contacto: "+obj.agencia_correo_electronico;
+
+
+            document.getElementById('latitud').innerHTML="Latitud: "+obj.latitud;
+            document.getElementById('altura').innerHTML="Altura: "+obj.altura_elipsoidal;
+            document.getElementById('longitud').innerHTML="Longitud: "+obj.longitud;
+
+            document.getElementById('x').innerHTML="X(m): "+obj.x;
+            document.getElementById('z').innerHTML="Z(m): "+obj.z;
+            document.getElementById('y').innerHTML="	Y(m): "+obj.y;
+
+            document.getElementById('img1').src=obj.foto_antena;
+            document.getElementById('img2').src=obj.foto_estacion;
+
+
+
+        })
+</script>
+
+<script>
+    $(document).ready(function () {
+        $(".slideshow ").slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3500,
+            arrows: true,
+            dots: true,
+            pauseOnHover: false,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2,
+                    },
+                },
+                {
+                    breakpoint: 520,
+                    settings: {
+                        slidesToShow: 1,
+                    },
+                },
+            ],
+        });
+    });
+</script>
+
 </body>
 </html>
