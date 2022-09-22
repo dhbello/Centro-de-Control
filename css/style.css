@@ -22,6 +22,17 @@ input::placeholder, select {
   font-size: 14px;  
 }
 
+.select2-container{
+    display: block !important;
+    width:100% !important;
+}
+#muni,#depto,#muni1,#depto1{
+    width: 100%;
+}
+.apexcharts-tooltip {
+    background: #f3f3f3;
+    color: #333333;
+  }
 .nav-underline {
     position: sticky;
     top: 60px;
@@ -57,6 +68,7 @@ input::placeholder, select {
 .containercolor.typec {
     background: #1a2e35;
     position: relative;
+    color:#fff;
 }
 
 .containercolor.typec::before {
@@ -702,6 +714,15 @@ table.dataTable thead th, table.dataTable tbody td {
     white-space: nowrap;
     text-align: center;
     box-shadow: none !important;
+}
+
+#tbl_filter{
+    display:none;
+}
+#site-search{
+    margin-bottom: 10px;
+    width: 100%;
+    background-color: #e6e6e6;
 }
 
 .redTable2 #redTable_filter {
