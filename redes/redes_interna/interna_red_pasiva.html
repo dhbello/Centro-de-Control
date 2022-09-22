@@ -37,17 +37,17 @@
                     <h3 class="h3">
                         Nomenclatura Estandarizada 91263001
                     </h3>
-                    <div class="title">
-                        Departamento:  Amazonas
+                    <div class="title" id="departamento">
+                        
                     </div>
-                    <div class="item">
-                        Municipio:  El encanto
+                    <div class="item" id="municipio">
+                        
                     </div>
-                    <div class="item">
-                        Vereda:  El encanto
+                    <div class="item" id="barrio">
+                     
                     </div>
-                    <div class="item">
-                        Localización: Coliseo
+                    <div class="item" id="localizacion">
+                       
                     </div>
                 </section>
                 <div class="divider"></div>
@@ -55,21 +55,21 @@
                     <div class="title">
                         Coordenadas Navegadas MAGNA SIRGAS
                     </div>
-                    <div class="item">
-                        Latitud (φ): 01°44'33.95" S
+                    <div class="item" id="latitud">
+                        
                     </div>
-                    <div class="item">
-                        Longitud ( ג ): 73°12'30.22" W
+                    <div class="item" id="longitud">
+                    
                     </div>
-                    <div class="item">
-                        Altura Elipsoidal (Һ): 156.730
+                    <div class="item" id="altura">
+                        
                     </div>
                 </section>           
             </div>
             <div class="col-md-6">
                 <section class="section infoUbicacion pb-0">
                     <h3 class="h3">
-                        Nomenclatura Placa 91263001
+                        Nomenclatura Placa 
                     </h3>
                     <div class="row">
                         <div class="col-md-6">
@@ -113,26 +113,26 @@
                     <div class="title">
                         Monumentaci&oacute;n
                     </div>
-                    <div class="item">
-                        Fecha:  2022-02-04
+                    <div class="item" id="fecha_materializacion">
+                       
+                    </div>
+                    <div class="item" id="tipo_materializacion">
+                      
+                    </div>
+                    <div class="item" >
+                        Monumentado por: 
                     </div>
                     <div class="item">
-                        Tipo:  MOJON
+                        Estado del punto:
                     </div>
                     <div class="item">
-                        Monumentado por: LOBSANG ALFONSO TABARES
+                        Ancho(m): 
                     </div>
                     <div class="item">
-                        Estado del punto: Bueno
+                        Largo(m):
                     </div>
                     <div class="item">
-                        Ancho(m):  0.3
-                    </div>
-                    <div class="item">
-                        Largo(m): 0.3
-                    </div>
-                    <div class="item">
-                        Altura(m): 0.15
+                        Altura(m):
                     </div>
                 </section>         
             </div>
@@ -260,13 +260,69 @@
         
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
     <script src="/index.js"></script>
+
+
     <script>
         
+         function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+        var estacion = getParameterByName('estacion');
+        var nombre = getParameterByName('nombre');
+
+
+        function check(data){
+            if (data == null){
+            return "Sin información"
+        }else{
+            return data
+
+        }
+        }
+
+        $.ajax({
+      type: 'get',
+      url: url_backend+"/json_detalle_activa",
+      data: {
+        "id": estacion
+      },
+      dataType: "json",
+      success: function (result) {
+        
+        console.log(result)
+
+        var obj=result[0];
+        
+        
+
+            document.getElementById('departamento').innerHTML="Departamento: "+check(obj.departamento);
+            document.getElementById('municipio').innerHTML="Municipio: "+check(obj.municipio);
+            document.getElementById('barrio').innerHTML="Barrio: "+check(obj.agencia_direccion);
+            document.getElementById('localizacion').innerHTML="Localizacion: "+check(obj.agencia_direccion);
+
+            document.getElementById('latitud').innerHTML="Latitud (φ): "+check(obj.latitud);
+            document.getElementById('altura').innerHTML="Altura Elipsoidal (Һ): "+check(obj.altura_elipsoidal);
+            document.getElementById('longitud').innerHTML="Longitud (ג): "+check(obj.longitud);
+            document.getElementById('tipo_materializacion').innerHTML="Tipo de Monumento: "+check(obj.tipo_materializacion);
+            document.getElementById('fecha_materializacion').innerHTML="Fecha Monumentación: "+check(obj.fecha_materializacion);
+      }
+    });
+
+
+
     </script>
 </body>
 </html>

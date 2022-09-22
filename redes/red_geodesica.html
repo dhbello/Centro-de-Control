@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,6 +15,7 @@
     <link href="../css/style.css" rel="stylesheet">
     <link href="../css/maestra.css" rel="stylesheet">
 </head>
+
 <body class="main redes geodesicaMaestra">
     <nav class="navbarigac origen">
     </nav>
@@ -59,22 +61,25 @@
         </section>
 
         <div class="typeB">
-            <div class="container containerIgac">        
+            <div class="container containerIgac">
                 <section class="section">
                     <div class="m-auto w-100">
-                        <table id="tbl" class="display">
+
+                        <table id="tbl1" class="display">
                             <thead>
                                 <tr>
                                     <th>ID</th>
                                     <th>Contribuyente</th>
-                                    <th>Ubicación</th>
+                                    <th>Red</th>
                                     <th>Estado</th>
                                     <th></th>
-                                    <th></th>
+
                                 </tr>
                             </thead>
                         </table>
-                        
+
+
+
                     </div>
                 </section>
             </div>
@@ -90,19 +95,21 @@
                 </div>
                 <div class="row card-no-border">
                     <div class="col-md-4 text-center mb-5">
-                        <img src="/images/images-redes/bullets-grafico1.svg" alt="">           
+                        <img src="/images/images-redes/bullets-grafico1.svg" alt="">
                         <h2 class="fw-normal">Consulta y edita <br> la ficha de los v&eacute;rtices</h2>
                     </div>
-                    <div class="col-md-4 text-center mb-5 modalIntEstaciones" data-toggle="modal" data-target="#modalIntEstaciones">
-                        <img src="/images/images-redes/bullets-grafico2.svg" alt="">              
+                    <div class="col-md-4 text-center mb-5 modalIntEstaciones" data-toggle="modal"
+                        data-target="#modalIntEstaciones">
+                        <img src="/images/images-redes/bullets-grafico2.svg" alt="">
                         <h2 class="fw-normal">Registra y postula <br> un nuevo v&eacute;rtice</h2>
                     </div>
-                    <div class="col-md-4 text-center mb-5 modalButtonReportar" data-toggle="modal" data-target="#reportarModal">
-                        <img src="/images/images-redes/bullets-grafico3.svg" alt="">             
-                        <h2 class="fw-normal">Reporta novedades <br> sobre los v&eacute;rtices</h2>                    
+                    <div class="col-md-4 text-center mb-5 modalButtonReportar" data-toggle="modal"
+                        data-target="#reportarModal">
+                        <img src="/images/images-redes/bullets-grafico3.svg" alt="">
+                        <h2 class="fw-normal">Reporta novedades <br> sobre los v&eacute;rtices</h2>
                     </div>
                 </div>
-            </section>            
+            </section>
         </div>
     </div>
     <div class="container containerIgac">
@@ -114,11 +121,13 @@
                             Los Mapas de la Red
                         </div>
                         <div class="resume">
-                            Encuentra y visualiza los mapas de los todos los puntos geodésicos existentes en Colombia: Redes Activas, Redes Pasivas, Red de Control Vertical de Precisión, Red Gravimétrica y la Red Geomagnética. Nuestras redes están ubicadas a lo largo y ancho del territorio.
+                            Encuentra y visualiza los mapas de los todos los puntos geodésicos existentes en Colombia:
+                            Redes Activas, Redes Pasivas, Red de Control Vertical de Precisión, Red Gravimétrica y la
+                            Red Geomagnética. Nuestras redes están ubicadas a lo largo y ancho del territorio.
                         </div>
                     </div>
                     <div class="boton-faqs type2">
-                        <a href="#">Visitar Temática Geodesia</a>            
+                        <a href="#">Visitar Temática Geodesia</a>
                     </div>
                 </div>
                 <div class="col-md-8">
@@ -253,7 +262,12 @@
                             <h2>Sobre la Red</h2>
                             <div class="block">
                                 <h2>¿Qué es?</h2>
-                                <p>El conjunto de v&eacute;rtices geod&eacute;sicos definidos y materializados estrat&eacute;gicamente en campo con el fin de representar el marco de referencia terrestre y generar informaci&oacute;n GNSS de alta precisi&oacute;n que represente la realidad del terreno permite registrar movimientos milim&eacute;tricos en la tierra, detectando cambios muy peque&ntilde;os en periodos de tiempo prolongados.</p>
+                                <p>El conjunto de v&eacute;rtices geod&eacute;sicos definidos y materializados
+                                    estrat&eacute;gicamente en campo con el fin de representar el marco de referencia
+                                    terrestre y generar informaci&oacute;n GNSS de alta precisi&oacute;n que represente
+                                    la realidad del terreno permite registrar movimientos milim&eacute;tricos en la
+                                    tierra, detectando cambios muy peque&ntilde;os en periodos de tiempo prolongados.
+                                </p>
                                 <h2>¿Por qué es importante?</h2>
                                 <p>Provee informaci&oacute;n precisa que sirve como insumo para la generaci&oacute;n de
                                     cartograf&iacute;a en diferentes &aacute;reas de estudio. Por ejemplo: Catastro
@@ -296,11 +310,12 @@
     <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
     <script src="/index.js"></script>
     <script>
-        $(function() {
-            $('a[href*="#"]:not([href="#"])').click(function() {
-                if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        $(function () {
+            $('a[href*="#"]:not([href="#"])').click(function () {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location
+                    .hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
                     if (target.length) {
                         $('html, body').animate({
                             scrollTop: target.offset().top - 80
@@ -396,72 +411,35 @@
     </script>
 
 
-<script type="module">
+    <script type="module">
 
-    var table;
-    
-    import {queryFeatures}  from "https://cdn.skypack.dev/@esri/arcgis-rest-feature-service@4.0.3";
-        /* consulta indicador 1 */
-        queryFeatures({
-            url: "https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer/0",
-            where: "es_activa_gnss+es_pasiva_gnss>0",
-            returnGeometry:'false',
-            outStatistics:[{
-                    statisticType: "count",
-                    onStatisticField: "es_activa_gnss",
-                    outStatisticFieldName: "out"
-                }
-                ]
-            })
-            .then((result)=>{
-                var draw= result.features[0].attributes.out;
-    
-                let texto='';
-    
-                var uri='https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer/0/query?where=es_activa_gnss%2Bes_pasiva_gnss>0'+texto+'&outFields=t_id%2Cidentificador%2Cagencia_sigla%2Credes%2Cestado&returnGeometry=false&f=pjson';
-                console.log(uri)
-    
-            table= $('#tbl').DataTable({
-                    orderCellsTop: true,
-                    serverSide: true,
-                    fixedHeader: true,
-                   searching: false,
-                    ajax: {
-                        url: uri,
-                        data: function (d) {
-                            d.resultRecordCount = d.length;
-                            d.resultOffset=d.start;
-                        },
-                        "dataSrc": function ( json ) {
-                            console.log(json)
-                            var obj=json.features;
-                            var arr1=[]
-                            Object.keys(obj).forEach(function(key, index) {
-                                obj[key].attributes["id"] = index;
-                                obj[key].attributes["ir"] = '/redes/redes_interna/rinex.html?estacion=' + obj[key].attributes.identificador+'&id='+ obj[key].attributes.t_id;
-                                
-                                var item=[]
-    
-                                Object.keys(obj[key].attributes).forEach(function(key2, index) {
-                                    item.push(obj[key].attributes[key2])   
-                                })
-                            
-                                arr1.push(obj[key].attributes)
-                            });
-                           
-                            json.recordsTotal = draw
-                            json.recordsFiltered = draw
-                            json.data=arr1;
-     
-                            return json.data;
-                            },
-                    },
-                    columns: [
+
+        $('#tbl1').DataTable({
+        ajax: {
+            url:url_backend+'/json',
+            "dataSrc": function ( json ) {
+                
+                var obj=json;
+               
+                var arr1=[]
+
+                obj.map(function(i,e){
+                    i["ir"]='/redes/redes_interna/rinex.html?estacion=' + i["identificador"]+'&id='+ i["t_id"];
+
+                    arr1.push(i)
+                })
+
+                json.data=arr1;
+
+                return json.data;
+            },
+        },
+        columns: [
                         {
                             data: 'identificador'
                         },
                         {
-                            data: 'agencia_sigla'
+                            data: 'sigla'
                         },
                         {
                             data: 'redes'
@@ -482,19 +460,11 @@
                         {
                             data: 'ir',
                             render: function (dataField) {
-                                return '<a href="">Más</a>';
-                            }
-                        },
-                        {
-                            data: 'ir',
-                            render: function (dataField) {
                                 return '<a href="'+dataField+'">Archivo Rinex</a>';
                             }
                         }
                     ],
-    
-    
-            language: {
+                    language: {
                 "decimal": "",
                 "emptyTable": "No hay información",
                 "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
@@ -514,59 +484,18 @@
                     "previous": "Anterior"
                 }
             },
-    
-    
-                });
-    
-                $('#tbl thead th').each(function () {
-                var title = $(this).text();
-                $(this).html(title+' <input type="text" class="col-search-input" placeholder="Search ' + title + '" />');
-            });
-            
-            table.columns().every(function (i) {
-                var table = this;
-                $('input', this.header()).on('keyup change', function () {
-                    if (table.search() !== this.value) {
-    
-                        var column="";
+    });
 
-                        switch(i){
-                            case 0:
-                            column="identificador"
-                            break;
-                            case 1:
-                            column="municipio"
-                            break;
-                            case 2:
-                            column="estado"
-                            break;
-                            case 3:
-                            column="redes"
-                            break;
-                            case 4:
-                            column="agencia_sigla"
-                            break;
-                        }
-    
-                            texto="+and+"+column+"+like+upper%28%27%25"+this.value+"%25%27%29"
-    
-                            var uri='https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer/0/query?where=es_activa_gnss=1'+texto+'&outFields=identificador%2Cmunicipio%2Cestado%2Credes%2Cagencia_sigla&returnGeometry=false&f=pjson';
-    
-                            table.ajax.url(uri).load();
-    
-                           table.search(this.value).draw();
-                           console.log(uri)
-                    }
-                });
-            });
-    
-                
-            })
-    
+
+
+
+
+
               
     </script>
 
 
 
 </body>
+
 </html>
