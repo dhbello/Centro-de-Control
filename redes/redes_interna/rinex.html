@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,21 +8,25 @@
     <title>Centro de Control Geod&eacute;sico Nacional</title>
     <link rel="icon" href="images-home/logos/favicon.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
     <link href="../../css/style.css" rel="stylesheet">
     <link href="../../css/maestra.css" rel="stylesheet">
 </head>
+
 <body class="main redes geodesicaMaestra">
-    <nav class="navbarigac origen">        
+    <nav class="navbarigac origen">
     </nav>
-    <nav class="nav nav-underline">        
+    <nav class="nav nav-underline">
     </nav>
     <section class="portada-igac portadaSub origen">
         <div class="container block-igac">
             <div class="d-flex contenido-portada">
-                <a class="get-back" href="../red_geodesica.html"><img src="/images/iconos/arrow-back.svg" alt=""> Volver a la Red Geodésica</a>
+                <a class="get-back" href="../red_geodesica.html"><img src="/images/iconos/arrow-back.svg" alt=""> Volver
+                    a la Red Geodésica</a>
                 <div class="texto-portada">
                     <h1 id="titulo"></h1>
                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh</p>
@@ -32,25 +37,23 @@
 
 
     <div class="typeB">
-        <div class="container containerIgac">        
+        <div class="container containerIgac">
             <section class="section">
                 <div class="m-auto w-100">
-                    <table id="tbl" class="display">
+                    <table id="tbl1" class="display">
                         <thead>
                             <tr>
+                                <th>Nombre</th>
+                                <th>Versión</th>
+                                <th>Tipo</th>
+                                <th>Tasa de muestreo</th>
+                                <th>Año</th>
+                                <th>Día del año</th>
+                                <th>Semana GPS</th>
                                 <th>url</th>
-                                <th>version</th>        
-                                <th>tipo</th> 
-                                <th>tasa_muestreo</th>
-                                <th>anio</th>
-                                <th>dia_del_anio</th>
-                                <th>semana_gps</th>  
-                                <th>url</th>        
-           
                             </tr>
                         </thead>
                     </table>
-                    
                 </div>
             </section>
         </div>
@@ -59,145 +62,77 @@
 
 
     <footer class="footer origen">
-        
+
     </footer>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
 
     <script src="../../index.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
+
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
 
     <script>
         $('.redTable_filter').wrapAll('<div class="childjbdjwbd" />');
 
-    function getParameterByName(name, url) {
-        if (!url) url = window.location.href;
-        name = name.replace(/[\[\]]/g, '\\$&');
-        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-            results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, ' '));
-    }
-    var estacion = getParameterByName('estacion');
-    var id_estacion = getParameterByName('id');
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+        var estacion = getParameterByName('estacion');
+        var id_estacion = getParameterByName('id');
 
-    document.getElementById('titulo').innerHTML='Rinex de la estación: '+estacion;
-
+        document.getElementById('titulo').innerHTML = 'Rinex de la estación: ' + estacion;
     </script>
 
-<script type="module">
 
-    var table;
-    
-    import {queryFeatures}  from "https://cdn.skypack.dev/@esri/arcgis-rest-feature-service@4.0.3";
-        /* consulta indicador 1 */
-        queryFeatures({
-            url: "https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer/1",
-            where: "estacion = "+id_estacion,
-            returnGeometry:'false',
-            outStatistics:[{
-                    statisticType: "count",
-                    onStatisticField: "estacion",
-                    outStatisticFieldName: "out"
-                }
-                ]
-            })
-            .then((result)=>{
-                var draw= result.features[0].attributes.out;
-    
-                let texto='';
-    
-                var uri='https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer/1/query?where=estacion='+id_estacion+'&outFields=*&returnGeometry=false&f=pjson';
-    
-             table= $('#tbl').DataTable({
-                    orderCellsTop: true,
-                    serverSide: true,
-                    fixedHeader: true,
-                   searching: false,
-                    ajax: {
-                        url: uri,
-                        data: function (d) {
-                            d.resultRecordCount = d.length;
-                            d.resultOffset=d.start;
-                        },
-                        "dataSrc": function ( json ) {
-                            console.log(json)
-                            var obj=json.features;
-                            var arr1=[]
-                            Object.keys(obj).forEach(function(key, index) {
-                                obj[key].attributes["id"] = index;
-                                
-                                obj[key].attributes["version"]
-
-                                switch(obj[key].attributes["version"]){
-                                    case 1:
-                                    obj[key].attributes["version"]='Rinex versión 2.11'
-                                    break;
-                                    case 2:
-                                    obj[key].attributes["version"]='Rinex versión 3.0'
-                                    break;
-                                }
-                                switch(obj[key].attributes["tipo"]){
-                                    case 1:
-                                    obj[key].attributes["tipo"]='Observado'
-                                    break;
-                                    case 2:
-                                    obj[key].attributes["tipo"]='Navegado GPS'
-                                    break;
-                                    case 3:
-                                    obj[key].attributes["tipo"]='Navegado Glonass'
-                                    break;
-                                    case 4:
-                                    obj[key].attributes["tipo"]='Crudo'
-                                    break;
-                                }
+    <script type="module">
 
 
-                                var item=[]
-    
-                                Object.keys(obj[key].attributes).forEach(function(key2, index) {
-                                    item.push(obj[key].attributes[key2])   
-                                })
-                            
-                                arr1.push(obj[key].attributes)
-                            });
-                           
-                            json.recordsTotal = draw
-                            json.recordsFiltered = draw
-                            json.data=arr1;
-     
-                            return json.data;
-                            },
-                    },
-                    columns: [
+        $('#tbl1').DataTable({
+    ajax: {
+        url:url_backend+'/json_rinex',
+        data:{"id":id_estacion},
+        "dataSrc": function ( json ) {
+
+            return json;
+        },
+    },
+ 
+    columns: [
+
                         {
-                            data: 'url',
-                            render: function (dataField) {
-                                return '<a href="rinex_detalle.html"><img class="img-folder" src="/images/iconos/folder.svg" alt=""></a>';
-                            }
+                            data: 'nombre'
                         },
                         {
-                            data: 'version'
+                            data: 'version_rinex'
                         },
                         {
-                            data: 'tipo'
+                            data: 'tipo_rinex'
                         },
                         {
                             data: 'tasa_muestreo'
                         },
                         {
-                            data: 'anio'
+                            data: 'año'
                         },
                         {
-                            data: 'dia_del_anio'
+                            data: 'dia_del_año'
                         },
                         {
                             data: 'semana_gps'
@@ -210,94 +145,35 @@
                         },
                         
                     ],
-    
-
-    
-                    language: {
-                        "decimal": "",
-                        "emptyTable": "No hay información",
-                        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
-                        "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
-                        "infoFiltered": "(Filtrado de _MAX_ total entradas)",
-                        "infoPostFix": "",
-                        "thousands": ",",
-                        "lengthMenu": "Mostrar _MENU_ Entradas",
-                        "loadingRecords": "Cargando...",
-                        "processing": "Procesando...",
-                        "search": "Buscar:",
-                        "zeroRecords": "Sin resultados encontrados",
-                        "paginate": {
-                            "first": "Primero",
-                            "last": "Ultimo",
-                            "next": "Siguiente",
-                            "previous": "Anterior"
-                        }
-                    },
-    
-    
-                });
-    
-                $('#tbl thead th').each(function () {
-                var title = $(this).text();
-                $(this).html(title+' <input type="text" class="col-search-input" placeholder="Search ' + title + '" />');
-            });
-            
-            table.columns().every(function (i) {
-                var table = this;
-                $('input', this.header()).on('keyup change', function () {
-                    if (table.search() !== this.value) {
-    
-                        var column="";
-
-                        switch(i){
-                            case 0:
-                            column="url"
-                            break;
-                            case 1:
-                            column="version"
-                            break;
-                            case 2:
-                            column="tipo"
-                            break;
-                            case 3:
-                            column="tasa_muestreo"
-                            break;
-                            case 4:
-                            column="anio"
-                            break;
-                            case 5:
-                            column="dia_del_anio"
-                            break;
-                            case 6:
-                            column="semana_gps"
-                            break;
-                            case 7:
-                            column="url"
-                            break;
-
-                        }
-    
-                            texto="%20and%20"+column+"="+this.value
-    
-                            var uri='https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer/1/query?where=estacion='+id_estacion+texto+'&outFields=*&returnGeometry=false&f=pjson';
-    
-                            table.ajax.url(uri).load();
-    
-                           table.search(this.value).draw();
-                           console.log(uri)
-                    }
-                });
-            });
-    
-                
-            })
-    
-              
-    </script>
 
 
+                language: {
+            "decimal": "",
+            "emptyTable": "No hay información",
+            "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+            "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+            "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+            "infoPostFix": "",
+            "thousands": ",",
+            "lengthMenu": "Mostrar _MENU_ Entradas",
+            "loadingRecords": "Cargando...",
+            "processing": "Procesando...",
+            "search": "Buscar:",
+            "zeroRecords": "Sin resultados encontrados",
+            "paginate": {
+                "first": "Primero",
+                "last": "Ultimo",
+                "next": "Siguiente",
+                "previous": "Anterior"
+            }
+        },
+});
+
+          
+</script>
 
 
 
 </body>
+
 </html>
