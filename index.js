@@ -1,4 +1,4 @@
-var url_backend="http://redgeodesica-cg.igac.gov.co";
+var url_backend="https://redgeodesica-cg.igac.gov.co";
 
 if (document.querySelector(".navbarigac")) {
     const navbarigac = document.querySelector(".navbarigac");
@@ -251,7 +251,7 @@ if (document.querySelector(".modalButtonReportar")) {
                                 <div class="col-md-6">
                                     <label for="inputVertice">Identificación del vértice o nomenclatura</label>
                                     <label class='type2' id='inputCoordinateLatitudLabel' for='inputCoordinateLatitud'>Ingrese identificaci&oacute;n del v&eacute;rtice o nomenclatura (siempre y cuando sea legible)&rdquo;: Campo de texto en el que se ingresa el n&uacute;mero o identificaci&oacute;n (Nomenclatura) de la placa, siempre que sea legible.</label>
-                                    <input type="text" class="form-control" id="inputVertice" placeholder="Identificación del vertice" >
+                                    <input type="text" class="form-control" id="inputVertice" placeholder="Identificación del vertice" required>
                                 </div>
 
                                 </div>
@@ -291,7 +291,7 @@ if (document.querySelector(".modalButtonReportar")) {
 
                             <input type="file"
                                    name="streamfile"
-                                   accept="image/png, image/jpeg">
+                                   accept="image/png, image/jpeg" class="form-control" required>
 
                             </div>
                         </div>
@@ -336,7 +336,7 @@ if (document.querySelector(".modalButtonReportar")) {
 
                                 <div class="col-md-6">
                                     <label for="inputEmpresa">Empresa</label>
-                                    <input type="text" class="form-control" id="inputEmpresa" placeholder="Empresa">
+                                    <input type="text" class="form-control" id="inputEmpresa" placeholder="Empresa" required>
                                     <div class="invalid-feedback">
                                         Ingrese un nombre de empresa
                                     </div>
@@ -348,7 +348,7 @@ if (document.querySelector(".modalButtonReportar")) {
 
                                 <div class="col-md-6">
                                     <label for="inputDireccion">Dirección</label>
-                                    <input type="text" class="form-control" id="inputDireccion" placeholder="Dirección">
+                                    <input type="text" class="form-control" id="inputDireccion" placeholder="Dirección" required>
                                     <div class="invalid-feedback">
                                         Ingrese una dirección
                                     </div>
@@ -2308,7 +2308,7 @@ if (document.querySelector(".modalEstaciones")) {
                         <div class='sumary modalSection'>
                             <div class='content'>
                                 <div class='form-title mainTitle'>
-                                    <h2>Red Pasiva y de Nivelaci&oacute;n</h2>
+                                    <h2>Registrar una nueva estación</h2>
                                 </div>
                                 <div class='row form-row'>
                                     <div class='form-title col-12'>
@@ -2430,24 +2430,24 @@ if (document.querySelector(".modalEstaciones")) {
                                     <tbody>
                                         <tr>
                                             <td>1</td>
-                                            <td><input style="width: 100%;" type="text" placeholder="Nombre o identificador de la estación" name="Nombre o identificador de la estación"></td>
-                                            <td><input style="width: 100%;" type="text" placeholder="Fecha de monumentacion de la estacion" name="Fecha de monumentacion de la estacion"></td>
-                                            <td><input style="width: 100%;" type="text" placeholder="Edad en años" name="Edad en años"></td>
-                                            <td><input style="width: 100%;" type="text" placeholder="Entidad que materializó" name="Entidad que materializó"></td>
-                                            <td><input style="width: 100%;" type="text" placeholder="Departamento" name="Departamento"></td>
-                                            <td><input style="width: 100%;" type="text" placeholder="Municipio" name="Municipio"></td>
-                                            <td><input style="width: 100%;" type="text" placeholder="Latitud" name="Latitud"></td>
-                                            <td><input style="width: 100%;" type="text" placeholder="Longitud" name="Longitud"></td>
-                                            <td><input style="width: 100%;" type="text" placeholder="Sitio donde se ubica (edificio, predio o lugar)" name="Sitio donde se ubica (edificio, predio o lugar)"></td>
-                                            <td><input style="width: 100%;" type="text" placeholder="Tipo de monumentación" name="Tipo de monumentación"></td>
-                                            <td><input style="width: 100%;" type="text" placeholder="Altura instrumental" name="Altura instrumental"></td>
-                                            <td><input style="width: 100%;" type="text" placeholder="Tipo de antena" name="Tipo de antena"></td>
-                                            <td><input style="width: 100%;" type="text" placeholder="Serial de antena" name="Serial de antena"></td>
-                                            <td><input style="width: 100%;" type="text" placeholder="Tipo de receptor" name="Tipo de receptor"></td>
-                                            <td><input style="width: 100%;" type="text" placeholder="Serial de receptor" name="Serial de receptor"></td>
-                                            <td><input style="width: 100%;" type="text" placeholder="Estado actual de la estación" name="Estado actual de la estación"></td>
+                                            <td><input style="width: 100%;" type="text" placeholder="Nombre o identificador de la estación" class="form-control" name="Nombre o identificador de la estación" required></td>
+                                            <td><input style="width: 100%;" type="text" placeholder="Fecha de monumentacion de la estacion" name="Fecha de monumentacion de la estacion" class="form-control" required></td>
+                                            <td><input style="width: 100%;" type="text" placeholder="Edad en años" name="Edad en años" class="form-control" required></td>
+                                            <td><input style="width: 100%;" type="text" placeholder="Entidad que materializó" name="Entidad que materializó" class="form-control" required></td>
+                                            <td><input style="width: 100%;" type="text" placeholder="Departamento" name="Departamento" class="form-control" required></td>
+                                            <td><input style="width: 100%;" type="text" placeholder="Municipio" name="Municipio" class="form-control" required></td>
+                                            <td><input style="width: 100%;" type="text" placeholder="Latitud" name="Latitud" class="form-control" required></td>
+                                            <td><input style="width: 100%;" type="text" placeholder="Longitud" name="Longitud" class="form-control" required></td>
+                                            <td><input style="width: 100%;" type="text" placeholder="Sitio donde se ubica (edificio, predio o lugar)" name="Sitio donde se ubica (edificio, predio o lugar)" class="form-control" required></td>
+                                            <td><input style="width: 100%;" type="text" placeholder="Tipo de monumentación" name="Tipo de monumentación" class="form-control" required></td>
+                                            <td><input style="width: 100%;" type="text" placeholder="Altura instrumental" name="Altura instrumental" class="form-control" required></td>
+                                            <td><input style="width: 100%;" type="text" placeholder="Tipo de antena" name="Tipo de antena" class="form-control" required></td>
+                                            <td><input style="width: 100%;" type="text" placeholder="Serial de antena" name="Serial de antena" class="form-control" required></td>
+                                            <td><input style="width: 100%;" type="text" placeholder="Tipo de receptor" name="Tipo de receptor" class="form-control" required></td>
+                                            <td><input style="width: 100%;" type="text" placeholder="Serial de receptor" name="Serial de receptor" class="form-control" required></td>
+                                            <td><input style="width: 100%;" type="text" placeholder="Estado actual de la estación" name="Estado actual de la estación" class="form-control" required></td>
                                             <td>
-                                                <select style="width: 100%; height: 25px;" name="Sistema de telecomuicación">
+                                                <select style="width: 100%; height: 25px;" name="Sistema de telecomuicación" class="form-control" required>
                                                     <option value="value1">Celular</option>
                                                     <option value="value2">Satelital</option>
                                                     <option value="value3">Radio enlace</option>
@@ -2455,7 +2455,7 @@ if (document.querySelector(".modalEstaciones")) {
                                                 </select>
                                             </td>
                                             <td>
-                                                <select style="width: 100%; height: 25px;" name="IP">
+                                                <select style="width: 100%; height: 25px;" name="IP" class="form-control" required>
                                                     <option value="value1">Direccion estatica</option>
                                                     <option value="value2">Puerto TCP/IP</option>
                                                     <option value="value3">Puerto HTTP</option>
@@ -2464,7 +2464,7 @@ if (document.querySelector(".modalEstaciones")) {
                                                 </select>
                                             </td>
                                             <td>
-                                                <select style="width: 100%; height: 25px;" name="Sistema electrico">
+                                                <select style="width: 100%; height: 25px;" name="Sistema electrico" class="form-control" required>
                                                     <option value="value1">Fotovoltaico</option>
                                                     <option value="value2">Corriente electrica</option>
                                                     <option value="value3">Hibrido</option>
@@ -2473,24 +2473,24 @@ if (document.querySelector(".modalEstaciones")) {
                                         </tr>
                                         <tr>
                                             <td>2</td>
-                                            <td><input style="width: 100%;" type="text" placeholder="Nombre o identificador de la estación" name="Nombre o identificador de la estación"></td>
-                                            <td><input style="width: 100%;" type="text" placeholder="Fecha de monumentacion de la estacion" name="Fecha de monumentacion de la estacion"></td>
-                                            <td><input style="width: 100%;" type="text" placeholder="Edad en años" name="Edad en años"></td>
-                                            <td><input style="width: 100%;" type="text" placeholder="Entidad que materializó" name="Entidad que materializó"></td>
-                                            <td><input style="width: 100%;" type="text" placeholder="Departamento" name="Departamento"></td>
-                                            <td><input style="width: 100%;" type="text" placeholder="Municipio" name="Municipio"></td>
-                                            <td><input style="width: 100%;" type="text" placeholder="Latitud" name="Latitud"></td>
-                                            <td><input style="width: 100%;" type="text" placeholder="Longitud" name="Longitud"></td>
-                                            <td><input style="width: 100%;" type="text" placeholder="Sitio donde se ubica (edificio, predio o lugar)" name="Sitio donde se ubica (edificio, predio o lugar)"></td>
-                                            <td><input style="width: 100%;" type="text" placeholder="Tipo de monumentación" name="Tipo de monumentación"></td>
-                                            <td><input style="width: 100%;" type="text" placeholder="Altura instrumental" name="Altura instrumental"></td>
-                                            <td><input style="width: 100%;" type="text" placeholder="Tipo de antena" name="Tipo de antena"></td>
-                                            <td><input style="width: 100%;" type="text" placeholder="Serial de antena" name="Serial de antena"></td>
-                                            <td><input style="width: 100%;" type="text" placeholder="Tipo de receptor" name="Tipo de receptor"></td>
-                                            <td><input style="width: 100%;" type="text" placeholder="Serial de receptor" name="Serial de receptor"></td>
-                                            <td><input style="width: 100%;" type="text" placeholder="Estado actual de la estación" name="Estado actual de la estación"></td>
+                                            <td><input style="width: 100%;" type="text" placeholder="Nombre o identificador de la estación" name="Nombre o identificador de la estación" class="form-control" required></td>
+                                            <td><input style="width: 100%;" type="text" placeholder="Fecha de monumentacion de la estacion" name="Fecha de monumentacion de la estacion" class="form-control" required></td>
+                                            <td><input style="width: 100%;" type="text" placeholder="Edad en años" name="Edad en años" class="form-control" required></td>
+                                            <td><input style="width: 100%;" type="text" placeholder="Entidad que materializó" name="Entidad que materializó" class="form-control" required></td>
+                                            <td><input style="width: 100%;" type="text" placeholder="Departamento" name="Departamento" class="form-control" required></td>
+                                            <td><input style="width: 100%;" type="text" placeholder="Municipio" name="Municipio" class="form-control" required></td>
+                                            <td><input style="width: 100%;" type="text" placeholder="Latitud" name="Latitud" class="form-control" required></td>
+                                            <td><input style="width: 100%;" type="text" placeholder="Longitud" name="Longitud" class="form-control" required></td>
+                                            <td><input style="width: 100%;" type="text" placeholder="Sitio donde se ubica (edificio, predio o lugar)" name="Sitio donde se ubica (edificio, predio o lugar)" class="form-control" required></td>
+                                            <td><input style="width: 100%;" type="text" placeholder="Tipo de monumentación" name="Tipo de monumentación" class="form-control" required></td>
+                                            <td><input style="width: 100%;" type="text" placeholder="Altura instrumental" name="Altura instrumental" class="form-control" required></td>
+                                            <td><input style="width: 100%;" type="text" placeholder="Tipo de antena" name="Tipo de antena" class="form-control" required></td>
+                                            <td><input style="width: 100%;" type="text" placeholder="Serial de antena" name="Serial de antena" class="form-control" required></td>
+                                            <td><input style="width: 100%;" type="text" placeholder="Tipo de receptor" name="Tipo de receptor" class="form-control" required></td>
+                                            <td><input style="width: 100%;" type="text" placeholder="Serial de receptor" name="Serial de receptor" class="form-control" required></td>
+                                            <td><input style="width: 100%;" type="text" placeholder="Estado actual de la estación" name="Estado actual de la estación" class="form-control" required></td>
                                             <td>
-                                                <select style="width: 100%; height: 25px;" name="Sistema de telecomuicación">
+                                                <select style="width: 100%; height: 25px;" name="Sistema de telecomuicación" class="form-control" required>
                                                     <option value="value1">Celular</option>
                                                     <option value="value2">Satelital</option>
                                                     <option value="value3">Radio enlace</option>
@@ -2498,7 +2498,7 @@ if (document.querySelector(".modalEstaciones")) {
                                                 </select>
                                             </td>
                                             <td>
-                                                <select style="width: 100%; height: 25px;" name="IP">
+                                                <select style="width: 100%; height: 25px;" name="IP" class="form-control" required>
                                                     <option value="value1">Direccion estatica</option>
                                                     <option value="value2">Puerto TCP/IP</option>
                                                     <option value="value3">Puerto HTTP</option>
@@ -2507,7 +2507,7 @@ if (document.querySelector(".modalEstaciones")) {
                                                 </select>
                                             </td>
                                             <td>
-                                                <select style="width: 100%; height: 25px;" name="Sistema electrico">
+                                                <select style="width: 100%; height: 25px;" name="Sistema electrico" class="form-control" required>
                                                     <option value="value1">Fotovoltaico</option>
                                                     <option value="value2">Corriente electrica</option>
                                                     <option value="value3">Hibrido</option>

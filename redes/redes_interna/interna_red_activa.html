@@ -256,7 +256,9 @@
                             </div>
                         </section>
 
-
+                        <img id="img3"
+                        src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                        alt="" /></div>
 
                     </div>
                 </section>
@@ -325,6 +327,7 @@
     }
         var estacion = getParameterByName('estacion');
         var nombre = getParameterByName('nombre');
+        var id = getParameterByName('id');
 
         document.getElementById('titulo').innerHTML='Red '+nombre+' - '+estacion
 
@@ -339,43 +342,54 @@
       success: function (result) {
         
         var obj=result[0];
+
+
+        function check(data){
+            if (data == null){
+            return "Sin información"
+        }else{
+            return data
+
+        }
+        }
+
         
-        document.getElementById('sigla').innerHTML="Nombre (Identificaci&oacute;n seg&uacute;n IGS SIRGAS): "+obj.identificador;
+        document.getElementById('sigla').innerHTML="Nombre (Identificaci&oacute;n seg&uacute;n IGS SIRGAS): "+check(obj.identificador);
 
-            document.getElementById('departamento').innerHTML="Departamento: "+obj.departamento;
-            document.getElementById('municipio').innerHTML="Municipio: "+obj.municipio;
-            document.getElementById('barrio').innerHTML="Barrio: "+obj.agencia_direccion;
-            document.getElementById('localizacion').innerHTML="Localizacion: "+obj.agencia_direccion;
-            document.getElementById('divipola').innerHTML="Código Divipola: "+obj.codigo;
-
-
-            document.getElementById('tipo_materializacion').innerHTML="Tipo de Monumento: "+obj.tipo_materializacion;
-            document.getElementById('fecha_materializacion').innerHTML="Fecha Monumentación: "+obj.fecha_materializacion;
-            document.getElementById('altura_referencia_antena').innerHTML="Altura Instrumental (m): "+obj.altura_referencia_antena;
-            document.getElementById('lugar_materializacion').innerHTML="Localización: "+obj.lugar_materializacion;
-            document.getElementById('divipola').innerHTML="Código Divipola: "+obj.codigo;
+            document.getElementById('departamento').innerHTML="Departamento: "+check(obj.departamento);
+            document.getElementById('municipio').innerHTML="Municipio: "+check(obj.municipio);
+            document.getElementById('barrio').innerHTML="Barrio: "+check(obj.agencia_direccion);
+            document.getElementById('localizacion').innerHTML="Localizacion: "+check(obj.agencia_direccion);
+            document.getElementById('divipola').innerHTML="Código Divipola: "+check(obj.codigo);
 
 
-            document.getElementById('antena_tipo').innerHTML=obj.antena_modelo;
-            document.getElementById('antena_marca').innerHTML=obj.antena_marca;
-            document.getElementById('antena_serial').innerHTML=obj.antena_serial;
-
-            document.getElementById('receptor_modelo').innerHTML=obj.receptor_modelo;
-            document.getElementById('receptor_marca').innerHTML=obj.receptor_marca;
-            document.getElementById('receptor_serial').innerHTML=obj.receptor_serial;
-
-            document.getElementById('oficina').innerHTML="Oficina: "+obj.agencia_nombre;
-            document.getElementById('direccion').innerHTML="Dirección: "+obj.agencia_direccion;
-            document.getElementById('agencia_correo_electronico').innerHTML="Email de contacto: "+obj.agencia_mail;
+            document.getElementById('tipo_materializacion').innerHTML="Tipo de Monumento: "+check(obj.tipo_materializacion);
+            document.getElementById('fecha_materializacion').innerHTML="Fecha Monumentación: "+check(obj.fecha_materializacion);
+            document.getElementById('altura_referencia_antena').innerHTML="Altura Instrumental (m): "+check(obj.altura_referencia_antena);
+            document.getElementById('lugar_materializacion').innerHTML="Localización: "+check(obj.lugar_materializacion);
+            document.getElementById('divipola').innerHTML="Código Divipola: "+check(obj.codigo);
 
 
-            document.getElementById('latitud').innerHTML="Latitud: "+obj.latitud;
-            document.getElementById('altura').innerHTML="Altura: "+obj.altura_elipsoidal;
-            document.getElementById('longitud').innerHTML="Longitud: "+obj.longitud;
+            document.getElementById('antena_tipo').innerHTML=check(obj.antena_modelo);
+            document.getElementById('antena_marca').innerHTML=check(obj.antena_marca);
+            document.getElementById('antena_serial').innerHTML=check(obj.antena_serial);
 
-            document.getElementById('x').innerHTML="X(m): "+obj.x;
-            document.getElementById('z').innerHTML="Z(m): "+obj.z;
-            document.getElementById('y').innerHTML="	Y(m): "+obj.y;
+            document.getElementById('receptor_modelo').innerHTML=check(obj.receptor_modelo);
+            document.getElementById('receptor_marca').innerHTML=check(obj.receptor_marca);
+            document.getElementById('receptor_serial').innerHTML=check(obj.receptor_serial);
+
+            document.getElementById('oficina').innerHTML="Oficina: "+check(obj.agencia_nombre);
+            document.getElementById('direccion').innerHTML="Dirección: "+check(obj.agencia_direccion);
+            document.getElementById('agencia_correo_electronico').innerHTML="Email de contacto: "+check(obj.agencia_mail);
+
+
+            document.getElementById('latitud').innerHTML="Latitud: "+check(obj.latitud);
+            document.getElementById('altura').innerHTML="Altura: "+check(obj.altura_elipsoidal);
+            document.getElementById('longitud').innerHTML="Longitud: "+check(obj.longitud);
+
+            document.getElementById('x').innerHTML="X(m): "+check(obj.x);
+            document.getElementById('z').innerHTML="Z(m): "+check(obj.z);
+            document.getElementById('y').innerHTML="	Y(m): "+check(obj.y);
 
             document.getElementById('img1').src=obj.foto_antena;
             document.getElementById('img2').src=obj.foto_estacion;
@@ -383,6 +397,11 @@
 
       }
     });
+
+
+    document.getElementById('img3').src='http://10.23.13.14:3000/ver_img_activa/'+id;
+
+
 
 </script>
 
