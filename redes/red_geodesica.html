@@ -349,11 +349,7 @@
                 "AAPK2a2e861a0c794bfdb29a1b4ce47b1583OBbY7CvHSkUPhQ20FG1hZEbAl5GmTTZcs-cyoy2tw5to5j_pJiiTW6J_KRbBx-qS";
             const layer = new MapImageLayer({
                 url: "https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer",
-                sublayers: [{
-                    id: 0,
-                    visible: true,
-                    definitionExpression: "es_activa_gnss + es_pasiva_gnss +es_nivelacion >0"
-                }]
+
             });
             const map = new Map({
                 layers: [layer],

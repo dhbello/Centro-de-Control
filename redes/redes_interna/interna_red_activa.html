@@ -21,6 +21,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
 
 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.1/dist/leaflet.css"
+        integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js"
+        integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s=" crossorigin=""></script>
+
+    <style>
+        #mapa_estacion {
+            height: 350px;
+            z-index: 0;
+        }
+    </style>
 
 </head>
 
@@ -53,8 +64,8 @@
                             </p>
                         </div>
                         <div class="col-md-6">
-                            <p>
-                                Identificaci&oacute;n seg&uacute;n el ITRF:
+                            <p id="iers">
+
                             </p>
                         </div>
                     </div>
@@ -230,7 +241,7 @@
                         Ubicaci&oacute;n en Planta de la Estaci&oacute;n
                     </div>
                     <div class="item">
-                        <img src="/images/images-redes/ubicacionPlanta.png" alt="">
+                        <div id="mapa_estacion"></div>
                     </div>
                 </section>
                 <section class="section infoUbicacion pt-5">
@@ -244,10 +255,10 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="slick slideshow">
-                                            <div><img id="img1"
+                                            <div id="div1"><img id="img1"
                                                     src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
                                                     alt="" /></div>
-                                            <div><img id="img2"
+                                            <div id="div2"><img id="img2"
                                                     src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
                                                     alt="" /></div>
                                         </div>
@@ -256,41 +267,42 @@
                             </div>
                         </section>
 
-
-
+                        <img id="img3" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="" />
                     </div>
-                </section>
-                <section class="section infoUbicacion pt-5">
-                    <div class="title">
-                        Contacto
-                    </div>
-                    <div class="item" id="oficina">
 
-                    </div>
-                    <div class="item" id="direccion">
-
-                    </div>
-                    <div class="item" id="agencia_correo_electronico">
-
-                    </div>
-                </section>
-                <div class="divider"></div>
-                <section class="section infoUbicacion pt-0">
-                    <p style=" color: #3a3a3a;">
-                        Nota: La red de estaciones GNSS de funcionamiento continuo MAGNA–ECO hace parte de la red
-                        SIRGAS-CON (Sistema de Referencia Geocéntrico para las Américas–Red de Operación Continua), la
-                        cual es procesada semanalmente por los Centros Locales de Procesamiento SIRGAS; estos Centros
-                        generan soluciones semanales que detallan coordenadas de alta precisión (Asociadas a una época
-                        específica de referencia) y sus cambios a través del tiempo (Velocidades de las estaciones) para
-                        cada estación. Las coordenadas de dichas estaciones están disponibles sin costo alguno de manera
-                        pública en el sitio web
-                        http://www.sirgas.org/es/sirgas-con-network/coordinates/weekly-positions/. Para las estaciones
-                        de la red MAGNA–ECO que no se encuentran en el reporte de coordenadas de la red SIRGAS-CON puede
-                        ingresar a través del ftp://geodesia.igac.gov.co.
-                    </p>
-                </section>
             </div>
+            </section>
+            <section class="section infoUbicacion pt-5">
+                <div class="title">
+                    Contacto
+                </div>
+                <div class="item" id="oficina">
+
+                </div>
+                <div class="item" id="direccion">
+
+                </div>
+                <div class="item" id="agencia_correo_electronico">
+
+                </div>
+            </section>
+            <div class="divider"></div>
+            <section class="section infoUbicacion pt-0">
+                <p style=" color: #3a3a3a;">
+                    Nota: La red de estaciones GNSS de funcionamiento continuo MAGNA–ECO hace parte de la red
+                    SIRGAS-CON (Sistema de Referencia Geocéntrico para las Américas–Red de Operación Continua), la
+                    cual es procesada semanalmente por los Centros Locales de Procesamiento SIRGAS; estos Centros
+                    generan soluciones semanales que detallan coordenadas de alta precisión (Asociadas a una época
+                    específica de referencia) y sus cambios a través del tiempo (Velocidades de las estaciones) para
+                    cada estación. Las coordenadas de dichas estaciones están disponibles sin costo alguno de manera
+                    pública en el sitio web
+                    http://www.sirgas.org/es/sirgas-con-network/coordinates/weekly-positions/. Para las estaciones
+                    de la red MAGNA–ECO que no se encuentran en el reporte de coordenadas de la red SIRGAS-CON puede
+                    ingresar a través del ftp://geodesia.igac.gov.co.
+                </p>
+            </section>
         </div>
+    </div>
     </div>
 
     <footer class="footer origen">
@@ -310,6 +322,10 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 
+
+    <link rel="stylesheet" href="https://js.arcgis.com/4.24/esri/themes/light/main.css">
+    <script src="https://js.arcgis.com/4.24/"></script>
+
     <script type="module">
 
         import {queryFeatures}  from "https://cdn.skypack.dev/@esri/arcgis-rest-feature-service@4.0.3";
@@ -325,6 +341,7 @@
     }
         var estacion = getParameterByName('estacion');
         var nombre = getParameterByName('nombre');
+        var id = getParameterByName('id');
 
         document.getElementById('titulo').innerHTML='Red '+nombre+' - '+estacion
 
@@ -339,55 +356,74 @@
       success: function (result) {
         
         var obj=result[0];
+
+        console.log(obj)
+
+        function check(data){
+            if (data == null){
+            return "Sin información"
+        }else{
+            return data
+
+        }
+        }
+
         
-        document.getElementById('sigla').innerHTML="Nombre (Identificaci&oacute;n seg&uacute;n IGS SIRGAS): "+obj.identificador;
+        document.getElementById('sigla').innerHTML="Nombre (Identificaci&oacute;n seg&uacute;n IGS SIRGAS): "+check(obj.identificador);
 
-            document.getElementById('departamento').innerHTML="Departamento: "+obj.departamento;
-            document.getElementById('municipio').innerHTML="Municipio: "+obj.municipio;
-            document.getElementById('barrio').innerHTML="Barrio: "+obj.agencia_direccion;
-            document.getElementById('localizacion').innerHTML="Localizacion: "+obj.agencia_direccion;
-            document.getElementById('divipola').innerHTML="Código Divipola: "+obj.codigo;
+        document.getElementById('iers').innerHTML="Identificación según el ITRF: "+check(obj.numero_domo_iers);   
 
 
-            document.getElementById('tipo_materializacion').innerHTML="Tipo de Monumento: "+obj.tipo_materializacion;
-            document.getElementById('fecha_materializacion').innerHTML="Fecha Monumentación: "+obj.fecha_materializacion;
-            document.getElementById('altura_referencia_antena').innerHTML="Altura Instrumental (m): "+obj.altura_referencia_antena;
-            document.getElementById('lugar_materializacion').innerHTML="Localización: "+obj.lugar_materializacion;
-            document.getElementById('divipola').innerHTML="Código Divipola: "+obj.codigo;
+            document.getElementById('departamento').innerHTML="Departamento: "+check(obj.departamento);
+            document.getElementById('municipio').innerHTML="Municipio: "+check(obj.municipio);
+            document.getElementById('barrio').innerHTML="Barrio: "+check(obj.agencia_direccion);
+            document.getElementById('localizacion').innerHTML="Localizacion: "+check(obj.agencia_direccion);
+            document.getElementById('divipola').innerHTML="Código Divipola: "+check(obj.codigo);
 
 
-            document.getElementById('antena_tipo').innerHTML=obj.antena_modelo;
-            document.getElementById('antena_marca').innerHTML=obj.antena_marca;
-            document.getElementById('antena_serial').innerHTML=obj.antena_serial;
-
-            document.getElementById('receptor_modelo').innerHTML=obj.receptor_modelo;
-            document.getElementById('receptor_marca').innerHTML=obj.receptor_marca;
-            document.getElementById('receptor_serial').innerHTML=obj.receptor_serial;
-
-            document.getElementById('oficina').innerHTML="Oficina: "+obj.agencia_nombre;
-            document.getElementById('direccion').innerHTML="Dirección: "+obj.agencia_direccion;
-            document.getElementById('agencia_correo_electronico').innerHTML="Email de contacto: "+obj.agencia_mail;
+            document.getElementById('tipo_materializacion').innerHTML="Tipo de Monumento: "+check(obj.tipo_materializacion);
+            document.getElementById('fecha_materializacion').innerHTML="Fecha Monumentación: "+check(obj.fecha_materializacion);
+            document.getElementById('altura_referencia_antena').innerHTML="Altura Instrumental (m): "+check(obj.altura_referencia_antena);
+            document.getElementById('lugar_materializacion').innerHTML="Localización: "+check(obj.lugar_materializacion);
+            document.getElementById('divipola').innerHTML="Código Divipola: "+check(obj.codigo);
 
 
-            document.getElementById('latitud').innerHTML="Latitud: "+obj.latitud;
-            document.getElementById('altura').innerHTML="Altura: "+obj.altura_elipsoidal;
-            document.getElementById('longitud').innerHTML="Longitud: "+obj.longitud;
+            document.getElementById('antena_tipo').innerHTML=check(obj.antena_modelo);
+            document.getElementById('antena_marca').innerHTML=check(obj.antena_marca);
+            document.getElementById('antena_serial').innerHTML=check(obj.antena_serial);
 
-            document.getElementById('x').innerHTML="X(m): "+obj.x;
-            document.getElementById('z').innerHTML="Z(m): "+obj.z;
-            document.getElementById('y').innerHTML="	Y(m): "+obj.y;
+            document.getElementById('receptor_modelo').innerHTML=check(obj.receptor_modelo);
+            document.getElementById('receptor_marca').innerHTML=check(obj.receptor_marca);
+            document.getElementById('receptor_serial').innerHTML=check(obj.receptor_serial);
 
-            document.getElementById('img1').src=obj.foto_antena;
-            document.getElementById('img2').src=obj.foto_estacion;
+            document.getElementById('oficina').innerHTML="Oficina: "+check(obj.agencia_nombre);
+            document.getElementById('direccion').innerHTML="Dirección: "+check(obj.agencia_direccion);
+            document.getElementById('agencia_correo_electronico').innerHTML="Email de contacto: "+check(obj.agencia_mail);
 
 
-      }
-    });
+            document.getElementById('latitud').innerHTML="Latitud: "+check(obj.estacion_latitud);
+            document.getElementById('altura').innerHTML="Altura: "+check(obj.estacion_altura_elipsoidal);
+            document.getElementById('longitud').innerHTML="Longitud: "+check(obj.estacion_longitud);
 
-</script>
+            document.getElementById('x').innerHTML="X(m): "+check(obj.x);
+            document.getElementById('z').innerHTML="Z(m): "+check(obj.z);
+            document.getElementById('y').innerHTML="	Y(m): "+check(obj.y);
 
-    <script>
-        $(document).ready(function () {
+            if(obj.foto_antena!==null){
+                document.getElementById('img1').src=obj.foto_antena;
+            }else{
+                $('#div1').remove()
+            }
+
+            if(obj.foto_estacion!==null){
+                document.getElementById('img2').src=obj.foto_estacion;
+            }else{
+  
+                $('#div2').remove()
+            }
+
+
+
             $(".slideshow ").slick({
                 slidesToShow: 1,
                 slidesToScroll: 1,
@@ -410,8 +446,128 @@
                     },
                 ],
             });
+
+
+        var latitud=obj.estacion_latitud;
+        var longitud=obj.estacion_longitud;
+
+        console.log(latitud)
+        console.log(longitud)
+
+        if (typeof obj.estacion_latitud === 'number' && !Number.isNaN(obj.estacion_latitud)) {
+            if (typeof obj.estacion_latitud === 'number' && !Number.isNaN(obj.estacion_latitud)) {
+            
+             }else{
+                latitud=0;
+                longitud=0;
+             }
+            }else{
+                latitud=0;
+                longitud=0;
+            }
+
+
+        //mapa de la estación
+
+
+        require([
+            "esri/config",
+            "esri/Map",
+            "esri/views/MapView",
+            "esri/widgets/Home",
+            "esri/widgets/ScaleBar",
+            "esri/widgets/LayerList",
+            "esri/widgets/Legend",
+            "esri/widgets/Expand",
+            "esri/widgets/Compass",
+            "esri/geometry/Extent",
+            "esri/layers/MapImageLayer",
+            "esri/geometry/Circle",
+            "esri/Graphic"
+        ], (
+            esriConfig, Map, MapView, Home, ScaleBar, LayerList, Legend,
+            Expand, Compass, Extent, MapImageLayer,Circle,Graphic
+        ) => {
+            esriConfig.apiKey =
+                "AAPK2a2e861a0c794bfdb29a1b4ce47b1583OBbY7CvHSkUPhQ20FG1hZEbAl5GmTTZcs-cyoy2tw5to5j_pJiiTW6J_KRbBx-qS";
+
+            const map = new Map({
+                basemap: "arcgis-topographic"
+            });
+            const view = new MapView({
+                container: "mapa_estacion",
+                map: map,
+                zoom: 16,
+                center: [longitud, latitud],
+            });
+            const homeBtn = new Home({
+                view: view
+            });
+            const scaleBar = new ScaleBar({
+                view: view,
+                unit: "dual"
+            });
+
+            const compass = new Compass({
+                view: view,
+                visible: false
+            });
+            const circleGeometry = new Circle({
+                center: [ longitud, latitud ],
+                geodesic: true,
+                numberOfPoints: 100,
+                radius: 10,
+                radiusUnit: "meters"
+            });
+
+
+            view.ui.add(homeBtn, "top-left");
+            view.ui.add(scaleBar, "bottom-right");
+            view.ui.add(compass, "top-left");
+
+            view.graphics.add(new Graphic({
+                geometry: circleGeometry,
+                
+
+                symbol: {
+                    type: "simple-fill",
+                    style: "solid",
+                    color: [ 255, 115, 95 , 0.9 ],
+                    outline: {
+                        width: 1,
+                        color: "red"
+                    }
+                }
+                }));
+
+
+
+            // load the Compass only when the view is rotated
+            view.watch('rotation', function (rotation) {
+                if (rotation && !compass.visible) {
+                    compass.visible = true;
+                }
+            });
         });
-    </script>
+  
+        try {
+        document.getElementById('img3').src=url_backend+'/ver_img_activa/'+id
+    } catch (ex) {
+        console.log(ex)
+    }
+
+      }
+    });
+
+
+ 
+
+
+
+
+</script>
+
+
 
 </body>
 

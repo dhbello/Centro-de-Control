@@ -428,7 +428,7 @@
             esriConfig.apiKey =
                 "AAPK2a2e861a0c794bfdb29a1b4ce47b1583OBbY7CvHSkUPhQ20FG1hZEbAl5GmTTZcs-cyoy2tw5to5j_pJiiTW6J_KRbBx-qS";
             const layer = new MapImageLayer({
-                url: "https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGNSS/Mapserver",
+                url: "https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGNSS/MapServer",
                 sublayers: [{
                     id: 0,
                     visible: true
@@ -502,7 +502,7 @@
                     var arr1=[]
     
                     obj.map(function(i,e){
-                        i["ir"]='interna_red_activa.html?estacion=' + i["t_id"]+'&nombre='+i["redes"]
+                        i["ir"]='interna_red_activa.html?estacion=' + i["t_id"]+'&nombre='+i["redes"]+'&id='+i["identificador"]
                         
 
                         arr1.push(i)
@@ -586,7 +586,7 @@ $.ajax({
       success: function (result) {
       
         document.getElementById('stat1').innerHTML=result[0].indicador;
-        document.getElementById('text1').innerHTML="Número de estaciones CORS integradas a la red";
+        document.getElementById('text1').innerHTML="Total de estaciones activas";
       }
     });
 
@@ -599,7 +599,7 @@ $.ajax({
       dataType: "json",
       success: function (result) {
         document.getElementById('stat2').innerHTML=result[0].indicador;
-        document.getElementById('text2').innerHTML="Número de estaciones CORS activas";
+        document.getElementById('text2').innerHTML="Total de estaciones activas con transmisión de datos";
       }
     });
 
