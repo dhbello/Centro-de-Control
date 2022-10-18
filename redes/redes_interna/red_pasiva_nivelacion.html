@@ -26,7 +26,7 @@
                 <a class="get-back" href="../red_geodesica.html"><img src="/images/iconos/arrow-back.svg" alt="">Volver
                     a la Red Geodésica GNSS</a>
                 <div class="texto-portada">
-                    <h1>Red Pasiva y de Nivelaci&oacute;n</h1>
+                    <h1>Red de Vértices Pasivos y de Control Vertical</h1>
                     <p>
                         Es la red compuesta de v&eacute;rtices materializados en campo en monumentaciones tipo mojones,
                         pilastras, incrustaciones y obeliscos. En el caso colombiano, los datos coordenados de la Red
@@ -41,7 +41,7 @@
         <section class="section visor row">
             <div class="iframe col-md-12">
                 <div class="d-flex position-relative align-items-center justify-content-end">
-                    <h2 class="title w-divider text-center">Mapa de la red Pasiva y de nivelación</h2>
+                    <h2 class="title w-divider text-center">Mapa de la Red de Vértices Pasivos y de Control Vertical</h2>
                     <div class="status d-flex position-absolute">
                         <a class="btn mb-4 text-center buttonCem">Ver en CEM</a>
                     </div>
@@ -104,7 +104,7 @@
                                 </div>
                                 <div class="content">
                                     <div class="number" id="stat1">0</div>
-                                    <div class="text" >Número total de vertices geodésicos</div>
+                                    <div class="text" >Vértices de la red de nivelación</div>
                                 </div>
                             </div>
                         </div>
@@ -128,7 +128,7 @@
                                 </div>
                                 <div class="content">
                                     <div class="number" id="stat3">0</div>
-                                    <div class="text">Total de estaciones pasivas</div>
+                                    <div class="text">Vértices de la red pasiva GNSS</div>
                                 </div>
                             </div>
                         </div>
@@ -139,7 +139,7 @@
                                 </div>
                                 <div class="content">
                                     <div class="number" id="stat4">0</div>
-                                    <div class="text">% de municipios cubiertos por la red</div>
+                                    <div class="text">Municipios con vértices materializados (%)</div>
                                 </div>
                             </div>
                         </div>
@@ -425,6 +425,13 @@
                     compass.visible = true;
                 }
             });
+            const extent = new Extent({
+                xmin: -74,
+                ymin: -1,
+                xmax: -70,
+                ymax: 10,
+                });
+                view.extent = extent; 
         });
     </script>
 
@@ -566,8 +573,7 @@ $.ajax({
       dataType: "json",
       success: function (result) {
     
-        var percentaje=Math.round(result[0].indicador/1132*100).toFixed(0);
-        document.getElementById('stat4').innerHTML=percentaje+' %';
+        document.getElementById('stat4').innerHTML=result[0].indicador+' %';
 
       }
     });

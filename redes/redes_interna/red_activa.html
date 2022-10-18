@@ -26,7 +26,7 @@
                 <a class="get-back" href="../red_geodesica.html"><img src="/images/iconos/arrow-back.svg" alt=""> Volver
                     a la Red Geodésica GNSS</a>
                 <div class="texto-portada">
-                    <h1>Red Activa</h1>
+                    <h1>Red de estaciones de Operación Continua</h1>
                     <p>
                         Est&aacute; compuesta por estaciones GNSS de funcionamiento continuo que proporcionan
                         informaci&oacute;n diaria en el formato Receiver Independent Exchange (RINEX) el cual es un
@@ -43,7 +43,7 @@
         <section class="section visor row">
             <div class="iframe col-md-12">
                 <div class="d-flex position-relative align-items-center justify-content-end">
-                    <h2 class="title w-divider text-center">Mapa de la Red Activa</h2>
+                    <h2 class="title w-divider text-center">Mapa de la Red de estaciones de Operación Continua</h2>
                     <div class="status d-flex position-absolute">
                         <a class="btn mb-4 text-center buttonCem">Ver en CEM</a>
                     </div>
@@ -66,6 +66,7 @@
                                 <th>Estado</th>
                                 <th>Nombre de la red</th>
                                 <th>Entidad</th>
+                                <th></th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -230,37 +231,7 @@
         </div>
         </div>
     </section>-->
-    <section class="section registrarReportar paddingLast">
-        <div class="container containerIgac">
-            <div class="d-flex">
-                <div class="containerFaqs typeB">
-                    <div class="faqs typeC">
-                        <div class="title m-0 mb-3">
-                            Registra una nueva estaci&oacute;n
-                        </div>
-                        <div class="d-flex align-items-center modalEstaciones" data-toggle="modal"
-                            data-target="#modalEstaciones">
-                            <div class="boton-faqs">
-                                <a>Iniciar formulario</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="containerFaqs typeB">
-                    <div class="faqs typeD">
-                        <div class="title m-0 mb-3">
-                            Reporta una novedad
-                        </div>
-                        <div style="white-space: nowrap;"
-                            class="p-0 col-md-4 text-center modalButtonReportar boton-faqs" data-toggle="modal"
-                            data-target="#reportarModal">
-                            <a>Iniciar formulario</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
     <div class="containercolor">
         <div class="container containerIgac">
             <section class="section sumary">
@@ -387,6 +358,38 @@
                     </a>
                 </div>
             </section>
+            <section class="section registrarReportar paddingLast">
+                <h2 class="title w-divider text-center">Participa activamente de la red</h2>
+                <div class="container containerIgac">
+                    <div class="d-flex">
+                        <div class="containerFaqs typeB">
+                            <div class="faqs typeC">
+                                <div class="title m-0 mb-3">
+                                    Registra una nueva estaci&oacute;n
+                                </div>
+                                <div class="d-flex align-items-center modalEstaciones" data-toggle="modal"
+                                    data-target="#modalEstaciones">
+                                    <div class="boton-faqs">
+                                        <a>Iniciar formulario</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="containerFaqs typeB">
+                            <div class="faqs typeD">
+                                <div class="title m-0 mb-3">
+                                    Reporta una novedad
+                                </div>
+                                <div style="white-space: nowrap;"
+                                    class="p-0 col-md-4 text-center modalButtonReportar boton-faqs" data-toggle="modal"
+                                    data-target="#reportarModal">
+                                    <a>Iniciar formulario</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
     <footer class="footer origen">
@@ -486,6 +489,13 @@
                     compass.visible = true;
                 }
             });
+            const extent = new Extent({
+                xmin: -74,
+                ymin: -1,
+                xmax: -70,
+                ymax: 10,
+                });
+                view.extent = extent; 
         });
     </script>
 
@@ -503,8 +513,8 @@
     
                     obj.map(function(i,e){
                         i["ir"]='interna_red_activa.html?estacion=' + i["t_id"]+'&nombre='+i["redes"]+'&id='+i["identificador"]
-                        
-
+                        i["rinex"]='rinex.html?estacion=' + i["identificador"]+'&id='+ i["t_id"];
+            
                         arr1.push(i)
                     })
     
@@ -525,13 +535,16 @@
                                 data: 'estado',
                                 render: function (dataField) {
                                     var clase="inactivo"
+                                    var status="Inactivo"
                                     if(dataField==("Activa")){
                                         clase="activo"
+                                        status="Activa"
                                     }else if(dataField==null){
                                     clase="vacio";
                                     dataField=""
+                                    status=""
                                 }
-                                    return '<span class="'+clase+'">'+dataField+'</span>';
+                                    return '<span class="'+clase+'">'+status+'</span>';
                                 }
                             },
                             {
@@ -544,6 +557,12 @@
                                 data: 'ir',
                                 render: function (dataField) {
                                     return '<a href="'+dataField+'">Más</a>';
+                                }
+                            },
+                            {
+                                data: 'rinex',
+                                render: function (dataField) {
+                                    return '<a href="'+dataField+'">Archivo Rinex</a>';
                                 }
                             }
                         ],
@@ -625,9 +644,8 @@ $.ajax({
       dataType: "json",
       success: function (result) {
     
-        var percentaje=Math.round(result[0].indicador/1132*100).toFixed(0);
-        document.getElementById('stat4').innerHTML=percentaje+' %';
-        document.getElementById('text4').innerHTML="Portcentaje de municipios cubiertos";
+        document.getElementById('stat4').innerHTML=result[0].indicador+' %';
+        document.getElementById('text4').innerHTML="Porcentaje de municipios cubiertos";
 
       }
     });
