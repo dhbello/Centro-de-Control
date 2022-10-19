@@ -64,7 +64,28 @@
                     <div class="item" id="altura">
                         
                     </div>
-                </section>           
+                </section> 
+                <div class="divider"></div>
+                <section class="section infoUbicacion pt-0">
+                    <div class="title">
+                        Monumentación
+                    </div>
+                    <div class="item" id="tipo_materializacion">
+                        Tipo de Monumento: 
+                    </div>
+                    <div class="item" id="fecha_materializacion">
+                        Fecha Monumentaci&oacute;n: 
+                    </div>
+                    <div class="item" id="altura_referencia_antena">
+                        Altura Instrumental (m): 
+                    </div>
+                    <div class="item" id="lugar_materializacion">
+                        Localizaci&oacute;n: 
+                    </div>
+                    <div class="item" id="divipola2">
+                        
+                    </div>
+                </section>          
             </div>
             <div class="col-md-6">
                 <section class="section infoUbicacion pb-0">
@@ -72,7 +93,30 @@
                         Nomenclatura Placa 
                     </h3>
                     <div class="row" id="fotos">
-
+                        <div class="col-md-6 mt-4">
+                            <div class="title">
+                                Croquis General
+                            </div>
+                            <div class="item" id="img_croquis">
+                                
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <div class="title">
+                                Croquis detallado
+                            </div>
+                            <div class="item" id="img_detallado">
+                                
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <div class="title">
+                                Acceso general
+                            </div>
+                            <div class="item" id="img_perfil">
+                                
+                            </div>
+                        </div>
                         <div class="col-md-6 mt-4">
                             <div class="title">
                                 Perfil
@@ -314,6 +358,41 @@
             document.getElementById('longitud').innerHTML="Longitud (ג): "+check(obj.longitud);
 
 
+            document.getElementById('tipo_materializacion').innerHTML="Tipo de Monumento: "+check(obj.tipo_materializacion);
+            document.getElementById('fecha_materializacion').innerHTML="Fecha Monumentación: "+check(obj.fecha_materializacion);
+            document.getElementById('altura_referencia_antena').innerHTML="Altura Instrumental (m): "+check(obj.altura_referencia_antena);
+            document.getElementById('lugar_materializacion').innerHTML="Localización: "+check(obj.lugar_materializacion);
+            document.getElementById('divipola2').innerHTML="Código Municipio: "+check(obj.codigo);
+
+
+
+            if(obj.fotos_campo_croquis_general){
+                var img = document.createElement("img");
+                img.src = obj.fotos_campo_croquis_general;
+                var src = document.getElementById("img_croquis");
+                src.appendChild(img);
+            }else{
+                $( "#img_croquis" ).after( "<p style='text-align: center; font-size: 16px'>Sin información</p>" );
+
+            }
+            if(obj.fotos_campo_perfil){
+                var img = document.createElement("img");
+                img.src = obj.fotos_campo_perfil;
+                var src = document.getElementById("img_perfil");
+                src.appendChild(img);
+            }else{
+                $( "#img_perfil" ).after( "<p style='text-align: center; font-size: 16px'>Sin información</p>" );
+
+            }
+            if(obj.fotos_campo_croquis_detallado){
+                var img = document.createElement("img");
+                img.src = obj.fotos_campo_croquis_detallado;
+                var src = document.getElementById("img_detallado");
+                src.appendChild(img);
+            }else{
+                $( "#img_detallado" ).after( "<p style='text-align: center; font-size: 16px'>Sin información</p>" );
+            }
+
             if(obj.fotos_campo){
                 var cols=obj.fotos_campo.length;
 
@@ -355,7 +434,7 @@
                 for (var i = tableHeaderRowCount; i < rowCount; i++) {
                     table.deleteRow(tableHeaderRowCount);
                 }
-                $( "#tbl_puntos" ).after( "<p>Sin información</p>" );
+                $( "#tbl_puntos" ).after( "<p style='text-align: center; font-size: 16px'>Sin información</p>" );
             }
 
                 

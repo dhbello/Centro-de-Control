@@ -1261,6 +1261,22 @@ if (document.querySelector(".modalEstaciones")) {
                                         </div>
                                     </div>
                                  
+
+                                    
+
+                                    <div class='form-title mt-3'>
+                                        <h2>Información de la estación</h2>
+                                    </div>
+
+                                    
+
+                                    <div class='form-title mt-2'>
+                                        <h2>Seleccione un punto en el mapa</h2>
+                                    </div>
+
+                                    <div id="viewDiv1"></div>
+
+
                                     <table style='width: 100%;' id='example' style='width: 100%;' class='display mt-2  mb-0 form-new-est'>
                                    
                         
@@ -1306,13 +1322,13 @@ if (document.querySelector(".modalEstaciones")) {
 
                                     <tr>
                                         <td>Latitud</td>
-                                        <td><input style="width: 100%;" type="number" step="0.00000001" placeholder="Latitud" name="Latitud" class="form-control" required></td>
+                                        <td><input id="lat1" style="width: 100%;" type="number" step="0.00000001" placeholder="Latitud" name="Latitud" class="form-control" required></td>
                                         <td><input style="width: 100%;" type="number" step="0.00000001" placeholder="Latitud" name="Latitud" class="form-control" required></td>
                                     </tr> 
 
                                     <tr>
                                         <td>Longitud</td>
-                                        <td><input style="width: 100%;" type="text" placeholder="Longitud" name="Longitud" class="form-control" required></td>
+                                        <td><input id="lon1" style="width: 100%;" type="text" placeholder="Longitud" name="Longitud" class="form-control" required></td>
                                         <td><input style="width: 100%;" type="text" placeholder="Longitud" name="Longitud" class="form-control" required></td>
                                     </tr> 
 
@@ -1449,6 +1465,152 @@ if (document.querySelector(".modalEstaciones")) {
 
 
 window.onload = function () {
+
+
+
+    require([
+        "esri/config",
+        "esri/Map",
+        "esri/views/MapView",
+        "esri/widgets/Home",
+        "esri/widgets/ScaleBar",
+        "esri/widgets/LayerList",
+        "esri/widgets/Legend",
+        "esri/widgets/Expand",
+        "esri/widgets/Compass",
+        "esri/geometry/Extent",
+        "esri/layers/MapImageLayer",
+        "esri/layers/GraphicsLayer",
+        "esri/widgets/Sketch"
+    ], (
+        esriConfig, Map, MapView, Home, ScaleBar, LayerList, Legend,
+        Expand, Compass, Extent, MapImageLayer,GraphicsLayer, Sketch
+    ) => {
+        esriConfig.apiKey =
+            "AAPK2a2e861a0c794bfdb29a1b4ce47b1583OBbY7CvHSkUPhQ20FG1hZEbAl5GmTTZcs-cyoy2tw5to5j_pJiiTW6J_KRbBx-qS";
+        const layer = new MapImageLayer({
+            url: "https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer",
+        });
+        var graphicsLayer = new GraphicsLayer();
+        const map = new Map({
+            layers: [graphicsLayer],
+            basemap: "arcgis-topographic"
+        });
+        const view = new MapView({
+            container: "viewDiv1",
+            map: map
+        });
+      // Sketch widget
+      var sketch = new Sketch({
+        view: view,
+        layer: graphicsLayer,
+        availableCreateTools:["point"],
+        creationMode:"update",
+      });
+
+      sketch.visibleElements = {
+        selectionTools:{
+          "lasso-selection": false
+        },
+        settingsMenu: false
+      }
+
+      // Add widget to the view
+      view.ui.add(sketch, "top-right");  
+
+        const homeBtn = new Home({
+            view: view
+        });
+        const scaleBar = new ScaleBar({
+            view: view,
+            unit: "dual"
+        });
+        const layerList = new LayerList({
+            view: view
+        });
+        const legend = new Legend({
+            view: view
+        });
+        const layerListExpand = new Expand({
+            view: view,
+            content: layerList,
+            expanded: false,
+            expandTooltip: "Expand LayerList"
+        });
+        const legendExpand = new Expand({
+            view: view,
+            content: legend,
+            expandTooltip: "Expand Legend",
+            expanded: false
+        });
+        const compass = new Compass({
+            view: view,
+            visible: false
+        });
+        
+        view.ui.add(homeBtn, "top-left");
+        view.ui.add(scaleBar, "bottom-right");
+        view.ui.add(layerListExpand, "top-right");
+        view.ui.add(legendExpand, "bottom-left");
+        view.ui.add(compass, "top-left");
+        layer.when(() => {
+            const initialExtent = Extent.fromJSON(layer.sourceJSON.initialExtent);
+            view.goTo(initialExtent);
+        });
+        // load the Compass only when the view is rotated
+        view.watch('rotation', function (rotation) {
+            if (rotation && !compass.visible) {
+                compass.visible = true;
+            }
+        });
+        const extent = new Extent({
+            xmin: -74,
+            ymin: -1,
+            xmax: -70,
+            ymax: 10,
+            });
+            view.extent = extent; 
+
+
+
+
+       sketch.on("create", function(event) {
+        
+         if (event.state === "complete") {
+         
+            document.getElementById("lat1").value=event.graphic.geometry.latitude.toFixed(5);
+            document.getElementById("lon1").value=event.graphic.geometry.longitude.toFixed(5)
+         }else if (event.state === "start") {
+            graphicsLayer.removeAll()
+         }
+
+       });
+       sketch.on("update", function(event) {
+       
+        if (event.state === "complete") {
+           document.getElementById("lat1").value=event.graphics[0].geometry.latitude.toFixed(5);
+           document.getElementById("lon1").value=event.graphics[0].geometry.longitude.toFixed(5)
+        }
+
+      });
+
+
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function formObj2Json(formArray) { //serialize data function
   var returnArray = {};

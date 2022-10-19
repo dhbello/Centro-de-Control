@@ -73,8 +73,9 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Contribuyente</th>
-                                    <th>Red</th>
+                                    <th>Ubicación</th>
                                     <th>Estado</th>
+                                    <th>Tipo de Red</th>
                                     <th></th>
 
                                 </tr>
@@ -308,41 +309,39 @@
                     </div>
                 </div>
             </section>
-            <section class="section registrarReportar paddingLast">
-                <h2 class="title w-divider text-center">Participa activamente de la red</h2>
-                <div class="container containerIgac">
-                    <div class="d-flex">
-                        <div class="containerFaqs typeB">
-                            <div class="faqs typeC">
-                                <div class="title m-0 mb-3">
-                                    Registra una nueva estaci&oacute;n
-                                </div>
-                                <div class="d-flex align-items-center modalEstaciones" data-toggle="modal"
-                                    data-target="#modalEstaciones">
-                                    <div class="boton-faqs">
-                                        <a>Iniciar formulario</a>
-                                    </div>
-                                </div>
+        </div>
+        <section class="section registrarReportar paddingLast">
+            <h2 class="title w-divider text-center">Participa activamente de la red</h2>
+            <div class="container containerIgac">
+                <div class="d-flex">
+                    <div class="containerFaqs typeB">
+                        <div class="faqs typeC">
+                            <div class="title m-0 mb-3">
+                                Registra y postula un nuevo vértice a la Red Geodésica
                             </div>
-                        </div>
-                        <div class="containerFaqs typeB">
-                            <div class="faqs typeD">
-                                <div class="title m-0 mb-3">
-                                    Reporta una novedad
-                                </div>
-                                <div style="white-space: nowrap;"
-                                    class="p-0 col-md-4 text-center modalButtonReportar boton-faqs" data-toggle="modal"
-                                    data-target="#reportarModal">
+                            <div class="d-flex align-items-center modalEstaciones" data-toggle="modal"
+                                data-target="#modalEstaciones">
+                                <div class="boton-faqs">
                                     <a>Iniciar formulario</a>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="containerFaqs typeB">
+                        <div class="faqs typeD">
+                            <div class="title m-0 mb-3">
+                                Reporta novedades sobre vértices de la Red
+                            </div>
+                            <div style="white-space: nowrap;"
+                                class="p-0 col-md-4 text-center modalButtonReportar boton-faqs" data-toggle="modal"
+                                data-target="#reportarModal">
+                                <a>Iniciar formulario</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </section>
-
-
-        </div>
+            </div>
+        </section>
     </div>
     <footer class="footer origen">
     </footer>
@@ -504,6 +503,8 @@
                         i["ir"]='redes_interna/interna_red_activa.html?estacion=' + i["t_id"]+'&nombre='+i["redes"]+'&id='+i["identificador"]
                     }else if(i["estado"]=="Inactiva"){
                         i["ir"]='redes_interna/interna_red_pasiva.html?estacion=' + i["t_id"]+'&nombre='+i["redes"]
+                    }else{
+                        i["ir"]='redes_interna/interna_red_pasiva.html?estacion=' + i["t_id"]+'&nombre='+i["redes"]
                     }
 
                     arr1.push(i)
@@ -522,7 +523,7 @@
                             data: 'sigla'
                         },
                         {
-                            data: 'redes'
+                            data: 'municipio'
                         },
                         {
                             data: 'estado',
@@ -536,6 +537,9 @@
                             }
                                 return '<span class="'+clase+'">'+dataField+'</span>';
                             }
+                        },
+                        {
+                            data: 'redes'
                         },
                         {
                             data: 'ir',

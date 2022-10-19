@@ -62,10 +62,9 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Municipio,departamento</th>
+                                <th>Ubicación</th>
                                 <th>Estado</th>
-                                <th>Nombre de la red</th>
-                                <th>Entidad</th>
+                                <th>Contribuyente</th>
                                 <th></th>
                                 <th></th>
                             </tr>
@@ -152,7 +151,7 @@
         <section class="section pb-0">
             <div class="faqs type2">
                 <div class="title">
-                    Explora y consulta los servicios en tiempo real disponibles para todos
+                    Servicios en tiempo real
                 </div>
                 <div class="resume">
                     Conéctate y usalos servicios de procesamiento en línea de tipo diferencial y los servicios de posicionamiento en tiempo real via caster NTRIP para las estaciones de la Red Activa del Territorio Colombiano. ¿Qué esperas?
@@ -232,9 +231,9 @@
         </div>
     </section>-->
 
-    <div class="containercolor">
-        <div class="container containerIgac">
-            <section class="section sumary">
+    <div class="containercolor resources">
+        <div class="container containerIgac ">
+            <section class="section sumary ">
                 <h2 class="title w-divider">Recursos destacados</h2>
                 <div class="divider w-title"></div>
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -358,39 +357,40 @@
                     </a>
                 </div>
             </section>
-            <section class="section registrarReportar paddingLast">
-                <h2 class="title w-divider text-center">Participa activamente de la red</h2>
-                <div class="container containerIgac">
-                    <div class="d-flex">
-                        <div class="containerFaqs typeB">
-                            <div class="faqs typeC">
-                                <div class="title m-0 mb-3">
-                                    Registra una nueva estaci&oacute;n
-                                </div>
-                                <div class="d-flex align-items-center modalEstaciones" data-toggle="modal"
-                                    data-target="#modalEstaciones">
-                                    <div class="boton-faqs">
-                                        <a>Iniciar formulario</a>
-                                    </div>
-                                </div>
+
+        </div>
+        <section class="section registrarReportar paddingLast">
+            <h2 class="title w-divider text-center">Participa activamente de la red</h2>
+            <div class="container containerIgac">
+                <div class="d-flex">
+                    <div class="containerFaqs typeB">
+                        <div class="faqs typeC">
+                            <div class="title m-0 mb-3">
+                                Registra y postula un nuevo vértice a la Red Geodésica
                             </div>
-                        </div>
-                        <div class="containerFaqs typeB">
-                            <div class="faqs typeD">
-                                <div class="title m-0 mb-3">
-                                    Reporta una novedad
-                                </div>
-                                <div style="white-space: nowrap;"
-                                    class="p-0 col-md-4 text-center modalButtonReportar boton-faqs" data-toggle="modal"
-                                    data-target="#reportarModal">
+                            <div class="d-flex align-items-center modalEstaciones" data-toggle="modal"
+                                data-target="#modalEstaciones">
+                                <div class="boton-faqs">
                                     <a>Iniciar formulario</a>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="containerFaqs typeB">
+                        <div class="faqs typeD">
+                            <div class="title m-0 mb-3">
+                                Reporta novedades sobre vértices de la Red
+                            </div>
+                            <div style="white-space: nowrap;"
+                                class="p-0 col-md-4 text-center modalButtonReportar boton-faqs" data-toggle="modal"
+                                data-target="#reportarModal">
+                                <a>Iniciar formulario</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
     </div>
     <footer class="footer origen">
     </footer>
@@ -548,23 +548,21 @@
                                 }
                             },
                             {
-                                data: 'redes'
-                            },
-                            {
                                 data: 'sigla'
                             },
-                            {
-                                data: 'ir',
-                                render: function (dataField) {
-                                    return '<a href="'+dataField+'">Más</a>';
-                                }
-                            },
+
                             {
                                 data: 'rinex',
                                 render: function (dataField) {
                                     return '<a href="'+dataField+'">Archivo Rinex</a>';
                                 }
-                            }
+                            },
+                            {
+                                data: 'ir',
+                                render: function (dataField) {
+                                    return '<a href="'+dataField+'">Ver más</a>';
+                                }
+                            },
                         ],
                         language: {
                     "decimal": "",

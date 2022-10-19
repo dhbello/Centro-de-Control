@@ -149,6 +149,13 @@ input::placeholder, select {
     padding-top: 80px;
     padding-bottom: 0;
 }
+.resources{
+    background-color: #fff;
+}
+
+.rinex{
+    background-color: #D9DFE1;
+}
 
 .section.paddingLast {
     padding-bottom: 80px;
@@ -164,6 +171,7 @@ input::placeholder, select {
 
 .section.registrarReportar {
     position: relative;
+    background-color: #F4F8FE;
 }
 
 .section.registrarReportar::before {
@@ -2299,6 +2307,12 @@ label {
 
 #viewDiv {
     padding: 0;
+    margin: 0;
+    height: 400px;
+    width: 100%;
+}
+#viewDiv1 {
+    padding: 10px 0px;
     margin: 0;
     height: 400px;
     width: 100%;
