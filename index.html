@@ -1,55 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Centro de Control Geod&eacute;sico Nacional</title>
-    <link rel="icon" href="images-home/logos/favicon.png">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/maestra.css" rel="stylesheet">    
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-
-    <style>
-        #viewDiv {
-            padding: 0;
-            margin: 0;
-            height: 400px;
-            width: 100%;
-        }
-    </style>
-</head>
-<body class="origen main inicio">
-    <nav class="navbarigac origen">        
-    </nav>
+    <link rel="icon" href="images-home/logos/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/maestra.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="origen main inicio">
+    <nav class="navbarigac origen"></nav>
     <section class="section-portada">
-        <div class="container-portada">
-            <div class="portada">
-                <div class="text-content">
-                    <div class="title">
-                        Centro de Control <br> Geod&eacute;sico Nacional
-                    </div>
-                    <div class="summary">
-                        <p>Bienvenidos a la plataforma para la gestión de la información
-                            geodésica de Colombia. Es el punto de encuentro para monitorear,
-                            acceder y usar los datos generados por la Red Geodésica GNSS, la
-                            red de control Vertical de Precisión, la Red Gravimétrica y la Red
-                            Geomagnética.
-                            </p>
-                    </div>
-                </div>
+      <div class="container-portada">
+        <div class="portada">
+          <div class="text-content">
+            <div class="title">
+              Centro de Control <br />
+              Geod&eacute;sico Nacional
             </div>
+            <div class="summary">
+              <p>
+                Bienvenidos a la plataforma para la gestión de la información
+                geodésica de Colombia. Es el punto de encuentro para monitorear,
+                acceder y usar los datos generados por la Red Geodésica GNSS, la
+                red de control Vertical de Precisión, la Red Gravimétrica y la
+                Red Geomagnética.
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
     <div class="container containerIgac">
-        <section class="section visor row">
-            <div class="iframe col-md-12">
-                <h2 class="title">Visor de las redes geodésicas</h2>
-                <div id="viewDiv"></div>
-            </div>
-        </section>        
+      <section class="section visor row">
+        <div class="iframe col-md-12">
+          <h2 class="title">Visor de las redes geodésicas</h2>
+          <div id="viewDiv"></div>
+        </div>
+      </section>
     </div>
     <!--
     <div class="containercolor">
@@ -78,99 +83,151 @@
     -->
 
     <div class="container containerIgac">
-        <section class="section sumary">
-            <div class="row container-cards">
-                <h2 class="title">&iquest;Qu&eacute; est&aacute;s buscando?</h2>
-                <div class="col-md-4 mb-3 card-container">
-                    <div class="card card-content">
-                        <img src="images/images-inicio/img-card-1_1.svg" alt="">
-                        <p><a href="https://redgeodesica.igac.gov.co/herramientas/servicios.html">Accede a los servicios en tiempo real</a> </p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3 card-container">
-                    <div class="card card-content">
-                        <img src="images/images-inicio/img-card-2_1.svg" alt="">
-                        <p> <a href="https://redgeodesica.igac.gov.co/redes/red_geodesica.html">Consulta el estado de la Red Geodésica GNSS</a> </p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3 card-container">
-                    <div class="card card-content">
-                        <img src="images/images-inicio/img-card-3_1.svg" alt="">
-                        <p>Convierte y transforma coordenadas</p>
-                    </div>
-                </div>
-                <div class="col-md-4 card-container">
-                    <div class="card card-content">
-                        <img src="images/images-inicio/img-card-4_1.svg" alt="">
-                        <p>Consulta los archivos Rinex</p>
-                    </div>
-                </div>
-                <div class="col-md-4 card-container">
-                    <div class="card card-content">
-                        <img src="images/images-inicio/img-card-5_1.svg" alt="">
-                        <p>Explora los recursos geod&eacute;sicos</p>
-                    </div>
-                </div>
-                <div class="col-md-4 card-container">
-                    <div class="card card-content">
-                        <img src="images/images-inicio/img-card-6_1.svg" alt="">
-                        <p>Conoce sobre el Origen Nacional</p>
-                    </div>
-                </div>                
+      <section class="section sumary">
+        <div class="row container-cards">
+          <h2 class="title">&iquest;Qu&eacute; est&aacute;s buscando?</h2>
+          <div class="col-md-4 mb-3 card-container">
+            <div class="card card-content">
+              <img src="images/images-inicio/img-card-1_1.svg" alt="" />
+              <p>
+                <a
+                  class="ref"
+                  href="https://redgeodesica.igac.gov.co/herramientas/servicios.html"
+                  >Accede a los servicios en tiempo real</a
+                >
+              </p>
             </div>
-        </section>
-
-        <section class="section registrarReportar paddingLast">
-            <h2 class="title w-divider text-center">Participa activamente de la red</h2>
-            <div class="container containerIgac">
-                <div class="d-flex">
-                    <div class="containerFaqs typeB">
-                        <div class="faqs typeC">
-                            <div class="title m-0 mb-3">
-                                Registra una nueva estaci&oacute;n
-                            </div>
-                            <div class="d-flex align-items-center modalEstaciones" data-toggle="modal"
-                                data-target="#modalEstaciones">
-                                <div class="boton-faqs">
-                                    <a>Iniciar formulario</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="containerFaqs typeB">
-                        <div class="faqs typeD">
-                            <div class="title m-0 mb-3">
-                                Reporta una novedad
-                            </div>
-                            <div style="white-space: nowrap;"
-                                class="p-0 col-md-4 text-center modalButtonReportar boton-faqs" data-toggle="modal"
-                                data-target="#reportarModal">
-                                <a>Iniciar formulario</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="col-md-4 mb-3 card-container">
+            <div class="card card-content">
+              <img src="images/images-inicio/img-card-2_1.svg" alt="" />
+              <p>
+                <a
+                  class="ref"
+                  href="https://redgeodesica.igac.gov.co/redes/red_geodesica.html"
+                  >Consulta el estado de la Red Geodésica GNSS</a
+                >
+              </p>
             </div>
-        </section>
-
-
+          </div>
+          <div class="col-md-4 mb-3 card-container">
+            <div class="card card-content">
+              <img src="images/images-inicio/img-card-3_1.svg" alt="" />
+              <p>
+                <a
+                  class="ref"
+                  href="https://origen.igac.gov.co/herramientas.html"
+                  >Convierte y transforma coordenadas</a
+                >
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 card-container">
+            <div class="card card-content">
+              <img src="images/images-inicio/img-card-4_1.svg" alt="" />
+              <p>
+                <a
+                  class="ref"
+                  href="https://igac-cc.azurewebsites.net/redes/redes_interna/red_activa.html"
+                  >Consulta los archivos Rinex</a
+                >
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 card-container">
+            <div class="card card-content">
+              <img src="images/images-inicio/img-card-5_1.svg" alt="" />
+              <p>
+                <a
+                  class="ref"
+                  href="https://igac-cc.azurewebsites.net/herramientas/aplicaciones_herramientas.html"
+                  >Explora los recursos geod&eacute;sicos</a
+                >
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 card-container">
+            <div class="card card-content">
+              <img src="images/images-inicio/img-card-6_1.svg" alt="" />
+              <p>
+                <a class="ref" href="https://origen.igac.gov.co/index.html"
+                  >Conoce sobre el Origen Nacional</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-    <footer class="footer origen">
-    </footer>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <section class="section registrarReportar paddingLast mt-5">
+      <h2 class="title w-divider text-center">
+        Participa activamente de la red
+      </h2>
+      <div class="container containerIgac">
+        <div class="d-flex">
+          <div class="containerFaqs typeB">
+            <div class="faqs typeC">
+              <div class="title m-0 mb-3">
+                Registra y postula un nuevo vértice a la Red Geodésica
+              </div>
+              <div
+                class="d-flex align-items-center modalEstaciones"
+                data-toggle="modal"
+                data-target="#modalEstaciones"
+              >
+                <div class="boton-faqs">
+                  <a>Iniciar formulario</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="containerFaqs typeB">
+            <div class="faqs typeD">
+              <div class="title m-0 mb-3">
+                Reporta novedades sobre vértices de la Red
+              </div>
+              <div
+                style="white-space: nowrap"
+                class="p-0 col-md-4 text-center modalButtonReportar boton-faqs"
+                data-toggle="modal"
+                data-target="#reportarModal"
+              >
+                <a>Iniciar formulario</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer origen"></footer>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="/index.js"></script>
     <script>
-        $('.carousel').carousel({
-            interval: false
-        });
+      $(".carousel").carousel({
+        interval: false,
+      });
     </script>
-<link rel="stylesheet" href="https://js.arcgis.com/4.24/esri/themes/light/main.css">
-<script src="https://js.arcgis.com/4.24/"></script>
-<script>
-    require([
+    <link
+      rel="stylesheet"
+      href="https://js.arcgis.com/4.24/esri/themes/light/main.css"
+    />
+    <script src="https://js.arcgis.com/4.24/"></script>
+    <script>
+      require([
         "esri/config",
         "esri/Map",
         "esri/views/MapView",
@@ -181,69 +238,91 @@
         "esri/widgets/Expand",
         "esri/widgets/Compass",
         "esri/geometry/Extent",
-        "esri/layers/MapImageLayer"
-    ], (
-        esriConfig, Map, MapView, Home, ScaleBar, LayerList, Legend,
-        Expand, Compass, Extent, MapImageLayer
-    ) => {
+        "esri/layers/MapImageLayer",
+        "esri/layers/VectorTileLayer",
+      ], (
+        esriConfig,
+        Map,
+        MapView,
+        Home,
+        ScaleBar,
+        LayerList,
+        Legend,
+        Expand,
+        Compass,
+        Extent,
+        MapImageLayer,
+        VectorTileLayer
+      ) => {
         esriConfig.apiKey =
-            "AAPK2a2e861a0c794bfdb29a1b4ce47b1583OBbY7CvHSkUPhQ20FG1hZEbAl5GmTTZcs-cyoy2tw5to5j_pJiiTW6J_KRbBx-qS";
+          "AAPK2a2e861a0c794bfdb29a1b4ce47b1583OBbY7CvHSkUPhQ20FG1hZEbAl5GmTTZcs-cyoy2tw5to5j_pJiiTW6J_KRbBx-qS";
+        const vtlLayer = new VectorTileLayer({
+          url: "https://tiles.arcgis.com/tiles/RVvWzU3lgJISqdke/arcgis/rest/services/Mapa_base_topografico/VectorTileServer",
+        });
+
         const layer = new MapImageLayer({
-            url: "https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer",
+          url: "https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer",
+          sublayers: [
+            {
+              id: 1,
+              popupTemplate: {
+                title: "Atributos",
+                outFields: ["*"],
+                content: popup,
+              },
+            },
+          ],
         });
         const map = new Map({
-            layers: [layer],
-            basemap: "arcgis-topographic"
+          layers: [vtlLayer, layer],
         });
         const view = new MapView({
-            container: "viewDiv",
-            map: map
+          container: "viewDiv",
+          map: map,
+          center: [-74, 4], // longitude, latitude
+          zoom: 4.8,
         });
         const homeBtn = new Home({
-            view: view
+          view: view,
         });
         const scaleBar = new ScaleBar({
-            view: view,
-            unit: "dual"
+          view: view,
+          unit: "dual",
         });
         const layerList = new LayerList({
-            view: view
+          view: view,
         });
         const legend = new Legend({
-            view: view
+          view: view,
         });
         const layerListExpand = new Expand({
-            view: view,
-            content: layerList,
-            expanded: false,
-            expandTooltip: "Expand LayerList"
+          view: view,
+          content: layerList,
+          expanded: false,
+          expandTooltip: "Expand LayerList",
         });
         const legendExpand = new Expand({
-            view: view,
-            content: legend,
-            expandTooltip: "Expand Legend",
-            expanded: false
+          view: view,
+          content: legend,
+          expandTooltip: "Expand Legend",
+          expanded: true,
         });
         const compass = new Compass({
-            view: view,
-            visible: false
+          view: view,
+          visible: false,
         });
         view.ui.add(homeBtn, "top-left");
         view.ui.add(scaleBar, "bottom-right");
         view.ui.add(layerListExpand, "top-right");
         view.ui.add(legendExpand, "bottom-left");
         view.ui.add(compass, "top-left");
-        layer.when(() => {
-            const initialExtent = Extent.fromJSON(layer.sourceJSON.initialExtent);
-            view.goTo(initialExtent);
-        });
         // load the Compass only when the view is rotated
-        view.watch('rotation', function (rotation) {
-            if (rotation && !compass.visible) {
-                compass.visible = true;
-            }
+        view.watch("rotation", function (rotation) {
+          if (rotation && !compass.visible) {
+            compass.visible = true;
+          }
         });
-    });
-</script>
-</body>
+      });
+    </script>
+  </body>
 </html>

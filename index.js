@@ -1,9 +1,13 @@
+var url_backend = "https://redgeodesica-cg.igac.gov.co";
 
-var url_backend="https://redgeodesica-cg.igac.gov.co";
+var popup;
+$.getJSON("/json/popup.json", function (datos) {
+  popup = datos.popup;
+});
 
 if (document.querySelector(".navbarigac")) {
-    const navbarigac = document.querySelector(".navbarigac");
-    navbarigac.innerHTML = `
+  const navbarigac = document.querySelector(".navbarigac");
+  navbarigac.innerHTML = `
     <div class="logos">
         <div class="navbar-brand-igac">
             <a href='https://www.igac.gov.co' target='_blank'><img alt='Logo IGAC' src='../../images/logo-igac.png'/></a>
@@ -38,36 +42,36 @@ if (document.querySelector(".navbarigac")) {
             </ul>
         </li>
     </div>
-    `
-};
+    `;
+}
 
 if (document.querySelector(".nav-underline")) {
-    const navUnderline = document.querySelector(".nav-underline");
-    navUnderline.innerHTML = `
+  const navUnderline = document.querySelector(".nav-underline");
+  navUnderline.innerHTML = `
     <a class='nav-link geodesica' href='/redes/red_geodesica.html'>Red Geod&eacute;sica GNSS</a>
     <a class='nav-link gavimetrica' href='/redes/red_gavimetrica.html'>Red Gravim&eacute;trica</a>
     <a class='nav-link geomagnetica' href='/redes/red_geomagnetica.html'>Red Geomagn&eacute;tica</a>
     <a class='nav-link d-none' href='/redes/red_gnss.html'>Red GNSS Magna Sirgas</a>
     <a class='nav-link d-none' href='/redes/red_vertices_nivelacion.html'>Red de V&eacute;rtices y Redes de Nivelaci&oacute;n</a>
     <a class='nav-link tablero' href='/redes/tablero_control.html'>Tablero de control</a>
-    `
-};
+    `;
+}
 
 if (document.querySelector(".nav-underline.navHerramientas")) {
-    const navUnderline = document.querySelector(".nav-underline");
-    navUnderline.innerHTML = `
+  const navUnderline = document.querySelector(".nav-underline");
+  navUnderline.innerHTML = `
     <a class='servicios nav-link' href='servicios.html'>Servicios</a>
     <a class='aplicaciones nav-link' href='aplicaciones_herramientas.html'>Aplicaciones y Herramientas</a>
     <a class='modelos nav-link' href='modelos.html'>Modelos</a>
     <a class='datos nav-link' href='datos.html'>Datos</a>
     <a class='norma nav-link' href='normatividad.html'>Normatividad</a>
     <a class='guias nav-link' href='guias_manuales.html'>Gu&iacute;as y manuales</a>
-    `
-};
+    `;
+}
 
 if (document.querySelector(".footer")) {
-    const footerIgac = document.querySelector(".footer");
-    footerIgac.innerHTML = `
+  const footerIgac = document.querySelector(".footer");
+  footerIgac.innerHTML = `
     <div class='footer-container container'>
         <div class='row-footer'>
             <div class='bird-image'>
@@ -131,67 +135,67 @@ if (document.querySelector(".footer")) {
             </div>
         </div>        
     </div>
-    `
-};
+    `;
+}
 
 if (document.querySelector(".nav-bar-toggle-igac")) {
-    const dropDownButon = document.querySelector(".nav-bar-toggle-igac");
-    const dropDownMenu = document.querySelector(".navbarnavigac");
-    const dropDowntoggle = document.querySelector(".dropdownToggle");
-    const dropDown = document.querySelector(".dropDown");
-    dropDownButon.addEventListener('click', function handleClick(event) {
-        dropDownMenu.classList.toggle('expandMenu');
-    });
-    dropDowntoggle.addEventListener('click', function handleClick(event) {
-        dropDown.classList.toggle('expandMenuDrop');
-    });
+  const dropDownButon = document.querySelector(".nav-bar-toggle-igac");
+  const dropDownMenu = document.querySelector(".navbarnavigac");
+  const dropDowntoggle = document.querySelector(".dropdownToggle");
+  const dropDown = document.querySelector(".dropDown");
+  dropDownButon.addEventListener("click", function handleClick(event) {
+    dropDownMenu.classList.toggle("expandMenu");
+  });
+  dropDowntoggle.addEventListener("click", function handleClick(event) {
+    dropDown.classList.toggle("expandMenuDrop");
+  });
 }
 
 if (document.querySelector(".main.inicio")) {
-    $('a.inicio').addClass('active')
+  $("a.inicio").addClass("active");
 }
 
 if (document.querySelector(".main.redes")) {
-    $('a.redes').addClass('active')
+  $("a.redes").addClass("active");
 }
 if (document.querySelector(".main.recursos")) {
-    $('a.recursos').addClass('active')
+  $("a.recursos").addClass("active");
 }
 if (document.querySelector(".geodesicaMaestra")) {
-    $('a.geodesica').addClass('active')
+  $("a.geodesica").addClass("active");
 }
 if (document.querySelector(".gavimetricaMaestra")) {
-    $('a.gavimetrica').addClass('active')
+  $("a.gavimetrica").addClass("active");
 }
 if (document.querySelector(".geomagneticaMaestra")) {
-    $('a.geomagnetica').addClass('active')
+  $("a.geomagnetica").addClass("active");
 }
 if (document.querySelector(".tableroMaestra")) {
-    $('a.tablero').addClass('active')
+  $("a.tablero").addClass("active");
 }
 if (document.querySelector(".serviciosMaestra")) {
-    $('a.servicios').addClass('active')
+  $("a.servicios").addClass("active");
 }
 if (document.querySelector(".normaMaestra")) {
-    $('a.norma').addClass('active')
+  $("a.norma").addClass("active");
 }
 if (document.querySelector(".modelosMaestra")) {
-    $('a.modelos').addClass('active')
+  $("a.modelos").addClass("active");
 }
 if (document.querySelector(".datosMaestra")) {
-    $('a.datos').addClass('active')
+  $("a.datos").addClass("active");
 }
 if (document.querySelector(".aplicacionesMaestra")) {
-    $('a.aplicaciones').addClass('active')
+  $("a.aplicaciones").addClass("active");
 }
 if (document.querySelector(".guiasMaestra")) {
-    $('a.guias').addClass('active')
+  $("a.guias").addClass("active");
 }
 
 /*reporta novedades popUp*/
 if (document.querySelector(".modalButtonReportar")) {
-    var modalButton = (document.querySelector(".modalButtonReportar"));
-    var modalContent = innerHTML = ` 
+  var modalButton = document.querySelector(".modalButtonReportar");
+  var modalContent = (innerHTML = ` 
         <div class='modal maestraModalRedes fade' id='reportarModal' tabindex='-1' role='dialog' aria-labelledby='reportarModalLabel' aria-hidden='true'>
             <div class='modal-dialog' role='document'>
                 <div class='modal-content'>
@@ -396,199 +400,160 @@ if (document.querySelector(".modalButtonReportar")) {
                 </div>
             </div>
         </div>
-    `
-    $('body').append(modalContent)
+    `);
+  $("body").append(modalContent);
 }
 
 $(document).ready(function () {
-    
+  $.getJSON("/json/deptos.json", function (datos) {
+    var data = datos.departamentos;
+    var datamuni = datos.municipios;
 
-    $.getJSON('/json/deptos.json', function(datos) {
-        
+    $("#depto2,#depto1").select2({
+      data: data,
+      dropdownParent: $("#reportarModal"),
+    });
 
-        var data=datos.departamentos;
-        var datamuni=datos.municipios;
+    $("#depto2").on("select2:selecting", function (e) {
+      var muni = [];
+      datamuni.map(function (i) {
+        if (i.id.substring(0, 2) == e.params.args.data.id) {
+          muni.push(i);
+        }
+      });
+      $("#muni").empty();
+      $("#muni").select2({
+        data: muni,
+        dropdownParent: $("#reportarModal"),
+      });
+    });
 
-    
-        $('#depto2,#depto1').select2({
-            data: data,
-            dropdownParent: $('#reportarModal')
-        })
-        
-        $('#depto2').on('select2:selecting', function(e) {
-             var muni=[]
-            datamuni.map(function (i) {
-                if (i.id.substring(0, 2) == e.params.args.data.id) {
-                    muni.push(i)
-                }
-            })
-            $('#muni').empty();
-            $('#muni').select2({
-                data: muni,
-                dropdownParent: $('#reportarModal')
-            })
-    
-        });
+    $("#depto1").on("select2:selecting", function (e) {
+      var muni = [];
+      datamuni.map(function (i) {
+        if (i.id.substring(0, 2) == e.params.args.data.id) {
+          muni.push(i);
+        }
+      });
+      $("#muni1").empty();
+      $("#muni1").select2({
+        data: muni,
+        dropdownParent: $("#reportarModal"),
+      });
+    });
 
-        $('#depto1').on('select2:selecting', function(e) {
-            var muni=[]
-           datamuni.map(function (i) {
-               if (i.id.substring(0, 2) == e.params.args.data.id) {
-                   muni.push(i)
-               }
-           })
-           $('#muni1').empty();
-           $('#muni1').select2({
-               data: muni,
-               dropdownParent: $('#reportarModal')
-           })
-    
-       });
-    
-    
-        var muni=[]
-        datamuni.map(function (i) {
-            if (i.id.substring(0, 2) == '05') {
-                muni.push(i)
-            }
-        })
-    
-        $('#muni,#muni1').select2({
-            data: muni,
-            dropdownParent: $('#reportarModal')
-        });
-
-
-     });
-
-
-
-
-    function formObj2Json(formArray) { //serialize data function
-        var returnArray = {};
-        for (var i = 0, len = formArray.length; i < len; i++)
-          returnArray[formArray[i].name] = formArray[i].value;
-        return returnArray;
+    var muni = [];
+    datamuni.map(function (i) {
+      if (i.id.substring(0, 2) == "99") {
+        muni.push(i);
       }
-      
-      
-          $("#needs-validation1").submit(function (event) {
-      
+    });
 
-      
-              if (this.checkValidity() === false) {
-                  event.preventDefault();
-                  event.stopPropagation();
-              } else {
-                  
-               
-                  var depto = $('#depto2').select2('data')[0]
-                  var muni = $('#muni').select2('data')[0]
+    $("#muni,#muni1").select2({
+      data: muni,
+      dropdownParent: $("#reportarModal"),
+    });
+  });
 
-                  var depto1 = $('#depto1').select2('data')[0]
-                  var muni1 = $('#muni1').select2('data')[0]
-                  
+  function formObj2Json(formArray) {
+    //serialize data function
+    var returnArray = {};
+    for (var i = 0, len = formArray.length; i < len; i++)
+      returnArray[formArray[i].name] = formArray[i].value;
+    return returnArray;
+  }
 
-                  var inputAdicional = document.getElementById("inputAdicional");
-                  var inputOtraNovedad = document.getElementById("inputOtraNovedad");
+  $("#needs-validation1").submit(function (event) {
+    if (this.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    } else {
+      var depto = $("#depto2").select2("data")[0];
+      var muni = $("#muni").select2("data")[0];
 
-                  var inputVertice = document.getElementById("inputVertice");
-                  
-                  var inputNombre = document.getElementById("inputNombre");
-                  var inputCorreo = document.getElementById("inputCorreo");
-                  var inputTelefono = document.getElementById("inputTelefono");
-                  var inputEmpresa = document.getElementById("inputEmpresa");
-                  var inputDireccion = document.getElementById("inputDireccion");
-     
+      var depto1 = $("#depto1").select2("data")[0];
+      var muni1 = $("#muni1").select2("data")[0];
 
-                    var selected = [];
-                    $('.checkList input:checked').each(function() {
-                        selected.push($(this).attr('name'));
-                    });
-                  console.log(selected)
+      var inputAdicional = document.getElementById("inputAdicional");
+      var inputOtraNovedad = document.getElementById("inputOtraNovedad");
 
-      
-                  var json = {
-                      "depto": depto1.text,
-                      "muni": muni1.text,
-                      "inputAdicional": inputAdicional.value,
-                      "inputVertice": inputVertice.value,
-                      "inputOtraNovedad":inputOtraNovedad.value,
-                      "inputNombre": inputNombre.value,
-                      "inputCorreo": inputCorreo.value,
-                      "inputTelefono": inputTelefono.value,
-                      "inputEmpresa": inputEmpresa.value,
-                      "inputDireccion": inputDireccion.value,
-                      "inputMunicipio": muni1.text,
-                      "inputDepartamento": depto1.text,
-                      "TipoNovedad":selected
-                  }
-      
-                  console.log(json)
-                  
-                  event.preventDefault();
-                  event.stopPropagation();
-      
+      var inputVertice = document.getElementById("inputVertice");
 
-                  var logoImg = $('input[name=streamfile]').get(0).files[0];
-                  var formData = new FormData();
-                  formData.append('streamfile', logoImg);
+      var inputNombre = document.getElementById("inputNombre");
+      var inputCorreo = document.getElementById("inputCorreo");
+      var inputTelefono = document.getElementById("inputTelefono");
+      var inputEmpresa = document.getElementById("inputEmpresa");
+      var inputDireccion = document.getElementById("inputDireccion");
 
-                  formData.append( "json", JSON.stringify(json))
+      var selected = [];
+      $(".checkList input:checked").each(function () {
+        selected.push($(this).attr("name"));
+      });
+      console.log(selected);
 
-      
-                  $.ajax({
-                      url: url_backend+"/correo1",
-                      type: 'POST',
-                      contentType: false,
-                      processData: false,
-                      data: formData,
-                      dataType: "json",
-                      success: function(res) {
-                          console.log(res);
-                          if (res.resultado) {
-                              alert("Solicitud enviada con exito");
-                          } else {
-                              alert("Fallo al enviar la solicitud");
-                              
-                          }
-                         
-                      }
-                  });
-      
-      
-      
-      
-      
-              }
-              this.classList.add('was-validated');
-          });
-      
-          // Email validation.
-          $("#inputCorreo").change(function () {
-              var email = $(this);
-              if (email.is(':invalid')) {
-                  email.removeClass('is-valid').addClass('is-invalid');
-                  email.siblings(".invalid-feedback").text(email.prop("validationMessage"))
-              } else {
-                  email.removeClass('is-invalid').addClass('is-valid');
-              }
-          });
+      var json = {
+        depto: depto1.text,
+        muni: muni1.text,
+        inputAdicional: inputAdicional.value,
+        inputVertice: inputVertice.value,
+        inputOtraNovedad: inputOtraNovedad.value,
+        inputNombre: inputNombre.value,
+        inputCorreo: inputCorreo.value,
+        inputTelefono: inputTelefono.value,
+        inputEmpresa: inputEmpresa.value,
+        inputDireccion: inputDireccion.value,
+        inputMunicipio: muni1.text,
+        inputDepartamento: depto1.text,
+        TipoNovedad: selected,
+      };
 
+      console.log(json);
 
+      event.preventDefault();
+      event.stopPropagation();
 
+      var logoImg = $("input[name=streamfile]").get(0).files[0];
+      var formData = new FormData();
+      formData.append("streamfile", logoImg);
 
+      formData.append("json", JSON.stringify(json));
 
+      $.ajax({
+        url: url_backend + "/correo1",
+        type: "POST",
+        contentType: false,
+        processData: false,
+        data: formData,
+        dataType: "json",
+        success: function (res) {
+          console.log(res);
+          if (res.resultado) {
+            alert("Solicitud enviada con exito");
+          } else {
+            alert("Fallo al enviar la solicitud");
+          }
+        },
+      });
+    }
+    this.classList.add("was-validated");
+  });
 
-
+  // Email validation.
+  $("#inputCorreo").change(function () {
+    var email = $(this);
+    if (email.is(":invalid")) {
+      email.removeClass("is-valid").addClass("is-invalid");
+      email.siblings(".invalid-feedback").text(email.prop("validationMessage"));
+    } else {
+      email.removeClass("is-invalid").addClass("is-valid");
+    }
+  });
 });
-
-
 
 /*reporta novedades popUp*/
 if (document.querySelector(".modalIntEstaciones")) {
-    var modalButton = (document.querySelector(".modalIntEstaciones"));
-    var modalContent = innerHTML = ` 
+  var modalButton = document.querySelector(".modalIntEstaciones");
+  var modalContent = (innerHTML = ` 
         <div class='modal maestraModalRedes fade' id='modalIntEstaciones' tabindex='-1' role='dialog' aria-labelledby='modalIntEstaciones' aria-hidden='true'>
             <div class='modal-dialog' role='document'>
                 <div class='modal-content'>
@@ -951,14 +916,14 @@ if (document.querySelector(".modalIntEstaciones")) {
                 </div>
             </div>
         </div>
-    `
-    $('body').append(modalContent);
+    `);
+  $("body").append(modalContent);
 }
 
 /*reporta novedades red activa popUp*/
 if (document.querySelector(".modalIntEstacionesActiva")) {
-    var modalButton = (document.querySelector(".modalIntEstacionesActiva"));
-    var modalContent = innerHTML = ` 
+  var modalButton = document.querySelector(".modalIntEstacionesActiva");
+  var modalContent = (innerHTML = ` 
         <div class='modal maestraModalRedes fade' id='modalIntEstacionesActiva' tabindex='-1' role='dialog' aria-labelledby='modalIntEstacionesActiva' aria-hidden='true'>
             <div class='modal-dialog' role='document'>
                 <div class='modal-content'>
@@ -1142,19 +1107,14 @@ if (document.querySelector(".modalIntEstacionesActiva")) {
                 </div>
             </div>
         </div>
-    `
-    $('body').append(modalContent);
+    `);
+  $("body").append(modalContent);
 }
-
-
-
-
-
 
 /*reporta novedades red activa popUp*/
 if (document.querySelector(".modalEstaciones")) {
-    var modalButton = (document.querySelector(".modalEstaciones"));
-    var modalContent = innerHTML = ` 
+  var modalButton = document.querySelector(".modalEstaciones");
+  var modalContent = (innerHTML = ` 
         <div class='modal maestraModalRedes fade' id='modalEstaciones' tabindex='-1' role='dialog' aria-labelledby='modalEstaciones' aria-hidden='true'>
             <div class='modal-dialog' role='document'>
                 <div class='modal-content'>
@@ -1261,6 +1221,22 @@ if (document.querySelector(".modalEstaciones")) {
                                         </div>
                                     </div>
                                  
+
+                                    
+
+                                    <div class='form-title mt-3'>
+                                        <h2>Información de la estación</h2>
+                                    </div>
+
+                                    
+
+                                    <div class='form-title mt-2'>
+                                        <h2>Seleccione un punto en el mapa</h2>
+                                    </div>
+
+                                    <div id="viewDiv1"></div>
+
+
                                     <table style='width: 100%;' id='example' style='width: 100%;' class='display mt-2  mb-0 form-new-est'>
                                    
                         
@@ -1272,25 +1248,25 @@ if (document.querySelector(".modalEstaciones")) {
 
                                     <tr>
                                         <td>Nombre o identificador de la estación</td>
-                                        <td><input style="width: 100%;" type="text" placeholder="Nombre o identificador de la estación" class="form-control" name="Nombre o identificador de la estación" required></td>
-                                        <td><input style="width: 100%;" type="text" placeholder="Nombre o identificador de la estación" name="Nombre o identificador de la estación" class="form-control" required></td>
+                                        <td><input style="width: 100%;" type="text" placeholder="Escriba un nombre" class="form-control" name="Nombre o identificador de la estación" required></td>
+                                        <td><input style="width: 100%;" type="text" placeholder="Escriba un nombre" name="Nombre o identificador de la estación" class="form-control" required></td>
                                     </tr> 
 
                                     <tr>
                                         <td>Fecha de monumentacion de la estacion</td>
-                                        <td><input style="width: 100%;" type="date" placeholder="Fecha de monumentacion de la estacion" name="Fecha de monumentacion de la estacion" class="form-control" required></td>
-                                        <td><input style="width: 100%;" type="date" placeholder="Fecha de monumentacion de la estacion" name="Fecha de monumentacion de la estacion" class="form-control" required></td>
+                                        <td><input style="width: 100%;" type="date" placeholder="Escriba una fecha" name="Fecha de monumentacion de la estacion" class="form-control" required></td>
+                                        <td><input style="width: 100%;" type="date" placeholder="Escriba una fecha" name="Fecha de monumentacion de la estacion" class="form-control" required></td>
                                     </tr>
 
                                     <tr>
                                         <td>Edad en años</td>
-                                        <td><input style="width: 100%;" type="number" placeholder="Edad en años" name="Edad en años" class="form-control" required></td>
-                                        <td><input style="width: 100%;" type="number" placeholder="Edad en años" name="Edad en años" class="form-control" required></td>
+                                        <td><input style="width: 100%;" type="number" placeholder="Escriba una edad" name="Edad en años" class="form-control" required></td>
+                                        <td><input style="width: 100%;" type="number" placeholder="Escriba una edad" name="Edad en años" class="form-control" required></td>
                                     </tr>                                     
                                     <tr>
                                         <td>Entidad que materializó</td>
-                                        <td><input style="width: 100%;" type="text" placeholder="Entidad que materializó" name="Entidad que materializó" class="form-control" required></td>
-                                        <td><input style="width: 100%;" type="text" placeholder="Entidad que materializó" name="Entidad que materializó" class="form-control" required></td>
+                                        <td><input style="width: 100%;" type="text" placeholder="Escriba el nombre de la entidad" name="Entidad que materializó" class="form-control" required></td>
+                                        <td><input style="width: 100%;" type="text" placeholder="Escriba el nombre de la entidad" name="Entidad que materializó" class="form-control" required></td>
                                     </tr> 
                                     <tr>
                                         <td>Departamento</td>
@@ -1306,20 +1282,20 @@ if (document.querySelector(".modalEstaciones")) {
 
                                     <tr>
                                         <td>Latitud</td>
-                                        <td><input style="width: 100%;" type="number" step="0.00000001" placeholder="Latitud" name="Latitud" class="form-control" required></td>
-                                        <td><input style="width: 100%;" type="number" step="0.00000001" placeholder="Latitud" name="Latitud" class="form-control" required></td>
+                                        <td><input id="lat1" style="width: 100%;" type="number" step="0.00000001" placeholder="Ingrese un número" name="Latitud" class="form-control" required></td>
+                                        <td><input style="width: 100%;" type="number" step="0.00000001" placeholder="Ingrese un número" name="Latitud" class="form-control" required></td>
                                     </tr> 
 
                                     <tr>
                                         <td>Longitud</td>
-                                        <td><input style="width: 100%;" type="text" placeholder="Longitud" name="Longitud" class="form-control" required></td>
-                                        <td><input style="width: 100%;" type="text" placeholder="Longitud" name="Longitud" class="form-control" required></td>
+                                        <td><input id="lon1" style="width: 100%;" type="text" placeholder="ingrese un número" name="Longitud" class="form-control" required></td>
+                                        <td><input style="width: 100%;" type="text" placeholder="Ingrese un número" name="Longitud" class="form-control" required></td>
                                     </tr> 
 
                                     <tr>
                                         <td>Sitio donde se ubica (edificio, predio o lugar)</td>
-                                        <td><input style="width: 100%;" type="text" placeholder="Sitio donde se ubica (edificio, predio o lugar)" name="Sitio donde se ubica (edificio, predio o lugar)" class="form-control" required></td>
-                                        <td><input style="width: 100%;" type="text" placeholder="Sitio donde se ubica (edificio, predio o lugar)" name="Sitio donde se ubica (edificio, predio o lugar)" class="form-control" required></td>
+                                        <td><input style="width: 100%;" type="text" placeholder="edificio, predio o lugar" name="Sitio donde se ubica (edificio, predio o lugar)" class="form-control" required></td>
+                                        <td><input style="width: 100%;" type="text" placeholder="edificio, predio o lugar" name="Sitio donde se ubica (edificio, predio o lugar)" class="form-control" required></td>
                                     </tr> 
                                         
 
@@ -1332,56 +1308,58 @@ if (document.querySelector(".modalEstaciones")) {
 
                                     <tr>
                                         <td>Altura instrumental</td>
-                                        <td><input style="width: 100%;" type="number" step="0.0005" placeholder="Altura instrumental" name="Altura instrumental" class="form-control" required></td>
-                                        <td><input style="width: 100%;" type="number" step="0.0005" placeholder="Altura instrumental" name="Altura instrumental" class="form-control" required></td>
+                                        <td><input style="width: 100%;" type="number" step="0.0005" placeholder="Ingrese un número" name="Altura instrumental" class="form-control" required></td>
+                                        <td><input style="width: 100%;" type="number" step="0.0005" placeholder="Ingrese un número" name="Altura instrumental" class="form-control" required></td>
                                     </tr> 
 
                                     <tr>
                                         <td>Tipo de antena</td>
-                                        <td><input style="width: 100%;" type="text" placeholder="Tipo de antena" name="Tipo de antena" class="form-control" required></td>
-                                        <td><input style="width: 100%;" type="text" placeholder="Tipo de antena" name="Tipo de antena" class="form-control" required></td>
+                                        <td><input style="width: 100%;" type="text" placeholder="Escriba un tipo de antena" name="Tipo de antena" class="form-control" required></td>
+                                        <td><input style="width: 100%;" type="text" placeholder="Escriba un tipo de antena" name="Tipo de antena" class="form-control" required></td>
                                     </tr> 
                                         
                                     <tr>
                                         <td>Serial de antena</td>
-                                        <td><input style="width: 100%;" type="text" placeholder="Serial de antena" name="Serial de antena" class="form-control" required></td>
-                                        <td><input style="width: 100%;" type="text" placeholder="Serial de antena" name="Serial de antena" class="form-control" required></td>
+                                        <td><input style="width: 100%;" type="text" placeholder="Ingrese un número" name="Serial de antena" class="form-control" required></td>
+                                        <td><input style="width: 100%;" type="text" placeholder="Ingrese un número" name="Serial de antena" class="form-control" required></td>
                                     </tr> 
                                         
                                     <tr>
                                         <td>Tipo de receptor</td>
-                                        <td><input style="width: 100%;" type="text" placeholder="Tipo de receptor" name="Tipo de receptor" class="form-control" required></td>
-                                        <td><input style="width: 100%;" type="text" placeholder="Tipo de receptor" name="Tipo de receptor" class="form-control" required></td>
+                                        <td><input style="width: 100%;" type="text" placeholder="Escriba un receptor" name="Tipo de receptor" class="form-control" required></td>
+                                        <td><input style="width: 100%;" type="text" placeholder="Escriba un receptor" name="Tipo de receptor" class="form-control" required></td>
                                     </tr> 
 
                                     <tr>
                                         <td>Serial de receptor</td>
-                                        <td><input style="width: 100%;" type="text" placeholder="Serial de receptor" name="Serial de receptor" class="form-control" required></td>
-                                        <td><input style="width: 100%;" type="text" placeholder="Serial de receptor" name="Serial de receptor" class="form-control" required></td>
+                                        <td><input style="width: 100%;" type="text" placeholder="Ingrese un número" name="Serial de receptor" class="form-control" required></td>
+                                        <td><input style="width: 100%;" type="text" placeholder="Ingrese un número" name="Serial de receptor" class="form-control" required></td>
                                     </tr> 
 
                                     <tr>
                                         <td>Estado actual de la estación</td>
-                                        <td><input style="width: 100%;" type="text" placeholder="Estado actual de la estación" name="Estado actual de la estación" class="form-control" required></td>
-                                        <td><input style="width: 100%;" type="text" placeholder="Estado actual de la estación" name="Estado actual de la estación" class="form-control" required></td>
+                                        <td><input style="width: 100%;" type="text" placeholder="Escriba un estado" name="Estado actual de la estación" class="form-control" required></td>
+                                        <td><input style="width: 100%;" type="text" placeholder="Escriba un estado" name="Estado actual de la estación" class="form-control" required></td>
                                     </tr> 
 
                                     <tr>
                                         <td>Sistema de telecomunicación</td>
                                             <td>
                                                 <select style="width: 100%; height: 25px;" name="Sistema de telecomuicación" class="form-control" required>
-                                                    <option value="value1">Celular</option>
-                                                    <option value="value2">Satelital</option>
-                                                    <option value="value3">Radio enlace</option>
-                                                    <option value="value4">Otro</option>
+                                                    <option value="">Seleccione una opción</option>
+                                                    <option value="Celular">Celular</option>
+                                                    <option value="Satelital">Satelital</option>
+                                                    <option value="Radio enlace">Radio enlace</option>
+                                                    <option value="Otro">Otro</option>
                                                 </select>
                                             </td>
                                             <td>
                                                 <select style="width: 100%; height: 25px;" name="Sistema de telecomuicación" class="form-control" required>
-                                                    <option value="value1">Celular</option>
-                                                    <option value="value2">Satelital</option>
-                                                    <option value="value3">Radio enlace</option>
-                                                    <option value="value4">Otro</option>
+                                                <option value="">Seleccione una opción</option>
+                                                <option value="Celular">Celular</option>
+                                                <option value="Satelital">Satelital</option>
+                                                <option value="Radio enlace">Radio enlace</option>
+                                                <option value="Otro">Otro</option>
                                                 </select>
                                             </td>
                                     </tr> 
@@ -1390,20 +1368,22 @@ if (document.querySelector(".modalEstaciones")) {
                                         <td>IP</td>
                                             <td>
                                                 <select style="width: 100%; height: 25px;" name="IP" class="form-control" required>
-                                                    <option value="value1">Direccion estatica</option>
-                                                    <option value="value2">Puerto TCP/IP</option>
-                                                    <option value="value3">Puerto HTTP</option>
-                                                    <option value="value4">Puerto FTP</option>
-                                                    <option value="value5">Puerto NTRIP</option>
+                                                    <option value="">Seleccione una opción</option>    
+                                                    <option value="Direccion estatica">Direccion estatica</option>
+                                                    <option value="Puerto TCP/IP">Puerto TCP/IP</option>
+                                                    <option value="Puerto HTTP">Puerto HTTP</option>
+                                                    <option value="Puerto FTP<">Puerto FTP</option>
+                                                    <option value="Puerto NTRIP">Puerto NTRIP</option>
                                                 </select>
                                             </td>
                                             <td>
                                                 <select style="width: 100%; height: 25px;" name="IP" class="form-control" required>
-                                                    <option value="value1">Direccion estatica</option>
-                                                    <option value="value2">Puerto TCP/IP</option>
-                                                    <option value="value3">Puerto HTTP</option>
-                                                    <option value="value4">Puerto FTP</option>
-                                                    <option value="value5">Puerto NTRIP</option>
+                                                    <option value="">Seleccione una opción</option>    
+                                                    <option value="Direccion estatica">Direccion estatica</option>
+                                                    <option value="Puerto TCP/IP">Puerto TCP/IP</option>
+                                                    <option value="Puerto HTTP">Puerto HTTP</option>
+                                                    <option value="Puerto FTP<">Puerto FTP</option>
+                                                    <option value="Puerto NTRIP">Puerto NTRIP</option>
                                                 </select>
                                             </td>
                                     </tr>    
@@ -1412,16 +1392,18 @@ if (document.querySelector(".modalEstaciones")) {
                                         <td>Sistema eléctrico</td>
                                             <td>
                                                 <select style="width: 100%; height: 25px;" name="Sistema electrico" class="form-control" required>
-                                                    <option value="value1">Fotovoltaico</option>
-                                                    <option value="value2">Corriente electrica</option>
-                                                    <option value="value3">Hibrido</option>
+                                                    <option value="">Seleccione una opción</option>        
+                                                    <option value="Fotovoltaico">Fotovoltaico</option>
+                                                    <option value="Corriente electrica">Corriente electrica</option>
+                                                    <option value="Hibrido">Hibrido</option>
                                                 </select>
                                             </td>
                                             <td>
                                                 <select style="width: 100%; height: 25px;" name="Sistema electrico" class="form-control" required>
-                                                    <option value="value1">Fotovoltaico</option>
-                                                    <option value="value2">Corriente electrica</option>
-                                                    <option value="value3">Hibrido</option>
+                                                    <option value="">Seleccione una opción</option>        
+                                                    <option value="Fotovoltaico">Fotovoltaico</option>
+                                                    <option value="Corriente electrica">Corriente electrica</option>
+                                                    <option value="Hibrido">Hibrido</option>
                                                 </select>
                                             </td>
                                     </tr>                                        
@@ -1443,497 +1425,585 @@ if (document.querySelector(".modalEstaciones")) {
                 </div>
             </div>
         </div>
-    `
-    $('body').append(modalContent);
+    `);
+  $("body").append(modalContent);
 }
-
 
 window.onload = function () {
+  require([
+    "esri/config",
+    "esri/Map",
+    "esri/views/MapView",
+    "esri/widgets/Home",
+    "esri/widgets/ScaleBar",
+    "esri/widgets/LayerList",
+    "esri/widgets/Legend",
+    "esri/widgets/Expand",
+    "esri/widgets/Compass",
+    "esri/geometry/Extent",
+    "esri/layers/MapImageLayer",
+    "esri/layers/GraphicsLayer",
+    "esri/widgets/Sketch",
+    "esri/layers/VectorTileLayer",
+  ], (
+    esriConfig,
+    Map,
+    MapView,
+    Home,
+    ScaleBar,
+    LayerList,
+    Legend,
+    Expand,
+    Compass,
+    Extent,
+    MapImageLayer,
+    GraphicsLayer,
+    Sketch,
+    VectorTileLayer
+  ) => {
+    esriConfig.apiKey =
+      "AAPK2a2e861a0c794bfdb29a1b4ce47b1583OBbY7CvHSkUPhQ20FG1hZEbAl5GmTTZcs-cyoy2tw5to5j_pJiiTW6J_KRbBx-qS";
 
-function formObj2Json(formArray) { //serialize data function
-  var returnArray = {};
-  for (var i = 0, len = formArray.length; i < len; i++)
-    returnArray[formArray[i].name] = formArray[i].value;
-  return returnArray;
-}
-$.getJSON('/json/deptos.json', function(datos) {
-        
-
-    var data=datos.departamentos;
-    var datamuni=datos.municipios;
-
-
-    $('#depto3,#dp1,#dp2').select2({
-        data: data,
-        dropdownParent: $('#modalEstaciones')
-    })
-    
-    $('#depto3').on('select2:selecting', function(e) {
-         var muni=[]
-        datamuni.map(function (i) {
-            if (i.id.substring(0, 2) == e.params.args.data.id) {
-                muni.push(i)
-            }
-        })
-        $('#muni3').empty();
-        $('#muni3').select2({
-            data: muni,
-            dropdownParent: $('#modalEstaciones')
-        })
-
+    const vtlLayer = new VectorTileLayer({
+      url: "https://tiles.arcgis.com/tiles/RVvWzU3lgJISqdke/arcgis/rest/services/Mapa_base_topografico/VectorTileServer",
+    });
+    const layer = new MapImageLayer({
+      url: "https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer",
+    });
+    var graphicsLayer = new GraphicsLayer();
+    const map = new Map({
+      layers: [vtlLayer, graphicsLayer],
+    });
+    const view = new MapView({
+      container: "viewDiv1",
+      map: map,
+      center: [-74, 4], // longitude, latitude
+      zoom: 4.8,
+    });
+    // Sketch widget
+    var sketch = new Sketch({
+      view: view,
+      layer: graphicsLayer,
+      availableCreateTools: ["point"],
+      creationMode: "update",
     });
 
-    $('#dp1').on('select2:selecting', function(e) {
-        var muni=[]
-       datamuni.map(function (i) {
-           if (i.id.substring(0, 2) == e.params.args.data.id) {
-               muni.push(i)
-           }
-       })
-       $('#mu1').empty();
-       $('#mu1').select2({
-           data: muni,
-           dropdownParent: $('#modalEstaciones')
-       })
+    sketch.visibleElements = {
+      selectionTools: {
+        "lasso-selection": false,
+      },
+      settingsMenu: false,
+    };
 
-   });
+    // Add widget to the view
+    view.ui.add(sketch, "top-right");
 
-   $('#dp2').on('select2:selecting', function(e) {
-    var muni=[]
-   datamuni.map(function (i) {
-       if (i.id.substring(0, 2) == e.params.args.data.id) {
-           muni.push(i)
-       }
-   })
-   $('#mu2').empty();
-   $('#mu2').select2({
-       data: muni,
-       dropdownParent: $('#modalEstaciones')
-   })
+    const homeBtn = new Home({
+      view: view,
+    });
+    const scaleBar = new ScaleBar({
+      view: view,
+      unit: "dual",
+    });
+    const layerList = new LayerList({
+      view: view,
+    });
+    const legend = new Legend({
+      view: view,
+    });
+    const layerListExpand = new Expand({
+      view: view,
+      content: layerList,
+      expanded: false,
+      expandTooltip: "Expand LayerList",
+    });
+    const legendExpand = new Expand({
+      view: view,
+      content: legend,
+      expandTooltip: "Expand Legend",
+      expanded: false,
+    });
+    const compass = new Compass({
+      view: view,
+      visible: false,
+    });
 
-});
+    view.ui.add(homeBtn, "top-left");
+    view.ui.add(scaleBar, "bottom-right");
+    view.ui.add(layerListExpand, "top-right");
+    view.ui.add(legendExpand, "bottom-left");
+    view.ui.add(compass, "top-left");
 
+    // load the Compass only when the view is rotated
+    view.watch("rotation", function (rotation) {
+      if (rotation && !compass.visible) {
+        compass.visible = true;
+      }
+    });
 
+    sketch.on("create", function (event) {
+      if (event.state === "complete") {
+        document.getElementById("lat1").value =
+          event.graphic.geometry.latitude.toFixed(5);
+        document.getElementById("lon1").value =
+          event.graphic.geometry.longitude.toFixed(5);
+      } else if (event.state === "start") {
+        graphicsLayer.removeAll();
+      }
+    });
+    sketch.on("update", function (event) {
+      if (event.state === "complete") {
+        document.getElementById("lat1").value =
+          event.graphics[0].geometry.latitude.toFixed(5);
+        document.getElementById("lon1").value =
+          event.graphics[0].geometry.longitude.toFixed(5);
+      }
+    });
+  });
 
-    var muni=[]
-    datamuni.map(function (i) {
-        if (i.id.substring(0, 2) == '05') {
-            muni.push(i)
+  function formObj2Json(formArray) {
+    //serialize data function
+    var returnArray = {};
+    for (var i = 0, len = formArray.length; i < len; i++)
+      returnArray[formArray[i].name] = formArray[i].value;
+    return returnArray;
+  }
+  $.getJSON("/json/deptos.json", function (datos) {
+    var data = datos.departamentos;
+    var datamuni = datos.municipios;
+
+    $("#depto3,#dp1,#dp2").select2({
+      data: data,
+      dropdownParent: $("#modalEstaciones"),
+    });
+
+    $("#depto3").on("select2:selecting", function (e) {
+      var muni = [];
+      datamuni.map(function (i) {
+        if (i.id.substring(0, 2) == e.params.args.data.id) {
+          muni.push(i);
         }
-    })
-
-    $('#muni3,#mu1,#mu2').select2({
+      });
+      $("#muni3").empty();
+      $("#muni3").select2({
         data: muni,
-        dropdownParent: $('#reportarModal')
+        dropdownParent: $("#modalEstaciones"),
+      });
     });
 
-
- });
-
-
-    $("#needs-validation").submit(function (event) {
-
-       
-         function getAllValues() {
-    
-            let result = [];
-             
-             $("#example tr").each(function() {
-
-
-                 
-                 var name=''
-                 var elementos={};
-
-                 $(this).find('td:first-child').each(function() {
-                    name=$(this).text();
-                });
-
-                elementos["val"]=name;               
-
-                 $(this).find("input").each(function( index ) {
-                      
-                    elementos[index]=($(this).val());
-                     
-                 });
-                 $(this).find("select option:selected").each(function( index ) {
-                      
-                    elementos[index]=($(this).text());                     
-                    
-                });
-           
-
-                 result.push(elementos);
-             })
-
-             return result;
-             
-         }
-         
-        var result = getAllValues();
-        console.log(result)
-       
-  
-
-        if (this.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
-        } else {
-            
-            event.preventDefault();
-            event.stopPropagation();
-
-            var inputNombre = document.getElementById("iNombre");
-            var inputCorreo = document.getElementById("iCorreo");
-            var inputTelefono = document.getElementById("iTelefono");
-            var inputEmpresa = document.getElementById("iEmpresa");
-            var inputDireccion = document.getElementById("iDireccion");
-            var inputDepartamento = $('#depto3').select2('data')[0]
-            var inputMunicipio = $('#muni3').select2('data')[0]
-
-
-            var json = {
-                "inputNombre": inputNombre.value,
-                "inputCorreo": inputCorreo.value,
-                "inputTelefono": inputTelefono.value,
-                "inputEmpresa": inputEmpresa.value,
-                "inputDireccion": inputDireccion.value,
-                "inputMunicipio": inputMunicipio.text,
-                "inputDepartamento": inputDepartamento.text,
-                "tabla":result
-            }
-
-            console.log(json)
-
-            $.ajax({
-                url: url_backend+"/correo",
-                type: 'GET',
-                data:json,
-                dataType: 'json', // added data type
-                success: function(res) {
-                    console.log(res);
-                    if (res.resultado) {
-                        alert("Solicitud enviada con exito");
-                    } else {
-                        alert("Fallo al enviar la solicitud");
-                        
-                    }
-                   
-                }
-            });
-
-
-
-
-
+    $("#dp1").on("select2:selecting", function (e) {
+      var muni = [];
+      datamuni.map(function (i) {
+        if (i.id.substring(0, 2) == e.params.args.data.id) {
+          muni.push(i);
         }
-        this.classList.add('was-validated');
+      });
+      $("#mu1").empty();
+      $("#mu1").select2({
+        data: muni,
+        dropdownParent: $("#modalEstaciones"),
+      });
     });
 
-    // Email validation.
-    $("#inputCorreo").change(function () {
-        var email = $(this);
-        if (email.is(':invalid')) {
-            email.removeClass('is-valid').addClass('is-invalid');
-            email.siblings(".invalid-feedback").text(email.prop("validationMessage"))
-        } else {
-            email.removeClass('is-invalid').addClass('is-valid');
+    $("#dp2").on("select2:selecting", function (e) {
+      var muni = [];
+      datamuni.map(function (i) {
+        if (i.id.substring(0, 2) == e.params.args.data.id) {
+          muni.push(i);
         }
+      });
+      $("#mu2").empty();
+      $("#mu2").select2({
+        data: muni,
+        dropdownParent: $("#modalEstaciones"),
+      });
     });
 
+    var muni = [];
+    datamuni.map(function (i) {
+      if (i.id.substring(0, 2) == "99") {
+        muni.push(i);
+      }
+    });
 
+    $("#muni3,#mu1,#mu2").select2({
+      data: muni,
+      dropdownParent: $("#reportarModal"),
+    });
+  });
 
+  $("#needs-validation").submit(function (event) {
+    function getAllValues() {
+      let result = [];
 
+      $("#example tr").each(function () {
+        var name = "";
+        var elementos = {};
 
+        $(this)
+          .find("td:first-child")
+          .each(function () {
+            name = $(this).text();
+          });
+
+        elementos["val"] = name;
+
+        $(this)
+          .find("input")
+          .each(function (index) {
+            elementos[index] = $(this).val();
+          });
+        $(this)
+          .find("select option:selected")
+          .each(function (index) {
+            elementos[index] = $(this).text();
+          });
+
+        result.push(elementos);
+      });
+
+      return result;
+    }
+
+    var result = getAllValues();
+    console.log(result);
+
+    if (this.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    } else {
+      event.preventDefault();
+      event.stopPropagation();
+
+      var inputNombre = document.getElementById("iNombre");
+      var inputCorreo = document.getElementById("iCorreo");
+      var inputTelefono = document.getElementById("iTelefono");
+      var inputEmpresa = document.getElementById("iEmpresa");
+      var inputDireccion = document.getElementById("iDireccion");
+      var inputDepartamento = $("#depto3").select2("data")[0];
+      var inputMunicipio = $("#muni3").select2("data")[0];
+
+      var json = {
+        inputNombre: inputNombre.value,
+        inputCorreo: inputCorreo.value,
+        inputTelefono: inputTelefono.value,
+        inputEmpresa: inputEmpresa.value,
+        inputDireccion: inputDireccion.value,
+        inputMunicipio: inputMunicipio.text,
+        inputDepartamento: inputDepartamento.text,
+        tabla: result,
+      };
+
+      console.log(json);
+
+      $.ajax({
+        url: url_backend + "/correo",
+        type: "GET",
+        data: json,
+        dataType: "json", // added data type
+        success: function (res) {
+          console.log(res);
+          if (res.resultado) {
+            alert("Solicitud enviada con exito");
+          } else {
+            alert("Fallo al enviar la solicitud");
+          }
+        },
+      });
+    }
+    this.classList.add("was-validated");
+  });
+
+  // Email validation.
+  $("#inputCorreo").change(function () {
+    var email = $(this);
+    if (email.is(":invalid")) {
+      email.removeClass("is-valid").addClass("is-invalid");
+      email.siblings(".invalid-feedback").text(email.prop("validationMessage"));
+    } else {
+      email.removeClass("is-invalid").addClass("is-valid");
+    }
+  });
 };
 
 /*data tables*/
 if (document.querySelector("#redTable2")) {
-    $(document).ready(function () {
-        // Setup - add a text input to each footer cell
-        $('#redTable2 thead tr')
-            .clone(true)
-            .addClass('filters')
-            .insertAfter('.filterContainer');
-            
-     
-        var table = $('#redTable2').DataTable({
-            'colums': [
-                {'data': 'id'},
-                {'data': 'Municipio, departamento'},
-                {'data': 'Estado'},
-                {'data': 'Nombre de la red'},
-                {'data': 'Entidad'},
-            ],
-            orderCellsTop: true,
-            fixedHeader: true,
-            scrollX: true,
-            language: {
-                search: "_INPUT_",
-                searchPlaceholder: "Busca una estación",
-                paginate: {
-                    next: '<i class="fa fa-angle-right"></i>',
-                    previous: '<i class="fa fa-angle-left"></i>'
-                }
-            },
-            "columnDefs": [
-                { className: "estados", "targets": [ 2 ] },
-                { className: "estados", "targets": [ 3 ] },
-                { className: "redes", "targets": [ 4 ] }
-            ],
-            "bInfo": false,
-            "bLengthChange": false,
-            initComplete: function () {
-                var api = this.api();
-     
-                // For each column
+  $(document).ready(function () {
+    // Setup - add a text input to each footer cell
+    $("#redTable2 thead tr")
+      .clone(true)
+      .addClass("filters")
+      .insertAfter(".filterContainer");
+
+    var table = $("#redTable2").DataTable({
+      colums: [
+        { data: "id" },
+        { data: "Municipio, departamento" },
+        { data: "Estado" },
+        { data: "Nombre de la red" },
+        { data: "Entidad" },
+      ],
+      orderCellsTop: true,
+      fixedHeader: true,
+      scrollX: true,
+      language: {
+        search: "_INPUT_",
+        searchPlaceholder: "Busca una estación",
+        paginate: {
+          next: '<i class="fa fa-angle-right"></i>',
+          previous: '<i class="fa fa-angle-left"></i>',
+        },
+      },
+      columnDefs: [
+        { className: "estados", targets: [2] },
+        { className: "estados", targets: [3] },
+        { className: "redes", targets: [4] },
+      ],
+      bInfo: false,
+      bLengthChange: false,
+      initComplete: function () {
+        var api = this.api();
+
+        // For each column
+        api
+          .columns()
+          .eq(0)
+          .each(function (colIdx) {
+            // Set the header cell to contain the input element
+            var cell = $(".filters th").eq(
+              $(api.column(colIdx).header()).index()
+            );
+            var title = $(cell).text();
+            $(cell).html('<input type="text" placeholder="' + title + '" />');
+
+            // On every keypress in this input
+            $(
+              "input",
+              $(".filters th").eq($(api.column(colIdx).header()).index())
+            )
+              .off("keyup change")
+              .on("change", function (e) {
+                // Get the search value
+                $(this).attr("title", $(this).val());
+                var regexr = "({search})"; //$(this).parents('th').find('select').val();
+
+                var cursorPosition = this.selectionStart;
+                // Search the column for that value
                 api
-                    .columns()
-                    .eq(0)
-                    .each(function (colIdx) {
-                        // Set the header cell to contain the input element
-                        var cell = $('.filters th').eq(
-                            $(api.column(colIdx).header()).index()
-                        );
-                        var title = $(cell).text();
-                        $(cell).html('<input type="text" placeholder="' + title + '" />');
-     
-                        // On every keypress in this input
-                        $(
-                            'input',
-                            $('.filters th').eq($(api.column(colIdx).header()).index())
-                        )
-                            .off('keyup change')
-                            .on('change', function (e) {
-                                // Get the search value
-                                $(this).attr('title', $(this).val());
-                                var regexr = '({search})'; //$(this).parents('th').find('select').val();
+                  .column(colIdx)
+                  .search(
+                    this.value != ""
+                      ? regexr.replace("{search}", "(((" + this.value + ")))")
+                      : "",
+                    this.value != "",
+                    this.value == ""
+                  )
+                  .draw();
+              })
+              .on("keyup", function (e) {
+                e.stopPropagation();
 
-                                var cursorPosition = this.selectionStart;
-                                // Search the column for that value
-                                api
-                                    .column(colIdx)
-                                    .search(
-                                        this.value != ''
-                                            ? regexr.replace('{search}', '(((' + this.value + ')))')
-                                            : '',
-                                        this.value != '',
-                                        this.value == ''
-                                    )
-                                    .draw();
-                            })
-                            .on('keyup', function (e) {
-                                e.stopPropagation();
-
-                                $(this).trigger('change');
-                                $(this)
-                                    .focus()[0]
-                            });
-                    });
-            },
-            
-        });
+                $(this).trigger("change");
+                $(this).focus()[0];
+              });
+          });
+      },
     });
-
+  });
 }
 
 /*data tables*/
 if (document.querySelector("#redTable")) {
-    $(document).ready(function () {
-        // Setup - add a text input to each footer cell
-        $('#redTable thead tr')
-            .clone(true)
-            .addClass('filters')
-            .insertAfter('.filterContainer');
+  $(document).ready(function () {
+    // Setup - add a text input to each footer cell
+    $("#redTable thead tr")
+      .clone(true)
+      .addClass("filters")
+      .insertAfter(".filterContainer");
 
+    var table = $("#redTable").DataTable({
+      colums: [
+        { data: "id" },
+        { data: "Municipio, departamento" },
+        { data: "Estado" },
+        { data: "Nombre de la red" },
+        { data: "Entidad" },
+      ],
+      orderCellsTop: true,
+      fixedHeader: true,
+      language: {
+        search: "_INPUT_",
+        searchPlaceholder: "Busca una estación",
+        paginate: {
+          next: '<i class="fa fa-angle-right"></i>',
+          previous: '<i class="fa fa-angle-left"></i>',
+        },
+      },
+      columnDefs: [
+        { className: "estados", targets: [2] },
+        { className: "redes", targets: [4] },
+      ],
+      bInfo: false,
+      bLengthChange: false,
+      initComplete: function () {
+        var api = this.api();
 
-        var table = $('#redTable').DataTable({
-            'colums': [
-                { 'data': 'id' },
-                { 'data': 'Municipio, departamento' },
-                { 'data': 'Estado' },
-                { 'data': 'Nombre de la red' },
-                { 'data': 'Entidad' },
-            ],
-            orderCellsTop: true,
-            fixedHeader: true,
-            language: {
-                search: "_INPUT_",
-                searchPlaceholder: "Busca una estación",
-                paginate: {
-                    next: '<i class="fa fa-angle-right"></i>',
-                    previous: '<i class="fa fa-angle-left"></i>'
-                }
-            },
-            "columnDefs": [
-                { className: "estados", "targets": [2] },
-                { className: "redes", "targets": [4] }
-            ],
-            "bInfo": false,
-            "bLengthChange": false,
-            initComplete: function () {
-                var api = this.api();
+        // For each column
+        api
+          .columns()
+          .eq(0)
+          .each(function (colIdx) {
+            // Set the header cell to contain the input element
+            var cell = $(".filters th").eq(
+              $(api.column(colIdx).header()).index()
+            );
+            var title = $(cell).text();
+            $(cell).html('<input type="text" placeholder="' + title + '" />');
 
-                // For each column
+            // On every keypress in this input
+            $(
+              "input",
+              $(".filters th").eq($(api.column(colIdx).header()).index())
+            )
+              .off("keyup change")
+              .on("change", function (e) {
+                // Get the search value
+                $(this).attr("title", $(this).val());
+                var regexr = "({search})"; //$(this).parents('th').find('select').val();
+
+                var cursorPosition = this.selectionStart;
+                // Search the column for that value
                 api
-                    .columns()
-                    .eq(0)
-                    .each(function (colIdx) {
-                        // Set the header cell to contain the input element
-                        var cell = $('.filters th').eq(
-                            $(api.column(colIdx).header()).index()
-                        );
-                        var title = $(cell).text();
-                        $(cell).html('<input type="text" placeholder="' + title + '" />');
+                  .column(colIdx)
+                  .search(
+                    this.value != ""
+                      ? regexr.replace("{search}", "(((" + this.value + ")))")
+                      : "",
+                    this.value != "",
+                    this.value == ""
+                  )
+                  .draw();
+              })
+              .on("keyup", function (e) {
+                e.stopPropagation();
 
-                        // On every keypress in this input
-                        $(
-                            'input',
-                            $('.filters th').eq($(api.column(colIdx).header()).index())
-                        )
-                            .off('keyup change')
-                            .on('change', function (e) {
-                                // Get the search value
-                                $(this).attr('title', $(this).val());
-                                var regexr = '({search})'; //$(this).parents('th').find('select').val();
-
-                                var cursorPosition = this.selectionStart;
-                                // Search the column for that value
-                                api
-                                    .column(colIdx)
-                                    .search(
-                                        this.value != ''
-                                            ? regexr.replace('{search}', '(((' + this.value + ')))')
-                                            : '',
-                                        this.value != '',
-                                        this.value == ''
-                                    )
-                                    .draw();
-                            })
-                            .on('keyup', function (e) {
-                                e.stopPropagation();
-
-                                $(this).trigger('change');
-                                $(this)
-                                    .focus()[0]
-                            });
-                    });
-            },
-
-        });
+                $(this).trigger("change");
+                $(this).focus()[0];
+              });
+          });
+      },
     });
-
+  });
 }
 
 /*selector de estados de redes*/
 $(function () {
-    $('td.redes:contains(Activa)').addClass('activa')
+  $("td.redes:contains(Activa)").addClass("activa");
 });
 
 $(function () {
-    $('td.redes:contains(Pasiva)').addClass('pasiva')
+  $("td.redes:contains(Pasiva)").addClass("pasiva");
 });
 
 /*selector de estados de redes*/
 $(function () {
-    $('td.estados:contains(Inactivo)').html('<span class="inactivo">Inactivo</span>')
+  $("td.estados:contains(Inactivo)").html(
+    '<span class="inactivo">Inactivo</span>'
+  );
 });
 
 $(function () {
-    $('td.estados:contains(Removida)').html('<span class="removido">Removida</span>')
+  $("td.estados:contains(Removida)").html(
+    '<span class="removido">Removida</span>'
+  );
 });
 
 $(function () {
-    $('td.estados:contains(Activo)').html('<span class="activo">Activo</span>')
+  $("td.estados:contains(Activo)").html('<span class="activo">Activo</span>');
 });
 
 /*tabulador*/
 if (document.querySelector(".tab-content")) {
-    var button = document.getElementsByClassName('but'),
-        tabContent = document.getElementsByClassName('tab-content');
-    tabContent[0].style.display = 'block';
+  var button = document.getElementsByClassName("but"),
+    tabContent = document.getElementsByClassName("tab-content");
+  tabContent[0].style.display = "block";
 
-
-    function city(e, city) {
-        var i;
-        for (i = 0; i < button.length; i++) {
-            tabContent[i].style.display = 'none';
-            button[i].classList.remove('active');
-        }
-        document.getElementById(city).style.display = 'block';
-        e.currentTarget.classList.add('active');
+  function city(e, city) {
+    var i;
+    for (i = 0; i < button.length; i++) {
+      tabContent[i].style.display = "none";
+      button[i].classList.remove("active");
     }
-};
+    document.getElementById(city).style.display = "block";
+    e.currentTarget.classList.add("active");
+  }
+}
 
 $(document).ready(function () {
+  $("#example").DataTable({
+    scrollX: true,
+    searching: false,
+    paging: false,
+    info: false,
+  });
 
-    $("#example").DataTable({
-        scrollX: true,
-        searching: false,
-        paging: false,
-        info: false
-    });
+  $("#example2").DataTable({
+    scrollX: true,
+    searching: false,
+    paging: false,
+    info: false,
+  });
 
-    $("#example2").DataTable({
-        scrollX: true,
-        searching: false,
-        paging: false,
-        info: false
-    });
+  $(".modalIntEstaciones").one("click", function () {
+    setTimeout(() => {
+      $("#example_wrapper .sorting").last().trigger("click");
+    }, 500);
+  });
 
-    $(".modalIntEstaciones").one("click", function () {
-        setTimeout(() => {
-            $('#example_wrapper .sorting').last().trigger("click");
-        }, 500);
-    });
+  $("#table_id").DataTable({
+    scrollX: true,
+    searching: false,
+    paging: false,
+    info: false,
+  });
 
-    $("#table_id").DataTable({
-        scrollX: true,
-        searching: false,
-        paging: false,
-        info: false
-    });
+  $(".maestraModalRedes").one("click", function () {
+    setTimeout(() => {
+      $("#table_id_wrapper .sorting").last().trigger("click");
+    }, 500);
+  });
 
-    $(".maestraModalRedes").one("click", function () {
-        setTimeout(() => {
-            $('#table_id_wrapper .sorting').last().trigger("click");
-        }, 500);
-    });
+  /*tabs*/
 
-    /*tabs*/
+  $(".bodyTarget2").hide();
+  $(".redActivaButton").on("click", function () {
+    $(this).addClass("active");
+    $(".redPasivaButton").removeClass("active");
+    $(".bodyTarget1").show();
+    $(".bodyTarget2").hide();
+  });
+  $(".redPasivaButton").on("click", function () {
+    $(this).addClass("active");
+    $(".redActivaButton").removeClass("active");
+    $(".bodyTarget2").show();
+    $(".bodyTarget1").hide();
+  });
 
-    $('.bodyTarget2').hide();
-    $('.redActivaButton').on("click", function () {
-        $(this).addClass('active');
-        $('.redPasivaButton').removeClass('active');
-        $('.bodyTarget1').show();
-        $('.bodyTarget2').hide();
-    });
-    $('.redPasivaButton').on("click", function () {
-        $(this).addClass('active');
-        $('.redActivaButton').removeClass('active');
-        $('.bodyTarget2').show();
-        $('.bodyTarget1').hide();
-    });
-
-    /*ver mapa*/
-    $(".iframeMaps").hide();
-    $(".mapView").on("click", function () {
-        $(this).toggleClass('active');
-        if ($('.mapView').hasClass('active')) {
-            $(".iframeMaps").show();
-            $('.otraNovedadFoto').css('margin-top', '-150px')
-        } else {
-            $(".iframeMaps").hide();
-            $('.otraNovedadFoto').css('margin-top', '0')
-        }
-    });
-
-
-
+  /*ver mapa*/
+  $(".iframeMaps").hide();
+  $(".mapView").on("click", function () {
+    $(this).toggleClass("active");
+    if ($(".mapView").hasClass("active")) {
+      $(".iframeMaps").show();
+      $(".otraNovedadFoto").css("margin-top", "-150px");
+    } else {
+      $(".iframeMaps").hide();
+      $(".otraNovedadFoto").css("margin-top", "0");
+    }
+  });
 });
 
 /*carousel*/
-$('.carousel').carousel({
-    interval: false,
-}); 
+$(".carousel").carousel({
+  interval: false,
+});

@@ -49,27 +49,16 @@
                 </div>
                 <div class="col-md-12">
                     <div class="texto-portada">
-                        <h1 id="titulo">Nombre de la red y el ID</h1>
-                        <p>
-                            (Marco Geoc&eacute;ntrico Nacional de Estaciones Continuas) (GNSS: &ldquo;Global Navigation
-                            Satellite System&rdquo; - Sistema Global de Navegaci&oacute;n Satelital)
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-12 position-absolute identifiers">
-                    <div class="row">
-                        <div class="col-md-6" id="sigla">
-                            <p>
-
-                            </p>
+                        <h1 id="titulo"></h1>
+                        <div class="title" id="depto">
+                            
                         </div>
-                        <div class="col-md-6">
-                            <p id="iers">
-
-                            </p>
+                        <div class="title" id="muni">
+                            
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -79,12 +68,6 @@
                 <section class="section infoUbicacion">
                     <div class="title">
                         Informaci&oacute;n de ubicaci&oacute;n
-                    </div>
-                    <div class="item" id="departamento">
-                        Departamento:
-                    </div>
-                    <div class="item" id="municipio">
-                        Municipio: 
                     </div>
                     <div class="item" id="barrio">
                         Barrio o Sector: 
@@ -167,9 +150,7 @@
                     <div class="title">
                         Instrumentaci&oacute;n
                     </div>
-                    <img src="/images/images-redes/instrumentacionRedActiva.svg" alt="">
-                    <p>TCR: Top of Chokering, BCR: Bottom of Chokering, BPA – ARP: Bottom of Preamplifier- Antenna
-                        Reference Point https://geodesy.noaa.gov/ANTCAL/FAQ.xhtml#faq4</p>
+                    <img id="antena_foto" src="/images/images-redes/instrumentacionRedActiva.svg" alt="">
                 </section>
                 <div class="divider"></div>
                 <section class="section infoUbicacion pt-0">
@@ -238,7 +219,7 @@
             <div class="col-md-6">
                 <section class="section infoUbicacion">
                     <div class="title">
-                        Ubicaci&oacute;n en Planta de la Estaci&oacute;n
+                        Ubicaci&oacute;n
                     </div>
                     <div class="item">
                         <div id="mapa_estacion"></div>
@@ -264,25 +245,14 @@
                                                     alt="" /></div>
                                         </div>
                                     </div>
+                                    <img id="img3" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="" />
                                 </div>
                             </div>
                         </section>
                     </div>
-                    <section class="section infoUbicacion pt-0">
-                        <div class="title">
-                            Referencia medidas de los objetos al punto
-                        </div>
-                        <table id="tbl_puntos" class="customeTable">
-                                <tr>
-                                    <th>N°</th>
-                                    <th>Objeto</th>
-                                    <th>Azimut Magnético(°)</th>
-                                    <th>Distancia (m)</th>
-                                </tr>
 
-                        </table>
-                    </section>
             </div>
+            
             </section>
             <section class="section infoUbicacion pt-5">
                 <div class="title">
@@ -355,7 +325,7 @@
         var nombre = getParameterByName('nombre');
         var id = getParameterByName('id');
 
-        document.getElementById('titulo').innerHTML='Red '+nombre+' - '+estacion
+        document.getElementById('titulo').innerHTML=id
 
 
         $.ajax({
@@ -380,14 +350,11 @@
         }
         }
 
-        
-        document.getElementById('sigla').innerHTML="Nombre (Identificaci&oacute;n seg&uacute;n IGS SIRGAS): "+check(obj.identificador);
-
-        document.getElementById('iers').innerHTML="Identificación según el ITRF: "+check(obj.numero_domo_iers);   
+            document.getElementById('depto').innerHTML="Departamento: "+check(obj.departamento);
+            document.getElementById('muni').innerHTML="Municipio: "+check(obj.municipio);
 
 
-            document.getElementById('departamento').innerHTML="Departamento: "+check(obj.departamento);
-            document.getElementById('municipio').innerHTML="Municipio: "+check(obj.municipio);
+            
             document.getElementById('barrio').innerHTML="Barrio: "+check(obj.agencia_direccion);
             document.getElementById('localizacion').innerHTML="Localizacion: "+check(obj.agencia_direccion);
             document.getElementById('divipola').innerHTML="Código Municipio "+check(obj.codigo);
@@ -422,41 +389,25 @@
             document.getElementById('y').innerHTML="	Y(m): "+check(obj.y);
 
 
-            if(obj.punto_referencia){
-            
-                var cols=obj.punto_referencia.length;
-
-                for(i=0;i<cols;i++){
-                    $('#tbl_puntos tr:last').after("<tr><td>"+(i+1)+"</td><td>"+obj.punto_referencia[i].objeto+"</td><td>"+obj.punto_referencia[i].azimut+"</td><td>"+obj.punto_referencia[i].distancia+"</td></tr>");
-                }
-        }else{
-            
-
-            var tableHeaderRowCount = 1;
-            var table = document.getElementById('tbl_puntos');
-            var rowCount = table.rows.length;
-            console.log(rowCount)
-            for (var i = tableHeaderRowCount; i < rowCount; i++) {
-                table.deleteRow(tableHeaderRowCount);
-                
-            }
-            $( "#tbl_puntos" ).after( "<p>Sin información</p>" );
-
-        }
 
 
             if(obj.foto_antena!==null){
-                document.getElementById('img1').src=obj.foto_antena;
+
+                document.getElementById('img1').src='https://redgeodesica-cg.igac.gov.co/ver_img/'+obj.foto_antena;
             }else{
                 $('#div1').remove()
             }
 
             if(obj.foto_estacion!==null){
-                document.getElementById('img2').src=obj.foto_estacion;
+                document.getElementById('img2').src='https://redgeodesica-cg.igac.gov.co/ver_img/'+obj.foto_estacion;
             }else{
                 $('#div2').remove()
             }
 
+            if(obj.antena_modelo){
+            
+                $("#antena_foto").attr("src","/images/antenas/"+obj.antena_modelo+".jpg");
+            }
 
 
             $(".slideshow ").slick({
@@ -518,16 +469,21 @@
             "esri/geometry/Extent",
             "esri/layers/MapImageLayer",
             "esri/geometry/Circle",
-            "esri/Graphic"
+            "esri/Graphic",
+            "esri/symbols/PictureMarkerSymbol",
+            "esri/layers/VectorTileLayer",
         ], (
             esriConfig, Map, MapView, Home, ScaleBar, LayerList, Legend,
-            Expand, Compass, Extent, MapImageLayer,Circle,Graphic
+            Expand, Compass, Extent, MapImageLayer,Circle,Graphic,PictureMarkerSymbol,VectorTileLayer
         ) => {
             esriConfig.apiKey =
                 "AAPK2a2e861a0c794bfdb29a1b4ce47b1583OBbY7CvHSkUPhQ20FG1hZEbAl5GmTTZcs-cyoy2tw5to5j_pJiiTW6J_KRbBx-qS";
-
+            const vtlLayer = new VectorTileLayer({
+            url: "https://tiles.arcgis.com/tiles/RVvWzU3lgJISqdke/arcgis/rest/services/Mapa_base_topografico/VectorTileServer",
+            });
             const map = new Map({
-                basemap: "arcgis-topographic"
+          
+                layers:[vtlLayer]
             });
             const view = new MapView({
                 container: "mapa_estacion",
@@ -565,13 +521,10 @@
                 
 
                 symbol: {
-                    type: "simple-fill",
-                    style: "solid",
-                    color: [ 255, 115, 95 , 0.9 ],
-                    outline: {
-                        width: 1,
-                        color: "red"
-                    }
+                    type: "picture-marker",  // autocasts as new PictureMarkerSymbol()
+                    url: "/images/ping.png",
+                    width: "64px",
+                    height: "64px"
                 }
                 }));
 
@@ -585,13 +538,14 @@
             });
         });
   
-        /*
+        
         try {
+            console.log(url_backend+'/ver_img_activa/'+id)
             document.getElementById('img3').src=url_backend+'/ver_img_activa/'+id
         } catch (ex) {
             console.log(ex)
         }
-        */
+        
 
 
       }

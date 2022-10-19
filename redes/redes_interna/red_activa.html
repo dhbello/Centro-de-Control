@@ -1,167 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Centro de Control Geod&eacute;sico Nacional</title>
-    <link rel="icon" href="images-home/logos/favicon.png">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
-    <link href="../../css/style.css" rel="stylesheet">
-    <link href="../../css/maestra.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-</head>
-<body class="main redes geodesicaMaestra redActivaPagina">
-    <nav class="navbarigac origen">
-    </nav>
-    <nav class="nav nav-underline">
-    </nav>
+    <link rel="icon" href="images-home/logos/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css"
+    />
+    <link href="../../css/style.css" rel="stylesheet" />
+    <link href="../../css/maestra.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="main redes geodesicaMaestra redActivaPagina">
+    <nav class="navbarigac origen"></nav>
+    <nav class="nav nav-underline"></nav>
     <section class="portada-igac portadaSub redActiva">
-        <div class="container block-igac">
-            <div class="d-flex contenido-portada">
-                <a class="get-back" href="../red_geodesica.html"><img src="/images/iconos/arrow-back.svg" alt=""> Volver
-                    a la Red Geodésica GNSS</a>
-                <div class="texto-portada">
-                    <h1>Red de estaciones de Operación Continua</h1>
-                    <p>
-                        Est&aacute; compuesta por estaciones GNSS de funcionamiento continuo que proporcionan
-                        informaci&oacute;n diaria en el formato Receiver Independent Exchange (RINEX) el cual es un
-                        formato que permite su uso en cualquier software de procesamiento GNSS. El IGAC dispone de una
-                        red de Estaciones de rastreo contin&uacute;o la cual se encuentra ubicada
-                        estrat&eacute;gicamente en el territorio nacional y sirve de base de referencia para los
-                        levantamientos diferenciales, al recibir informaci&oacute;n satelital en tiempo real.
-                    </p>
-                </div>
-            </div>
+      <div class="container block-igac">
+        <div class="row contenido-portada m-0">
+          <div class="col-md-12 position-absolute get-backContainer">
+            <a class="get-back" href="../red_geodesica.html"
+              ><img src="/images/iconos/arrow-back.svg" alt="" />Volver a la Red
+              Geodésica GNSS</a
+            >
+          </div>
+          <div class="texto-portada mt-5">
+            <h1>Red de estaciones de Operación Continua</h1>
+            <p>
+              Est&aacute; compuesta por estaciones GNSS de funcionamiento
+              continuo que proporcionan informaci&oacute;n diaria en el formato
+              Receiver Independent Exchange (RINEX) el cual es un formato que
+              permite su uso en cualquier software de procesamiento GNSS. El
+              IGAC dispone de una red de Estaciones de rastreo contin&uacute;o
+              la cual se encuentra ubicada estrat&eacute;gicamente en el
+              territorio nacional y sirve de base de referencia para los
+              levantamientos diferenciales, al recibir informaci&oacute;n
+              satelital en tiempo real.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
     <div class="container containerIgac">
-        <section class="section visor row">
-            <div class="iframe col-md-12">
-                <div class="d-flex position-relative align-items-center justify-content-end">
-                    <h2 class="title w-divider text-center">Mapa de la Red de estaciones de Operación Continua</h2>
-                    <div class="status d-flex position-absolute">
-                        <a class="btn mb-4 text-center buttonCem">Ver en CEM</a>
-                    </div>
-                </div>
-                <div id="viewDiv"></div>
+      <section class="section visor row">
+        <div class="iframe col-md-12">
+          <div
+            class="d-flex position-relative align-items-center justify-content-end"
+          >
+            <h2 class="title w-divider text-center">
+              Mapa de la Red de estaciones de Operación Continua
+            </h2>
+            <div class="status d-flex position-absolute">
+              <a class="btn mb-4 text-center buttonCem">Ver en CEM</a>
             </div>
-        </section>
-    </div>
-    
-    <div class="typeB">
-        <div class="container containerIgac">        
-            <section class="section">
-                <div class="m-auto w-100">
-
-                    <table id="tbl1" class="display">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Municipio,departamento</th>
-                                <th>Estado</th>
-                                <th>Nombre de la red</th>
-                                <th>Entidad</th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                    </table>
-                    
-                </div>
-            </section>
+          </div>
+          <div id="viewDiv"></div>
         </div>
+      </section>
     </div>
 
+    <div class="typeB">
+      <div class="container containerIgac">
+        <section class="section pt-0">
+          <div class="m-auto w-100">
+            <div id="table-head">
+              <div id="new-search-area"></div>
+              <div id="head-1">
+                <div id="filtros"></div>
+                <div id="entradas"></div>
+                <div id="resultados">
+                  <p>Ver:</p>
 
+                  <div>
+                    <a id="btn_25">25</a>
+                    <a id="btn_50">50</a>
+                    <a id="btn_100">100</a>
+                  </div>
+                </div>
+              </div>
+            </div>
 
+            <table id="tbl1" class="display">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Ubicación</th>
+                  <th>Estado</th>
+                  <th>Contribuyente</th>
+                  <th class="invisible"></th>
+                  <th class="invisible"></th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </section>
+      </div>
+    </div>
 
     <div class="containercolor indicadoresMaestraRedes">
-        <div class="container containerIgac borderB">
-            <section class="section indicadores">
-                <div class="d-fex">
-                    <div class="text">
-                        <div class="title">
-                            Indicadores
-                        </div>
-                        <p>A continuaci&oacute;n, encontraras algunas cifras importantes respecto al estado y
-                            funcionamiento la Red GNSS Activa materializada en el territorio colombiano:</p>
-                    </div>
-                </div>
-                <img src="/images/images-redes/birdIndicadores.svg" alt="">
-            </section>
-        </div>
-        <div class="board">
-            <div class="card">
-                <div class="d-flex">
-                    <div class="item">
-                        <div class="d-flex">
-                            <div class="icon">
-                                <img src="/images/iconos/mapIcon.svg" alt="">
-                            </div>
-                            <div class="content">
-                                <div class="number" id="stat1"></div>
-                                <div class="text" id="text1"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="d-flex">
-                            <div class="icon">
-                                <img src="/images/iconos/moveIcon.svg" alt="">
-                            </div>
-                            <div class="content">
-                                <div class="number" id="stat2"></div>
-                                <div class="text" id="text2"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex">
-                    <div class="item">
-                        <div class="d-flex">
-                            <div class="icon">
-                                <img src="/images/iconos/tableIcon.svg" alt="">
-                            </div>
-                            <div class="content">
-                                <div class="number" id="stat3"></div>
-                                <div class="text" id="text3"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="d-flex">
-                            <div class="icon">
-                                <img src="/images/iconos/dataIcon.svg" alt="">
-                            </div>
-                            <div class="content">
-                                <div class="number" id="stat4"></div>
-                                <div class="text" id="text4"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <div class="container containerIgac borderB">
+        <section class="section indicadores">
+          <div class="d-fex">
+            <div class="text">
+              <div class="title">Indicadores</div>
+              <p>
+                A continuaci&oacute;n, encontraras algunas cifras importantes
+                respecto al estado y funcionamiento la Red GNSS Activa
+                materializada en el territorio colombiano:
+              </p>
             </div>
-        </div>        
+          </div>
+          <img src="/images/images-redes/birdIndicadores.svg" alt="" />
+        </section>
+      </div>
+      <div class="board">
+        <div class="card">
+          <div class="d-flex">
+            <div class="item">
+              <div class="d-flex">
+                <div class="icon">
+                  <img src="/images/iconos/mapIcon.svg" alt="" />
+                </div>
+                <div class="content">
+                  <div class="number" id="stat1"></div>
+                  <div class="text" id="text1"></div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="d-flex">
+                <div class="icon">
+                  <img src="/images/iconos/moveIcon.svg" alt="" />
+                </div>
+                <div class="content">
+                  <div class="number" id="stat2"></div>
+                  <div class="text" id="text2"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex">
+            <div class="item">
+              <div class="d-flex">
+                <div class="icon">
+                  <img src="/images/iconos/tableIcon.svg" alt="" />
+                </div>
+                <div class="content">
+                  <div class="number" id="stat3"></div>
+                  <div class="text" id="text3"></div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="d-flex">
+                <div class="icon">
+                  <img src="/images/iconos/dataIcon.svg" alt="" />
+                </div>
+                <div class="content">
+                  <div class="number" id="stat4"></div>
+                  <div class="text" id="text4"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="container block-igac">
-        <section class="section pb-0">
-            <div class="faqs type2">
-                <div class="title">
-                    Explora y consulta los servicios en tiempo real disponibles para todos
-                </div>
-                <div class="resume">
-                    Conéctate y usalos servicios de procesamiento en línea de tipo diferencial y los servicios de posicionamiento en tiempo real via caster NTRIP para las estaciones de la Red Activa del Territorio Colombiano. ¿Qué esperas?
-                </div>
-                <div class="boton-faqs">
-                    <a href="/herramientas/servicios.html">Explora estos recursos</a>            
-                </div>
-            </div>
-        </section>
+      <section class="section pb-0">
+        <div class="faqs type2">
+          <div class="title">Servicios en tiempo real</div>
+          <div class="resume">
+            Conéctate y usalos servicios de procesamiento en línea de tipo
+            diferencial y los servicios de posicionamiento en tiempo real via
+            caster NTRIP para las estaciones de la Red Activa del Territorio
+            Colombiano. ¿Qué esperas?
+          </div>
+          <div class="boton-faqs">
+            <a href="/herramientas/servicios.html">Explora estos recursos</a>
+          </div>
+        </div>
+      </section>
     </div>
     <!--<section class="section overflow-hidden sectionEstaciones">
         <div class="resourses-title" style="text-align: center;">
@@ -232,426 +269,568 @@
         </div>
     </section>-->
 
-    <div class="containercolor">
+    <div class="containercolor resources">
+      <div class="container containerIgac">
+        <section class="section sumary">
+          <h2 class="title w-divider">Recursos destacados</h2>
+          <div class="divider w-title"></div>
+          <div
+            id="carouselExampleIndicators"
+            class="carousel slide"
+            data-ride="carousel"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card shadow-sm blue">
+                      <div class="card-header">
+                        <h5>Aplicaciones y Herramientas</h5>
+                      </div>
+                      <div class="card-body">
+                        <h6>MAGNA SIRGAS PRO 5.1</h6>
+                        <p class="card-text">
+                          Esta herramienta permite la conversión y
+                          transformación de coordenadas, cálculo de ondulación
+                          geoidal, nivelación GPS, cálculos elipsoidales,
+                          cálculo de velocidades y cambio de época para un
+                          conjunto de coordenadas especificadas.
+                        </p>
+                        <div
+                          class="d-flex align-items-center justify-content-center"
+                        >
+                          <button type="button" class="btn btn-sm btn-default">
+                            Visitar
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card shadow-sm orange">
+                      <div class="card-header">
+                        <h5>Modelos</h5>
+                      </div>
+                      <div class="card-body">
+                        <h6>Modelo Geoidal</h6>
+                        <p class="card-text">
+                          Acá, podrás descargar el modelo GEOCOL más reciente
+                          para visualizar las alturas geoidales que se usan en
+                          la determinación de altura físicas en el Territorio
+                          Colombiano.
+                        </p>
+                        <div
+                          class="d-flex align-items-center justify-content-center"
+                        >
+                          <button type="button" class="btn btn-sm btn-default">
+                            Visitar
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card shadow-sm purple">
+                      <div class="card-header">
+                        <h5>Servicios</h5>
+                      </div>
+                      <div class="card-body">
+                        <h6>Servicios en tiempo real</h6>
+                        <p class="card-text">
+                          Este módulo direcciona al usuario a la central de
+                          servicios de procesamiento en línea de tipo
+                          diferencial y los servicios de posicionamiento en
+                          tiempo real via caster NTRIP para las estaciones de la
+                          Red Activa del Territorio Colombiano.
+                        </p>
+                        <div
+                          class="d-flex align-items-center justify-content-center"
+                        >
+                          <button type="button" class="btn btn-sm btn-default">
+                            Visitar
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card shadow-sm blue">
+                      <div class="card-header">
+                        <h5>Aplicaciones y Herramientas</h5>
+                      </div>
+                      <div class="card-body">
+                        <h6>MAGNA SIRGAS PRO 5.1</h6>
+                        <p class="card-text">
+                          Esta herramienta permite la conversión y
+                          transformación de coordenadas, cálculo de ondulación
+                          geoidal, nivelación GPS, cálculos elipsoidales,
+                          cálculo de velocidades y cambio de época para un
+                          conjunto de coordenadas especificadas.
+                        </p>
+                        <div
+                          class="d-flex align-items-center justify-content-center"
+                        >
+                          <button type="button" class="btn btn-sm btn-default">
+                            Visitar
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card shadow-sm orange">
+                      <div class="card-header">
+                        <h5>Modelos</h5>
+                      </div>
+                      <div class="card-body">
+                        <h6>Modelo Geoidal</h6>
+                        <p class="card-text">
+                          Acá, podrás descargar el modelo GEOCOL más reciente
+                          para visualizar las alturas geoidales que se usan en
+                          la determinación de altura físicas en el Territorio
+                          Colombiano.
+                        </p>
+                        <div
+                          class="d-flex align-items-center justify-content-center"
+                        >
+                          <button type="button" class="btn btn-sm btn-default">
+                            Visitar
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card shadow-sm purple">
+                      <div class="card-header">
+                        <h5>Servicios</h5>
+                      </div>
+                      <div class="card-body">
+                        <h6>Servicios en tiempo real</h6>
+                        <p class="card-text">
+                          Este módulo direcciona al usuario a la central de
+                          servicios de procesamiento en línea de tipo
+                          diferencial y los servicios de posicionamiento en
+                          tiempo real via caster NTRIP para las estaciones de la
+                          Red Activa del Territorio Colombiano.
+                        </p>
+                        <div
+                          class="d-flex align-items-center justify-content-center"
+                        >
+                          <button type="button" class="btn btn-sm btn-default">
+                            Visitar
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a
+              class="carousel-control-prev"
+              href="#carouselExampleIndicators"
+              role="button"
+              data-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a
+              class="carousel-control-next"
+              href="#carouselExampleIndicators"
+              role="button"
+              data-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </section>
+      </div>
+      <section class="section registrarReportar paddingLast">
+        <h2 class="title w-divider text-center">
+          Participa activamente de la red
+        </h2>
         <div class="container containerIgac">
-            <section class="section sumary">
-                <h2 class="title w-divider">Recursos destacados</h2>
-                <div class="divider w-title"></div>
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="card shadow-sm blue">
-                                        <div class="card-header">
-                                            <h5>Aplicaciones y Herramientas</h5>
-                                        </div>
-                                        <div class="card-body">
-                                            <h6>MAGNA SIRGAS PRO 5.1</h6>
-                                            <p class="card-text">Esta herramienta permite la conversión y transformación
-                                                de coordenadas, cálculo de ondulación geoidal, nivelación GPS, cálculos
-                                                elipsoidales, cálculo de velocidades y cambio de época para un conjunto
-                                                de coordenadas especificadas.</p>
-                                            <div class="d-flex align-items-center justify-content-center">
-                                                <button type="button" class="btn btn-sm btn-default">Visitar</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card shadow-sm orange">
-                                        <div class="card-header">
-                                            <h5>Modelos</h5>
-                                        </div>
-                                        <div class="card-body">
-                                            <h6>Modelo Geoidal</h6>
-                                            <p class="card-text">Acá, podrás descargar el modelo GEOCOL más reciente
-                                                para visualizar las alturas geoidales que se usan en la determinación de
-                                                altura físicas en el Territorio Colombiano.</p>
-                                            <div class="d-flex align-items-center justify-content-center">
-                                                <button type="button" class="btn btn-sm btn-default">Visitar</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card shadow-sm purple">
-                                        <div class="card-header">
-                                            <h5>Servicios</h5>
-                                        </div>
-                                        <div class="card-body">
-                                            <h6>Servicios en tiempo real</h6>
-                                            <p class="card-text">Este módulo direcciona al usuario a la central de
-                                                servicios de procesamiento en línea de tipo diferencial y los servicios
-                                                de posicionamiento en tiempo real via caster NTRIP para las estaciones
-                                                de la Red Activa del Territorio Colombiano.</p>
-                                            <div class="d-flex align-items-center justify-content-center">
-                                                <button type="button" class="btn btn-sm btn-default">Visitar</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="card shadow-sm blue">
-                                        <div class="card-header">
-                                            <h5>Aplicaciones y Herramientas</h5>
-                                        </div>
-                                        <div class="card-body">
-                                            <h6>MAGNA SIRGAS PRO 5.1</h6>
-                                            <p class="card-text">Esta herramienta permite la conversión y transformación
-                                                de coordenadas, cálculo de ondulación geoidal, nivelación GPS, cálculos
-                                                elipsoidales, cálculo de velocidades y cambio de época para un conjunto
-                                                de coordenadas especificadas.</p>
-                                            <div class="d-flex align-items-center justify-content-center">
-                                                <button type="button" class="btn btn-sm btn-default">Visitar</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card shadow-sm orange">
-                                        <div class="card-header">
-                                            <h5>Modelos</h5>
-                                        </div>
-                                        <div class="card-body">
-                                            <h6>Modelo Geoidal</h6>
-                                            <p class="card-text">Acá, podrás descargar el modelo GEOCOL más reciente
-                                                para visualizar las alturas geoidales que se usan en la determinación de
-                                                altura físicas en el Territorio Colombiano.</p>
-                                            <div class="d-flex align-items-center justify-content-center">
-                                                <button type="button" class="btn btn-sm btn-default">Visitar</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card shadow-sm purple">
-                                        <div class="card-header">
-                                            <h5>Servicios</h5>
-                                        </div>
-                                        <div class="card-body">
-                                            <h6>Servicios en tiempo real</h6>
-                                            <p class="card-text">Este módulo direcciona al usuario a la central de
-                                                servicios de procesamiento en línea de tipo diferencial y los servicios
-                                                de posicionamiento en tiempo real via caster NTRIP para las estaciones
-                                                de la Red Activa del Territorio Colombiano.</p>
-                                            <div class="d-flex align-items-center justify-content-center">
-                                                <button type="button" class="btn btn-sm btn-default">Visitar</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+          <div class="d-flex">
+            <div class="containerFaqs typeB">
+              <div class="faqs typeC">
+                <div class="title m-0 mb-3">
+                  Registra y postula un nuevo vértice a la Red Geodésica
                 </div>
-            </section>
-            <section class="section registrarReportar paddingLast">
-                <h2 class="title w-divider text-center">Participa activamente de la red</h2>
-                <div class="container containerIgac">
-                    <div class="d-flex">
-                        <div class="containerFaqs typeB">
-                            <div class="faqs typeC">
-                                <div class="title m-0 mb-3">
-                                    Registra una nueva estaci&oacute;n
-                                </div>
-                                <div class="d-flex align-items-center modalEstaciones" data-toggle="modal"
-                                    data-target="#modalEstaciones">
-                                    <div class="boton-faqs">
-                                        <a>Iniciar formulario</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="containerFaqs typeB">
-                            <div class="faqs typeD">
-                                <div class="title m-0 mb-3">
-                                    Reporta una novedad
-                                </div>
-                                <div style="white-space: nowrap;"
-                                    class="p-0 col-md-4 text-center modalButtonReportar boton-faqs" data-toggle="modal"
-                                    data-target="#reportarModal">
-                                    <a>Iniciar formulario</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div
+                  class="d-flex align-items-center modalEstaciones"
+                  data-toggle="modal"
+                  data-target="#modalEstaciones"
+                >
+                  <div class="boton-faqs">
+                    <a>Iniciar formulario</a>
+                  </div>
                 </div>
-            </section>
+              </div>
+            </div>
+            <div class="containerFaqs typeB">
+              <div class="faqs typeD">
+                <div class="title m-0 mb-3">
+                  Reporta novedades sobre vértices de la Red
+                </div>
+                <div
+                  style="white-space: nowrap"
+                  class="p-0 col-md-4 text-center modalButtonReportar boton-faqs"
+                  data-toggle="modal"
+                  data-target="#reportarModal"
+                >
+                  <a>Iniciar formulario</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
     </div>
-    <footer class="footer origen">
-    </footer>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js">
-    </script>
+    <footer class="footer origen"></footer>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"
+    ></script>
 
-
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
     <script src="/index.js"></script>
-    <link rel="stylesheet" href="https://js.arcgis.com/4.24/esri/themes/light/main.css">
+    <link
+      rel="stylesheet"
+      href="https://js.arcgis.com/4.24/esri/themes/light/main.css"
+    />
     <script src="https://js.arcgis.com/4.24/"></script>
     <script>
-        require([
-            "esri/config",
-            "esri/Map",
-            "esri/views/MapView",
-            "esri/widgets/Home",
-            "esri/widgets/ScaleBar",
-            "esri/widgets/LayerList",
-            "esri/widgets/Legend",
-            "esri/widgets/Expand",
-            "esri/widgets/Compass",
-            "esri/geometry/Extent",
-            "esri/layers/MapImageLayer"
-        ], (
-            esriConfig, Map, MapView, Home, ScaleBar, LayerList, Legend,
-            Expand, Compass, Extent, MapImageLayer
-        ) => {
-            esriConfig.apiKey =
-                "AAPK2a2e861a0c794bfdb29a1b4ce47b1583OBbY7CvHSkUPhQ20FG1hZEbAl5GmTTZcs-cyoy2tw5to5j_pJiiTW6J_KRbBx-qS";
-            const layer = new MapImageLayer({
-                url: "https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGNSS/MapServer",
-                sublayers: [{
-                    id: 0,
-                    visible: true
-                }]
-            });
-            const map = new Map({
-                layers: [layer],
-                basemap: "arcgis-topographic"
-            });
-            const view = new MapView({
-                container: "viewDiv",
-                map: map
-            });
-            const homeBtn = new Home({
-                view: view
-            });
-            const scaleBar = new ScaleBar({
-                view: view,
-                unit: "dual"
-            });
-            const layerList = new LayerList({
-                view: view
-            });
-            const legend = new Legend({
-                view: view
-            });
-            const layerListExpand = new Expand({
-                view: view,
-                content: layerList,
-                expanded: false,
-                expandTooltip: "Expand LayerList"
-            });
-            const legendExpand = new Expand({
-                view: view,
-                content: legend,
-                expandTooltip: "Expand Legend",
-                expanded: false
-            });
-            const compass = new Compass({
-                view: view,
-                visible: false
-            });
-            view.ui.add(homeBtn, "top-left");
-            view.ui.add(scaleBar, "bottom-right");
-            view.ui.add(layerListExpand, "top-right");
-            view.ui.add(legendExpand, "bottom-left");
-            view.ui.add(compass, "top-left");
-            layer.when(() => {
-                const initialExtent = Extent.fromJSON(layer.sourceJSON.initialExtent);
-                view.goTo(initialExtent);
-            });
-            // load the Compass only when the view is rotated
-            view.watch('rotation', function (rotation) {
-                if (rotation && !compass.visible) {
-                    compass.visible = true;
-                }
-            });
-            const extent = new Extent({
-                xmin: -74,
-                ymin: -1,
-                xmax: -70,
-                ymax: 10,
-                });
-                view.extent = extent; 
+      require([
+        "esri/config",
+        "esri/Map",
+        "esri/views/MapView",
+        "esri/widgets/Home",
+        "esri/widgets/ScaleBar",
+        "esri/widgets/LayerList",
+        "esri/widgets/Legend",
+        "esri/widgets/Expand",
+        "esri/widgets/Compass",
+        "esri/geometry/Extent",
+        "esri/layers/MapImageLayer",
+        "esri/layers/VectorTileLayer",
+      ], (
+        esriConfig,
+        Map,
+        MapView,
+        Home,
+        ScaleBar,
+        LayerList,
+        Legend,
+        Expand,
+        Compass,
+        Extent,
+        MapImageLayer,
+        VectorTileLayer
+      ) => {
+        esriConfig.apiKey =
+          "AAPK2a2e861a0c794bfdb29a1b4ce47b1583OBbY7CvHSkUPhQ20FG1hZEbAl5GmTTZcs-cyoy2tw5to5j_pJiiTW6J_KRbBx-qS";
+        const vtlLayer = new VectorTileLayer({
+          url: "https://tiles.arcgis.com/tiles/RVvWzU3lgJISqdke/arcgis/rest/services/Mapa_base_topografico/VectorTileServer",
         });
-    </script>
-
-
-<script>
-
-    $('#tbl1').DataTable({
-            ajax: {
-                url:url_backend+'/json_activa',
-                "dataSrc": function ( json ) {
-                    
-                    var obj=json;
-                   
-                    var arr1=[]
-    
-                    obj.map(function(i,e){
-                        i["ir"]='interna_red_activa.html?estacion=' + i["t_id"]+'&nombre='+i["redes"]+'&id='+i["identificador"]
-                        i["rinex"]='rinex.html?estacion=' + i["identificador"]+'&id='+ i["t_id"];
-            
-                        arr1.push(i)
-                    })
-    
-                    json.data=arr1;
-    
-                    return json.data;
-                },
+        const layer = new MapImageLayer({
+          url: "https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGNSS/MapServer",
+          sublayers: [
+            {
+              id: 0,
+              visible: true,
+              popupTemplate: {
+                title: "Atributos",
+                outFields: ["*"],
+                content: popup,
+              },
             },
-            columns: [
-                            {
-                                data: 'identificador'
-                            },
-                            {
-                                data: 'municipio'
-                            },
-    
-                            {
-                                data: 'estado',
-                                render: function (dataField) {
-                                    var clase="inactivo"
-                                    var status="Inactivo"
-                                    if(dataField==("Activa")){
-                                        clase="activo"
-                                        status="Activa"
-                                    }else if(dataField==null){
-                                    clase="vacio";
-                                    dataField=""
-                                    status=""
-                                }
-                                    return '<span class="'+clase+'">'+status+'</span>';
-                                }
-                            },
-                            {
-                                data: 'redes'
-                            },
-                            {
-                                data: 'sigla'
-                            },
-                            {
-                                data: 'ir',
-                                render: function (dataField) {
-                                    return '<a href="'+dataField+'">Más</a>';
-                                }
-                            },
-                            {
-                                data: 'rinex',
-                                render: function (dataField) {
-                                    return '<a href="'+dataField+'">Archivo Rinex</a>';
-                                }
-                            }
-                        ],
-                        language: {
-                    "decimal": "",
-                    "emptyTable": "No hay información",
-                    "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
-                    "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
-                    "infoFiltered": "(Filtrado de _MAX_ total entradas)",
-                    "infoPostFix": "",
-                    "thousands": ",",
-                    "lengthMenu": "Mostrar _MENU_ Entradas",
-                    "loadingRecords": "Cargando...",
-                    "processing": "Procesando...",
-                    "search": "Buscar:",
-                    "zeroRecords": "Sin resultados encontrados",
-                    "paginate": {
-                        "first": "Primero",
-                        "last": "Ultimo",
-                        "next": "Siguiente",
-                        "previous": "Anterior"
-                    }
-                },
+          ],
         });
-    
-    
+        const map = new Map({
+          layers: [vtlLayer, layer],
+        });
+        const view = new MapView({
+          container: "viewDiv",
+          map: map,
+          center: [-74, 4], // longitude, latitude
+          zoom: 4.8,
+        });
+        const homeBtn = new Home({
+          view: view,
+        });
+        const scaleBar = new ScaleBar({
+          view: view,
+          unit: "dual",
+        });
+        const layerList = new LayerList({
+          view: view,
+        });
+        const legend = new Legend({
+          view: view,
+        });
+        const layerListExpand = new Expand({
+          view: view,
+          content: layerList,
+          expanded: false,
+          expandTooltip: "Expand LayerList",
+        });
+        const legendExpand = new Expand({
+          view: view,
+          content: legend,
+          expandTooltip: "Expand Legend",
+          expanded: true,
+        });
+        const compass = new Compass({
+          view: view,
+          visible: false,
+        });
+        view.ui.add(homeBtn, "top-left");
+        view.ui.add(scaleBar, "bottom-right");
+        view.ui.add(layerListExpand, "top-right");
+        view.ui.add(legendExpand, "bottom-left");
+        view.ui.add(compass, "top-left");
+        layer.when(() => {
+          const initialExtent = Extent.fromJSON(layer.sourceJSON.initialExtent);
+          view.goTo(initialExtent);
+        });
+        // load the Compass only when the view is rotated
+        view.watch("rotation", function (rotation) {
+          if (rotation && !compass.visible) {
+            compass.visible = true;
+          }
+        });
+      });
     </script>
 
+    <script>
+      $("#tbl1 thead tr").clone(true).addClass("filters").appendTo("#filtros");
 
+      $(".filters th:first-child").hide();
 
-<script type="module">
+      var table = $("#tbl1").DataTable({
+        lengthChange: false,
+        ajax: {
+          url: url_backend + "/json_activa",
+          dataSrc: function (json) {
+            var obj = json;
 
-$.ajax({
-      type: 'POST',
-      url: url_backend+"/front",
-      data: {
-        "id_consulta": "indicador_activa_1"
-      },
-      dataType: "json",
-      success: function (result) {
-      
-        document.getElementById('stat1').innerHTML=result[0].indicador;
-        document.getElementById('text1').innerHTML="Total de estaciones activas";
-      }
-    });
+            var arr1 = [];
 
-    $.ajax({
-      type: 'POST',
-      url: url_backend+"/front",
-      data: {
-        "id_consulta": "indicador_activa_2"
-      },
-      dataType: "json",
-      success: function (result) {
-        document.getElementById('stat2').innerHTML=result[0].indicador;
-        document.getElementById('text2').innerHTML="Total de estaciones activas con transmisión de datos";
-      }
-    });
+            obj.map(function (i, e) {
+              i["ir"] =
+                "interna_red_activa.html?estacion=" +
+                i["t_id"] +
+                "&nombre=" +
+                i["redes"] +
+                "&id=" +
+                i["identificador"];
+              i["rinex"] =
+                "rinex.html?estacion=" +
+                i["identificador"] +
+                "&id=" +
+                i["t_id"];
 
-    $.ajax({
-      type: 'POST',
-      url: url_backend+"/front",
-      data: {
-        "id_consulta": "indicador_activa_3"
-      },
-      dataType: "json",
-      success: function (result) {
-        document.getElementById('stat3').innerHTML=result[0].indicador;
-        document.getElementById('text3').innerHTML="Número de entidades contribuyentes";
-      }
-    });
+              arr1.push(i);
+            });
 
-    $.ajax({
-      type: 'POST',
-      url: url_backend+"/front",
-      data: {
-        "id_consulta": "indicador_activa_4"
-      },
-      dataType: "json",
-      success: function (result) {
-    
-        document.getElementById('stat4').innerHTML=result[0].indicador+' %';
-        document.getElementById('text4').innerHTML="Porcentaje de municipios cubiertos";
+            json.data = arr1;
 
-      }
-    });
+            return json.data;
+          },
+        },
+        columns: [
+          {
+            data: "identificador",
+          },
+          {
+            data: "municipio",
+          },
 
-    
-</script>
-</body>
+          {
+            data: "estado",
+            render: function (dataField) {
+              var clase = "inactivo";
+              var status = "Inactivo";
+              if (dataField == "Activa") {
+                clase = "activo";
+                status = "Activa";
+              } else if (dataField == null) {
+                clase = "vacio";
+                dataField = "";
+                status = "";
+              }
+              return '<span class="' + clase + '">' + status + "</span>";
+            },
+          },
+          {
+            data: "sigla",
+          },
 
+          {
+            data: "rinex",
+            render: function (dataField) {
+              return '<a href="' + dataField + '">Archivo Rinex</a>';
+            },
+          },
+          {
+            data: "ir",
+            render: function (dataField) {
+              return '<a href="' + dataField + '">Ver más</a>';
+            },
+          },
+        ],
+        language: {
+          decimal: "",
+          emptyTable: "No hay información",
+          info: "_TOTAL_ resultados",
+          infoEmpty: "0 resultados",
+          infoFiltered: "",
+          infoPostFix: "",
+          thousands: ",",
+          lengthMenu: "Ver _MENU_",
+          loadingRecords: "Cargando...",
+          processing: "Procesando...",
+          search: "",
+          zeroRecords: "Sin resultados encontrados",
+          searchPlaceholder: "Buscar",
+          paginate: {
+            first: "Primero",
+            last: "Ultimo",
+            next: "Siguiente",
+            previous: "Anterior",
+          },
+        },
+        initComplete: function () {
+          $("#tbl1_filter").detach().appendTo("#new-search-area");
+          $("#tbl1_info").detach().appendTo("#entradas");
+
+          $("#btn_25").on("click", function () {
+            table.page.len(25).draw();
+          });
+
+          $("#btn_50").on("click", function () {
+            table.page.len(50).draw();
+          });
+
+          $("#btn_100").on("click", function () {
+            table.page.len(100).draw();
+          });
+
+          this.api()
+            .columns()
+            .every(function (i) {
+              var column = this;
+
+              var select = $(
+                '<select class="form-select"><option value="">' +
+                  $("#filtros tr").children().eq(i).text() +
+                  "</option></select>"
+              )
+                .appendTo($("#filtros tr").children().eq(i).empty())
+                .on("change", function () {
+                  var val = $.fn.dataTable.util.escapeRegex($(this).val());
+
+                  column.search(val ? "^" + val + "$" : "", true, false).draw();
+                });
+
+              column
+                .data()
+                .unique()
+                .sort()
+                .each(function (d, j) {
+                  select.append('<option value="' + d + '">' + d + "</option>");
+                });
+            });
+        },
+      });
+    </script>
+
+    <script type="module">
+      $.ajax({
+        type: "POST",
+        url: url_backend + "/front",
+        data: {
+          id_consulta: "indicador_activa_1",
+        },
+        dataType: "json",
+        success: function (result) {
+          document.getElementById("stat1").innerHTML = result[0].indicador;
+          document.getElementById("text1").innerHTML =
+            "Total de estaciones activas";
+        },
+      });
+
+      $.ajax({
+        type: "POST",
+        url: url_backend + "/front",
+        data: {
+          id_consulta: "indicador_activa_2",
+        },
+        dataType: "json",
+        success: function (result) {
+          document.getElementById("stat2").innerHTML = result[0].indicador;
+          document.getElementById("text2").innerHTML =
+            "Total de estaciones activas con transmisión de datos";
+        },
+      });
+
+      $.ajax({
+        type: "POST",
+        url: url_backend + "/front",
+        data: {
+          id_consulta: "indicador_activa_3",
+        },
+        dataType: "json",
+        success: function (result) {
+          document.getElementById("stat3").innerHTML = result[0].indicador;
+          document.getElementById("text3").innerHTML =
+            "Número de entidades contribuyentes";
+        },
+      });
+
+      $.ajax({
+        type: "POST",
+        url: url_backend + "/front",
+        data: {
+          id_consulta: "indicador_activa_4",
+        },
+        dataType: "json",
+        success: function (result) {
+          document.getElementById("stat4").innerHTML =
+            result[0].indicador + " %";
+          document.getElementById("text4").innerHTML =
+            "Porcentaje de municipios cubiertos";
+        },
+      });
+    </script>
+  </body>
 </html>
