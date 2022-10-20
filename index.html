@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="css/style.css" rel="stylesheet">
-    <link href="css/maestra.css" rel="stylesheet">
+    <link href="css/maestra.css" rel="stylesheet">    
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
     <style>
         #viewDiv {
             padding: 0;
@@ -30,7 +32,12 @@
                         Centro de Control <br> Geod&eacute;sico Nacional
                     </div>
                     <div class="summary">
-                        <p>Bienvenidos a la plataforma para la gesti&oacute;n de la informaci&oacute;n geod&eacute;sica de Colombia. Es el punto de encuentro para administrar, analizar, monitorear y distribuir los datos generados por la Red Activa GNSS, la Red Pasiva GNSS, la Red de Control Vertical de Precisi&oacute;n, la Red Gravim&eacute;trica y la Red Geomagn&eacute;tica del Territorio Colombiano.</p>
+                        <p>Bienvenidos a la plataforma para la gestión de la información
+                            geodésica de Colombia. Es el punto de encuentro para monitorear,
+                            acceder y usar los datos generados por la Red Geodésica GNSS, la
+                            red de control Vertical de Precisión, la Red Gravimétrica y la Red
+                            Geomagnética.
+                            </p>
                     </div>
                 </div>
             </div>
@@ -39,11 +46,12 @@
     <div class="container containerIgac">
         <section class="section visor row">
             <div class="iframe col-md-12">
-                <h2 class="title">Visor de servicios de las Redes</h2>
+                <h2 class="title">Visor de las redes geodésicas</h2>
                 <div id="viewDiv"></div>
             </div>
         </section>        
     </div>
+    <!--
     <div class="containercolor">
         <div class="container containerIgac">
             <section id="participa" class="section">
@@ -67,6 +75,8 @@
             </section>
         </div>
     </div>
+    -->
+
     <div class="container containerIgac">
         <section class="section sumary">
             <div class="row container-cards">
@@ -74,13 +84,13 @@
                 <div class="col-md-4 mb-3 card-container">
                     <div class="card card-content">
                         <img src="images/images-inicio/img-card-1_1.svg" alt="">
-                        <p>Accede a los servicios en tiempo real</p>
+                        <p><a href="https://redgeodesica.igac.gov.co/herramientas/servicios.html">Accede a los servicios en tiempo real</a> </p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-3 card-container">
                     <div class="card card-content">
                         <img src="images/images-inicio/img-card-2_1.svg" alt="">
-                        <p>Consulta el estado de la Red Geodésica GNSS</p>
+                        <p> <a href="https://redgeodesica.igac.gov.co/redes/red_geodesica.html">Consulta el estado de la Red Geodésica GNSS</a> </p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-3 card-container">
@@ -104,17 +114,53 @@
                 <div class="col-md-4 card-container">
                     <div class="card card-content">
                         <img src="images/images-inicio/img-card-6_1.svg" alt="">
-                        <p>Conoce las marcas de referencia</p>
+                        <p>Conoce sobre el Origen Nacional</p>
                     </div>
                 </div>                
             </div>
         </section>
+
+
+
     </div>
+    <section class="section registrarReportar paddingLast mt-5" >
+        <h2 class="title w-divider text-center">Participa activamente de la red</h2>
+        <div class="container containerIgac">
+            <div class="d-flex">
+                <div class="containerFaqs typeB">
+                    <div class="faqs typeC">
+                        <div class="title m-0 mb-3">
+                            Registra y postula un nuevo vértice a la Red Geodésica
+                        </div>
+                        <div class="d-flex align-items-center modalEstaciones" data-toggle="modal"
+                            data-target="#modalEstaciones">
+                            <div class="boton-faqs">
+                                <a>Iniciar formulario</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="containerFaqs typeB">
+                    <div class="faqs typeD">
+                        <div class="title m-0 mb-3">
+                            Reporta novedades sobre vértices de la Red
+                        </div>
+                        <div style="white-space: nowrap;"
+                            class="p-0 col-md-4 text-center modalButtonReportar boton-faqs" data-toggle="modal"
+                            data-target="#reportarModal">
+                            <a>Iniciar formulario</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <footer class="footer origen">
     </footer>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="/index.js"></script>
     <script>
         $('.carousel').carousel({
@@ -197,6 +243,13 @@
                 compass.visible = true;
             }
         });
+        const extent = new Extent({
+                xmin: -74,
+                ymin: -1,
+                xmax: -70,
+                ymax: 10,
+                });
+                view.extent = extent; 
     });
 </script>
 </body>

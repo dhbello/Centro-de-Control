@@ -84,16 +84,16 @@
                         Departamento:
                     </div>
                     <div class="item" id="municipio">
-                        Municipio: Arauquita
+                        Municipio: 
                     </div>
                     <div class="item" id="barrio">
-                        Barrio o Sector: Caserio Selvas de Lipa
+                        Barrio o Sector: 
                     </div>
                     <div class="item" id="localizacion">
-                        Localizaci&oacute;n: Base Militar LIPA
+                        Localizaci&oacute;n: 
                     </div>
                     <div class="item" id="divipola">
-                        C&oacute;digo Divipola (Divisi&oacute;n Pol&iacute;tico-Administrativa): 81065
+                        
                     </div>
                 </section>
                 <div class="divider"></div>
@@ -102,19 +102,19 @@
                         Informaci&oacute;n de instalaci&oacute;n
                     </div>
                     <div class="item" id="tipo_materializacion">
-                        Tipo de Monumento: Piso
+                        Tipo de Monumento: 
                     </div>
                     <div class="item" id="fecha_materializacion">
-                        Fecha Monumentaci&oacute;n: 3/22/2021
+                        Fecha Monumentaci&oacute;n: 
                     </div>
                     <div class="item" id="altura_referencia_antena">
-                        Altura Instrumental (m): 0,0350
+                        Altura Instrumental (m): 
                     </div>
                     <div class="item" id="lugar_materializacion">
-                        Localizaci&oacute;n: Base Militar LIPA
+                        Localizaci&oacute;n: 
                     </div>
-                    <div class="item" id="divipola">
-                        C&oacute;digo Divipola (Divisi&oacute;n Pol&iacute;tico-Administrativa): 81065
+                    <div class="item" id="divipola2">
+                        
                     </div>
                 </section>
                 <div class="divider"></div>
@@ -244,6 +244,7 @@
                         <div id="mapa_estacion"></div>
                     </div>
                 </section>
+                
                 <section class="section infoUbicacion pt-5">
                     <div class="title">
                         Ubicaci&oacute;n en Planta de la Estaci&oacute;n
@@ -266,10 +267,21 @@
                                 </div>
                             </div>
                         </section>
-
-                        <img id="img3" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="" />
                     </div>
+                    <section class="section infoUbicacion pt-0">
+                        <div class="title">
+                            Referencia medidas de los objetos al punto
+                        </div>
+                        <table id="tbl_puntos" class="customeTable">
+                                <tr>
+                                    <th>N°</th>
+                                    <th>Objeto</th>
+                                    <th>Azimut Magnético(°)</th>
+                                    <th>Distancia (m)</th>
+                                </tr>
 
+                        </table>
+                    </section>
             </div>
             </section>
             <section class="section infoUbicacion pt-5">
@@ -378,14 +390,14 @@
             document.getElementById('municipio').innerHTML="Municipio: "+check(obj.municipio);
             document.getElementById('barrio').innerHTML="Barrio: "+check(obj.agencia_direccion);
             document.getElementById('localizacion').innerHTML="Localizacion: "+check(obj.agencia_direccion);
-            document.getElementById('divipola').innerHTML="Código Divipola: "+check(obj.codigo);
+            document.getElementById('divipola').innerHTML="Código Municipio "+check(obj.codigo);
 
 
             document.getElementById('tipo_materializacion').innerHTML="Tipo de Monumento: "+check(obj.tipo_materializacion);
             document.getElementById('fecha_materializacion').innerHTML="Fecha Monumentación: "+check(obj.fecha_materializacion);
             document.getElementById('altura_referencia_antena').innerHTML="Altura Instrumental (m): "+check(obj.altura_referencia_antena);
             document.getElementById('lugar_materializacion').innerHTML="Localización: "+check(obj.lugar_materializacion);
-            document.getElementById('divipola').innerHTML="Código Divipola: "+check(obj.codigo);
+            document.getElementById('divipola2').innerHTML="Código Municipio: "+check(obj.codigo);
 
 
             document.getElementById('antena_tipo').innerHTML=check(obj.antena_modelo);
@@ -409,6 +421,30 @@
             document.getElementById('z').innerHTML="Z(m): "+check(obj.z);
             document.getElementById('y').innerHTML="	Y(m): "+check(obj.y);
 
+
+            if(obj.punto_referencia){
+            
+                var cols=obj.punto_referencia.length;
+
+                for(i=0;i<cols;i++){
+                    $('#tbl_puntos tr:last').after("<tr><td>"+(i+1)+"</td><td>"+obj.punto_referencia[i].objeto+"</td><td>"+obj.punto_referencia[i].azimut+"</td><td>"+obj.punto_referencia[i].distancia+"</td></tr>");
+                }
+        }else{
+            
+
+            var tableHeaderRowCount = 1;
+            var table = document.getElementById('tbl_puntos');
+            var rowCount = table.rows.length;
+            console.log(rowCount)
+            for (var i = tableHeaderRowCount; i < rowCount; i++) {
+                table.deleteRow(tableHeaderRowCount);
+                
+            }
+            $( "#tbl_puntos" ).after( "<p>Sin información</p>" );
+
+        }
+
+
             if(obj.foto_antena!==null){
                 document.getElementById('img1').src=obj.foto_antena;
             }else{
@@ -418,7 +454,6 @@
             if(obj.foto_estacion!==null){
                 document.getElementById('img2').src=obj.foto_estacion;
             }else{
-  
                 $('#div2').remove()
             }
 
@@ -550,11 +585,14 @@
             });
         });
   
+        
         try {
-        document.getElementById('img3').src=url_backend+'/ver_img_activa/'+id
-    } catch (ex) {
-        console.log(ex)
-    }
+            document.getElementById('img3').src=url_backend+'/ver_img_activa/'+id
+        } catch (ex) {
+            console.log(ex)
+        }
+        
+
 
       }
     });

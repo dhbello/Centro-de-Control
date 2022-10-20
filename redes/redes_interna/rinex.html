@@ -8,11 +8,12 @@
     <title>Centro de Control Geod&eacute;sico Nacional</title>
     <link rel="icon" href="images-home/logos/favicon.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+        <link type="text/css" href="https://gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/css/dataTables.checkboxes.css" rel="stylesheet" />
+
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
     <link href="../../css/style.css" rel="stylesheet">
     <link href="../../css/maestra.css" rel="stylesheet">
 </head>
@@ -22,14 +23,14 @@
     </nav>
     <nav class="nav nav-underline">
     </nav>
-    <section class="portada-igac portadaSub origen">
-        <div class="container block-igac">
+    <section class="portada-igac portadaSub rinex">
+        <div class="container block-igac rinex">
             <div class="d-flex contenido-portada">
                 <a class="get-back" href="../red_geodesica.html"><img src="/images/iconos/arrow-back.svg" alt=""> Volver
                     a la Red Geodésica</a>
                 <div class="texto-portada">
                     <h1 id="titulo"></h1>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh</p>
+                    <p id="subtitulo"></p>
                 </div>
             </div>
         </div>
@@ -38,11 +39,20 @@
 
     <div class="typeB">
         <div class="container containerIgac">
+
             <section class="section">
+                <div class="btn_download m-2">
+                    <button  class="btn btn-primary btn-sm" id="download_rinex">
+                        <i class="fa-solid fa-download"></i> Descargar archivos
+                    </button>
+                </div>
                 <div class="m-auto w-100">
-                    <table id="tbl1" class="display">
+                    <table id="tbl1" class="display select" cellspacing="0" width="100%">
                         <thead>
                             <tr>
+                                <th>
+                                    
+                                </th>
                                 <th>Nombre</th>
                                 <th>Versión</th>
                                 <th>Tipo</th>
@@ -50,7 +60,6 @@
                                 <th>Año</th>
                                 <th>Día del año</th>
                                 <th>Semana GPS</th>
-                                <th>url</th>
                             </tr>
                         </thead>
                     </table>
@@ -81,6 +90,8 @@
 
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/js/dataTables.checkboxes.min.js"></script>
+
 
     <script>
         $('.redTable_filter').wrapAll('<div class="childjbdjwbd" />');
@@ -97,11 +108,20 @@
         var estacion = getParameterByName('estacion');
         var id_estacion = getParameterByName('id');
 
-        document.getElementById('titulo').innerHTML = 'Rinex de la estación: ' + estacion;
+        document.getElementById('titulo').innerHTML = 'Descarga de archivo RINEX ' 
+        document.getElementById('subtitulo').innerHTML = estacion;
+
+        $("#download_rinex").on('click',function(){
+            window.open('https://www.colombiaenmapas.gov.co/?u=0&t=25&servicio=6&estacion='+estacion, '_blank');
+        });
+
+
     </script>
 
 
     <script type="module">
+
+
 
 
         $('#tbl1').DataTable({
@@ -113,9 +133,26 @@
             return json;
         },
     },
- 
+    'columnDefs': [
+         {
+            'targets': 0,
+            'checkboxes': {
+               'selectRow': true
+            }
+         }
+      ],
+      'select': {
+         'style': 'multi'
+      },
+      'order': [[1, 'asc']],
     columns: [
-
+    {
+                'data':null,
+                'defaultContent':'',
+                'checkboxes':{ 
+                    'selectRow':true
+                }
+            },
                         {
                             data: 'nombre'
                         },
@@ -137,13 +174,7 @@
                         {
                             data: 'semana_gps'
                         },
-                        {
-                            data: 'url',
-                            render: function (dataField) {
-                                return '<a href="'+dataField+'">Descargar</a>';
-                            }
-                        },
-                        
+                         
                     ],
 
 
@@ -169,6 +200,12 @@
         },
 });
 
+$('#example-select-all').on('click', function(){
+      // Get all rows with search applied
+      var rows = table.rows({ 'search': 'applied' }).nodes();
+      // Check/uncheck checkboxes for all rows in the table
+      $('input[type="checkbox"]', rows).prop('checked', this.checked);
+   });
           
 </script>
 

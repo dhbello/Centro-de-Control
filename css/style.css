@@ -149,6 +149,13 @@ input::placeholder, select {
     padding-top: 80px;
     padding-bottom: 0;
 }
+.resources{
+    background-color: #fff;
+}
+
+.rinex{
+    background-color: #D9DFE1;
+}
 
 .section.paddingLast {
     padding-bottom: 80px;
@@ -164,6 +171,7 @@ input::placeholder, select {
 
 .section.registrarReportar {
     position: relative;
+    background-color: #F4F8FE;
 }
 
 .section.registrarReportar::before {
@@ -706,6 +714,10 @@ thead .filters {
     display: none;
 }
 
+.form-new-est td{
+    text-align: left !important;
+}
+
 table.dataTable thead th {
     padding-top: 100px;
 }
@@ -1126,6 +1138,11 @@ table.customeTable.type2 td {
     color: #fff !important;    
 }
 
+.cardLosMapas .typee .card-header {
+    background: #FF5733;
+    color: #fff !important;    
+}
+
 .cardLosMapas .typed .card-header .title {
     color: #fff !important;
     opacity: 1;
@@ -1164,6 +1181,10 @@ table.customeTable.type2 td {
 
 .cardLosMapas .typed .card .gradient {
     background: linear-gradient(0deg, rgba(255,255,255,0) 50%, rgba(14,36,63,1) 100%);
+}
+
+.cardLosMapas .typee .card .gradient {
+    background: linear-gradient(0deg, rgba(255,255,255,0) 50%, rgba(255,87,51,1) 100%);
 }
 
 /*cards sin borde mapas de  la red*/
@@ -2286,6 +2307,12 @@ label {
 
 #viewDiv {
     padding: 0;
+    margin: 0;
+    height: 400px;
+    width: 100%;
+}
+#viewDiv1 {
+    padding: 10px 0px;
     margin: 0;
     height: 400px;
     width: 100%;

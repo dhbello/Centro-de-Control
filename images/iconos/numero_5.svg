@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 32 32"
+   version="1.1"
+   id="svg748"
+   sodipodi:docname="numero_5.svg"
+   inkscape:version="1.2.1 (9c6d41e, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview750"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="12.375"
+     inkscape:cx="3.7171717"
+     inkscape:cy="21.414141"
+     inkscape:window-width="1390"
+     inkscape:window-height="942"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="Layer_1" />
+  <defs
+     id="defs740">
+    <style
+       id="style738">.cls-1{fill:#3595e0;}.cls-2{fill:#f4a833;}</style>
+  </defs>
+  <g
+     id="Capa_2"
+     data-name="Capa 2">
+    <g
+       id="Layer_1"
+       data-name="Layer 1">
+      <circle
+         class="cls-1"
+         cx="16"
+         cy="16"
+         r="16"
+         id="circle742" />
+      <text
+         xml:space="preserve"
+         style="font-size:26.8643px;fill:#f4a833;fill-opacity:1;stroke-width:2.23868"
+         x="8.1553173"
+         y="23.5884"
+         id="text289"
+         transform="scale(1.0494833,0.95284985)"><tspan
+           sodipodi:role="line"
+           id="tspan287"
+           x="8.1553173"
+           y="23.5884"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Arial Hebrew';-inkscape-font-specification:'Arial Hebrew';fill:#f4a833;fill-opacity:1;stroke-width:2.23868">5</tspan></text>
+    </g>
+  </g>
+</svg>
