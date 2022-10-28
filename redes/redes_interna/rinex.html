@@ -1,216 +1,393 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Centro de Control Geod&eacute;sico Nacional</title>
-    <link rel="icon" href="images-home/logos/favicon.png">
+    <link rel="icon" href="images-home/logos/favicon.png" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link type="text/css" href="https://gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/css/dataTables.checkboxes.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      type="text/css"
+      href="https://gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/css/dataTables.checkboxes.css"
+      rel="stylesheet"
+    />
 
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
-    <link href="../../css/style.css" rel="stylesheet">
-    <link href="../../css/maestra.css" rel="stylesheet">
-</head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css"
+    />
+    <link href="../../css/style.css" rel="stylesheet" />
+    <link href="../../css/maestra.css" rel="stylesheet" />
+  </head>
 
-<body class="main redes geodesicaMaestra">
-    <nav class="navbarigac origen">
-    </nav>
-    <nav class="nav nav-underline">
-    </nav>
-    <section class="portada-igac portadaSub rinex">
-        <div class="container block-igac rinex">
-            <div class="d-flex contenido-portada">
-                <a class="get-back" href="../red_geodesica.html"><img src="/images/iconos/arrow-back.svg" alt=""> Volver
-                    a la Red Geodésica</a>
-                <div class="texto-portada">
-                    <h1 id="titulo"></h1>
-                    <p id="subtitulo"></p>
-                </div>
-            </div>
+  <body class="main redes geodesicaMaestra">
+    <nav class="navbarigac origen"></nav>
+    <nav class="nav nav-underline"></nav>
+    <section class="portada-igac portadaSub origen rinex">
+      <div class="container block-igac">
+        <div class="d-flex contenido-portada">
+          <a class="get-back" href="./red_activa.html"
+            ><img src="/images/iconos/arrow-back.svg" alt="" /> Volver a la Red
+            de estaciones de Operación Continua</a
+          >
+          <div class="texto-portada">
+            <h1 id="titulo"></h1>
+            <p id="subtitulo"></p>
+          </div>
         </div>
+      </div>
     </section>
 
-
     <div class="typeB">
-        <div class="container containerIgac">
+      <div class="container containerIgac">
+        <section class="section">
+          <div class="m-auto w-100">
+            <div id="table-head">
+              <div id="new-search-area"></div>
+              <div id="head-1">
+                <div id="filtros"></div>
+                <div id="entradas"></div>
+                <div id="resultados">
+                  <p>Ver:</p>
 
-            <section class="section">
-                <div class="btn_download m-2">
-                    <button  class="btn btn-primary btn-sm" id="download_rinex">
-                        <i class="fa-solid fa-download"></i> Descargar archivos
-                    </button>
+                  <div>
+                    <a id="btn_25">25</a>
+                    <a id="btn_50">50</a>
+                    <a id="btn_100">100</a>
+                  </div>
                 </div>
-                <div class="m-auto w-100">
-                    <table id="tbl1" class="display select" cellspacing="0" width="100%">
-                        <thead>
-                            <tr>
-                                <th>
-                                    
-                                </th>
-                                <th>Nombre</th>
-                                <th>Versión</th>
-                                <th>Tipo</th>
-                                <th>Tasa de muestreo</th>
-                                <th>Año</th>
-                                <th>Día del año</th>
-                                <th>Semana GPS</th>
-                            </tr>
-                        </thead>
-                    </table>
-                </div>
-            </section>
-        </div>
+              </div>
+            </div>
+            <div class="btn_download m-2">
+              <button class="btn btn-primary btn-sm" id="download">
+                <i class="fa-solid fa-download"></i>
+                <span>Descargar 0 archivos</span>
+              </button>
+              <button class="btn btn-secondary btn-sm" id="trash">
+                <i class="fa-solid fa-trash"></i>
+                <span>limpiar</span>
+              </button>
+              <button class="btn btn-secondary btn-sm" id="spinner">
+                <i class="fa fa-refresh fa-spin"></i>
+              </button>
+            </div>
+            <table
+              id="tbl1"
+              class="display select"
+              cellspacing="0"
+              width="100%"
+            >
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Nombre</th>
+                  <th>Versión</th>
+                  <th>Tipo</th>
+                  <th>Tasa de muestreo</th>
+                  <th>Año</th>
+                  <th>Día del año</th>
+                  <th>Semana GPS</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </section>
+      </div>
     </div>
 
+    <footer class="footer origen"></footer>
 
-
-    <footer class="footer origen">
-
-    </footer>
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
 
     <script src="../../index.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
 
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
-    <script type="text/javascript" src="https://gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/js/dataTables.checkboxes.min.js"></script>
-
+    <script
+      type="text/javascript"
+      src="https://gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/js/dataTables.checkboxes.min.js"
+    ></script>
 
     <script>
-        $('.redTable_filter').wrapAll('<div class="childjbdjwbd" />');
+      $(".redTable_filter").wrapAll('<div class="childjbdjwbd" />');
 
-        function getParameterByName(name, url) {
-            if (!url) url = window.location.href;
-            name = name.replace(/[\[\]]/g, '\\$&');
-            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, ' '));
-        }
-        var estacion = getParameterByName('estacion');
-        var id_estacion = getParameterByName('id');
+      function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return "";
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+      }
+      var estacion = getParameterByName("estacion");
+      var id_estacion = getParameterByName("id");
 
-        document.getElementById('titulo').innerHTML = 'Descarga de archivo RINEX ' 
-        document.getElementById('subtitulo').innerHTML = estacion;
-
-        $("#download_rinex").on('click',function(){
-            window.open('https://www.colombiaenmapas.gov.co/?u=0&t=25&servicio=6&estacion='+estacion, '_blank');
-        });
-
-
+      document.getElementById("titulo").innerHTML =
+        "Descarga de archivo RINEX ";
+      document.getElementById("subtitulo").innerHTML = estacion;
     </script>
 
-
     <script type="module">
+      $("#spinner").hide();
 
+      $("#trash").on("click", function () {
+        var table = $("#tbl1").DataTable();
 
+        localStorage.setItem("total", "0");
+        localStorage.setItem("datos", JSON.stringify([]));
 
+        location.reload();
+      });
 
-        $('#tbl1').DataTable({
-    ajax: {
-        url:url_backend+'/json_rinex',
-        data:{"id":id_estacion},
-        "dataSrc": function ( json ) {
+      let total = Number(localStorage.getItem("total"));
+      let data = JSON.parse(localStorage.getItem("datos"));
 
+      console.log(total);
+
+      if (total) {
+        $("#download span").text("Descargar " + total + " archivos");
+        if (total == 0) {
+          $("#download").prop("disabled", true);
+        }
+      } else {
+        $("#download").prop("disabled", true);
+      }
+
+      $("#download").on("click", function () {
+        $("#spinner").show();
+
+        var arr = JSON.parse(localStorage.getItem("datos"));
+        console.log(arr);
+
+        $.ajax({
+          type: "POST",
+          url: url_backend + "/download_rinex",
+          data: JSON.stringify({ datos: arr }),
+          xhrFields: {
+            responseType: "blob",
+          },
+          contentType: "application/json",
+          processData: false,
+          success: function (response) {
+            $("#spinner").hide();
+            var link = document.createElement("a");
+            link.href = window.URL.createObjectURL(response);
+            link.download = "rinex.zip";
+            document.body.appendChild(link);
+            link.click();
+          },
+        });
+      });
+
+      function printSelectedRows() {
+        var rows_selected = $("#tbl1")
+          .DataTable()
+          .column(0)
+          .checkboxes.selected();
+
+        if (rows_selected.length == 0 && total == 0) {
+          $("#download").prop("disabled", true);
+        } else {
+          $("#download").prop("disabled", false);
+        }
+
+        console.log(total);
+
+        if (total + rows_selected.length > 5) {
+          $("#download span").text("Descargar 5 archivos");
+
+          localStorage.setItem("total", "5");
+        } else {
+          $("#download span").text(
+            "Descargar " + (total + rows_selected.length) + " archivos"
+          );
+          console.log(total + rows_selected.length);
+          localStorage.setItem("total", total + rows_selected.length);
+        }
+
+        var arr = [];
+
+        for (var i = 0; i < rows_selected.length; i++) {
+          if (i < 5) {
+            arr.push(rows_selected[i]);
+          } else {
+            break;
+          }
+        }
+
+        if (data && rows_selected.length + total < 6) {
+          localStorage.setItem("datos", JSON.stringify(data.concat(arr)));
+        } else {
+          localStorage.setItem("datos", JSON.stringify(arr));
+        }
+        console.log(JSON.parse(localStorage.getItem("datos")));
+      }
+
+      $("#tbl1 thead tr").clone(true).addClass("filters").appendTo("#filtros");
+
+      $(".filters th:first-child").hide();
+      $(".filters th:nth-child(2)").hide();
+
+      var table = $("#tbl1").DataTable({
+        lengthChange: false,
+        ajax: {
+          url: url_backend + "/json_rinex",
+          data: { id: id_estacion },
+          dataSrc: function (json) {
+            console.log(json);
             return json;
+          },
         },
-    },
-    'columnDefs': [
-         {
-            'targets': 0,
-            'checkboxes': {
-               'selectRow': true
-            }
-         }
-      ],
-      'select': {
-         'style': 'multi'
-      },
-      'order': [[1, 'asc']],
-    columns: [
-    {
-                'data':null,
-                'defaultContent':'',
-                'checkboxes':{ 
-                    'selectRow':true
-                }
+        columnDefs: [
+          {
+            targets: 0,
+            checkboxes: {
+              selectRow: true,
             },
-                        {
-                            data: 'nombre'
-                        },
-                        {
-                            data: 'version_rinex'
-                        },
-                        {
-                            data: 'tipo_rinex'
-                        },
-                        {
-                            data: 'tasa_muestreo'
-                        },
-                        {
-                            data: 'año'
-                        },
-                        {
-                            data: 'dia_del_año'
-                        },
-                        {
-                            data: 'semana_gps'
-                        },
-                         
-                    ],
-
-
-                language: {
-            "decimal": "",
-            "emptyTable": "No hay información",
-            "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
-            "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
-            "infoFiltered": "(Filtrado de _MAX_ total entradas)",
-            "infoPostFix": "",
-            "thousands": ",",
-            "lengthMenu": "Mostrar _MENU_ Entradas",
-            "loadingRecords": "Cargando...",
-            "processing": "Procesando...",
-            "search": "Buscar:",
-            "zeroRecords": "Sin resultados encontrados",
-            "paginate": {
-                "first": "Primero",
-                "last": "Ultimo",
-                "next": "Siguiente",
-                "previous": "Anterior"
-            }
+          },
+        ],
+        select: {
+          style: "multi",
         },
-});
+        order: [[1, "asc"]],
+        columns: [
+          {
+            data: "url",
+            defaultContent: "",
+            checkboxes: {
+              selectRow: true,
+              selectCallback: function () {
+                printSelectedRows();
+              },
+            },
+          },
+          {
+            data: "nombre",
+          },
+          {
+            data: "version_rinex",
+          },
+          {
+            data: "tipo_rinex",
+          },
+          {
+            data: "tasa_muestreo",
+          },
+          {
+            data: "año",
+          },
+          {
+            data: "dia_del_año",
+          },
+          {
+            data: "semana_gps",
+          },
+        ],
 
-$('#example-select-all').on('click', function(){
-      // Get all rows with search applied
-      var rows = table.rows({ 'search': 'applied' }).nodes();
-      // Check/uncheck checkboxes for all rows in the table
-      $('input[type="checkbox"]', rows).prop('checked', this.checked);
-   });
-          
-</script>
+        language: {
+          decimal: "",
+          emptyTable: "No hay información",
+          info: "_TOTAL_ resultados",
+          infoEmpty: "0 resultados",
+          infoFiltered: "",
+          infoPostFix: "",
+          thousands: ",",
+          lengthMenu: "Ver _MENU_",
+          loadingRecords: "Cargando...",
+          processing: "Procesando...",
+          search: "",
+          zeroRecords: "Sin resultados encontrados",
+          searchPlaceholder: "Buscar",
+          paginate: {
+            first: "Primero",
+            last: "Ultimo",
+            next: "Siguiente",
+            previous: "Anterior",
+          },
+        },
 
+        initComplete: function () {
+          $("#tbl1_filter").detach().appendTo("#new-search-area");
+          $("#tbl1_info").detach().appendTo("#entradas");
 
+          $("#btn_25").on("click", function () {
+            table.page.len(25).draw();
+          });
 
-</body>
+          $("#btn_50").on("click", function () {
+            table.page.len(50).draw();
+          });
 
+          $("#btn_100").on("click", function () {
+            table.page.len(100).draw();
+          });
+
+          this.api()
+            .columns()
+            .every(function (i) {
+              var column = this;
+
+              var select = $(
+                '<select class="form-select"><option value="">' +
+                  $("#filtros tr").children().eq(i).text() +
+                  "</option></select>"
+              )
+                .appendTo($("#filtros tr").children().eq(i).empty())
+                .on("change", function () {
+                  var val = $.fn.dataTable.util.escapeRegex($(this).val());
+
+                  column.search(val ? "^" + val + "$" : "", true, false).draw();
+                });
+
+              column
+                .data()
+                .unique()
+                .sort()
+                .each(function (d, j) {
+                  select.append('<option value="' + d + '">' + d + "</option>");
+                });
+            });
+        },
+      });
+
+      $("#example-select-all").on("click", function () {
+        // Get all rows with search applied
+        var rows = table.rows({ search: "applied" }).nodes();
+        console.log(rows);
+        // Check/uncheck checkboxes for all rows in the table
+        $('input[type="checkbox"]', rows).prop("checked", this.checked);
+      });
+    </script>
+  </body>
 </html>

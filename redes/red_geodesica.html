@@ -1,95 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Centro de Control Geod&eacute;sico Nacional</title>
-    <link rel="icon" href="images-home/logos/favicon.png">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
-    <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/maestra.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="icon" href="images-home/logos/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css"
+    />
+    <link href="../css/style.css" rel="stylesheet" />
+    <link href="../css/maestra.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+  </head>
 
-</head>
-
-<body class="main redes geodesicaMaestra">
-    <nav class="navbarigac origen">
-    </nav>
-    <nav class="nav nav-underline">
-    </nav>
+  <body class="main redes geodesicaMaestra">
+    <nav class="navbarigac origen"></nav>
+    <nav class="nav nav-underline"></nav>
     <section class="portada-igac portadaSub origen">
-        <div class="container block-igac">
-            <div class="d-flex contenido-portada">
-                <div class="texto-portada">
-                    <h1>Red Geod&eacute;sica GNSS</h1>
-                    <p>La Red Geod&eacute;sica GNSS es el conjunto de puntos distribu&iacute;dos y materializados en
-                        ubicaciones estraegicas del territorio colombiano para definir el marco de referencia
-                        geod&eacute;sico nacional.</p>
-                </div>
-            </div>
+      <div class="container block-igac">
+        <div class="d-flex contenido-portada">
+          <div class="texto-portada">
+            <h1>Red Geod&eacute;sica GNSS</h1>
+            <p>
+              La Red Geod&eacute;sica GNSS es el conjunto de puntos
+              distribu&iacute;dos y materializados en ubicaciones estraegicas
+              del territorio colombiano para definir el marco de referencia
+              geod&eacute;sico nacional.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
     <div id="redActivaPasiva" class="container containerIgac">
-        <section id="acceso" class="section">
-            <div class="row">
-                <div class="col-md-6">
-                    <a href="redes_interna/red_activa.html">
-                        <div class="faqs dobles tipo-a">
-                            <div class="title">
-                                Red de estaciones de Operación Continua
-                            </div>
-                        </div>
-                    </a>
+      <section id="acceso" class="section">
+        <div class="row">
+          <div class="col-md-6">
+            <a href="redes_interna/red_activa.html">
+              <div class="faqs dobles tipo-a">
+                <div class="title">Red de estaciones de Operación Continua</div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6">
+            <a href="redes_interna/red_pasiva_nivelacion.html">
+              <div class="faqs dobles tipo-b">
+                <div class="title">
+                  Red de Vértices Pasivos y de Control Vertical
                 </div>
-                <div class="col-md-6">
-                    <a href="redes_interna/red_pasiva_nivelacion.html">
-                        <div class="faqs dobles tipo-b">
-                            <div class="title">
-                               Red de Vértices Pasivos y de Control Vertical
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-        <section id="visor" class="section">
-            <h2 class="title">Visor de la Red Geodésica GNSS y de Control Vertical</h2>
-            <div id="viewDiv"></div>
-        </section>
-
-        <div class="typeB">
-            <div class="container containerIgac">
-                <section class="section">
-                    <div class="m-auto w-100">
-
-                        <table id="tbl1" class="display">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Contribuyente</th>
-                                    <th>Ubicación</th>
-                                    <th>Estado</th>
-                                    <th>Tipo de Red</th>
-                                    <th></th>
-
-                                </tr>
-                            </thead>
-                        </table>
-
-
-
-                    </div>
-                </section>
-            </div>
+              </div>
+            </a>
+          </div>
         </div>
+      </section>
+      <section id="visor" class="section">
+        <h2 class="title">
+          Visor de la Red Geodésica GNSS y de Control Vertical
+        </h2>
+        <div id="viewDiv"></div>
+      </section>
 
+      <div class="typeB">
+        <div class="container containerIgac">
+          <section class="section">
+            <div class="m-auto w-100">
+              <div id="table-head">
+                <div id="new-search-area"></div>
+                <div id="head-1">
+                  <div id="filtros"></div>
+                  <div id="entradas"></div>
+                  <div id="resultados">
+                    <p>Ver:</p>
 
+                    <div>
+                      <a id="btn_25">25</a>
+                      <a id="btn_50">50</a>
+                      <a id="btn_100">100</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <table id="tbl1" class="display">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Contribuyente</th>
+                    <th>Ubicación</th>
+                    <th>Estado</th>
+                    <th>Tipo de estación</th>
+                    <th class="invisible"></th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </section>
+        </div>
+      </div>
     </div>
 
     <!--
@@ -120,100 +144,109 @@
     </div>
     -->
     <div class="container containerIgac">
-        <section class="section">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="context">
-                        <div class="text">
-                            Los Mapas de la Red
-                        </div>
-                        <div class="resume">
-                            Encuentra y visualiza los mapas de los todos los puntos geodésicos existentes en Colombia:
-                            Redes Activas, Redes Pasivas, Red de Control Vertical de Precisión, Red Gravimétrica y la
-                            Red Geomagnética. Nuestras redes están ubicadas a lo largo y ancho del territorio.
-                        </div>
-                    </div>
-                    <div class="boton-faqs type2">
-                        <a href="/index.html">Visitar Temática Geodesia</a>
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <div class="row cardLosMapas">
-                        <div class="col-md-6 mb-4">
-                            <div class="card shadow-sm">
-                                <a href="https://www.colombiaenmapas.gov.co/?e=-90.1941954394529,-5.000102408760591,-55.69712512696207,14.799322524114915,4686&b=igac&l=8&u=0&t=25&servicio=8">
-                                    <div class="card-header d-flex">
-                                        <div class="title">Magna Eco</div>
-                                        <div class="cta">Vistar CEM ›</div>
-                                    </div>
-                                    <div class="image">
-                                        <div class="gradient"></div>
-                                        <img src="/images/images-redes/map1.png" alt="">
-                                    </div>
-                                </a>
-                                
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-4 typeb">
-                            <div class="card shadow-sm">
-                                <a href="https://www.colombiaenmapas.gov.co/?e=-90.1941954394529,-5.000102408760591,-55.69712512696207,14.799322524114915,4686&b=igac&l=8&u=0&t=25&servicio=472">
-                                <div class="card-header d-flex">
-                                    <div class="title">Red de control vertical</div>
-                                    <div class="cta">Vistar CEM ›</div>
-                                </div>
-                                <div class="image">
-                                    <div class="gradient"></div>
-                                    <img src="/images/images-redes/map2.png" alt="">
-                                </div>
-                            </a>
-                            </div>
-                        </div>
-                        <div class="col-md-6 typec">
-                            <div class="card shadow-sm">
-                                <a href="https://www.colombiaenmapas.gov.co/?e=-90.1941954394529,-5.000102408760591,-55.69712512696207,14.799322524114915,4686&b=igac&l=8&u=0&t=25&servicio=743">
-                                <div class="card-header d-flex">
-                                    <div class="title">Red activa GeoRed</div>
-                                    <div class="cta">Vistar CEM ›</div>
-                                </div>
-                                <div class="image">
-                                    <div class="gradient"></div>
-                                    <img src="/images/images-redes/map3.png" alt="">
-                                </div>
-                            </a>
-                            </div>
-                        </div>
-                        <div class="col-md-6 typed">
-                            <div class="card shadow-sm">
-                                <a href="https://www.colombiaenmapas.gov.co/?e=-90.1941954394529,-5.000102408760591,-55.69712512696207,14.799322524114915,4686&b=igac&l=8&u=0&t=25&servicio=973">
-                                <div class="card-header d-flex">
-                                    <div class="title">Densificación de la red</div>
-                                    <div class="cta">Vistar CEM ›</div>
-                                </div>
-                                <div class="image">
-                                    <div class="gradient"></div>
-                                    <img src="/images/images-redes/map4.png" alt="">
-                                </div>
-                            </a>
-                            </div>
-                        </div>
-                        <div class="col-md-6 typee">
-                            <div class="card shadow-sm">
-                                <a href="https://www.colombiaenmapas.gov.co/?e=-90.1941954394529,-5.000102408760591,-55.69712512696207,14.799322524114915,4686&b=igac&l=8&u=0&t=25&servicio=821 ">
-                                <div class="card-header d-flex">
-                                    <div class="title">Red pasiva GeoRed</div>
-                                    <div class="cta">Vistar CEM ›</div>
-                                </div>
-                                <div class="image">
-                                    <div class="gradient"></div>
-                                    <img src="/images/images-redes/map1.png" alt="">
-                                </div>
-                            </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <section class="section">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="context">
+              <div class="text">Los Mapas de la Red</div>
+              <div class="resume">
+                Encuentra y visualiza los mapas de los todos los puntos
+                geodésicos existentes en Colombia: Redes Activas, Redes Pasivas,
+                Red de Control Vertical de Precisión, Red Gravimétrica y la Red
+                Geomagnética. Nuestras redes están ubicadas a lo largo y ancho
+                del territorio.
+              </div>
             </div>
-        </section>
+            <div class="boton-faqs type2">
+              <a href="/index.html">Visitar Temática Geodesia</a>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="row cardLosMapas">
+              <div class="col-md-6 mb-4">
+                <div class="card shadow-sm">
+                  <a
+                    href="https://www.colombiaenmapas.gov.co/?e=-90.1941954394529,-5.000102408760591,-55.69712512696207,14.799322524114915,4686&b=igac&l=8&u=0&t=25&servicio=8"
+                  >
+                    <div class="card-header d-flex">
+                      <div class="title">Magna Eco</div>
+                      <div class="cta">Vistar CEM ›</div>
+                    </div>
+                    <div class="image">
+                      <div class="gradient"></div>
+                      <img src="/images/images-redes/map1.png" alt="" />
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4 typeb">
+                <div class="card shadow-sm">
+                  <a
+                    href="https://www.colombiaenmapas.gov.co/?e=-90.1941954394529,-5.000102408760591,-55.69712512696207,14.799322524114915,4686&b=igac&l=8&u=0&t=25&servicio=472"
+                  >
+                    <div class="card-header d-flex">
+                      <div class="title">Red de control vertical</div>
+                      <div class="cta">Vistar CEM ›</div>
+                    </div>
+                    <div class="image">
+                      <div class="gradient"></div>
+                      <img src="/images/images-redes/map2.png" alt="" />
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-6 typec">
+                <div class="card shadow-sm">
+                  <a
+                    href="https://www.colombiaenmapas.gov.co/?e=-90.1941954394529,-5.000102408760591,-55.69712512696207,14.799322524114915,4686&b=igac&l=8&u=0&t=25&servicio=743"
+                  >
+                    <div class="card-header d-flex">
+                      <div class="title">Red activa GeoRed</div>
+                      <div class="cta">Vistar CEM ›</div>
+                    </div>
+                    <div class="image">
+                      <div class="gradient"></div>
+                      <img src="/images/images-redes/map3.png" alt="" />
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-6 typed">
+                <div class="card shadow-sm">
+                  <a
+                    href="https://www.colombiaenmapas.gov.co/?e=-90.1941954394529,-5.000102408760591,-55.69712512696207,14.799322524114915,4686&b=igac&l=8&u=0&t=25&servicio=973"
+                  >
+                    <div class="card-header d-flex">
+                      <div class="title">Densificación de la red</div>
+                      <div class="cta">Vistar CEM ›</div>
+                    </div>
+                    <div class="image">
+                      <div class="gradient"></div>
+                      <img src="/images/images-redes/map4.png" alt="" />
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-6 typee">
+                <div class="card shadow-sm">
+                  <a
+                    href="https://www.colombiaenmapas.gov.co/?e=-90.1941954394529,-5.000102408760591,-55.69712512696207,14.799322524114915,4686&b=igac&l=8&u=0&t=25&servicio=821 "
+                  >
+                    <div class="card-header d-flex">
+                      <div class="title">Red pasiva GeoRed</div>
+                      <div class="cta">Vistar CEM ›</div>
+                    </div>
+                    <div class="image">
+                      <div class="gradient"></div>
+                      <img src="/images/images-redes/map1.png" alt="" />
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
     <!--<div class="beforeImage" style="border-bottom: 1px solid #000;">
         <div class="container containerIgac">
@@ -284,85 +317,127 @@
         </div>
     </div> -->
     <div class="containerbg">
-        <div class="container containerIgac">
-            <section id="info" class="section">
-                <div class="row">
-                    <div class="col-md-7 m-auto card-contain">
-                        <div class="card shadow-sm cardTypeb">
-                            <h2>Sobre la Red</h2>
-                            <div class="block">
-                                <h2>¿Qué es?</h2>
-                                <p>El conjunto de v&eacute;rtices geod&eacute;sicos definidos y materializados
-                                    estrat&eacute;gicamente en campo con el fin de representar el marco de referencia
-                                    terrestre y generar informaci&oacute;n GNSS de alta precisi&oacute;n que represente
-                                    la realidad del terreno permite registrar movimientos milim&eacute;tricos en la
-                                    tierra, detectando cambios muy peque&ntilde;os en periodos de tiempo prolongados.
-                                </p>
-                                <h2>¿Por qué es importante?</h2>
-                                <p>Provee informaci&oacute;n precisa que sirve como insumo para la generaci&oacute;n de
-                                    cartograf&iacute;a en diferentes &aacute;reas de estudio. Por ejemplo: Catastro
-                                    Multiprop&oacute;sito, en Planes de Ordenamiento Territorial, para el Medio
-                                    Ambiente, en Comunicaciones, en Agricultura, en estudios cient&iacute;ficos,
-                                    Gesti&oacute;n del Riesgo, entre otros.</p>
-                            </div>
-                        </div>
-                    </div>
+      <div class="container containerIgac">
+        <section id="info" class="section">
+          <div class="row">
+            <div class="col-md-7 m-auto card-contain">
+              <div class="card shadow-sm cardTypeb">
+                <h2>Sobre la Red</h2>
+                <div class="block">
+                  <h2>¿Qué es?</h2>
+                  <p>
+                    El conjunto de v&eacute;rtices geod&eacute;sicos definidos y
+                    materializados estrat&eacute;gicamente en campo con el fin
+                    de representar el marco de referencia terrestre y generar
+                    informaci&oacute;n GNSS de alta precisi&oacute;n que
+                    represente la realidad del terreno permite registrar
+                    movimientos milim&eacute;tricos en la tierra, detectando
+                    cambios muy peque&ntilde;os en periodos de tiempo
+                    prolongados.
+                  </p>
+                  <h2>¿Por qué es importante?</h2>
+                  <p>
+                    Provee informaci&oacute;n precisa que sirve como insumo para
+                    la generaci&oacute;n de cartograf&iacute;a en diferentes
+                    &aacute;reas de estudio. Por ejemplo: Catastro
+                    Multiprop&oacute;sito, en Planes de Ordenamiento
+                    Territorial, para el Medio Ambiente, en Comunicaciones, en
+                    Agricultura, en estudios cient&iacute;ficos, Gesti&oacute;n
+                    del Riesgo, entre otros.
+                  </p>
                 </div>
-            </section>
-        </div>
-        <section class="section registrarReportar paddingLast">
-            <h2 class="title w-divider text-center">Participa activamente de la red</h2>
-            <div class="container containerIgac">
-                <div class="d-flex">
-                    <div class="containerFaqs typeB">
-                        <div class="faqs typeC">
-                            <div class="title m-0 mb-3">
-                                Registra y postula un nuevo vértice a la Red Geodésica
-                            </div>
-                            <div class="d-flex align-items-center modalEstaciones" data-toggle="modal"
-                                data-target="#modalEstaciones">
-                                <div class="boton-faqs">
-                                    <a>Iniciar formulario</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="containerFaqs typeB">
-                        <div class="faqs typeD">
-                            <div class="title m-0 mb-3">
-                                Reporta novedades sobre vértices de la Red
-                            </div>
-                            <div style="white-space: nowrap;"
-                                class="p-0 col-md-4 text-center modalButtonReportar boton-faqs" data-toggle="modal"
-                                data-target="#reportarModal">
-                                <a>Iniciar formulario</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
+          </div>
         </section>
+      </div>
+      <section class="section registrarReportar paddingLast">
+        <h2 class="title w-divider text-center">
+          Participa activamente de la red
+        </h2>
+        <div class="container containerIgac">
+          <div class="d-flex">
+            <div class="containerFaqs typeB">
+              <div class="faqs typeC">
+                <div class="title m-0 mb-3">
+                  Registra y postula un nuevo vértice a la Red Geodésica
+                </div>
+                <div
+                  class="d-flex align-items-center modalEstaciones"
+                  data-toggle="modal"
+                  data-target="#modalEstaciones"
+                >
+                  <div class="boton-faqs">
+                    <a>Iniciar formulario</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="containerFaqs typeB">
+              <div class="faqs typeD">
+                <div class="title m-0 mb-3">
+                  Reporta novedades sobre vértices de la Red
+                </div>
+                <div
+                  style="white-space: nowrap"
+                  class="p-0 col-md-4 text-center modalButtonReportar boton-faqs"
+                  data-toggle="modal"
+                  data-target="#reportarModal"
+                >
+                  <a>Iniciar formulario</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-    <footer class="footer origen">
-    </footer>
+    <footer class="footer origen"></footer>
     <div class="floatingMenu">
-        <ul class="containerLinks">
-            <li><a class="acceso" href="#acceso"><img src="/images/iconos/update_icono.svg" alt=""></a></li>
-            <li><a class="visor" href="#visor"><img src="/images/iconos/eye_icono.svg" alt=""></a></li>
-            <li><a class="participa" href="#participa"><img src="/images/iconos/pen_icono.svg" alt=""></a></li>
-            <li><a class="contribuye" href="#contribuye"><img src="/images/iconos/flag_icono.svg" alt=""></a></li>
-            <li><a class="info" href="#info"><img src="/images/iconos/info_icono.svg" alt=""></a></li>
-        </ul>
+      <ul class="containerLinks">
+        <li>
+          <a class="acceso" href="#acceso"
+            ><img src="/images/iconos/update_icono.svg" alt=""
+          /></a>
+        </li>
+        <li>
+          <a class="visor" href="#visor"
+            ><img src="/images/iconos/eye_icono.svg" alt=""
+          /></a>
+        </li>
+        <li>
+          <a class="participa" href="#participa"
+            ><img src="/images/iconos/pen_icono.svg" alt=""
+          /></a>
+        </li>
+        <li>
+          <a class="contribuye" href="#contribuye"
+            ><img src="/images/iconos/flag_icono.svg" alt=""
+          /></a>
+        </li>
+        <li>
+          <a class="info" href="#info"
+            ><img src="/images/iconos/info_icono.svg" alt=""
+          /></a>
+        </li>
+      </ul>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js">
-    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"
+    ></script>
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
@@ -371,215 +446,292 @@
     <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    
-    
 
     <script src="/index.js"></script>
     <script>
-        $(function () {
-            $('a[href*="#"]:not([href="#"])').click(function () {
-                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location
-                    .hostname == this.hostname) {
-                    var target = $(this.hash);
-                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                    if (target.length) {
-                        $('html, body').animate({
-                            scrollTop: target.offset().top - 80
-                        }, 500);
-                        return false;
-                    }
-                }
-            });
+      $(function () {
+        $('a[href*="#"]:not([href="#"])').click(function () {
+          if (
+            location.pathname.replace(/^\//, "") ==
+              this.pathname.replace(/^\//, "") &&
+            location.hostname == this.hostname
+          ) {
+            var target = $(this.hash);
+            target = target.length
+              ? target
+              : $("[name=" + this.hash.slice(1) + "]");
+            if (target.length) {
+              $("html, body").animate(
+                {
+                  scrollTop: target.offset().top - 80,
+                },
+                500
+              );
+              return false;
+            }
+          }
         });
+      });
     </script>
-    <link rel="stylesheet" href="https://js.arcgis.com/4.24/esri/themes/light/main.css">
+    <link
+      rel="stylesheet"
+      href="https://js.arcgis.com/4.24/esri/themes/light/main.css"
+    />
     <script src="https://js.arcgis.com/4.24/"></script>
     <script>
-        require([
-            "esri/config",
-            "esri/Map",
-            "esri/views/MapView",
-            "esri/widgets/Home",
-            "esri/widgets/ScaleBar",
-            "esri/widgets/LayerList",
-            "esri/widgets/Legend",
-            "esri/widgets/Expand",
-            "esri/widgets/Compass",
-            "esri/geometry/Extent",
-            "esri/layers/MapImageLayer"
-        ], (
-            esriConfig, Map, MapView, Home, ScaleBar, LayerList, Legend,
-            Expand, Compass, Extent, MapImageLayer
-        ) => {
-            esriConfig.apiKey =
-                "AAPK2a2e861a0c794bfdb29a1b4ce47b1583OBbY7CvHSkUPhQ20FG1hZEbAl5GmTTZcs-cyoy2tw5to5j_pJiiTW6J_KRbBx-qS";
-            const layer = new MapImageLayer({
-                url: "https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer",
-
-            });
-            const map = new Map({
-                layers: [layer],
-                basemap: "arcgis-topographic"
-            });
-            const view = new MapView({
-                container: "viewDiv",
-                map: map
-            });
-            const homeBtn = new Home({
-                view: view
-            });
-            const scaleBar = new ScaleBar({
-                view: view,
-                unit: "dual"
-            });
-            const layerList = new LayerList({
-                view: view
-            });
-            const legend = new Legend({
-                view: view
-            });
-            const layerListExpand = new Expand({
-                view: view,
-                content: layerList,
-                expanded: false,
-                expandTooltip: "Expand LayerList"
-            });
-            const legendExpand = new Expand({
-                view: view,
-                content: legend,
-                expandTooltip: "Expand Legend",
-                expanded: false
-            });
-            const compass = new Compass({
-                view: view,
-                visible: false
-            });
-            view.ui.add(homeBtn, "top-left");
-            view.ui.add(scaleBar, "bottom-right");
-            view.ui.add(layerListExpand, "top-right");
-            view.ui.add(legendExpand, "bottom-left");
-            view.ui.add(compass, "top-left");
-            layer.when(() => {
-                const initialExtent = Extent.fromJSON(layer.sourceJSON.initialExtent);
-                view.goTo(initialExtent);
-            });
-            // load the Compass only when the view is rotated
-            view.watch('rotation', function (rotation) {
-                if (rotation && !compass.visible) {
-                    compass.visible = true;
-                }
-            });
-
-            const extent = new Extent({
-                xmin: -74,
-                ymin: -1,
-                xmax: -70,
-                ymax: 10,
-                });
-                view.extent = extent; 
-
-
+      require([
+        "esri/config",
+        "esri/Map",
+        "esri/views/MapView",
+        "esri/widgets/Home",
+        "esri/widgets/ScaleBar",
+        "esri/widgets/LayerList",
+        "esri/widgets/Legend",
+        "esri/widgets/Expand",
+        "esri/widgets/Compass",
+        "esri/geometry/Extent",
+        "esri/layers/MapImageLayer",
+        "esri/layers/VectorTileLayer",
+      ], (
+        esriConfig,
+        Map,
+        MapView,
+        Home,
+        ScaleBar,
+        LayerList,
+        Legend,
+        Expand,
+        Compass,
+        Extent,
+        MapImageLayer,
+        VectorTileLayer
+      ) => {
+        esriConfig.apiKey =
+          "AAPK2a2e861a0c794bfdb29a1b4ce47b1583OBbY7CvHSkUPhQ20FG1hZEbAl5GmTTZcs-cyoy2tw5to5j_pJiiTW6J_KRbBx-qS";
+        const vtlLayer = new VectorTileLayer({
+          url: "https://tiles.arcgis.com/tiles/RVvWzU3lgJISqdke/arcgis/rest/services/Mapa_base_topografico/VectorTileServer",
         });
+        const layer = new MapImageLayer({
+          url: "https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer",
+          sublayers: [
+            {
+              id: 1,
+              popupTemplate: {
+                title: "Atributos",
+                outFields: ["*"],
+                content: popup,
+              },
+            },
+          ],
+        });
+        const map = new Map({
+          layers: [vtlLayer, layer],
+        });
+        const view = new MapView({
+          container: "viewDiv",
+          map: map,
+          center: [-74, 4], // longitude, latitude
+          zoom: 4.8,
+        });
+        const homeBtn = new Home({
+          view: view,
+        });
+        const scaleBar = new ScaleBar({
+          view: view,
+          unit: "dual",
+        });
+        const layerList = new LayerList({
+          view: view,
+        });
+        const legend = new Legend({
+          view: view,
+        });
+        const layerListExpand = new Expand({
+          view: view,
+          content: layerList,
+          expanded: false,
+          expandTooltip: "Expand LayerList",
+        });
+        const legendExpand = new Expand({
+          view: view,
+          content: legend,
+          expandTooltip: "Expand Legend",
+          expanded: true,
+        });
+        const compass = new Compass({
+          view: view,
+          visible: false,
+        });
+        view.ui.add(homeBtn, "top-left");
+        view.ui.add(scaleBar, "bottom-right");
+        view.ui.add(layerListExpand, "top-right");
+        view.ui.add(legendExpand, "bottom-left");
+        view.ui.add(compass, "top-left");
+        // load the Compass only when the view is rotated
+        view.watch("rotation", function (rotation) {
+          if (rotation && !compass.visible) {
+            compass.visible = true;
+          }
+        });
+      });
     </script>
-
 
     <script type="module">
+      $("#tbl1 thead tr").clone(true).addClass("filters").appendTo("#filtros");
 
+      $(".filters th:first-child").hide();
 
-        $('#tbl1').DataTable({
+      var table = $("#tbl1").DataTable({
+        lengthChange: false,
+
         ajax: {
-            url:url_backend+'/json',
-            "dataSrc": function ( json ) {
-                
-                console.log(json)
+          url: url_backend + "/json",
+          dataSrc: function (json) {
+            var obj = json;
 
-                var obj=json;
-               
-                var arr1=[]
+            var arr1 = [];
 
-                obj.map(function(i,e){
+            obj.map(function (i, e) {
+              if (i["estado"] == "Activa") {
+                i["ir"] =
+                  "redes_interna/interna_red_activa.html?estacion=" +
+                  i["t_id"] +
+                  "&nombre=" +
+                  i["redes"] +
+                  "&id=" +
+                  i["identificador"];
+              } else if (i["estado"] == "Inactiva") {
+                i["ir"] =
+                  "redes_interna/interna_red_pasiva.html?estacion=" +
+                  i["t_id"] +
+                  "&nombre=" +
+                  i["identificador"];
+              } else {
+                i["ir"] =
+                  "redes_interna/interna_red_pasiva.html?estacion=" +
+                  i["t_id"] +
+                  "&nombre=" +
+                  i["identificador"];
+              }
+              arr1.push(i);
+            });
 
-                    if(i["estado"]=="Activa"){
-                        i["ir"]='redes_interna/interna_red_activa.html?estacion=' + i["t_id"]+'&nombre='+i["redes"]+'&id='+i["identificador"]
-                    }else if(i["estado"]=="Inactiva"){
-                        i["ir"]='redes_interna/interna_red_pasiva.html?estacion=' + i["t_id"]+'&nombre='+i["redes"]
-                    }else{
-                        i["ir"]='redes_interna/interna_red_pasiva.html?estacion=' + i["t_id"]+'&nombre='+i["redes"]
-                    }
+            json.data = arr1;
 
-                    arr1.push(i)
-                })
-
-                json.data=arr1;
-
-                return json.data;
-            },
+            return json.data;
+          },
         },
         columns: [
-                        {
-                            data: 'identificador'
-                        },
-                        {
-                            data: 'sigla'
-                        },
-                        {
-                            data: 'municipio'
-                        },
-                        {
-                            data: 'estado',
-                            render: function (dataField) {
-                                var clase="inactivo"
-                                if(dataField==("Activa")){
-                                    clase="activo"
-                                }else if(dataField==null){
-                                clase="vacio";
-                                dataField=""
-                            }
-                                return '<span class="'+clase+'">'+dataField+'</span>';
-                            }
-                        },
-                        {
-                            data: 'redes'
-                        },
-                        {
-                            data: 'ir',
-                            render: function (dataField) {
-                                return '<a href="'+dataField+'">Ver más</a>';
-                            }
-                        }
-                    ],
-                    language: {
-                "decimal": "",
-                "emptyTable": "No hay información",
-                "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
-                "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
-                "infoFiltered": "(Filtrado de _MAX_ total entradas)",
-                "infoPostFix": "",
-                "thousands": ",",
-                "lengthMenu": "Mostrar _MENU_ Entradas",
-                "loadingRecords": "Cargando...",
-                "processing": "Procesando...",
-                "search": "Buscar:",
-                "zeroRecords": "Sin resultados encontrados",
-                "paginate": {
-                    "first": "Primero",
-                    "last": "Ultimo",
-                    "next": "Siguiente",
-                    "previous": "Anterior"
-                }
+          {
+            data: "identificador",
+          },
+          {
+            data: "sigla",
+          },
+          {
+            data: "municipio",
+          },
+          {
+            data: "estado",
+            render: function (dataField) {
+              var clase = "rojo";
+              if (dataField == "Activa") {
+                clase = "verde";
+              }
+              if (dataField == "Destruido") {
+                clase = "rojo";
+              }
+              if (dataField == "Inactiva") {
+                clase = "rojo";
+              }
+              if (dataField == "Materializado") {
+                clase = "verde";
+              }
+              if (dataField == "Removida") {
+                clase = "gris";
+              } else if (dataField == null) {
+                clase = "vacio";
+                dataField = "";
+              }
+              return '<span class="' + clase + '">' + dataField + "</span>";
             },
-    });
+          },
+          {
+            data: "tipo_estacion",
+          },
+          {
+            data: "ir",
+            render: function (dataField) {
+              return '<a href="' + dataField + '">Ver más</a>';
+            },
+          },
+        ],
+        language: {
+          decimal: "",
+          emptyTable: "No hay información",
+          info: "_TOTAL_ resultados",
+          infoEmpty: "0 resultados",
+          infoFiltered: "",
+          infoPostFix: "",
+          thousands: ",",
+          lengthMenu: "Ver _MENU_",
+          loadingRecords: "Cargando...",
+          processing: "Procesando...",
+          search: "",
+          zeroRecords: "Sin resultados encontrados",
+          searchPlaceholder: "Buscar",
+          paginate: {
+            first: "Primero",
+            last: "Ultimo",
+            next: "Siguiente",
+            previous: "Anterior",
+          },
+        },
 
+        initComplete: function () {
+          $("#tbl1_filter").detach().appendTo("#new-search-area");
+          $("#tbl1_info").detach().appendTo("#entradas");
 
+          $("#btn_25").on("click", function () {
+            table.page.len(25).draw();
+          });
 
+          $("#btn_50").on("click", function () {
+            table.page.len(50).draw();
+          });
 
+          $("#btn_100").on("click", function () {
+            table.page.len(100).draw();
+          });
 
+          this.api()
+            .columns()
+            .every(function (i) {
+              var column = this;
 
-              
+              var select = $(
+                '<select class="form-select"><option value="">' +
+                  $("#filtros tr").children().eq(i).text() +
+                  "</option></select>"
+              )
+                .appendTo($("#filtros tr").children().eq(i).empty())
+                .on("change", function () {
+                  var val = $.fn.dataTable.util.escapeRegex($(this).val());
+
+                  column.search(val ? "^" + val + "$" : "", true, false).draw();
+                });
+
+              column
+                .data()
+                .unique()
+                .sort()
+                .each(function (d, j) {
+                  select.append('<option value="' + d + '">' + d + "</option>");
+                });
+            });
+        },
+      });
     </script>
-
-
-
-</body>
-
+  </body>
 </html>
+
