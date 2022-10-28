@@ -575,6 +575,9 @@ footer .footer-container .botonAcceso:hover {
 .serviciosMaestra .portada-igac.portadaSub.origen {
     background: #dbdfe1;
 }
+.serviciosMaestra .portada-igac.portadaSub.rinex {
+    background: #d9dfe1;
+}
 .geodesicaMaestra .portada-igac.portadaSub.redActiva{
     background: #dfdaf7;
 }
