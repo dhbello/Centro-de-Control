@@ -2,6 +2,13 @@
 <html lang="en">
 
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JB8FKBC408"></script>
+    <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag() { dataLayer.push(arguments); }
+          gtag('js', new Date());
+          gtag('config', 'G-JB8FKBC408');
+    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,10 +58,10 @@
                     <div class="texto-portada">
                         <h1 id="titulo"></h1>
                         <div class="title" id="depto">
-                            
+
                         </div>
                         <div class="title" id="muni">
-                            
+
                         </div>
                     </div>
                 </div>
@@ -70,13 +77,13 @@
                         Informaci&oacute;n de ubicaci&oacute;n
                     </div>
                     <div class="item" id="barrio">
-                        Barrio o Sector: 
+                        Barrio o Sector:
                     </div>
                     <div class="item" id="localizacion">
-                        Localizaci&oacute;n: 
+                        Localizaci&oacute;n:
                     </div>
                     <div class="item" id="divipola">
-                        
+
                     </div>
                 </section>
                 <div class="divider"></div>
@@ -85,19 +92,19 @@
                         Informaci&oacute;n de instalaci&oacute;n
                     </div>
                     <div class="item" id="tipo_materializacion">
-                        Tipo de Monumento: 
+                        Tipo de Monumento:
                     </div>
                     <div class="item" id="fecha_materializacion">
-                        Fecha Monumentaci&oacute;n: 
+                        Fecha Monumentaci&oacute;n:
                     </div>
                     <div class="item" id="altura_referencia_antena">
-                        Altura Instrumental (m): 
+                        Altura Instrumental (m):
                     </div>
                     <div class="item" id="lugar_materializacion">
-                        Localizaci&oacute;n: 
+                        Localizaci&oacute;n:
                     </div>
                     <div class="item" id="divipola2">
-                        
+
                     </div>
                 </section>
                 <div class="divider"></div>
@@ -225,7 +232,7 @@
                         <div id="mapa_estacion"></div>
                     </div>
                 </section>
-                
+
                 <section class="section infoUbicacion pt-5">
                     <div class="title">
                         Ubicaci&oacute;n en Planta de la Estaci&oacute;n
@@ -252,7 +259,7 @@
                     </div>
 
             </div>
-            
+
             </section>
             <section class="section infoUbicacion pt-5">
                 <div class="title">
@@ -336,7 +343,7 @@
       },
       dataType: "json",
       success: function (result) {
-        
+
         var obj=result[0];
 
         console.log(obj)
@@ -354,7 +361,7 @@
             document.getElementById('muni').innerHTML="Municipio: "+check(obj.municipio);
 
 
-            
+
             document.getElementById('barrio').innerHTML="Barrio: "+check(obj.agencia_direccion);
             document.getElementById('localizacion').innerHTML="Localizacion: "+check(obj.agencia_direccion);
             document.getElementById('divipola').innerHTML="Código Municipio "+check(obj.codigo);
@@ -405,7 +412,7 @@
             }
 
             if(obj.antena_modelo){
-            
+
                 $("#antena_foto").attr("src","/images/antenas/"+obj.antena_modelo+".jpg");
             }
 
@@ -442,7 +449,7 @@
 
         if (typeof obj.estacion_latitud === 'number' && !Number.isNaN(obj.estacion_latitud)) {
             if (typeof obj.estacion_latitud === 'number' && !Number.isNaN(obj.estacion_latitud)) {
-            
+
              }else{
                 latitud=0;
                 longitud=0;
@@ -482,7 +489,7 @@
             url: "https://tiles.arcgis.com/tiles/RVvWzU3lgJISqdke/arcgis/rest/services/Mapa_base_topografico/VectorTileServer",
             });
             const map = new Map({
-          
+
                 layers:[vtlLayer]
             });
             const view = new MapView({
@@ -518,7 +525,7 @@
 
             view.graphics.add(new Graphic({
                 geometry: circleGeometry,
-                
+
 
                 symbol: {
                     type: "picture-marker",  // autocasts as new PictureMarkerSymbol()
@@ -537,22 +544,22 @@
                 }
             });
         });
-  
-        
+
+
         try {
             console.log(url_backend+'/ver_img_activa/'+id)
             document.getElementById('img3').src=url_backend+'/ver_img_activa/'+id
         } catch (ex) {
             console.log(ex)
         }
-        
+
 
 
       }
     });
 
 
- 
+
 
 
 
