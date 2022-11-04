@@ -273,6 +273,28 @@ input[type="time"] {
   color: #878787;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
+  font-family: 'Gill Sans Std Italic';
+}
+
+.form-row .form-control,
+.form-row .select2 {
+  margin-bottom: 20px;
+}
+
+.form-row .select2-container--default .select2-selection--single {
+  border: 1px solid #ced4da;
+}
+
+.form-row .select2-container--default .select2-selection--single .select2-selection__rendered {
+  color: #878787;
+  font-size: 14px;
+  font-family: 'Gill Sans Std Italic';
+}
+
+.select2-results__option {
+  color: #878787;
+  font-size: 14px;
+  font-family: 'Gill Sans Std Italic';
 }
 
 .checkList .label {
@@ -465,7 +487,8 @@ input[type="time"] {
   display: flex;
   justify-content: center;
   margin: auto;
-  width: 70%;
+  width: 100%;
+  padding-right: 50px;
   line-height: normal;
   font-size: 35px;
   color: #fff;
@@ -1024,7 +1047,7 @@ table.customeTable.type2 td {
   border: 0;
   border-bottom: 5px solid #d2d8db;
   cursor: pointer;
-  padding: 40px 20px;
+  padding: 40px 60px;
   display: flex;
   align-items: center;
   transition: 1s ease;
@@ -1309,6 +1332,21 @@ table.customeTable.type2 td {
   height: calc(100vh - 60px);
 }
 
+.modal .modal-content .form-row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.modal .modal-content .form-row .container {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.modal .modal-content .form-row .form-title {
+  padding-right: 0;
+  padding-left: 0;
+}
+
 .modal.maestraModalRedes .modal-content {
   overflow: hidden;
   position: absolute;
@@ -1434,8 +1472,6 @@ table.customeTable.type2 td {
 .modal.maestraModalRedes .modalSection {
   display: flex;
   justify-content: space-between;
-  padding-left: 5px;
-  padding-right: 5px;
   padding-bottom: 15px;
   margin-bottom: 15px;
 }
@@ -1467,6 +1503,16 @@ table.customeTable.type2 td {
 .modal.maestraModalRedes .modal-body p {
   margin-bottom: 0;
   font-size: 14px;
+}
+
+.modal.maestraModalRedes .modal-body .form-check {
+  display: flex;
+  align-items: flex-end;
+}
+
+.modal.maestraModalRedes .modal-body .form-check-label {
+  color: #808082;
+  height: 14px;
 }
 
 .modal.maestraModalRedes .modal-body .entiti span {
@@ -1734,7 +1780,7 @@ a.buttonCem {
   background-image: url("/images/images-redes/graficaindicadoresGeomagnetica.svg");
 }
 
-.geomagneticaMaestra .faqs.type2:before {
+.geomagneticaMaestra .faqs.type2::after {
   background-image: url("/images/images-redes/grafica-de-tablero.svg");
   background-repeat: no-repeat;
   width: 100%;
@@ -2357,13 +2403,18 @@ label {
   display: grid;
   column-gap: 10px;
 }
+
+#new-search-area label {
+  margin-bottom: 25px;
+}
+
 #new-search-area input {
   width: 100%;
   background-color: #f6f6f6;
 }
 
 #table-head {
-  padding: 10px;
+  padding: 20px 15px;
   grid-template-columns: 1fr;
   background-color: #f9f9f9;
   border-radius: 10px;
@@ -2374,9 +2425,14 @@ label {
 }
 
 #head-1 {
-  display: grid;
+  display: flex;
+  justify-content: space-between;
   grid-template-columns: 50fr 20fr 20fr;
   column-gap: 10px;
+}
+
+#head-1 {
+  width: 100%;
 }
 
 .filtros {
@@ -2388,25 +2444,61 @@ label {
   font-style: normal;
   margin: 3px;
 }
+
 .filters th select {
   width: 150px !important;
+  height: 30px;
+  font-size: 14px;
+  color: #878787;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  font-family: 'Gill Sans Std Italic';
+  padding-left: 8px;
+  padding-right: 20px;
+}
+
+.filters th #entradas {
+  display: flex;
+  align-items: center;
 }
 
 #entradas {
-  display: grid;
+  padding: 2px 20px 2px 0;
+  width: fit-content;
+  display: inline-flex;
+  justify-content: flex-end;
   align-self: center;
   font-style: italic;
+  font-size: 14px;
+  color: #393939;
+  border-right: 1px solid #00000026;
 }
+
+#entradas div {
+  white-space: nowrap;
+}
+
 #resultados {
-  display: grid;
+  padding: 2px 0 2px 10px;
+  width: fit-content;
+  display: inline-flex;
   grid-template-columns: 20fr 80fr;
+  justify-content: flex-end;
   align-self: center;
   align-items: center;
+  font-size: 14px;
+  color: #393939;
 }
+
+#resultados div {
+  display: inline-flex;
+}
+
 #resultados p {
   margin: 0;
   vertical-align: middle;
 }
+
 #resultados a {
   text-decoration: underline;
   cursor: pointer;
@@ -2425,3 +2517,73 @@ label {
   font-size: 16px; /* Set a font size */
 }
 
+/* logos Portada */
+.logosPortada  {
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  padding: 20px;
+}
+
+.logosPortada .logo {
+  width: 15%;
+  filter: grayscale(1);
+  opacity: 0.6;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logosPortada .logo img {
+  height: auto;
+}
+
+.logosPortada .logo.tipec {
+  opacity: 0.4;
+}
+
+.logosPortada .logo.tipeD {
+  width: 8%;
+}
+
+.logosPortada .logo.tipeB {
+  width: 12%;
+}
+
+.form-table {
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+}
+
+.form-table th {
+  text-align: center;
+}
+
+.form-table th:first-child {
+  text-align: left;
+}
+
+.form-table th,
+.form-table td {
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.form-table tr {
+  border-bottom: 1px solid #8080826b;
+}
+
+.form-table td input,
+.form-table td .select2,
+.form-table td select {
+  margin-bottom: 0 !important;
+}
+
+.modal-body .btn-primary {
+  background: #5192D9;
+  font-size: 14px;
+  padding: 8px 30px;
+  margin-top: 40px;
+}

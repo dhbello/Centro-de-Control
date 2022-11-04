@@ -45,20 +45,32 @@
           <div class="texto-portada mt-5">
             <h1>Red de estaciones de Operación Continua</h1>
             <p>
-              Est&aacute; compuesta por estaciones GNSS de funcionamiento
-              continuo que proporcionan informaci&oacute;n diaria en el formato
-              Receiver Independent Exchange (RINEX) el cual es un formato que
-              permite su uso en cualquier software de procesamiento GNSS. El
-              IGAC dispone de una red de Estaciones de rastreo contin&uacute;o
-              la cual se encuentra ubicada estrat&eacute;gicamente en el
+              Proporciona informaci&oacute;n diaria en el formato
+              Receiver Independent Exchange (RINEX), el cual permite su uso en cualquier software de procesamiento GNSS. La red de estaciones se encuentra ubicada estrat&eacute;gicamente en el
               territorio nacional y sirve de base de referencia para los
-              levantamientos diferenciales, al recibir informaci&oacute;n
-              satelital en tiempo real.
+              levantamientos diferenciales.
             </p>
           </div>
         </div>
       </div>
     </section>
+    <div class="logosPortada">
+      <div class="logo tipeD">
+        <img src="/images/patrocinadores/Sena_Colombia_logo.png" alt="Servicio Geologico">
+      </div>
+      <div class="logo tipeB">
+        <img src="/images/patrocinadores/logo_celsia.svg" alt="Servicio Geologico">
+      </div>
+      <div class="logo">
+        <img src="/images/patrocinadores/serviciogeologico.svg" alt="Servicio Geologico">
+      </div>  
+      <div class="logo">
+        <img src="/images/patrocinadores/logo_eaab.png" alt="Servicio Geologico">
+      </div>
+      <div class="logo tipec">
+        <img src="/images/patrocinadores/Galileo_Instruments_logotipo.png" alt="Servicio Geologico">
+      </div>       
+    </div>
     <div class="container containerIgac">
       <section class="section visor row">
         <div class="iframe col-md-12">
@@ -69,7 +81,7 @@
               Mapa de la Red de estaciones de Operación Continua
             </h2>
             <div class="status d-flex position-absolute">
-              <a class="btn mb-4 text-center buttonCem">Ver en CEM</a>
+              <a href="https://www.colombiaenmapas.gov.co/?e=-78.98264758789338,-0.45841719313507073,-66.93064563477158,10.285446744373395,4686&b=igac&u=0&t=25&servicio=6" class="btn mb-4 text-center buttonCem">Ver en CEM</a>
             </div>
           </div>
           <div id="viewDiv"></div>
@@ -122,7 +134,7 @@
             <div class="text">
               <div class="title">Indicadores</div>
               <p>
-                A continuaci&oacute;n, encontraras algunas cifras importantes
+                A continuaci&oacute;n, encontrar&aacute;s algunas cifras importantes
                 respecto al estado y funcionamiento la Red GNSS Activa
                 materializada en el territorio colombiano:
               </p>
@@ -189,7 +201,7 @@
         <div class="faqs type2">
           <div class="title">Servicios en tiempo real</div>
           <div class="resume">
-            Conéctate y usalos servicios de procesamiento en línea de tipo
+            Conéctate y usa los servicios de procesamiento en línea de tipo
             diferencial y los servicios de posicionamiento en tiempo real via
             caster NTRIP para las estaciones de la Red Activa del Territorio
             Colombiano. ¿Qué esperas?
@@ -785,7 +797,7 @@
         success: function (result) {
           document.getElementById("stat1").innerHTML = result[0].indicador;
           document.getElementById("text1").innerHTML =
-            "Total de estaciones activas";
+            "Total de estaciones de operaci&oacute;n continua";
         },
       });
 

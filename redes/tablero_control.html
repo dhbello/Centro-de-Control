@@ -35,35 +35,51 @@
       </div>
     </div>
   </section>
-  <div class="containercolor typec noBefore">
+  <div class="containercolor typec noBefore" style="overflow: inherit;">
     <div class="container containerIgac">
-      <div class="estadisticas">
-
-        <div class="cuadro">
-          <p>Porcentaje de estaciones activas e inactivas</p>
-          <div id="chart1"></div>
-
-        </div>
-        <div class="cuadro">
-          <p>Número de estaciones por agencia</p>
-          <div id="chart2"></div>
-
-        </div>
-      </div>
-      <div class="estadisticas_all">
-        <div class="cuadro">
-          <p>Número total de estaciones geodésicas instaladas por año</p>
-          <div id="chart3"></div>
-
-        </div>
-      </div>
-        <div class="estadisticas">
-          <div class="cuadro">
-            <p>Número de estaciones por tipo de coordenada</p>
-            <div id="chart4"></div>
-  
+      <section class="tabs-hojas">
+        <div class="container block-igac container-tabs">
+          <div class="tab-cont">
+              <div class="p-sticky">
+                <label>Geodes&iacute;a</label>
+                <div class="content-but">
+                    <button class="but active" onclick="city(event, 'PorcentajeDeEstaciones')"><p>Porcentaje de estaciones activas e inactivas</p></button>
+                    <button class="but" onclick="city(event, 'NumeroDeEstaciones')"><p>Número de estaciones por agencia</p></button>
+                    <button class="but" onclick="city(event, 'NumeroDeEstacioneAno')"><p>Número total de estaciones geodésicas instaladas por año</p></button>
+                    <button class="but" onclick="city(event, 'NumeroDeEstacioneCordenada')"><p>Número de estaciones por tipo de coordenada</p></button>
+                </div>
+              </div>
+          </div>
+          <div class="tab-content" id="PorcentajeDeEstaciones" style="display: block;">
+            <div class="cuadro">
+              <p>Porcentaje de estaciones activas e inactivas</p>
+              <div id="chart1"></div>
+            
+            </div>
+          </div>
+          <div style="display: none;" class="tab-content" id="NumeroDeEstaciones">
+            <div class="cuadro">
+              <p>Número de estaciones por agencia</p>
+              <div id="chart2"></div>
+            
+            </div>
+          </div>
+          <div style="display: none;" class="tab-content" id="NumeroDeEstacioneAno">
+            <div class="cuadro">
+              <p>Número total de estaciones geodésicas instaladas por año</p>
+              <div id="chart3"></div>
+            
+            </div>
+          </div>
+          <div style="display: none;" class="tab-content" id="NumeroDeEstacioneCordenada">
+            <div class="cuadro">
+              <p>Número de estaciones por tipo de coordenada</p>
+              <div id="chart4"></div>
+          
+            </div>
           </div>
         </div>
+      </section>    
         
 
       

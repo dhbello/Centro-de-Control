@@ -32,7 +32,7 @@ if (document.querySelector(".navbarigac")) {
             <a class='recursos' href='/herramientas/servicios.html'>Recursos</a>
         </li>
         <li>
-            <a class='dropdownToggle' href='#'>Acerca de</a>
+            <a class='dropdownToggle d-none' href='#'>Acerca de</a>
             <ul class='dropDown'>
                 <li><a href='/preguntas_frecuentes/index.html'>&iquest;Por qu&eacute; tener un &uacute;nico origen?</a></li>
                 <li><a href='/preguntas_frecuentes/cual-es-la-proyeccion.html'>&iquest;Cu&aacute;l es la proyecci&oacute;n?</a></li>
@@ -606,7 +606,7 @@ if (document.querySelector(".modalIntEstaciones")) {
                                             <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Departamento'>
                                         </div>
                                         <div class='text modalSection noBorder d-block mt-2'>
-                                            <p class='mb-0'>Con el diligenciamiento del presente formulario, usted manifiesta el inter&eacute;s de integrar las estaciones de referencia continua CORS que relaciona a continuaci&oacute;n y entiende que el IGAC exige est&aacute;ndares de calidad definidos en la resoluci&oacute;n XXX, raz&oacute;n por la cual tiene la potestad de aprobar o no la integraci&oacute;n de estaciones de la red Geodesica Nacional y se exonera de [&#8230;] y que la informaci&oacute;n que relaciona en el presente formulario &ldquo;es real&rdquo; y autoriza su uso para fines de verificaci&oacute;n del estado de la estaci&oacute;n (Carta de intenci&oacute;n de vinculaci&oacute;n de estaciones CORS a la red Geod&eacute;sica Nacional)&#8230;</p>
+                                            <p class='mb-0'>Al momento de diligenciar el presente formulario usted expresa su inter&eacute;s de integrar las estaciones de referencia continua CORS relacionadas en &eacute;ste y manifiesta bajo juramento que toda la informaci&oacute;n diligenciada y aportada es cierta, confiable y verificable, por lo que, exonera de toda responsabilidad al IGAC sobre la veracidad de &eacute;sta. El IGAC se reserva el derecho de integrar las estaciones de referencia continua CORS relacionadas en el formulario a la Red Geod&eacute;sica Nacional. De igual manera, con el diligenciamiento del formulario, usted autoriza el uso de la informaci&oacute;n que provenga de las estaciones para todos los fines que requiera el IGAC dentro de su misionalidad.</p>
                                             <div class='checkList mt-2'>
                                                 <div class='check'>
                                                     <input type='checkbox'><div class='label'>Acepto t&eacute;rminos</div>
@@ -664,7 +664,7 @@ if (document.querySelector(".modalIntEstaciones")) {
                                                 <td><input style="width: 100%;" type="text" value="Serial de receptor"></td>
                                                 <td><input style="width: 100%;" type="text" value="Estado actual de la estación"></td>
                                                 <td>
-                                                    <select style="width: 100%; height: 25px;" name="Sistema de telecomuicación">
+                                                    <select style="width: 100%;" name="Sistema de telecomuicación">
                                                         <option value="value1">Celular</option>
                                                         <option value="value2">Satelital</option>
                                                         <option value="value3">Radio enlace</option>
@@ -672,7 +672,7 @@ if (document.querySelector(".modalIntEstaciones")) {
                                                     </select>
                                                 </td>
                                                 <td>
-                                                    <select style="width: 100%; height: 25px;" name="IP">
+                                                    <select style="width: 100%;" name="IP">
                                                         <option value="value1">Direccion estatica</option>
                                                         <option value="value2">Puerto TCP/IP</option>
                                                         <option value="value3">Puerto HTTP</option>
@@ -681,7 +681,7 @@ if (document.querySelector(".modalIntEstaciones")) {
                                                     </select>
                                                 </td>
                                                 <td>
-                                                    <select style="width: 100%; height: 25px;" name="Sistema electrico">
+                                                    <select style="width: 100%;" name="Sistema electrico">
                                                         <option value="value1">Fotovoltaico</option>
                                                         <option value="value2">Corriente electrica</option>
                                                         <option value="value2">Hibrido</option>
@@ -707,7 +707,7 @@ if (document.querySelector(".modalIntEstaciones")) {
                                                 <td><input style="width: 100%;" type="text" value="Serial de receptor"></td>
                                                 <td><input style="width: 100%;" type="text" value="Estado actual de la estación"></td>
                                                 <td>
-                                                    <select style="width: 100%; height: 25px;" name="Sistema de telecomuicación">
+                                                    <select style="width: 100%;" name="Sistema de telecomuicación">
                                                         <option value="value1">Celular</option>
                                                         <option value="value2">Satelital</option>
                                                         <option value="value3">Radio enlace</option>
@@ -715,7 +715,7 @@ if (document.querySelector(".modalIntEstaciones")) {
                                                     </select>
                                                 </td>
                                                 <td>
-                                                    <select style="width: 100%; height: 25px;" name="IP">
+                                                    <select style="width: 100%;" name="IP">
                                                         <option value="value1">Direccion estatica</option>
                                                         <option value="value2">Puerto TCP/IP</option>
                                                         <option value="value3">Puerto HTTP</option>
@@ -724,7 +724,7 @@ if (document.querySelector(".modalIntEstaciones")) {
                                                     </select>
                                                 </td>
                                                 <td>
-                                                    <select style="width: 100%; height: 25px;" name="Sistema electrico">
+                                                    <select style="width: 100%;" name="Sistema electrico">
                                                         <option value="value1">Fotovoltaico</option>
                                                         <option value="value2">Corriente electrica</option>
                                                         <option value="value2">Hibrido</option>
@@ -778,7 +778,7 @@ if (document.querySelector(".modalIntEstaciones")) {
                                             <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Departamento'>
                                         </div>
                                         <div class='text modalSection noBorder d-block mt-2'>
-                                            <p class='mb-0'>Con el diligenciamiento del presente formulario, usted manifiesta el inter&eacute;s de integrar las estaciones de referencia continua CORS que relaciona a continuaci&oacute;n y entiende que el IGAC exige est&aacute;ndares de calidad definidos en la resoluci&oacute;n XXX, raz&oacute;n por la cual tiene la potestad de aprobar o no la integraci&oacute;n de estaciones de la red Geodesica Nacional y se exonera de [&#8230;] y que la informaci&oacute;n que relaciona en el presente formulario &ldquo;es real&rdquo; y autoriza su uso para fines de verificaci&oacute;n del estado de la estaci&oacute;n (Carta de intenci&oacute;n de vinculaci&oacute;n de estaciones CORS a la red Geod&eacute;sica Nacional)&#8230;
+                                            <p class='mb-0'>Al momento de diligenciar el presente formulario usted expresa su inter&eacute;s de integrar las estaciones de referencia continua CORS relacionadas en &eacute;ste y manifiesta bajo juramento que toda la informaci&oacute;n diligenciada y aportada es cierta, confiable y verificable, por lo que, exonera de toda responsabilidad al IGAC sobre la veracidad de &eacute;sta. El IGAC se reserva el derecho de integrar las estaciones de referencia continua CORS relacionadas en el formulario a la Red Geod&eacute;sica Nacional. De igual manera, con el diligenciamiento del formulario, usted autoriza el uso de la informaci&oacute;n que provenga de las estaciones para todos los fines que requiera el IGAC dentro de su misionalidad.
                                             </p>
                                             <div class='checkList mt-2'>
                                                 <div class='check'>
@@ -837,7 +837,7 @@ if (document.querySelector(".modalIntEstaciones")) {
                                                 <td><input style="width: 100%;" type="text" value="Serial de receptor"></td>
                                                 <td><input style="width: 100%;" type="text" value="Estado actual de la estación"></td>
                                                 <td>
-                                                    <select style="width: 100%; height: 25px;" name="Sistema de telecomuicación">
+                                                    <select style="width: 100%;" name="Sistema de telecomuicación">
                                                         <option value="value1">Celular</option>
                                                         <option value="value2">Satelital</option>
                                                         <option value="value3">Radio enlace</option>
@@ -845,7 +845,7 @@ if (document.querySelector(".modalIntEstaciones")) {
                                                     </select>
                                                 </td>
                                                 <td>
-                                                    <select style="width: 100%; height: 25px;" name="IP">
+                                                    <select style="width: 100%;" name="IP">
                                                         <option value="value1">Direccion estatica</option>
                                                         <option value="value2">Puerto TCP/IP</option>
                                                         <option value="value3">Puerto HTTP</option>
@@ -854,7 +854,7 @@ if (document.querySelector(".modalIntEstaciones")) {
                                                     </select>
                                                 </td>
                                                 <td>
-                                                    <select style="width: 100%; height: 25px;" name="Sistema electrico">
+                                                    <select style="width: 100%;" name="Sistema electrico">
                                                         <option value="value1">Fotovoltaico</option>
                                                         <option value="value2">Corriente electrica</option>
                                                         <option value="value2">Hibrido</option>
@@ -880,7 +880,7 @@ if (document.querySelector(".modalIntEstaciones")) {
                                                 <td><input style="width: 100%;" type="text" value="Serial de receptor"></td>
                                                 <td><input style="width: 100%;" type="text" value="Estado actual de la estación"></td>
                                                 <td>
-                                                    <select style="width: 100%; height: 25px;" name="Sistema de telecomuicación">
+                                                    <select style="width: 100%;" name="Sistema de telecomuicación">
                                                         <option value="value1">Celular</option>
                                                         <option value="value2">Satelital</option>
                                                         <option value="value3">Radio enlace</option>
@@ -888,7 +888,7 @@ if (document.querySelector(".modalIntEstaciones")) {
                                                     </select>
                                                 </td>
                                                 <td>
-                                                    <select style="width: 100%; height: 25px;" name="IP">
+                                                    <select style="width: 100%;" name="IP">
                                                         <option value="value1">Direccion estatica</option>
                                                         <option value="value2">Puerto TCP/IP</option>
                                                         <option value="value3">Puerto HTTP</option>
@@ -897,7 +897,7 @@ if (document.querySelector(".modalIntEstaciones")) {
                                                     </select>
                                                 </td>
                                                 <td>
-                                                    <select style="width: 100%; height: 25px;" name="Sistema electrico">
+                                                    <select style="width: 100%;" name="Sistema electrico">
                                                         <option value="value1">Fotovoltaico</option>
                                                         <option value="value2">Corriente electrica</option>
                                                         <option value="value2">Hibrido</option>
@@ -971,7 +971,7 @@ if (document.querySelector(".modalIntEstacionesActiva")) {
                                         <input id='inputCoordinateLatitud' type='text' class='form-control' placeholder='Departamento'>
                                     </div>
                                     <div class='text modalSection noBorder d-block mt-2'>
-                                        <p class='mb-0'>Con el diligenciamiento del presente formulario, usted manifiesta el inter&eacute;s de integrar las estaciones de referencia continua CORS que relaciona a continuaci&oacute;n y entiende que el IGAC exige est&aacute;ndares de calidad definidos en la resoluci&oacute;n XXX, raz&oacute;n por la cual tiene la potestad de aprobar o no la integraci&oacute;n de estaciones de la red Geodesica Nacional y se exonera de [&#8230;] y que la informaci&oacute;n que relaciona en el presente formulario &ldquo;es real&rdquo; y autoriza su uso para fines de verificaci&oacute;n del estado de la estaci&oacute;n (Carta de intenci&oacute;n de vinculaci&oacute;n de estaciones CORS a la red Geod&eacute;sica Nacional)&#8230;</p>
+                                        <p class='mb-0'>Al momento de diligenciar el presente formulario usted expresa su inter&eacute;s de integrar las estaciones de referencia continua CORS relacionadas en &eacute;ste y manifiesta bajo juramento que toda la informaci&oacute;n diligenciada y aportada es cierta, confiable y verificable, por lo que, exonera de toda responsabilidad al IGAC sobre la veracidad de &eacute;sta. El IGAC se reserva el derecho de integrar las estaciones de referencia continua CORS relacionadas en el formulario a la Red Geod&eacute;sica Nacional. De igual manera, con el diligenciamiento del formulario, usted autoriza el uso de la informaci&oacute;n que provenga de las estaciones para todos los fines que requiera el IGAC dentro de su misionalidad.</p>
                                         <div class='checkList mt-2'>
                                             <div class='check'>
                                                 <input type='checkbox'><div class='label'>Acepto t&eacute;rminos</div>
@@ -1029,7 +1029,7 @@ if (document.querySelector(".modalIntEstacionesActiva")) {
                                             <td><input style="width: 100%;" type="text" value="Serial de receptor"></td>
                                             <td><input style="width: 100%;" type="text" value="Estado actual de la estación"></td>
                                             <td>
-                                                <select style="width: 100%; height: 25px;" name="Sistema de telecomuicación">
+                                                <select style="width: 100%;" name="Sistema de telecomuicación">
                                                     <option value="value1">Celular</option>
                                                     <option value="value2">Satelital</option>
                                                     <option value="value3">Radio enlace</option>
@@ -1037,7 +1037,7 @@ if (document.querySelector(".modalIntEstacionesActiva")) {
                                                 </select>
                                             </td>
                                             <td>
-                                                <select style="width: 100%; height: 25px;" name="IP">
+                                                <select style="width: 100%;" name="IP">
                                                     <option value="value1">Direccion estatica</option>
                                                     <option value="value2">Puerto TCP/IP</option>
                                                     <option value="value3">Puerto HTTP</option>
@@ -1046,7 +1046,7 @@ if (document.querySelector(".modalIntEstacionesActiva")) {
                                                 </select>
                                             </td>
                                             <td>
-                                                <select style="width: 100%; height: 25px;" name="Sistema electrico">
+                                                <select style="width: 100%;" name="Sistema electrico">
                                                     <option value="value1">Fotovoltaico</option>
                                                     <option value="value2">Corriente electrica</option>
                                                     <option value="value2">Hibrido</option>
@@ -1072,7 +1072,7 @@ if (document.querySelector(".modalIntEstacionesActiva")) {
                                             <td><input style="width: 100%;" type="text" value="Serial de receptor"></td>
                                             <td><input style="width: 100%;" type="text" value="Estado actual de la estación"></td>
                                             <td>
-                                                <select style="width: 100%; height: 25px;" name="Sistema de telecomuicación">
+                                                <select style="width: 100%;" name="Sistema de telecomuicación">
                                                     <option value="value1">Celular</option>
                                                     <option value="value2">Satelital</option>
                                                     <option value="value3">Radio enlace</option>
@@ -1080,7 +1080,7 @@ if (document.querySelector(".modalIntEstacionesActiva")) {
                                                 </select>
                                             </td>
                                             <td>
-                                                <select style="width: 100%; height: 25px;" name="IP">
+                                                <select style="width: 100%;" name="IP">
                                                     <option value="value1">Direccion estatica</option>
                                                     <option value="value2">Puerto TCP/IP</option>
                                                     <option value="value3">Puerto HTTP</option>
@@ -1089,7 +1089,7 @@ if (document.querySelector(".modalIntEstacionesActiva")) {
                                                 </select>
                                             </td>
                                             <td>
-                                                <select style="width: 100%; height: 25px;" name="Sistema electrico">
+                                                <select style="width: 100%;" name="Sistema electrico">
                                                     <option value="value1">Fotovoltaico</option>
                                                     <option value="value2">Corriente electrica</option>
                                                     <option value="value2">Hibrido</option>
@@ -1210,8 +1210,8 @@ if (document.querySelector(".modalEstaciones")) {
                                     </div>
 
 
-                                    <div class='text modalSection noBorder d-block mt-2'>
-                                        <p class='mb-0'>Con el diligenciamiento del presente formulario, usted manifiesta el inter&eacute;s de integrar las estaciones de referencia continua CORS que relaciona a continuaci&oacute;n y entiende que el IGAC exige est&aacute;ndares de calidad definidos en la resoluci&oacute;n XXX, raz&oacute;n por la cual tiene la potestad de aprobar o no la integraci&oacute;n de estaciones de la red Geodesica Nacional y se exonera de [&#8230;] y que la informaci&oacute;n que relaciona en el presente formulario &ldquo;es real&rdquo; y autoriza su uso para fines de verificaci&oacute;n del estado de la estaci&oacute;n (Carta de intenci&oacute;n de vinculaci&oacute;n de estaciones CORS a la red Geod&eacute;sica Nacional)&#8230;</p>
+                                    <div class='text modalSection noBorder d-block mt-2 mb-5'>
+                                        <p class='pb-2'>Al momento de diligenciar el presente formulario usted expresa su inter&eacute;s de integrar las estaciones de referencia continua CORS relacionadas en &eacute;ste y manifiesta bajo juramento que toda la informaci&oacute;n diligenciada y aportada es cierta, confiable y verificable, por lo que, exonera de toda responsabilidad al IGAC sobre la veracidad de &eacute;sta. El IGAC se reserva el derecho de integrar las estaciones de referencia continua CORS relacionadas en el formulario a la Red Geod&eacute;sica Nacional. De igual manera, con el diligenciamiento del formulario, usted autoriza el uso de la informaci&oacute;n que provenga de las estaciones para todos los fines que requiera el IGAC dentro de su misionalidad.</p>
 
                                        
                                         <div class="form-check">
@@ -1237,7 +1237,7 @@ if (document.querySelector(".modalEstaciones")) {
                                     <div id="viewDiv1"></div>
 
 
-                                    <table style='width: 100%;' id='example' style='width: 100%;' class='display mt-2  mb-0 form-new-est'>
+                                    <table style='width: 100%;' id='example' style='width: 100%;' class='display mt-2  mb-0 form-new-est form-table'>
                                    
                         
                                     <tr>
@@ -1345,7 +1345,7 @@ if (document.querySelector(".modalEstaciones")) {
                                     <tr>
                                         <td>Sistema de telecomunicación</td>
                                             <td>
-                                                <select style="width: 100%; height: 25px;" name="Sistema de telecomuicación" class="form-control" required>
+                                                <select style="width: 100%;" name="Sistema de telecomuicación" class="form-control" required>
                                                     <option value="">Seleccione una opción</option>
                                                     <option value="Celular">Celular</option>
                                                     <option value="Satelital">Satelital</option>
@@ -1354,7 +1354,7 @@ if (document.querySelector(".modalEstaciones")) {
                                                 </select>
                                             </td>
                                             <td>
-                                                <select style="width: 100%; height: 25px;" name="Sistema de telecomuicación" class="form-control" required>
+                                                <select style="width: 100%;" name="Sistema de telecomuicación" class="form-control" required>
                                                 <option value="">Seleccione una opción</option>
                                                 <option value="Celular">Celular</option>
                                                 <option value="Satelital">Satelital</option>
@@ -1367,7 +1367,7 @@ if (document.querySelector(".modalEstaciones")) {
                                     <tr>
                                         <td>IP</td>
                                             <td>
-                                                <select style="width: 100%; height: 25px;" name="IP" class="form-control" required>
+                                                <select style="width: 100%;" name="IP" class="form-control" required>
                                                     <option value="">Seleccione una opción</option>    
                                                     <option value="Direccion estatica">Direccion estatica</option>
                                                     <option value="Puerto TCP/IP">Puerto TCP/IP</option>
@@ -1377,7 +1377,7 @@ if (document.querySelector(".modalEstaciones")) {
                                                 </select>
                                             </td>
                                             <td>
-                                                <select style="width: 100%; height: 25px;" name="IP" class="form-control" required>
+                                                <select style="width: 100%;" name="IP" class="form-control" required>
                                                     <option value="">Seleccione una opción</option>    
                                                     <option value="Direccion estatica">Direccion estatica</option>
                                                     <option value="Puerto TCP/IP">Puerto TCP/IP</option>
@@ -1391,7 +1391,7 @@ if (document.querySelector(".modalEstaciones")) {
                                     <tr>
                                         <td>Sistema eléctrico</td>
                                             <td>
-                                                <select style="width: 100%; height: 25px;" name="Sistema electrico" class="form-control" required>
+                                                <select style="width: 100%;" name="Sistema electrico" class="form-control" required>
                                                     <option value="">Seleccione una opción</option>        
                                                     <option value="Fotovoltaico">Fotovoltaico</option>
                                                     <option value="Corriente electrica">Corriente electrica</option>
@@ -1399,7 +1399,7 @@ if (document.querySelector(".modalEstaciones")) {
                                                 </select>
                                             </td>
                                             <td>
-                                                <select style="width: 100%; height: 25px;" name="Sistema electrico" class="form-control" required>
+                                                <select style="width: 100%;" name="Sistema electrico" class="form-control" required>
                                                     <option value="">Seleccione una opción</option>        
                                                     <option value="Fotovoltaico">Fotovoltaico</option>
                                                     <option value="Corriente electrica">Corriente electrica</option>
