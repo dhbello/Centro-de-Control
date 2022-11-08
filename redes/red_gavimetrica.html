@@ -102,18 +102,16 @@
                 </div>
             </div>
         </div>
-        <div class="container containerIgac">
-            <section class="section visor row">
-                <div class="iframe col-md-12">
-                    <div class="d-flex position-relative align-items-center justify-content-end">
-                        <h2 class="title w-divider">Visor de la Red Gravimétrica</h2>
-                        <div class="status d-flex position-absolute">
+                <div class="container containerIgac">
+				      <section class="section visor row pb-0">
+				        <div class="iframe col-md-12">
+				          <h2 class="title">Visor de la Red Gravimétrica</h2>
+				          <div class="status d-flex position-absolute">
                             <a href="https://www.colombiaenmapas.gov.co/?e=-81.28977649414276,-0.45841719313507073,-64.62351672852219,10.285446744373395,4686&b=igac&l=479&u=0&t=25&servicio=479" class="btn mb-4 text-center buttonCem">Ver en CEM</a>
-                        </div>
-                    </div>
-                    <img src="../../images/mapa.png" alt="mapa">
-                </div>
-            </section>
+		                  </div>
+				          <div id="viewDiv"></div>
+				        </div>
+				      </section>
         </div>
     </div>
     <div class="containercolor">
@@ -258,6 +256,116 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="/index.js"></script>
+<link rel="stylesheet" href="https://js.arcgis.com/4.24/esri/themes/light/main.css"/>
+    <script src="https://js.arcgis.com/4.24/"></script>
+    <script>
+      $(".carousel").carousel({
+        interval: false,
+      });
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://js.arcgis.com/4.24/esri/themes/light/main.css"
+    />
+    <script src="https://js.arcgis.com/4.24/"></script>
+    <script>
+      require([
+        "esri/config",
+        "esri/Map",
+        "esri/views/MapView",
+        "esri/widgets/Home",
+        "esri/widgets/ScaleBar",
+        "esri/widgets/LayerList",
+        "esri/widgets/Legend",
+        "esri/widgets/Expand",
+        "esri/widgets/Compass",
+        "esri/geometry/Extent",
+        "esri/layers/MapImageLayer",
+        "esri/layers/VectorTileLayer",
+      ], (
+        esriConfig,
+        Map,
+        MapView,
+        Home,
+        ScaleBar,
+        LayerList,
+        Legend,
+        Expand,
+        Compass,
+        Extent,
+        MapImageLayer,
+        VectorTileLayer
+      ) => {
+        esriConfig.apiKey =
+          "AAPK2a2e861a0c794bfdb29a1b4ce47b1583OBbY7CvHSkUPhQ20FG1hZEbAl5GmTTZcs-cyoy2tw5to5j_pJiiTW6J_KRbBx-qS";
+        const vtlLayer = new VectorTileLayer({
+          url: "https://tiles.arcgis.com/tiles/RVvWzU3lgJISqdke/arcgis/rest/services/Mapa_base_topografico/VectorTileServer",
+        });
 
+        const layer = new MapImageLayer({
+          url: "https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer",
+          sublayers: [
+            {
+              id: 1,
+              popupTemplate: {
+                title: "Atributos",
+                outFields: ["*"],
+                content: popup,
+                  },
+                  definitionExpression: "es_gravimetrica = 1"
+            },
+          ],
+        });
+        const map = new Map({
+          layers: [vtlLayer, layer],
+        });
+        const view = new MapView({
+          container: "viewDiv",
+          map: map,
+          center: [-74, 4], // longitude, latitude
+          zoom: 4.8,
+        });
+        const homeBtn = new Home({
+          view: view,
+        });
+        const scaleBar = new ScaleBar({
+          view: view,
+          unit: "dual",
+        });
+        const layerList = new LayerList({
+          view: view,
+        });
+        const legend = new Legend({
+          view: view,
+        });
+        const layerListExpand = new Expand({
+          view: view,
+          content: layerList,
+          expanded: false,
+          expandTooltip: "Expand LayerList",
+        });
+        const legendExpand = new Expand({
+          view: view,
+          content: legend,
+          expandTooltip: "Expand Legend",
+          expanded: true,
+        });
+        const compass = new Compass({
+          view: view,
+          visible: false,
+        });
+        view.ui.add(homeBtn, "top-left");
+        view.ui.add(scaleBar, "bottom-right");
+        view.ui.add(layerListExpand, "top-right");
+        view.ui.add(legendExpand, "bottom-left");
+        view.ui.add(compass, "top-left");
+        // load the Compass only when the view is rotated
+        view.watch("rotation", function (rotation) {
+          if (rotation && !compass.visible) {
+            compass.visible = true;
+          }
+        });
+      });
+    </script>
 </body>
 </html>
