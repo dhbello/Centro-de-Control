@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-JB8FKBC408"></script>
-      <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
-            gtag('config', 'G-JB8FKBC408');
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-JB8FKBC408"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-JB8FKBC408");
     </script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -52,10 +57,11 @@
           <div class="texto-portada mt-5">
             <h1>Red de estaciones de Operación Continua</h1>
             <p>
-              Proporciona informaci&oacute;n diaria en el formato
-              Receiver Independent Exchange (RINEX), el cual permite su uso en cualquier software de procesamiento GNSS. La red de estaciones se encuentra ubicada estrat&eacute;gicamente en el
-              territorio nacional y sirve de base de referencia para los
-              levantamientos diferenciales.
+              Proporciona informaci&oacute;n diaria en el formato Receiver
+              Independent Exchange (RINEX), el cual permite su uso en cualquier
+              software de procesamiento GNSS. La red de estaciones se encuentra
+              ubicada estrat&eacute;gicamente en el territorio nacional y sirve
+              de base de referencia para los levantamientos diferenciales.
             </p>
           </div>
         </div>
@@ -63,19 +69,34 @@
     </section>
     <div class="logosPortada">
       <div class="logo tipeD">
-        <img src="/images/patrocinadores/Sena_Colombia_logo.png" alt="Servicio Geologico">
+        <img
+          src="/images/patrocinadores/Sena_Colombia_logo.png"
+          alt="Servicio Geologico"
+        />
       </div>
       <div class="logo tipeB">
-        <img src="/images/patrocinadores/logo_celsia.svg" alt="Servicio Geologico">
+        <img
+          src="/images/patrocinadores/logo_celsia.svg"
+          alt="Servicio Geologico"
+        />
       </div>
       <div class="logo">
-        <img src="/images/patrocinadores/serviciogeologico.svg" alt="Servicio Geologico">
+        <img
+          src="/images/patrocinadores/serviciogeologico.svg"
+          alt="Servicio Geologico"
+        />
       </div>
       <div class="logo">
-        <img src="/images/patrocinadores/logo_eaab.png" alt="Servicio Geologico">
+        <img
+          src="/images/patrocinadores/logo_eaab.png"
+          alt="Servicio Geologico"
+        />
       </div>
       <div class="logo tipec">
-        <img src="/images/patrocinadores/Galileo_Instruments_logotipo.png" alt="Servicio Geologico">
+        <img
+          src="/images/patrocinadores/Galileo_Instruments_logotipo.png"
+          alt="Servicio Geologico"
+        />
       </div>
     </div>
     <div class="container containerIgac">
@@ -88,7 +109,11 @@
               Mapa de la Red de estaciones de Operación Continua
             </h2>
             <div class="status d-flex position-absolute">
-              <a href="https://www.colombiaenmapas.gov.co/?e=-78.98264758789338,-0.45841719313507073,-66.93064563477158,10.285446744373395,4686&b=igac&u=0&t=25&servicio=6" class="btn mb-4 text-center buttonCem">Ver en CEM</a>
+              <a
+                href="https://www.colombiaenmapas.gov.co/?e=-78.98264758789338,-0.45841719313507073,-66.93064563477158,10.285446744373395,4686&b=igac&u=0&t=25&servicio=6"
+                class="btn mb-4 text-center buttonCem"
+                >Ver en CEM</a
+              >
             </div>
           </div>
           <div id="viewDiv"></div>
@@ -141,9 +166,9 @@
             <div class="text">
               <div class="title">Indicadores</div>
               <p>
-                A continuaci&oacute;n, encontrar&aacute;s algunas cifras importantes
-                respecto al estado y funcionamiento la Red GNSS Activa
-                materializada en el territorio colombiano:
+                A continuaci&oacute;n, encontrar&aacute;s algunas cifras
+                importantes respecto al estado y funcionamiento la Red GNSS
+                Activa materializada en el territorio colombiano:
               </p>
             </div>
           </div>
@@ -621,12 +646,14 @@
           content: layerList,
           expanded: false,
           expandTooltip: "Expand LayerList",
+          mode: "floating",
         });
         const legendExpand = new Expand({
           view: view,
           content: legend,
           expandTooltip: "Expand Legend",
           expanded: true,
+          mode: "floating",
         });
         const compass = new Compass({
           view: view,

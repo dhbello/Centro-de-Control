@@ -1,151 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JB8FKBC408"></script>
+  <head>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-JB8FKBC408"
+    ></script>
     <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag() { dataLayer.push(arguments); }
-          gtag('js', new Date());
-          gtag('config', 'G-JB8FKBC408');
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-JB8FKBC408");
     </script>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Centro de Control Geod&eacute;sico Nacional</title>
-    <link rel="icon" href="images-home/logos/favicon.png">
+    <link rel="icon" href="images-home/logos/favicon.png" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
-    <link href="../../css/style.css" rel="stylesheet">
-    <link href="../../css/maestra.css" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css"
+    />
+    <link href="../../css/style.css" rel="stylesheet" />
+    <link href="../../css/maestra.css" rel="stylesheet" />
     <style>
-        #viewDiv {
-            padding: 0;
-            margin: 0;
-            height: 400px;
-            width: 100%;
-        }
-        #tbl {
-            margin-bottom: 0px;
-        }
-        .tabla {
-            display: grid;
-        }
+      #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 400px;
+        width: 100%;
+      }
+      #tbl {
+        margin-bottom: 0px;
+      }
+      .tabla {
+        display: grid;
+      }
     </style>
-</head>
-<body class="main redes geodesicaMaestra">
-    <nav class="navbarigac origen">
-    </nav>
-    <nav class="nav nav-underline">
-    </nav>
+  </head>
+  <body class="main redes geodesicaMaestra">
+    <nav class="navbarigac origen"></nav>
+    <nav class="nav nav-underline"></nav>
     <section class="portada-igac portadaSub portadaTable origen">
-        <div class="container block-igac">
-            <div class="d-flex contenido-portada">
-                <a class="get-back" href="../red_geodesica.html"><img src="/images/iconos/arrow-back.svg" alt=""> Volver a la Red Geodesica GNSS</a>
-                <div class="texto-portada">
-                    <h1 id="titulo">EABB</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi possimus, voluptatibus, soluta illo similique asperiores cupiditate id hic praesentium eligendi reiciendis esse dignissimos consequuntur laboriosam culpa, nulla ratione sit magni.
-                    </p>
-                </div>
-            </div>
+      <div class="container block-igac">
+        <div class="d-flex contenido-portada">
+          <a class="get-back" href="../red_geodesica.html"
+            ><img src="/images/iconos/arrow-back.svg" alt="" /> Volver a la Red
+            Geodesica GNSS</a
+          >
+          <div class="texto-portada">
+            <h1 id="titulo">EABB</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
+              possimus, voluptatibus, soluta illo similique asperiores
+              cupiditate id hic praesentium eligendi reiciendis esse dignissimos
+              consequuntur laboriosam culpa, nulla ratione sit magni.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
     <div class="beforeImage typeB">
-        <div class="container containerIgac">
-            <section class="section">
-                <div class="resourses-title" style="text-align: center;">
-                    <h2 id="titulo_estaciones">Estaciones de EABB</h2>
-                </div>
-                <div class="row">
-                    <div class="m-auto">
-                    <table id="tbl" class="display">
-                        <thead>
-                            <tr >
-                                <th>Identificador</th>
-                                <th>Municipio, departamento</th>
-                                <th>Estado</th>
-                                <th>Nombre de la red</th>
-                                <th>Entidad</th>
-                                <th>Ver</th>
-                            </tr>
-                        </thead>
-                    </table>
-                </div>
-                </div>
-            </section>
-        </div>
+      <div class="container containerIgac">
+        <section class="section">
+          <div class="resourses-title" style="text-align: center">
+            <h2 id="titulo_estaciones">Estaciones de EABB</h2>
+          </div>
+          <div class="row">
+            <div class="m-auto">
+              <table id="tbl" class="display">
+                <thead>
+                  <tr>
+                    <th>Identificador</th>
+                    <th>Municipio, departamento</th>
+                    <th>Estado</th>
+                    <th>Nombre de la red</th>
+                    <th>Entidad</th>
+                    <th>Ver</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
     <div class="containercolor">
-        <div class="container containerIgac">
-            <section class="section visor row">
-                <div class="iframe col-md-12">
-                    <div class="d-flex justify-content-between">
-                        <h2 id="mapa_estaciones" class="title w-divider">Mapa de las estaciones de EABB</h2>
-                        <div class="status d-flex">
-                            <div class="activa active"><p>Activa</p></div>
-                            <div class="pasiva"><p>Pasiva</p></div>
-                        </div>
-                    </div>
-                    <div id="viewDiv"></div>
-                </div>
-            </section>
-        </div>
+      <div class="container containerIgac">
+        <section class="section visor row">
+          <div class="iframe col-md-12">
+            <div class="d-flex justify-content-between">
+              <h2 id="mapa_estaciones" class="title w-divider">
+                Mapa de las estaciones de EABB
+              </h2>
+              <div class="status d-flex">
+                <div class="activa active"><p>Activa</p></div>
+                <div class="pasiva"><p>Pasiva</p></div>
+              </div>
+            </div>
+            <div id="viewDiv"></div>
+          </div>
+        </section>
+      </div>
     </div>
     <section class="section registrarReportar paddingLast">
-        <div class="container containerIgac">
-            <div class="d-flex">
-                <div class="containerFaqs typeB">
-                    <div class="faqs typeA">
-                        <div class="title">
-                            Registrar un nuevo vértice o estación
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <div class="boton-faqs">
-                                <a href="#">Iniciar formulario</a>
-                            </div>
-                            <a href="#">Solo para funcionarios</a>
-                        </div>
-                    </div>
+      <div class="container containerIgac">
+        <div class="d-flex">
+          <div class="containerFaqs typeB">
+            <div class="faqs typeA">
+              <div class="title">Registrar un nuevo vértice o estación</div>
+              <div class="d-flex align-items-center">
+                <div class="boton-faqs">
+                  <a href="#">Iniciar formulario</a>
                 </div>
-                <div class="containerFaqs typeB">
-                    <div class="faqs typeB">
-                        <div class="title">
-                            Reporta una novedad
-                        </div>
-                        <div class="boton-faqs modalButtonReportar" data-toggle="modal" data-target="#reportarModal">
-                            <a>Iniciar formulario</a>
-                        </div>
-                    </div>
-                </div>
+                <a href="#">Solo para funcionarios</a>
+              </div>
             </div>
+          </div>
+          <div class="containerFaqs typeB">
+            <div class="faqs typeB">
+              <div class="title">Reporta una novedad</div>
+              <div
+                class="boton-faqs modalButtonReportar"
+                data-toggle="modal"
+                data-target="#reportarModal"
+              >
+                <a>Iniciar formulario</a>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
-    <footer class="footer origen">
-    </footer>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+    <footer class="footer origen"></footer>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"
+    ></script>
     <script src="../../index.js"></script>
-    <link rel="stylesheet" href="https://js.arcgis.com/4.24/esri/themes/light/main.css">
+    <link
+      rel="stylesheet"
+      href="https://js.arcgis.com/4.24/esri/themes/light/main.css"
+    />
     <script src="https://js.arcgis.com/4.24/"></script>
-<script>
-    function getParameterByName(name, url) {
+    <script>
+      function getParameterByName(name, url) {
         if (!url) url = window.location.href;
-        name = name.replace(/[\[\]]/g, '\\$&');
-        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-            results = regex.exec(url);
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(url);
         if (!results) return null;
-        if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, ' '));
-    }
-    var estacion = getParameterByName('estacion');
-    document.getElementById('titulo').innerHTML=estacion;
-    document.getElementById('titulo_estaciones').innerHTML='Estaciones de '+estacion;
-    document.getElementById('mapa_estaciones').innerHTML='Mapa de las estaciones de '+estacion;
-    require([
+        if (!results[2]) return "";
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+      }
+      var estacion = getParameterByName("estacion");
+      document.getElementById("titulo").innerHTML = estacion;
+      document.getElementById("titulo_estaciones").innerHTML =
+        "Estaciones de " + estacion;
+      document.getElementById("mapa_estaciones").innerHTML =
+        "Mapa de las estaciones de " + estacion;
+      require([
         "esri/config",
         "esri/Map",
         "esri/views/MapView",
@@ -156,57 +200,70 @@
         "esri/widgets/Expand",
         "esri/widgets/Compass",
         "esri/geometry/Extent",
-        "esri/layers/MapImageLayer"
-    ], (
-        esriConfig, Map, MapView, Home, ScaleBar, LayerList, Legend,
-        Expand, Compass, Extent, MapImageLayer
-    ) => {
+        "esri/layers/MapImageLayer",
+      ], (
+        esriConfig,
+        Map,
+        MapView,
+        Home,
+        ScaleBar,
+        LayerList,
+        Legend,
+        Expand,
+        Compass,
+        Extent,
+        MapImageLayer
+      ) => {
         esriConfig.apiKey =
-            "AAPK2a2e861a0c794bfdb29a1b4ce47b1583OBbY7CvHSkUPhQ20FG1hZEbAl5GmTTZcs-cyoy2tw5to5j_pJiiTW6J_KRbBx-qS";
+          "AAPK2a2e861a0c794bfdb29a1b4ce47b1583OBbY7CvHSkUPhQ20FG1hZEbAl5GmTTZcs-cyoy2tw5to5j_pJiiTW6J_KRbBx-qS";
         const layer = new MapImageLayer({
-            url: "https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer",
-            sublayers: [{
-                id: 0,
-                visible: true,
-                definitionExpression: "agencia_sigla ='"+estacion+"'"
-            }]
+          url: "https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer",
+          sublayers: [
+            {
+              id: 0,
+              visible: true,
+              definitionExpression: "agencia_sigla ='" + estacion + "'",
+            },
+          ],
         });
         const map = new Map({
-            layers: [layer],
-            basemap: "arcgis-topographic"
+          layers: [layer],
+          basemap: "arcgis-topographic",
         });
         const view = new MapView({
-            container: "viewDiv",
-            map: map
+          container: "viewDiv",
+          map: map,
         });
         const homeBtn = new Home({
-            view: view
+          view: view,
         });
         const scaleBar = new ScaleBar({
-            view: view,
-            unit: "dual"
+          view: view,
+          unit: "dual",
         });
         const layerList = new LayerList({
-            view: view
+          view: view,
         });
         const legend = new Legend({
-            view: view
+          view: view,
         });
         const layerListExpand = new Expand({
-            view: view,
-            content: layerList,
-            expanded: false,
-            expandTooltip: "Expand LayerList"
+          view: view,
+          content: layerList,
+          expanded: false,
+          expandTooltip: "Expand LayerList",
+          mode: "floating",
         });
         const legendExpand = new Expand({
-            view: view,
-            content: legend,
-            expandTooltip: "Expand Legend",
-            expanded: false
+          view: view,
+          content: legend,
+          expandTooltip: "Expand Legend",
+          expanded: false,
+          mode: "floating",
         });
         const compass = new Compass({
-            view: view,
-            visible: false
+          view: view,
+          visible: false,
         });
         view.ui.add(homeBtn, "top-left");
         view.ui.add(scaleBar, "bottom-right");
@@ -214,71 +271,76 @@
         view.ui.add(legendExpand, "bottom-left");
         view.ui.add(compass, "top-left");
         layer.when(() => {
-            const initialExtent = Extent.fromJSON(layer.sourceJSON.initialExtent);
-            view.goTo(initialExtent);
+          const initialExtent = Extent.fromJSON(layer.sourceJSON.initialExtent);
+          view.goTo(initialExtent);
         });
         // load the Compass only when the view is rotated
-        view.watch('rotation', function (rotation) {
-            if (rotation && !compass.visible) {
-                compass.visible = true;
-            }
+        view.watch("rotation", function (rotation) {
+          if (rotation && !compass.visible) {
+            compass.visible = true;
+          }
         });
-    });
-    $('#tbl').DataTable({
+      });
+      $("#tbl").DataTable({
         orderCellsTop: true,
-            serverSide: true,
-            ajax: {
-                url: "https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer/0/query?where=agencia_sigla='"+estacion+"'&outFields=identificador%2Cmunicipio%2Cestado%2Credes%2Cagencia_sigla&returnGeometry=false&f=pjson",
-                data: function (d) {
-                    d.resultRecordCount = d.length;
-                    d.resultOffset=d.start
-                },
-                "dataSrc": function ( json ) {
-                    var obj=json.features;
-                    var arr1=[]
-                    Object.keys(obj).forEach(function(key, index) {
-                        obj[key].attributes["id"] = index;
-                        obj[key].attributes["ir"] = '/redes/redes_interna/maestra.html?estacion=' + obj[key].attributes.agencia_sigla;
-                        arr1.push(obj[key].attributes)
-                    });
-                    return arr1;
-                    },
+        serverSide: true,
+        ajax: {
+          url:
+            "https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer/0/query?where=agencia_sigla='" +
+            estacion +
+            "'&outFields=identificador%2Cmunicipio%2Cestado%2Credes%2Cagencia_sigla&returnGeometry=false&f=pjson",
+          data: function (d) {
+            d.resultRecordCount = d.length;
+            d.resultOffset = d.start;
+          },
+          dataSrc: function (json) {
+            var obj = json.features;
+            var arr1 = [];
+            Object.keys(obj).forEach(function (key, index) {
+              obj[key].attributes["id"] = index;
+              obj[key].attributes["ir"] =
+                "/redes/redes_interna/maestra.html?estacion=" +
+                obj[key].attributes.agencia_sigla;
+              arr1.push(obj[key].attributes);
+            });
+            return arr1;
+          },
+        },
+        columns: [
+          {
+            data: "identificador",
+          },
+          {
+            data: "municipio",
+          },
+          {
+            data: "estado",
+            render: function (dataField) {
+              var clase = "inactivo";
+              if (dataField == "Activa") {
+                clase = "activo";
+              } else if (dataField == null) {
+                clase = "vacio";
+                dataField = "";
+              }
+              return '<span class="' + clase + '">' + dataField + "</span>";
             },
-            columns: [
-                {
-                    data: 'identificador'
-                },
-                {
-                    data: 'municipio'
-                },
-                {
-                    data: 'estado',
-                    render: function (dataField) {
-                        var clase="inactivo"
-                        if(dataField==("Activa")){
-                            clase="activo"
-                        }else if(dataField==null){
-                            clase="vacio";
-                            dataField=""
-                        }
-                        return '<span class="'+clase+'">'+dataField+'</span>';
-                    }
-                },
-                {
-                    data: 'redes'
-                },
-                {
-                    data: 'agencia_sigla'
-                },
-                {
-                    data: 'ir',
-                    render: function (dataField) {
-                        return '<a href="" class="modalButton" data-toggle="modal" data-target="#exampleModal">M&aacute;s</a>';
-                    }
-                }
-            ],
-        });
-        var modalContent = innerHTML = `
+          },
+          {
+            data: "redes",
+          },
+          {
+            data: "agencia_sigla",
+          },
+          {
+            data: "ir",
+            render: function (dataField) {
+              return '<a href="" class="modalButton" data-toggle="modal" data-target="#exampleModal">M&aacute;s</a>';
+            },
+          },
+        ],
+      });
+      var modalContent = (innerHTML = `
     <div class='modal maestraModalRedes fade' id='exampleModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
         <div class='modal-dialog' role='document'>
         <div class='modal-content'>
@@ -394,8 +456,8 @@
         </div>
         </div>
     </div>
-    `
-    $('body').append(modalContent)
-</script>
-</body>
+    `);
+      $("body").append(modalContent);
+    </script>
+  </body>
 </html>
