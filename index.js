@@ -1516,12 +1516,14 @@ window.onload = function () {
       content: layerList,
       expanded: false,
       expandTooltip: "Expand LayerList",
+      mode: "floating",
     });
     const legendExpand = new Expand({
       view: view,
       content: legend,
       expandTooltip: "Expand Legend",
       expanded: false,
+      mode: "floating",
     });
     const compass = new Compass({
       view: view,
@@ -2007,4 +2009,3 @@ $(document).ready(function () {
 $(".carousel").carousel({
   interval: false,
 });
-

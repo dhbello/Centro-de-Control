@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-JB8FKBC408"></script>
-      <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
-            gtag('config', 'G-JB8FKBC408');
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-JB8FKBC408"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-JB8FKBC408");
     </script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -545,12 +550,14 @@
           content: layerList,
           expanded: false,
           expandTooltip: "Expand LayerList",
+          mode: "floating",
         });
         const legendExpand = new Expand({
           view: view,
           content: legend,
           expandTooltip: "Expand Legend",
           expanded: true,
+          mode: "floating",
         });
         const compass = new Compass({
           view: view,

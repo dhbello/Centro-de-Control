@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-JB8FKBC408"></script>
-      <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
-            gtag('config', 'G-JB8FKBC408');
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-JB8FKBC408"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-JB8FKBC408");
     </script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -97,17 +102,28 @@
                 <div class="item" id="img_detallado"></div>
               </div>
               <div class="col-md-6 mt-4">
-                <div class="title">Acceso general</div>
+                <div class="title">Perfil</div>
                 <div class="item" id="img_perfil"></div>
               </div>
               <div class="col-md-6 mt-4">
-                <div class="title">Perfil</div>
+                <div class="title">Acceso general</div>
                 <div class="item">
                   Partiendo del puerto fluvial se toma la v&iacute;a hacia el
                   norte en direcci&oacute;n a la escuela del corregimiento hasta
                   encontrar la zona del estadio y cancha de futbol, lugar donde
                   se determino el v&eacute;rtice 91263001.
                 </div>
+              </div>
+            </div>
+
+            <div class="row" id="fotos">
+              <div class="col-md-6 mt-4">
+                <div class="title">Diagrama de obstaculos</div>
+                <div class="item" id="img_obstaculos"></div>
+              </div>
+              <div class="col-md-6 mt-4">
+                <div class="title">Imagen de la placa</div>
+                <div class="item" id="img_placa"></div>
               </div>
             </div>
 
@@ -365,36 +381,35 @@
           document.getElementById("divipola2").innerHTML =
             "Código Municipio: " + check(obj.codigo);
 
-          if (obj.fotos_campo_croquis_general) {
-            var img = document.createElement("img");
-            img.src = obj.fotos_campo_croquis_general;
-            var src = document.getElementById("img_croquis");
-            src.appendChild(img);
-          } else {
-            $("#img_croquis").after(
-              "<p style='text-align: center; font-size: 16px'>Sin información</p>"
-            );
-          }
-          if (obj.fotos_campo_perfil) {
-            var img = document.createElement("img");
-            img.src = obj.fotos_campo_perfil;
-            var src = document.getElementById("img_perfil");
-            src.appendChild(img);
-          } else {
-            $("#img_perfil").after(
-              "<p style='text-align: center; font-size: 16px'>Sin información</p>"
-            );
-          }
-          if (obj.fotos_campo_croquis_detallado) {
-            var img = document.createElement("img");
-            img.src = obj.fotos_campo_croquis_detallado;
-            var src = document.getElementById("img_detallado");
-            src.appendChild(img);
-          } else {
-            $("#img_detallado").after(
-              "<p style='text-align: center; font-size: 16px'>Sin información</p>"
-            );
-          }
+          var img = document.createElement("img");
+          img.src =
+            "https://redgeodesica-cg.igac.gov.co/croquis/" + nombre + "/3";
+          var src = document.getElementById("img_croquis");
+          src.appendChild(img);
+
+          var img = document.createElement("img");
+          img.src =
+            "https://redgeodesica-cg.igac.gov.co/croquis/" + nombre + "/2";
+          var src = document.getElementById("img_detallado");
+          src.appendChild(img);
+
+          var img = document.createElement("img");
+          img.src =
+            "https://redgeodesica-cg.igac.gov.co/croquis/" + nombre + "/1";
+          var src = document.getElementById("img_perfil");
+          src.appendChild(img);
+
+          var img = document.createElement("img");
+          img.src =
+            "https://redgeodesica-cg.igac.gov.co/croquis/" + nombre + "/5";
+          var src = document.getElementById("img_obstaculos");
+          src.appendChild(img);
+
+          var img = document.createElement("img");
+          img.src =
+            "https://redgeodesica-cg.igac.gov.co/croquis/" + nombre + "/4";
+          var src = document.getElementById("img_placa");
+          src.appendChild(img);
 
           if (obj.fotos_campo) {
             var cols = obj.fotos_campo.length;
@@ -450,4 +465,3 @@
     </script>
   </body>
 </html>
-
