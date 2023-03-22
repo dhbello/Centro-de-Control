@@ -42,17 +42,21 @@ select {
   position: sticky;
   top: 60px;
   z-index: 10;
-  background: #333333;
+  background: #e9eaeb;
+  border-top: 1px solid #3366cc;
   justify-content: center;
 }
 
 .nav-underline a {
-  color: #fff;
-  font-size: 13px;
+  color: #666666;
+  font-size: 14px;
+  text-align: center;
+  line-height: 15x;
+  height: 30px;
 }
 
 .nav-link.active {
-  color: #f4a833;
+  color: #3366cc;
 }
 
 .containerIgac {
@@ -660,9 +664,9 @@ input[type="time"] {
   color: #58595b;
 }
 
-li {
+/* li {
   list-style: decimal;
-}
+} */
 
 .row.container-cards {
   flex-wrap: wrap;
@@ -2274,10 +2278,10 @@ label {
 /*floating Menu red Geodesica */
 .floatingMenu {
   position: fixed;
-  height: 100vh;
   display: flex;
   align-items: center;
-  top: 0;
+  top: calc(50%);
+  bottom: calc(50%);
   right: 15px;
   z-index: 100;
 }

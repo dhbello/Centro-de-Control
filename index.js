@@ -5,43 +5,37 @@ $.getJSON("/json/popup.json", function (datos) {
   popup = datos.popup;
 });
 
-if (document.querySelector(".navbarigac")) {
-  const navbarigac = document.querySelector(".navbarigac");
-  navbarigac.innerHTML = `
-    <div class="logos">
-        <div class="navbar-brand-igac">
-            <a href='https://www.igac.gov.co' target='_blank'><img alt='Logo IGAC' src='../../images/logo-igac.png'/></a>
-        </div>
-        <div class="logoigac">
-            <a href="/index.html"><img src="../../images/logo.svg" alt="Logo Origen Nacional"></a>
-        </div>
-    </div>
-    <button class='nav-bar-toggle-igac'>
-        <div class='icon-bar'></div>
-        <div class='icon-bar'></div>
-        <div class='icon-bar'></div>
-    </button>
-    <div class='navbarnavigac'>
-        <li>
-            <a class='inicio' href='/index.html'>Inicio</a>
-        </li>
-        <li>
-            <a class='redes' href='/redes/red_geodesica.html'>Redes</a>
-        </li>
-        <li>
-            <a class='recursos' href='/herramientas/servicios.html'>Recursos</a>
-        </li>
-        <li>
-            <a class='dropdownToggle d-none' href='#'>Acerca de</a>
-            <ul class='dropDown'>
-                <li><a href='/preguntas_frecuentes/index.html'>&iquest;Por qu&eacute; tener un &uacute;nico origen?</a></li>
-                <li><a href='/preguntas_frecuentes/cual-es-la-proyeccion.html'>&iquest;Cu&aacute;l es la proyecci&oacute;n?</a></li>
-                <li><a href='/preguntas_frecuentes/cuales-son-sus-beneficios.html'>&iquest;Cu&aacute;les son sus beneficios?</a></li>
-                <li><a href='/preguntas_frecuentes/quienes-deben-adoptarlo.html'>&iquest;Qui&eacute;nes deben adoptarlo?</a></li>
-                <li><a href='/preguntas_frecuentes/otras-preguntas-frecuentes.html'>Otras preguntas frecuentes</a></li>
-            </ul>
-        </li>
-    </div>
+if (document.querySelector(".navbarIgacContainer")) {
+  const navbarIgacContainer = document.querySelector(".navbarIgacContainer");
+  navbarIgacContainer.innerHTML = `
+    <nav>
+      <div class='navbarigac'>
+          <div class='logos'>
+              <a href='https://www.igac.gov.co' class='navbar-brand-igac' target='_blank'>
+                  <img alt='Logo IGAC' src='/images/nav/logo.png'>
+              </a>
+              <img src='/images/nav/centrodecontrol.svg' alt='Colombia en Mapas'>
+          </div>
+          <ul id='link-list'>
+              <li>
+                <a class='inicio' href='/index.html' rel='noopener'>Inicio</a>
+              </li>
+              <li>
+                <a class='redes' href='/redes/red_geodesica.html' rel='noopener'>Redes</a>
+              </li>
+              <li>
+                <a class='recursos' href='/herramientas/servicios.html' rel='noopener'>Recursos</a>
+              </li>
+          </ul>
+          <button class='nav-bar-toggle-igac'>
+              <div class='icon-bar'></div>
+              <div class='icon-bar'></div>
+              <div class='icon-bar'></div>
+          </button>
+      </div>
+      <div class='navbarnavigac'>            
+      </div>
+    </nav>
     `;
 }
 
@@ -72,83 +66,84 @@ if (document.querySelector(".nav-underline.navHerramientas")) {
 if (document.querySelector(".footer")) {
   const footerIgac = document.querySelector(".footer");
   footerIgac.innerHTML = `
-    <div class='footer-container container'>
-        <div class='row-footer'>
-            <div class='bird-image'>
-                <img src='../../images/pajaro_igac.svg' alt=''>
+  <div class='containerf'>
+    <div class='footer-container'>
+        <div class='rowf'>
+            <div class='col-md-6f'>
+                <h2 class='footer-titulo'>Instituto Geográfico Agustín Codazzi - IGAC</h2>
             </div>
-            <div class='content-footer'>
-                <div class='title'>
-                    INSTITUTO GEOGRÁFICO AGUSTÍN CODAZZI
+            <div class='logos-footer col-md-6f'>&nbsp;</div>
+        </div>
+        <div class='rowf'>
+            <div class='col-md-6f'>
+                <h2 class='sub-titulo-sede-gov-co'>Información sede principal</h2>
+            
+                <h3>Dirección:</h3> 
+                <p>Bogotá D.C. - Carrera 30 # 48-51</p>
+            
+                <h3>Horarios de atención al ciudadano:</h3>
+                <p>Abierto al público de lunes a viernes de 9:00 a.m. a 4:00 p.m. jornada continua Sede Central y territorial Cundinamarca (Horario de atención temporal acatando las medidas y demás regulaciones de bioseguridad)</p>
+                <h3>Teléfono Conmutador:</h3>
+                <p>
+                    <a href='tel:6016531888'>+57 601 653 18 88</a>
+                </p>
+                <h3>Correo de contacto:</h3>
+                <p>
+                    <a href='mailto:contactenos@igac.gov.co'>contactenos@igac.gov.co</a>
+                </p>
+            
+                <h3>Correo de notificaciones judiciales:</h3>
+                <p>
+                    <a href='mailto:judiciales@igac.gov.co'>judiciales@igac.gov.co</a>
+                </p>
+                <p>NIT: 8999990049</p>
+            
+                <p>©Copyright 2021 - Todos los derechos reservados Gobierno de Colombia</p>
+            </div>                
+            <div class='col-md-6f'>
+                <h3>Contáctenos en nuestras redes sociales</h3>
+            
+                <div class='redes-sociales'>
+                    <p>
+                        <a href='https://www.facebook.com/IgacColombia' tabindex='-1' target='_blank'>
+                            <img alt='Visitar Facebook IGAC' class='icono-redes' src='/images/footer/facebook.svg'>
+                            Facebook IGAC 
+                        </a>
+                    </p>
+            
+                    <p>
+                        <a href='https://twitter.com/igacColombia' tabindex='-1' target='_blank'>
+                            <img alt='Visitar Twitter IGAC' class='icono-redes' src='/images/footer/twitter.svg'>
+                            Twitter IGAC 
+                        </a>
+                    </p>
+            
+                    <p>
+                        <a href='https://www.instagram.com/accounts/login/?next=/igacColombia/' tabindex='-1' target='_blank'><img alt='Visitar Instagram IGAC' class='icono-redes' src='/images/footer/instagram.svg'>
+                            Instagram IGAC 
+                        </a>
+                    </p>
+                </div>                    
+                <div class='footer-enlaces'><a class='btn-low'>Políticas</a> 
+                    <a class='btn-low'>Mapa del sitio</a> 
+                    <a class='btn-low'>Términos y condiciones</a>
                 </div>
-                <div class='sub-title'>
-                    Oficinas y horarios
-                </div>
-                <ul>
-                    <li>
-                        <a class='underline-none' href='tel:+6013773214'>Conmutador (1) 3773214</a>
-                    </li>
-                    <li>
-                        E-mail: <a class='link' href='mailto:contactenos@igac.gov.co' target='_blank'>contactenos@igac.gov.co</a>
-                    </li>
-                    <li>
-                        <a class='link' href='https://www.igac.gov.co/es/contenido/notificaciones-judiciales' target='_blank'>Notificaciones judiciales</a>
-                    </li>
-                    <li>
-                        Carrera 30 Nº 48-51, Bogotá
-                    </li>
-                </ul>
-                <div class='sub-title'>
-                    Contáctenos
-                </div>
-                <ul>
-                    <li>Abierto de lunes a viernes de 7:30 a.m. a 3:45 p.m. Jornada continua.</li>
-                    <li>Sede Central y territorial Cundinamarca</li>
-                    <li>NIT: 8999990049</li>
-                    <li><a class="link" href='https://forms.office.com/Pages/ResponsePage.aspx?id=mv5J7epu5ke_Uu6ey12oBxIGmwVNvQBMvgfd4pJEsvJUOUVXTzVQOE1ESlZZRVNZQ1RMVjYzWk8yOS4u' target='_blank'>Encuesta de satisfacción y percepción portal web</a></li>
-                </ul>
             </div>
-            <div class='content-footer cla-a'>
-                <div class='contents'>
-                    <div class='sub-title'>
-                        Nuestras plataformas
-                    </div>
-                    <a href='https://www.colombiaot.gov.co/'>Colombia OT</a>
-                    <a href='https://www.colombiaenmapas.gov.co/'>Colombia en Mapas</a>
-                    <a href='https://diccionario.igac.gov.co/'>Diccionario Geogr&aacute;fico</a>                
-                </div>
-                <div class='botonAccesoContainer'>
-                    <div class='botonAcceso'>Acceso Admin</div>
-                </div>
-            </div>
-            <div class='content-footer cla-a cla-b'>
-                <div class='conatin'>
-                    <div class='sub-title'>
-                        Síguenos
-                    </div>
-                    <a href='https://co.linkedin.com/company/igac'><i class='fab fa-linkedin-in'></i><span>LinkedIn</span></a>
-                    <a href='https://es-la.facebook.com/IgacColombia/'><i class='fab fa-facebook-f'></i><span>Facebook</span></a>
-                    <a href='https://twitter.com/igacColombia?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor'><i class='fab fa-twitter'></i><span>Twitter</span></a>
-                    <a href='https://www.instagram.com/igaccolombia/'><i class='fab fa-instagram'></i><span>Instagram</span></a>
-                </div>
-
-            </div>
-        </div>        
+        </div>
     </div>
-    `;
-}
+  </div>
+  <div class='gov-co-footer-pie'>
+    <div class='gov-co-footer-auto containerf'>
+        <img alt='Logo marca de Colombia' class='gov-co-logo-pie-blanco' src='/images/footer/marca_colombia.png'>
 
-if (document.querySelector(".nav-bar-toggle-igac")) {
-  const dropDownButon = document.querySelector(".nav-bar-toggle-igac");
-  const dropDownMenu = document.querySelector(".navbarnavigac");
-  const dropDowntoggle = document.querySelector(".dropdownToggle");
-  const dropDown = document.querySelector(".dropDown");
-  dropDownButon.addEventListener("click", function handleClick(event) {
-    dropDownMenu.classList.toggle("expandMenu");
-  });
-  dropDowntoggle.addEventListener("click", function handleClick(event) {
-    dropDown.classList.toggle("expandMenuDrop");
-  });
+        <img alt='Logo de Gov Co' class='gov-co-logo-pie-mesa' src='/images/footer/header_govco.png'>
+
+        <a class='text-white text-align-right' href='https://www.gov.co' target='_blank'>
+            Conoce GOV.CO aquí
+        </a>
+    </div>
+  </div>
+    `;
 }
 
 if (document.querySelector(".main.inicio")) {
@@ -2009,3 +2004,50 @@ $(document).ready(function () {
 $(".carousel").carousel({
   interval: false,
 });
+
+
+
+/*navbar*/
+const dropDownButon = document.querySelector(".nav-bar-toggle-igac");
+const nav = document.querySelector(".navbarigac");
+const navLogos = document.querySelector(".navbarigac .logos");
+const dropDownMenu = document.querySelector(".navbarnavigac");
+const dropDowntoggle = document.querySelector(".dropdownToggle");
+const dropDown = document.querySelector(".dropDown");
+const linklist = document.querySelector("#link-list")
+const logoIgac = document.querySelector(".navbar-brand-igac")
+const barraIgac = document.querySelector(".barra_gov")
+
+
+dropDownButon.addEventListener('click', function handleClick(event) {
+    dropDownMenu.classList.toggle('expandMenu');
+});
+
+// Tablet responsive
+function tabletSize(x) {
+    if (x.matches) {
+        dropDownMenu.append(linklist);
+    } else {
+        linklist.remove()
+        nav.append(linklist);
+    }
+}  
+var x = window.matchMedia("(max-width: 768px)")
+tabletSize(x)
+x.addListener(tabletSize)
+
+
+// Mobile responsive
+function tabletMobile(x) {
+    if (x.matches) {
+        barraIgac.append(logoIgac);
+    } else {
+        logoIgac.remove()
+        navLogos.append(logoIgac);
+    }
+  }
+  
+var x = window.matchMedia("(max-width: 526px)")
+tabletMobile(x)
+x.addListener(tabletMobile)
+
