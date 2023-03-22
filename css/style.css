@@ -43,16 +43,17 @@ select {
   top: 60px;
   z-index: 10;
   background: #e9eaeb;
-  border-top: 1px solid #3366cc;
+  border-top: 1px solid #d9d9d9;
   justify-content: center;
 }
 
 .nav-underline a {
   color: #666666;
   font-size: 14px;
-  text-align: center;
-  line-height: 15x;
-  height: 30px;
+}
+
+.nav-link {
+  padding: 0.8rem 1rem 0.6rem 1rem;
 }
 
 .nav-link.active {

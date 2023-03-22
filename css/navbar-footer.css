@@ -96,6 +96,7 @@ nav a {
 
 .navbarigac img {
     order: 2;
+    width: auto;
     height: 30px;
     padding-right: 1rem;
     padding-left: 1rem;
@@ -425,6 +426,10 @@ footer .gov-co-logo-pie-mesa {
         margin-top: 10px;
     }
 
+    .navbarigac img {
+        height: 20px;
+    }
+
     /* Footer*/
     footer > .containerf,
     .gov-co-footer-pie > .containerf {
@@ -447,6 +452,7 @@ footer .gov-co-logo-pie-mesa {
     .navbar-brand-igac img {
         height: 30px;
     }
+    
 
     /* Footer*/
     footer > .containerf,
