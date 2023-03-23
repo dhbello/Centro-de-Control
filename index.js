@@ -1,5 +1,9 @@
 var url_backend = "https://redgeodesica-cg.igac.gov.co";
 
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
 var popup;
 $.getJSON("/json/popup.json", function (datos) {
   popup = datos.popup;
