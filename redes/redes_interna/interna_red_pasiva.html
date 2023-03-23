@@ -48,6 +48,8 @@
     </div>
     <div class="navbarIgacContainer origen"></div>
     <nav class="nav nav-underline"></nav>
+
+    <div class="contenido-imprimir">
     <section class="portada-igac portadaSub redActiva">
       <div class="container block-igac">
         <div class="contenido-portada">
@@ -300,6 +302,56 @@
             -->
       </div>
     </div>
+  </div>
+    <div class="container mt-4">
+      <div class="row">
+          <div class="col" style="display: flex; justify-content: center; margin-bottom: 4vh;">            
+              <button id="imprimir-pagina" class="btn btn-outline-primary" onclick="printDiv()" style="margin-left: 5vw;">Imprimir Pdf</button>
+              <!-- <button class="btn btn-outline-success" onclick="printImg()">Imprimir Imagen</button>
+              <a id="download" href="#" style="display: none;">Tomar screenshot y descargar</a> -->
+          </div>
+      </div>
+  </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>    
+
+
+
+    <script>
+
+        const printDiv = () => {
+            console.log('click')
+            const contenido = document.querySelector('.contenido-imprimir').innerHTML;
+            const contenidoOriginal= document.body.innerHTML;
+            document.body.innerHTML = contenido;
+            window.print();
+            document.body.innerHTML = contenidoOriginal;
+       
+        }
+        
+
+        const printImg = () => {
+            
+            console.log('click')   
+            
+            html2canvas(document.body, {
+                onrendered (canvas) {
+                    var link = document.querySelector('#download');
+                    var image = canvas.toDataURL();
+                    link.href = image;
+                    link.download = 'screenshot.png';
+                    link.click();        
+
+                }
+            });
+
+            
+
+
+
+        }
+
+    </script>
 
     <footer class="footer origen"></footer>
 
