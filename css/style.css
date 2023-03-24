@@ -2354,7 +2354,11 @@ label {
 }
 
 .floatingMenu a.contribuye::before {
-  content: "Contribuyentes de la Red";
+  content: "Datos";
+}
+
+.floatingMenu a.mapas::before {
+  content: "Mapas de la Red";
 }
 
 .floatingMenu a.info::before {
