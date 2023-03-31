@@ -104,6 +104,18 @@
       <section class="section visor row pb-0">
         <div class="iframe col-md-12">
           <h2 class="title">Visor de las redes geodésicas</h2>
+
+          <div class="custom-control custom-switch" style=" float: right;">
+            <span style="color: rgb(134, 134, 126); font-size: 20px;">Filtro</span>
+           <select id="opcionesMapa" class="custom-select mb-2" style="width: 20vw;" aria-label="Default select example">
+              <option selected>Todos</option>
+              <option value="4">Activa GNSS</option>                        
+              <option value="2">Geomagnética</option>
+              <option value="1">Gravimétrica</option>
+              <option value="3">Pasiva GNSS</option>
+            </select>
+        </div>
+
           <div id="viewDiv"></div>
         </div>
       </section>
@@ -289,8 +301,27 @@
       href="https://js.arcgis.com/4.24/esri/themes/light/main.css"
     />
     <script src="https://js.arcgis.com/4.24/"></script>
+
+
     <script>
-      require([
+
+         
+        
+        
+
+        const arreglo = [
+            {
+              id: 1,
+              popupTemplate: {
+                title: "Atributos",
+                outFields: ["*"],
+                content: popup,
+                  },
+                //   definitionExpression:"es_activa_gnss = 1",                  
+            }
+        ];
+      const cargarMapa = (arreglo) => {
+        require([
         "esri/config",
         "esri/Map",
         "esri/views/MapView",
@@ -325,16 +356,7 @@
 
         const layer = new MapImageLayer({
           url: "https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer",
-          sublayers: [
-            {
-              id: 1,
-              popupTemplate: {
-                title: "Atributos",
-                outFields: ["*"],
-                content: popup,
-              },
-            },
-          ],
+          sublayers: arreglo,
         });
         const map = new Map({
           layers: [vtlLayer, layer],
@@ -388,6 +410,89 @@
           }
         });
       });
-    </script>
+      }
+
+      cargarMapa(arreglo);
+
+
+      const opcionesMapa = document.querySelector('#opcionesMapa');
+
+        opcionesMapa.addEventListener('change', ($event) => {            
+            
+            if($event.target.value == 1){
+                const arreglo = [
+                                {
+                                        id: 1,
+                                        popupTemplate: {
+                                        title: "Atributos",
+                                        outFields: ["*"],
+                                        content: popup,
+                                        },
+                                        definitionExpression:"es_gravimetrica = 1",                  
+                                    }
+                                ];
+                
+                cargarMapa(arreglo);
+
+            }else if($event.target.value == 2){
+                const arreglo = [
+                                   {
+                                        id: 1,
+                                        popupTemplate: {
+                                        title: "Atributos",
+                                        outFields: ["*"],
+                                        content: popup,
+                                        },
+                                        definitionExpression:"es_geomagnetica = 1",                  
+                                    }
+                                ];
+                
+                cargarMapa(arreglo);
+            }else if($event.target.value == 3) {
+                const arreglo = [
+                                    {
+                                    id: 1,
+                                    popupTemplate: {
+                                        title: "Atributos",
+                                        outFields: ["*"],
+                                        content: popup,
+                                        },
+                                        definitionExpression:"es_pasiva_gnss = 1",                  
+                                    }
+                ];
+                cargarMapa(arreglo);
+
+            }else if($event.target.value == 4) {
+                const arreglo = [
+                                    {
+                                    id: 1,
+                                    popupTemplate: {
+                                        title: "Atributos",
+                                        outFields: ["*"],
+                                        content: popup,
+                                        },
+                                        definitionExpression:"es_activa_gnss = 1",                  
+                                    }
+                ];
+                cargarMapa(arreglo);
+
+            } else {
+                const arreglo = [
+                                   {
+                                        id: 1,
+                                        popupTemplate: {
+                                            title: "Atributos",
+                                            outFields: ["*"],
+                                            content: popup,
+                                        }                                        
+                                    }
+                                ];
+                cargarMapa(arreglo);
+            }
+        
+        
+        });
+
+            </script>
   </body>
 </html>
