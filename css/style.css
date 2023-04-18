@@ -2596,3 +2596,20 @@ label {
   padding: 8px 30px;
   margin-top: 40px;
 }
+
+
+#icono-user {
+  width:27px;  
+}
+
+#icono-user:hover {
+  background-color:  #919cc0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+
