@@ -39,7 +39,7 @@ if (document.querySelector(".navbarIgacContainer")) {
 
                   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                     <div class="offcanvas-header">
-                      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Zona Usuario</h5>
+                      <h5 class="offcanvas-title" id="offcanvasExampleLabel"></h5>
                       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
@@ -47,11 +47,94 @@ if (document.querySelector(".navbarIgacContainer")) {
                         <div class="row">
                           <div class="col">
 
+                          <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#registro" type="button" role="tab" aria-controls="home" aria-selected="true">Registro</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab" aria-controls="profile" aria-selected="false">Login</button>
+                            </li>                           
+                          </ul>
+                          <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="registro" role="tabpanel" aria-labelledby="home-tab">
+                            
+                                        <div class="main-block">
+                                            <h1>Registro</h1>
+                                            <form id="formRegistro">          
+                                            
+                                              <hr>
+                                              
+                                              <input type="text" name="usuario" id="usuario" placeholder="usuario" required/>
+                  
+                                              
+                  
+                                              <input type="text" name="correo_electronico" id="correo_electronico" placeholder="Correo" required/>                      
+                  
+                                              <select class="" name="tipo_documento" aria-label="Default select example" required>
+                                                <option selected>Seleccione Documento</option>
+                                                <option value="1">Cédula de ciudadanía</option>
+                                                <option value="2">Cédula de extranjería</option>
+                                                <option value="3">NIT</option>
+                                                <option value="4">Pasaporte</option>
+                                              </select>
+                  
+                                              <input type="text" name="numero_documento" id="numero_documento" placeholder="N° Documento" required/>
+                  
+                                              <input type="text" name="telefono" id="telefono" placeholder="Telefono" required/>                 
+                                              
+                                              <input type="password" name="contrasenia" id="contrasenia" placeholder="Contraseña" required/>                         
+                  
+                  
+                  
+                                              
+                                              <hr>
+                                              <div class="btn-block">
+                                                <p>©Copyright 2021 - Todos los derechos reservados Gobierno de Colombia</p>
+                                                <button type="submit" id="btnRegistrar">Enviar</button>
+                                              </div>
+                                            </form>
+                                      </div>
+
+
+
+                            
+                            </div>
+
+                            <div class="tab-pane fade" id="login" role="tabpanel" aria-labelledby="profile-tab">
+                              
+                                        <div class="main-block">
+                                              <h1>Login</h1>
+                                              <form id="formLogin">          
+                                              
+                                                <hr>                                                  
+                    
+                                                <input type="text" name="correo_electronico" id="correo_electronico" placeholder="Correo" required/>                                                      
+                                                
+                                                <input type="password" name="contrasenia" id="contrasenia" placeholder="Contraseña" required/>                                        
+                                                
+                                                <hr>
+                                                <div class="btn-block">
+                                                  <p>©Copyright 2021 - Todos los derechos reservados Gobierno de Colombia</p>
+                                                  <button type="submit" id="btnRegistrar">Enviar</button>
+                                                </div>
+                                              </form>
+                                        </div>
+                            </div>                            
+
+                            
+                          </div>
+
+
+
+
+
+                          
+
                               
 
                           </div>
                         </div>
-                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+                       
                       </div>
                       
                     </div>
@@ -74,6 +157,52 @@ if (document.querySelector(".navbarIgacContainer")) {
     </nav>
     `;
 }
+
+// ===== REGISTRAR USUARIO ======
+document.querySelector('#formRegistro').addEventListener('submit', async (e) => {
+  e.preventDefault();  
+
+  const formData = new FormData(e.target);
+
+  document.querySelector('#btnRegistrar').innerHTML = ` <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+  Loading...`;
+  document.querySelector('#btnRegistrar').disabled = true;
+
+  const datos = await fetch('http://localhost:3000/api/usuario',{
+    method: 'POST',    
+    body: JSON.stringify({
+      usuario: formData.get('usuario'),
+      nombre: formData.get('nombre'),
+      correo_electronico: formData.get('correo_electronico'),
+      tipo_documento: formData.get('tipo_documento'),
+      numero_documento: formData.get('numero_documento'),
+      telefono: formData.get('telefono'),
+      numero_contrato: formData.get('numero_contrato'),
+      fecha_creacion: formData.get('fecha_creacion'),
+      fecha_vencimiento: formData.get('fecha_vencimiento'),
+      cargo: formData.get('cargo'),
+      contrasenia: formData.get('contrasenia')
+    }),
+    headers: {
+      "Content-Type": "application/json"     
+    },
+  });
+
+  const datosJson = await datos.json();
+  console.log(datosJson);
+
+  document.querySelector('#btnRegistrar').innerHTML = `Enviar`;
+  document.querySelector('#btnRegistrar').disabled = false;
+
+  if(datosJson.status === true){
+    $("#profile-tab").click();
+  }
+
+  
+
+});
+
+// === FIN REGISTRAR =====
 
 if (document.querySelector(".nav-underline")) {
   const navUnderline = document.querySelector(".nav-underline");
