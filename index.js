@@ -1,4 +1,7 @@
 var url_backend = "https://redgeodesica-cg.igac.gov.co";
+const URLAUTHS = "http://localhost:3000";
+
+
 
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
@@ -45,7 +48,7 @@ if (document.querySelector(".navbarIgacContainer")) {
                     <div class="offcanvas-body">
                       <div class="container mt-5">
                         <div class="row">
-                          <div class="col">
+                          <div id="contenidoOffCanvas" class="col">
 
                           <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item" role="presentation">
@@ -70,8 +73,8 @@ if (document.querySelector(".navbarIgacContainer")) {
                   
                                               <input type="text" name="correo_electronico" id="correo_electronico" placeholder="Correo" required/>                      
                   
-                                              <select class="" name="tipo_documento" aria-label="Default select example" required>
-                                                <option selected>Seleccione Documento</option>
+                                              <select class="" name="tipo_documento" required>
+                                                <option value="" selected>Seleccione Documento</option>
                                                 <option value="1">Cédula de ciudadanía</option>
                                                 <option value="2">Cédula de extranjería</option>
                                                 <option value="3">NIT</option>
@@ -115,7 +118,7 @@ if (document.querySelector(".navbarIgacContainer")) {
                                                 <hr>
                                                 <div class="btn-block">
                                                   <p>©Copyright 2021 - Todos los derechos reservados Gobierno de Colombia</p>
-                                                  <button type="submit" id="btnRegistrar">Enviar</button>
+                                                  <button type="submit" id="btnLogin">Enviar</button>
                                                 </div>
                                               </form>
                                         </div>
@@ -158,51 +161,138 @@ if (document.querySelector(".navbarIgacContainer")) {
     `;
 }
 
+
+// ===== INICIO SESION  USUARIO ======
+
+document.querySelector('#formLogin').addEventListener('submit', async (e) => {
+
+  e.preventDefault();
+  
+  const formData = new FormData(e.target);
+  console.log(formData.get('correo_electronico'));
+  console.log(formData.get('contrasenia'));
+
+  document.querySelector('#btnLogin').innerHTML = ` <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>  Loading...`;
+  document.querySelector('#btnLogin').disabled = true;
+
+  try {
+    const data = await fetch(URLAUTHS+'/api/login', {
+      method: 'POST',    
+      body: JSON.stringify({
+        correo_electronico: formData.get('correo_electronico'),
+        contrasenia: formData.get('contrasenia'),
+      }),
+      headers: {
+        "Content-Type": "application/json"     
+      },
+    });
+    const datosJson = await data.json();    
+    console.log(datosJson);
+    if(datosJson.token){
+      localStorage.setItem('tokenIgac', datosJson.token);
+      localStorage.setItem('usuarioIgac', JSON.stringify(datosJson.usuario));      
+      document.querySelector('#contenidoOffCanvas').innerHTML = `
+      <div class="main-block">
+        <p>${datosJson.token}</p> <p>${datosJson.usuario}</p>
+      </div>
+    
+      `;
+    }
+
+    document.querySelector('#btnLogin').innerHTML = `Enviar`;
+    document.querySelector('#btnLogin').disabled = false;
+    
+  } catch (error) {    
+    console.error(error);
+    document.querySelector('#btnLogin').innerHTML = `Enviar`;
+    document.querySelector('#btnLogin').disabled = false;
+  }
+
+});
+
+// === FIN INICIO SESION =====
+
+
+
 // ===== REGISTRAR USUARIO ======
 document.querySelector('#formRegistro').addEventListener('submit', async (e) => {
   e.preventDefault();  
 
   const formData = new FormData(e.target);
 
-  document.querySelector('#btnRegistrar').innerHTML = ` <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-  Loading...`;
+  document.querySelector('#btnRegistrar').innerHTML = ` <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>  Loading...`;
   document.querySelector('#btnRegistrar').disabled = true;
 
-  const datos = await fetch('http://localhost:3000/api/usuario',{
-    method: 'POST',    
-    body: JSON.stringify({
-      usuario: formData.get('usuario'),
-      nombre: formData.get('nombre'),
-      correo_electronico: formData.get('correo_electronico'),
-      tipo_documento: formData.get('tipo_documento'),
-      numero_documento: formData.get('numero_documento'),
-      telefono: formData.get('telefono'),
-      numero_contrato: formData.get('numero_contrato'),
-      fecha_creacion: formData.get('fecha_creacion'),
-      fecha_vencimiento: formData.get('fecha_vencimiento'),
-      cargo: formData.get('cargo'),
-      contrasenia: formData.get('contrasenia')
-    }),
-    headers: {
-      "Content-Type": "application/json"     
-    },
-  });
+  try {
+        const datos = await fetch(URLAUTHS+'/api/usuario',{
+        method: 'POST',    
+        body: JSON.stringify({
+          usuario: formData.get('usuario'),
+          nombre: formData.get('nombre'),
+          correo_electronico: formData.get('correo_electronico'),
+          tipo_documento: formData.get('tipo_documento'),
+          numero_documento: formData.get('numero_documento'),
+          telefono: formData.get('telefono'),
+          numero_contrato: formData.get('numero_contrato'),
+          fecha_creacion: formData.get('fecha_creacion'),
+          fecha_vencimiento: formData.get('fecha_vencimiento'),
+          cargo: formData.get('cargo'),
+          contrasenia: formData.get('contrasenia')
+        }),
+        headers: {
+          "Content-Type": "application/json"     
+        },
+      });
 
-  const datosJson = await datos.json();
-  console.log(datosJson);
+      const datosJson = await datos.json();
+      console.log(datosJson);
 
-  document.querySelector('#btnRegistrar').innerHTML = `Enviar`;
-  document.querySelector('#btnRegistrar').disabled = false;
+      document.querySelector('#btnRegistrar').innerHTML = `Enviar`;
+      document.querySelector('#btnRegistrar').disabled = false;
 
-  if(datosJson.status === true){
-    $("#profile-tab").click();
+      if(datosJson.status === true){
+        $("#profile-tab").click();
+      }
+    
+  } catch (error) {    
+    console.error(error);
+    document.querySelector('#btnRegistrar').innerHTML = `Enviar`;
+    document.querySelector('#btnRegistrar').disabled = false;
   }
+
+  
+
+ 
 
   
 
 });
 
 // === FIN REGISTRAR =====
+
+
+(() => {
+  try {
+    const usuario = JSON.parse(localStorage.getItem('usuarioIgac'));
+    const token = localStorage.getItem('tokenIgac');
+    console.log(usuario, token)    
+    document.querySelector('#contenidoOffCanvas').innerHTML = `
+      <div class="main-block">
+        <p>${usuario.usuario}</p> <p>${token}</p>
+      </div>
+    
+      `;
+  } catch (error) {    
+    console.log(error);
+  }
+})();
+
+
+
+
+
+
+
 
 if (document.querySelector(".nav-underline")) {
   const navUnderline = document.querySelector(".nav-underline");
