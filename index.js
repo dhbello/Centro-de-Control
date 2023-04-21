@@ -63,7 +63,7 @@ if (document.querySelector(".navbarIgacContainer")) {
                             
                                         <div class="main-block">
                                             <h1>Registro</h1>
-                                            <form id="formRegistro">          
+                                            <form id="formRegistro" onsubmit="registro(event)">          
                                             
                                               <hr>
                                               
@@ -71,7 +71,7 @@ if (document.querySelector(".navbarIgacContainer")) {
                   
                                               
                   
-                                              <input type="text" name="correo_electronico" id="correo_electronico" placeholder="Correo" required/>                      
+                                              <input type="text" name="RegistroCorreo_electronico" id="RegistroCorreo_electronico" placeholder="Correo" required/>                      
                   
                                               <select class="" name="tipo_documento" required>
                                                 <option value="" selected>Seleccione Documento</option>
@@ -85,7 +85,7 @@ if (document.querySelector(".navbarIgacContainer")) {
                   
                                               <input type="text" name="telefono" id="telefono" placeholder="Telefono" required/>                 
                                               
-                                              <input type="password" name="contrasenia" id="contrasenia" placeholder="Contraseña" required/>                         
+                                              <input type="password" name="RegistroContrasenia" id="RegistroContrasenia" placeholder="Contraseña" required/>                         
                   
                   
                   
@@ -107,7 +107,7 @@ if (document.querySelector(".navbarIgacContainer")) {
                               
                                         <div class="main-block">
                                               <h1>Login</h1>
-                                              <form id="formLogin">          
+                                              <form id="formLogin" onsubmit="login(event)">          
                                               
                                                 <hr>                                                  
                     
@@ -136,6 +136,8 @@ if (document.querySelector(".navbarIgacContainer")) {
                               
 
                           </div>
+
+
                         </div>
                        
                       </div>
@@ -162,15 +164,17 @@ if (document.querySelector(".navbarIgacContainer")) {
 }
 
 
+
+
 // ===== INICIO SESION  USUARIO ======
 
-document.querySelector('#formLogin').addEventListener('submit', async (e) => {
+async function login(e){
 
   e.preventDefault();
   
   const formData = new FormData(e.target);
-  console.log(formData.get('correo_electronico'));
-  console.log(formData.get('contrasenia'));
+  // console.log(formData.get('correo_electronico'));
+  // console.log(formData.get('contrasenia'));
 
   document.querySelector('#btnLogin').innerHTML = ` <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>  Loading...`;
   document.querySelector('#btnLogin').disabled = true;
@@ -187,20 +191,16 @@ document.querySelector('#formLogin').addEventListener('submit', async (e) => {
       },
     });
     const datosJson = await data.json();    
-    console.log(datosJson);
+    // console.log(datosJson);
     if(datosJson.token){
       localStorage.setItem('tokenIgac', datosJson.token);
       localStorage.setItem('usuarioIgac', JSON.stringify(datosJson.usuario));      
-      document.querySelector('#contenidoOffCanvas').innerHTML = `
-      <div class="main-block">
-        <p>${datosJson.token}</p> <p>${datosJson.usuario}</p>
-      </div>
-    
-      `;
+      cargarUsuario();      
+    }else {
+      document.querySelector('#btnLogin').innerHTML = `Enviar`;
+      document.querySelector('#btnLogin').disabled = false;
     }
 
-    document.querySelector('#btnLogin').innerHTML = `Enviar`;
-    document.querySelector('#btnLogin').disabled = false;
     
   } catch (error) {    
     console.error(error);
@@ -208,14 +208,14 @@ document.querySelector('#formLogin').addEventListener('submit', async (e) => {
     document.querySelector('#btnLogin').disabled = false;
   }
 
-});
+}
 
 // === FIN INICIO SESION =====
 
 
 
 // ===== REGISTRAR USUARIO ======
-document.querySelector('#formRegistro').addEventListener('submit', async (e) => {
+ async function registro(e){
   e.preventDefault();  
 
   const formData = new FormData(e.target);
@@ -229,7 +229,7 @@ document.querySelector('#formRegistro').addEventListener('submit', async (e) => 
         body: JSON.stringify({
           usuario: formData.get('usuario'),
           nombre: formData.get('nombre'),
-          correo_electronico: formData.get('correo_electronico'),
+          correo_electronico: formData.get('RegistroCorreo_electronico'),
           tipo_documento: formData.get('tipo_documento'),
           numero_documento: formData.get('numero_documento'),
           telefono: formData.get('telefono'),
@@ -237,7 +237,7 @@ document.querySelector('#formRegistro').addEventListener('submit', async (e) => 
           fecha_creacion: formData.get('fecha_creacion'),
           fecha_vencimiento: formData.get('fecha_vencimiento'),
           cargo: formData.get('cargo'),
-          contrasenia: formData.get('contrasenia')
+          contrasenia: formData.get('RegistroContrasenia')
         }),
         headers: {
           "Content-Type": "application/json"     
@@ -258,36 +258,157 @@ document.querySelector('#formRegistro').addEventListener('submit', async (e) => 
     console.error(error);
     document.querySelector('#btnRegistrar').innerHTML = `Enviar`;
     document.querySelector('#btnRegistrar').disabled = false;
-  }
+  } 
 
-  
-
- 
-
-  
-
-});
+}
 
 // === FIN REGISTRAR =====
 
 
-(() => {
+
+
+
+const cargarUsuario = () => {
   try {
+    if(!localStorage.getItem('tokenIgac')){
+      return false;
+    }
     const usuario = JSON.parse(localStorage.getItem('usuarioIgac'));
     const token = localStorage.getItem('tokenIgac');
-    console.log(usuario, token)    
+    
     document.querySelector('#contenidoOffCanvas').innerHTML = `
-      <div class="main-block">
-        <p>${usuario.usuario}</p> <p>${token}</p>
-      </div>
+          <div class="card">
+            <div class="card-header">
+              <img class="card-header__imagen-user" src="./../images/iconos/person-circle.svg" alt="">
+            </div>
+            <div class="texto">
+              <span class="black">${usuario.usuario} </span><span class="age"></span> 
+              <p class="city">${usuario.correo_electronico}</p>
+            </div>  
+            <div class="card-footer">
+              <button id="cerrarSesion" onclick="cerrarSesion()" class="btn btn-primary">Cerrar Sesion</button>
+            </div>
+               
+          </div>      
+            
+        </div>       
     
       `;
   } catch (error) {    
     console.log(error);
   }
-})();
+}
+cargarUsuario();
 
 
+
+
+const cargarLoginRegistro = () => {
+  document.getElementById('contenidoOffCanvas').innerHTML = `
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#registro" type="button" role="tab" aria-controls="home" aria-selected="true">Registro</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab" aria-controls="profile" aria-selected="false">Login</button>
+  </li>                           
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="registro" role="tabpanel" aria-labelledby="home-tab">
+  
+              <div class="main-block">
+                  <h1>Registro</h1>
+                  <form id="formRegistro" onsubmit="registro(event)">          
+                  
+                    <hr>
+                    
+                    <input type="text" name="usuario" id="usuario" placeholder="usuario" required/>
+
+                    
+
+                    <input type="text" name="RegistroCorreo_electronico" id="RegistroCorreo_electronico" placeholder="Correo" required/>                      
+
+                    <select class="" name="tipo_documento" required>
+                      <option value="" selected>Seleccione Documento</option>
+                      <option value="1">Cédula de ciudadanía</option>
+                      <option value="2">Cédula de extranjería</option>
+                      <option value="3">NIT</option>
+                      <option value="4">Pasaporte</option>
+                    </select>
+
+                    <input type="text" name="numero_documento" id="numero_documento" placeholder="N° Documento" required/>
+
+                    <input type="text" name="telefono" id="telefono" placeholder="Telefono" required/>                 
+                    
+                    <input type="password" name="RegistroContrasenia" id="RegistroContrasenia" placeholder="Contraseña" required/>                         
+
+
+
+                    
+                    <hr>
+                    <div class="btn-block">
+                      <p>©Copyright 2021 - Todos los derechos reservados Gobierno de Colombia</p>
+                      <button type="submit" id="btnRegistrar">Enviar</button>
+                    </div>
+                  </form>
+            </div>
+
+
+
+  
+  </div>
+
+  <div class="tab-pane fade" id="login" role="tabpanel" aria-labelledby="profile-tab">
+    
+              <div class="main-block">
+                    <h1>Login</h1>
+                    <form id="formLogin" onsubmit="login(event)">          
+                    
+                      <hr>                                                  
+
+                      <input type="text" name="correo_electronico" id="correo_electronico" placeholder="Correo" required/>                                                      
+                      
+                      <input type="password" name="contrasenia" id="contrasenia" placeholder="Contraseña" required/>                                        
+                      
+                      <hr>
+                      <div class="btn-block">
+                        <p>©Copyright 2021 - Todos los derechos reservados Gobierno de Colombia</p>
+                        <button type="submit" id="btnLogin">Enviar</button>
+                      </div>
+                    </form>
+              </div>
+  </div>                            
+
+  
+</div>
+
+
+
+
+
+
+
+    
+
+</div>
+  `;
+}
+
+
+// ===== CERRAR SESION ======
+
+async function cerrarSesion (){  
+  console.log('cerro sesion')
+  try {
+    localStorage.removeItem('tokenIgac');
+    localStorage.removeItem('usuarioIgac');  
+    cargarLoginRegistro();    
+  } catch (error) {    
+    console.error(error);
+  }
+  
+}
+// ===== FIN CERRAR =============
 
 
 

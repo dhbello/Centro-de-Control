@@ -2631,7 +2631,7 @@ a {
       opacity: 0.3;
       }
   .main-block {
-      max-width: 340px; 
+      width: 20vw;
       min-height: 460px; 
       padding: 10px 0;
       margin: auto;
@@ -2639,6 +2639,8 @@ a {
       border: solid 1px #ccc;
       box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
       background: #ebebeb; 
+      margin-top: 3vh;
+      margin-left: -3vw;
       }
   .offcanvas-body form {
       margin: 0 30px;
@@ -2716,7 +2718,53 @@ a {
 
 }
 
-.offcanvas .main-block {
-  margin-top: 3vh;
-  width: 20vw;
+
+
+#contenidoOffCanvas {
+  margin-left: 2vw;
 }
+
+
+
+
+
+
+
+/* #contenidoOffCanvas .card {   
+
+} */
+
+#contenidoOffCanvas .card-header {       
+  padding: 20px;       
+  display: flex;
+  justify-content: center;
+} 
+
+#contenidoOffCanvas .card-footer div {
+  float: left;    
+}
+
+
+
+#contenidoOffCanvas .texto {    
+  padding: 20px;
+  text-align: center;
+  margin-top: -20px;
+  border-bottom: 1px solid rgb(206, 196, 196);
+}
+
+#contenidoOffCanvas .card-header img {
+  /* margin-left: 20px; */
+  width: 7vw;
+  
+}
+
+#contenidoOffCanvas .black {
+  font-weight: 600;    
+}
+
+
+
+
+
+
