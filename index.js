@@ -83,7 +83,7 @@ if (document.querySelector(".navbarIgacContainer")) {
                   
                                               <input type="text" name="numero_documento" id="numero_documento" placeholder="N° Documento" required/>
                   
-                                              <input type="text" name="telefono" id="telefono" placeholder="Telefono" required/>                 
+                                              <input type="text" name="telefono" id="telefono" placeholder="Telefono"/>                 
                                               
                                               <input type="password" name="RegistroContrasenia" id="RegistroContrasenia" placeholder="Contraseña" required/>                         
                   
@@ -116,9 +116,15 @@ if (document.querySelector(".navbarIgacContainer")) {
                                                 <input type="password" name="contrasenia" id="contrasenia" placeholder="Contraseña" required/>                                        
                                                 
                                                 <hr>
+
+                                                <div class="div-error">
+                                                  <span id="errorLogin" class="error"></span>
+                                                </div>
+
+
                                                 <div class="btn-block">
-                                                  <p>©Copyright 2021 - Todos los derechos reservados Gobierno de Colombia</p>
                                                   <button type="submit" id="btnLogin">Enviar</button>
+                                                  <p><a class="link-recover" href="/herramientas/auth/email.html" target="_blank">click  aquí para restaurar la contraseña</a></p>
                                                 </div>
                                               </form>
                                         </div>
@@ -173,8 +179,6 @@ async function login(e){
   e.preventDefault();
   
   const formData = new FormData(e.target);
-  // console.log(formData.get('correo_electronico'));
-  // console.log(formData.get('contrasenia'));
 
   document.querySelector('#btnLogin').innerHTML = ` <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>  Loading...`;
   document.querySelector('#btnLogin').disabled = true;
@@ -190,8 +194,9 @@ async function login(e){
         "Content-Type": "application/json"     
       },
     });
-    const datosJson = await data.json();    
-    // console.log(datosJson);
+    const datosJson = await data.json();        
+
+
     if(datosJson.token){
       localStorage.setItem('tokenIgac', datosJson.token);
       localStorage.setItem('usuarioIgac', JSON.stringify(datosJson.usuario));      
@@ -199,6 +204,7 @@ async function login(e){
     }else {
       document.querySelector('#btnLogin').innerHTML = `Enviar`;
       document.querySelector('#btnLogin').disabled = false;
+      document.querySelector('#errorLogin').innerHTML = `<span class="text-danger">${datosJson.message}</span>`;      
     }
 
     
@@ -209,10 +215,6 @@ async function login(e){
   }
 
 }
-
-// === FIN INICIO SESION =====
-
-
 
 // ===== REGISTRAR USUARIO ======
  async function registro(e){
@@ -262,11 +264,8 @@ async function login(e){
 
 }
 
-// === FIN REGISTRAR =====
 
-
-
-
+// === CARGAR DATOS DE USUARIO =====
 
 const cargarUsuario = () => {
   try {
@@ -303,6 +302,8 @@ cargarUsuario();
 
 
 
+// === CARGAR LOGIN Y REGISTRO =====
+
 const cargarLoginRegistro = () => {
   document.getElementById('contenidoOffCanvas').innerHTML = `
   <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -338,7 +339,7 @@ const cargarLoginRegistro = () => {
 
                     <input type="text" name="numero_documento" id="numero_documento" placeholder="N° Documento" required/>
 
-                    <input type="text" name="telefono" id="telefono" placeholder="Telefono" required/>                 
+                    <input type="text" name="telefono" id="telefono" placeholder="Telefono"/>                 
                     
                     <input type="password" name="RegistroContrasenia" id="RegistroContrasenia" placeholder="Contraseña" required/>                         
 
@@ -347,8 +348,7 @@ const cargarLoginRegistro = () => {
                     
                     <hr>
                     <div class="btn-block">
-                      <p>©Copyright 2021 - Todos los derechos reservados Gobierno de Colombia</p>
-                      <button type="submit" id="btnRegistrar">Enviar</button>
+                      <button type="submit" id="btnRegistrar">Enviar</button>                      
                     </div>
                   </form>
             </div>
@@ -371,9 +371,14 @@ const cargarLoginRegistro = () => {
                       <input type="password" name="contrasenia" id="contrasenia" placeholder="Contraseña" required/>                                        
                       
                       <hr>
-                      <div class="btn-block">
-                        <p>©Copyright 2021 - Todos los derechos reservados Gobierno de Colombia</p>
+
+                      <div class="div-error">
+                        <span id="errorLogin" class="error"></span>
+                      </div>
+
+                      <div class="btn-block">                        
                         <button type="submit" id="btnLogin">Enviar</button>
+                        <p><a class="link-recover" href="/herramientas/auth/email.html" target="_blank">click  aquí para restaurar la contraseña</a></p>
                       </div>
                     </form>
               </div>
@@ -408,7 +413,72 @@ async function cerrarSesion (){
   }
   
 }
-// ===== FIN CERRAR =============
+
+// === ENVIAR CORREO RECUPERACION CONTRASEÑA ====
+
+const enviarCorreoRecuperacion = async () => {
+  console.log(window.location.origin)  
+  const  correo =  document.querySelector('#inCorreoRecuperacion').value;
+  console.log(correo)
+  // try {
+  //   const datos = await fetch(URLAUTHS+'/api/recuperarPassword',{
+  //     method: 'POST',
+  //     body: JSON.stringify({
+  //       email: correo,        
+  //       origin: window.location.origin
+  //     }),
+  //     headers:{
+  //       "Content-Type": "application/json"     
+  //     },
+  //   });
+  //   const res = await datos.json();
+  //   console.log(res);
+  // } catch (error) {    
+  //   console.log(error);
+  // }
+}
+
+const resetContrasenia = async (e) => {
+  e.preventDefault();
+
+  const formData = new FormData(e.target);
+
+  const contrasenia = formData.get('contrasenia')
+  const contraseniaConfirm = formData.get('contraseniaConfirm')
+
+  if(contrasenia !== contraseniaConfirm){
+    return document.getElementById('errorContrasenia').innerHTML = 'Las contraseñas no coinciden';
+  }
+  
+  let token = window.location.search;    
+  token = token.substring(7,token.length );
+
+  try {
+    const datos = await fetch(URLAUTHS+'/api/reestablecerPassword',{
+      method: 'POST',
+      body: JSON.stringify({
+        contrasenia:contrasenia,
+        confirmacion:contraseniaConfirm
+      }),
+      headers:{
+        "Content-Type": "application/json",
+        "token":token
+      }
+    });
+    const res = await datos.json();
+    console.log(res);
+
+  } catch (error) {
+    console.log(error);
+  }
+  
+  
+
+  
+  
+}
+
+
 
 
 
