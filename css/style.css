@@ -2761,6 +2761,40 @@ a {
   font-weight: 600;    
 }
 
+.link-recover {
+  color: blue;    
+}
+
+.link-recover:hover {
+  color: blue;  
+  text-decoration: underline;
+}
+
+
+/* enviar correo recuperación */
+
+
+.envio-correo .container {
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.envio-correo .container img {
+  width: 10vw;
+}
+
+.envio-correo .container .imagen {
+  display: flex;
+  justify-content: center;
+}
+
+.error {
+  color: red;
+  font-family:'Times New Roman', Times, serif;
+}
+
 
 
 
