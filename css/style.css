@@ -757,8 +757,6 @@ thead .filters th:nth-child(6n) {
   text-align: left !important;
 }
 
-table.dataTable thead th {
-}
 
 table.dataTable thead th,
 table.dataTable tbody td {
