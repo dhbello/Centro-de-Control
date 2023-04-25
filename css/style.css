@@ -2629,16 +2629,15 @@ a {
       opacity: 0.3;
       }
   .main-block {
-      width: 20vw;
+      width: 100%;
       min-height: 460px; 
-      padding: 10px 0;
+      padding: 0px 0;
       margin: auto;
       border-radius: 5px; 
       border: solid 1px #ccc;
       box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
       background: #ebebeb; 
-      margin-top: 3vh;
-      margin-left: -3vw;
+      margin-top: 3vh;      
       }
   .offcanvas-body form {
       margin: 0 30px;
@@ -2715,13 +2714,6 @@ a {
   background-color: whitesmoke;
 
 }
-
-
-
-#contenidoOffCanvas {
-  margin-left: 2vw;
-}
-
 
 
 

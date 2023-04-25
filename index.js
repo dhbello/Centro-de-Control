@@ -67,11 +67,11 @@ if (document.querySelector(".navbarIgacContainer")) {
                                             
                                               <hr>
                                               
-                                              <input type="text" name="usuario" id="usuario" placeholder="usuario" required/>
+                                              <input type="text" name="usuario" id="usuario" placeholder="usuario" minlength="6" required/>
                   
                                               
                   
-                                              <input type="text" name="RegistroCorreo_electronico" id="RegistroCorreo_electronico" placeholder="Correo" required/>                      
+                                              <input type="text" name="RegistroCorreo_electronico" minlength="8" id="RegistroCorreo_electronico" placeholder="Correo" required/>                      
                   
                                               <select class="" name="tipo_documento" required>
                                                 <option value="" selected>Seleccione Documento</option>
@@ -81,11 +81,11 @@ if (document.querySelector(".navbarIgacContainer")) {
                                                 <option value="4">Pasaporte</option>
                                               </select>
                   
-                                              <input type="text" name="numero_documento" id="numero_documento" placeholder="N° Documento" required/>
+                                              <input type="text" name="numero_documento" id="numero_documento" minlength="6" placeholder="N° Documento" required/>
                   
                                               <input type="text" name="telefono" id="telefono" placeholder="Telefono"/>                 
                                               
-                                              <input type="password" name="RegistroContrasenia" id="RegistroContrasenia" placeholder="Contraseña" required/>                         
+                                              <input type="password" name="RegistroContrasenia" id="RegistroContrasenia" placeholder="Contraseña" minlength="8" required/>                         
                   
                   
                   
@@ -323,11 +323,11 @@ const cargarLoginRegistro = () => {
                   
                     <hr>
                     
-                    <input type="text" name="usuario" id="usuario" placeholder="usuario" required/>
+                    <input type="text" name="usuario" id="usuario" placeholder="usuario" minlength="6" required/>
 
                     
 
-                    <input type="text" name="RegistroCorreo_electronico" id="RegistroCorreo_electronico" placeholder="Correo" required/>                      
+                    <input type="text" name="RegistroCorreo_electronico" id="RegistroCorreo_electronico" minlength="8" placeholder="Correo" required/>                      
 
                     <select class="" name="tipo_documento" required>
                       <option value="" selected>Seleccione Documento</option>
@@ -337,11 +337,11 @@ const cargarLoginRegistro = () => {
                       <option value="4">Pasaporte</option>
                     </select>
 
-                    <input type="text" name="numero_documento" id="numero_documento" placeholder="N° Documento" required/>
+                    <input type="text" name="numero_documento" id="numero_documento" placeholder="N° Documento" minlength="6" required/>
 
                     <input type="text" name="telefono" id="telefono" placeholder="Telefono"/>                 
                     
-                    <input type="password" name="RegistroContrasenia" id="RegistroContrasenia" placeholder="Contraseña" required/>                         
+                    <input type="password" name="RegistroContrasenia" id="RegistroContrasenia" placeholder="Contraseña" minlength="8" required/>                         
 
 
 
@@ -417,25 +417,30 @@ async function cerrarSesion (){
 // === ENVIAR CORREO RECUPERACION CONTRASEÑA ====
 
 const enviarCorreoRecuperacion = async () => {
-  console.log(window.location.origin)  
+  
   const  correo =  document.querySelector('#inCorreoRecuperacion').value;
-  console.log(correo)
-  // try {
-  //   const datos = await fetch(URLAUTHS+'/api/recuperarPassword',{
-  //     method: 'POST',
-  //     body: JSON.stringify({
-  //       email: correo,        
-  //       origin: window.location.origin
-  //     }),
-  //     headers:{
-  //       "Content-Type": "application/json"     
-  //     },
-  //   });
-  //   const res = await datos.json();
-  //   console.log(res);
-  // } catch (error) {    
-  //   console.log(error);
-  // }
+  
+  try {
+    const datos = await fetch(URLAUTHS+'/api/recuperarPassword',{
+      method: 'POST',
+      body: JSON.stringify({
+        email: correo,        
+        origin: window.location.origin
+      }),
+      headers:{
+        "Content-Type": "application/json"     
+      },
+    });
+    const res = await datos.json();
+    if(res.status){
+      document.querySelector('#cardCorreo').innerHTML = '<p class="card-text">Recibirás instrucciones para restaurar tu contraseña en el correo ingresado.</p>';
+    }else{
+      document.getElementById('errorRecuperacion').innerHTML = 'El correo no existe';      
+    }
+    console.log(res);
+  } catch (error) {    
+    console.log(error);
+  }
 }
 
 const resetContrasenia = async (e) => {
@@ -466,6 +471,12 @@ const resetContrasenia = async (e) => {
       }
     });
     const res = await datos.json();
+    if(res){
+      document.querySelector('#cardContrasenia').innerHTML = `
+        <p class="card-text">Contraseña restablecida correctamente.</p>
+        <p class="card-text"><a class="link-recover" href="/index.html" >click  aquí para regresar a la página principal.</a></p>
+      `;
+    }
     console.log(res);
 
   } catch (error) {
