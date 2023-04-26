@@ -1,5 +1,5 @@
 var url_backend = "https://redgeodesica-cg.igac.gov.co";
-const URLAUTHS = "http://localhost:3000";
+const URLAUTHS = "http://10.23.13.10:3000";
 
 
 
