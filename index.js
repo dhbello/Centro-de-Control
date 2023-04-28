@@ -1,5 +1,5 @@
 var url_backend = "https://redgeodesica-cg.igac.gov.co";
-const URLAUTHS = "http://10.23.13.10:3000";
+const URLAUTHS = "http://localhost:3001";
 
 
 
@@ -505,6 +505,7 @@ if (document.querySelector(".nav-underline")) {
     <a class='nav-link d-none' href='/redes/red_gnss.html'>Red GNSS Magna Sirgas</a>
     <a class='nav-link d-none' href='/redes/red_vertices_nivelacion.html'>Red de V&eacute;rtices y Redes de Nivelaci&oacute;n</a>
     <a class='nav-link tablero' href='/redes/tablero_control.html'>Tablero de control</a>
+    <a class='nav-link centro' href='/redes/centro_procesamiento.html'>Centro de procesamiento</a>
     `;
 }
 
@@ -624,6 +625,9 @@ if (document.querySelector(".geomagneticaMaestra")) {
 }
 if (document.querySelector(".tableroMaestra")) {
   $("a.tablero").addClass("active");
+}
+if (document.querySelector(".centroMaestra")) {
+  $("a.centro").addClass("active");
 }
 if (document.querySelector(".serviciosMaestra")) {
   $("a.servicios").addClass("active");
