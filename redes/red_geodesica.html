@@ -55,7 +55,7 @@
     </div>
     <div class="navbarIgacContainer origen"></div>
     <nav class="nav nav-underline"></nav>
-    <section class="portada-igac portadaSub origen">
+    <section class="portada-igac portadaSub origen mt-4">
       <div class="container block-igac">
         <div class="d-flex contenido-portada">
           <div class="texto-portada">
@@ -76,15 +76,37 @@
           <div class="col-md-6">
             <a href="redes_interna/red_activa.html">
               <div class="faqs dobles tipo-a">
-                <div class="title">Red de Estaciones Operación Continua</div>
+                <div class="container-title d-flex">
+                  <div class="title">
+                      Red de Estaciones Operación Continua                  
+                  </div>
+                  <span>
+                    <img src="/images/images-redes/redActivaLabel.svg" alt="">
+                  </span>
+                </div>
+                <div class="boton-faqs">
+                  <p>
+                    Ver más
+                  </p>
+                </div>
               </div>
             </a>
           </div>
           <div class="col-md-6">
             <a href="redes_interna/red_pasiva_nivelacion.html">
               <div class="faqs dobles tipo-b">
-                <div class="title">
-                  Red de Vértices Pasivos y de Control Vertical
+                <div class="container-title d-flex">
+                  <div class="title">
+                    Red de Vértices Pasivos y de Control Vertical
+                  </div>
+                  <span>
+                    <img src="/images/images-redes/redPasivaLavel.svg" alt="">
+                  </span>
+                </div>
+                <div class="boton-faqs">
+                  <p>
+                    Ver más
+                  </p>
                 </div>
               </div>
             </a>
@@ -92,9 +114,11 @@
         </div>
       </section>
       <section id="visor" class="section">
-        <h2 class="title">
-          Visor de la Red Geodésica GNSS y de Control Vertical
-        </h2>
+        <div class="title-box">
+          <h2 class="title">
+            Visor de la Red Geodésica GNSS y de Control Vertical
+          </h2>
+        </div>
         <div id="viewDiv"></div>
       </section>
 
@@ -164,12 +188,14 @@
         </div>
     </div>
     -->
-    <div class="container containerIgac">
-      <section class="section" id="mapas_de_red">
+    <section class="section" id="mapas_de_red">
+      <div class="container containerIgac">
         <div class="row">
           <div class="col-md-4">
             <div class="context">
-              <div class="text">Los Mapas de la Red</div>
+              <div class="title-box">
+                <div class="title">Los Mapas de la Red</div>
+              </div>
               <div class="resume">
                 Encuentra y visualiza los mapas de los todos los puntos
                 geodésicos existentes en Colombia: Redes Activas, Redes Pasivas,
@@ -267,8 +293,8 @@
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
     <!--<div class="beforeImage" style="border-bottom: 1px solid #000;">
         <div class="container containerIgac">
             <section id="contribuye" class="section">
@@ -373,14 +399,16 @@
         </section>
       </div>
       <section id="participa" class="section registrarReportar paddingLast">
-        <h2 class="title w-divider text-center">
-          Participa activamente de la red
-        </h2>
+        <div class="title-box">
+          <h2 class="title w-divider text-center">
+            Participa activamente de la red
+          </h2>
+        </div>
         <div class="container containerIgac">
           <div class="d-flex">
             <div class="containerFaqs typeB">
               <div class="faqs typeC">
-                <div class="title m-0 mb-3">
+                <div class="title m-0">
                   Registra y postula un nuevo vértice a la Red Geodésica
                 </div>
                 <div

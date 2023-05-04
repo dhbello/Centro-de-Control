@@ -50,11 +50,15 @@
       </a>
     </div>
     <div class="navbarIgacContainer origen"></div>
-    <div style="position: absolute;padding: 10px;background-color: lightyellow !important;color: gray;" class="bg-info">Señor usuario actualmente el IGAC se encuentra haciendo ajustes a la plataforma que se encuentra en construcción y no se han dispuesto los servicios de manera oficial. Recuerde consultar toda la información geodésica actualizada en nuestro portal Colombia en Mapas.</div>
+    <div class="w-100 advice" style="position: absolute;padding: 10px; color: gray;" class="bg-info">
+      <div class="container containerIgac">
+        Señor usuario actualmente el IGAC se encuentra haciendo ajustes a la plataforma que se encuentra en construcción y no se han dispuesto los servicios de manera oficial. Recuerde consultar toda la información geodésica actualizada en nuestro portal Colombia en Mapas.
+      </div>
+    </div>
     <section class="section-portada">
       <div class="container-portada">
-        <div class="portada">
-          <div class="text-content">
+        <div class="portada row align-items-center justify-content-between">
+          <div class="text-content col-md-6">
             <div class="title">
               Centro de Control <br />
               Geod&eacute;sico Nacional
@@ -68,6 +72,9 @@
                 Red Geomagnética.
               </p>
             </div>
+          </div>
+          <div class="col-md-6">
+            <img src="images/bg-portada.svg" alt="">
           </div>
         </div>
       </div>
@@ -107,19 +114,20 @@
     <div class="container containerIgac">
       <section class="section visor row pb-0">
         <div class="iframe col-md-12">
-          <h2 class="title">Visor de las redes geodésicas</h2>
-
-          <div class="custom-control custom-switch" style=" float: right;">
-            <span style="color: rgb(134, 134, 126); font-size: 20px; margin-right: 1vh;">Filtro</span>
-           <select id="opcionesMapa" class="custom-select mb-2" style="width: 20vw;" aria-label="Default select example">
-              <option selected>Todos</option>
-              <option value="4">Activa GNSS</option>                        
-              <option value="2">Geomagnética</option>
-              <option value="1">Gravimétrica</option>
-              <option value="3">Pasiva GNSS</option>
-            </select>
-        </div>
-
+          <div class="title-box d-flex justify-content-between align-items-center">
+            <h2 class="title">Visor de las redes geodésicas</h2>
+  
+            <div class="custom-control custom-switch" style=" float: right;">
+              <span style="color: rgb(134, 134, 126); font-size: 20px; margin-right: 1vh;">Filtro</span>
+              <select id="opcionesMapa" class="custom-select m-0" style="width: 20vw;" aria-label="Default select example">
+                <option selected>Todos</option>
+                <option value="4">Activa GNSS</option>                        
+                <option value="2">Geomagnética</option>
+                <option value="1">Gravimétrica</option>
+                <option value="3">Pasiva GNSS</option>
+              </select>
+            </div>
+          </div>
           <div id="viewDiv"></div>
         </div>
       </section>
@@ -151,15 +159,13 @@
     -->
     <div class="container containerIgac">
       <section class="section sumary">
-        <div class="row container-cards" >
-          <h2 class="title">&iquest;Qu&eacute; est&aacute;s buscando?</h2>
+        <div class="row container-cards">
+          <div class="title-box">
+            <h2 class="title">&iquest;Qu&eacute; est&aacute;s buscando?</h2>
+          </div>
           <div class="col-md-4 mb-3 card-container" data-toggle="tooltip" data-placement="top" 
-            title="Explora las características y forma de conexión a los servicios NTRIP/VRS."          
-          >
-            <a
-              class="ref"
-              href="https://redgeodesica.igac.gov.co/herramientas/servicios.html"
-            >
+            title="Explora las características y forma de conexión a los servicios NTRIP/VRS.">
+            <a class="ref" href="https://redgeodesica.igac.gov.co/herramientas/servicios.html">
               <div class="card card-content">
                 <img src="images/images-inicio/img-card-1_1.svg" alt="" />
                 <p class="no-decoration">Accede a los servicios en tiempo real</p>
@@ -168,12 +174,8 @@
           </div>
 
           <div class="col-md-4 mb-3 card-container" data-toggle="tooltip" data-placement="top" 
-            title="Revisa el estado de la Red GNSS (Activa y Pasiva)."          
-          >
-            <a
-              class="ref"
-              href="https://redgeodesica.igac.gov.co/redes/red_geodesica.html"
-            >
+            title="Revisa el estado de la Red GNSS (Activa y Pasiva).">
+            <a class="ref" href="https://redgeodesica.igac.gov.co/redes/red_geodesica.html">
               <div class="card card-content">
                 <img src="images/images-inicio/img-card-2_1.svg" alt="" />
                 <p>Consulta el estado de la Red Geodésica GNSS</p>
@@ -182,8 +184,7 @@
           </div>
 
           <div class="col-md-4 mb-3 card-container" data-toggle="tooltip" data-placement="top" 
-            title="Implementa el servicio de conversión de coordenadas acorde a la resolución 471 de 2020 del IGAC."
-          >
+            title="Implementa el servicio de conversión de coordenadas acorde a la resolución 471 de 2020 del IGAC.">
             <a class="ref" href="https://origen.igac.gov.co/herramientas.html">
               <div class="card card-content">
                 <img src="images/images-inicio/img-card-3_1.svg" alt="" />
@@ -193,12 +194,8 @@
           </div>
 
           <div class="col-md-4 card-container" data-toggle="tooltip" data-placement="top" 
-            title="Descarga los archivos RINEX de las CORS integradas a la Red Geodésica Nacional."
-          >
-            <a
-              class="ref"
-              href="https://igac-cc.azurewebsites.net/redes/redes_interna/red_activa.html"
-            >
+            title="Descarga los archivos RINEX de las CORS integradas a la Red Geodésica Nacional.">
+            <a class="ref" href="https://igac-cc.azurewebsites.net/redes/redes_interna/red_activa.html">
               <div class="card card-content">
                 <img src="images/images-inicio/img-card-4_1.svg" alt="" />
                 <p>Consulta los archivos RINEX</p>
@@ -207,12 +204,8 @@
           </div>
 
           <div class="col-md-4 card-container" data-toggle="tooltip" data-placement="top" 
-            title="Conoce los recursos geodésicos desarrollados por el IGAC a través de la historia."
-          >
-            <a
-              class="ref"
-              href="https://igac-cc.azurewebsites.net/herramientas/aplicaciones_herramientas.html"
-            >
+            title="Conoce los recursos geodésicos desarrollados por el IGAC a través de la historia.">
+            <a class="ref" href="https://igac-cc.azurewebsites.net/herramientas/aplicaciones_herramientas.html">
               <div class="card card-content">
                 <img src="images/images-inicio/img-card-5_1.svg" alt="" />
                 <p>Explora los recursos geod&eacute;sicos</p>
@@ -220,9 +213,7 @@
             </a>
           </div>
 
-          <div class="col-md-4 card-container" data-toggle="tooltip" data-placement="top" 
-            title="Explora las características y detalles técnicos del Nuevo Origen Nacional."
-          >
+          <div class="col-md-4 card-container" data-toggle="tooltip" data-placement="top" title="Explora las características y detalles técnicos del Nuevo Origen Nacional.">
             <a class="ref" href="https://origen.igac.gov.co/index.html">
               <div class="card card-content">
                 <img src="images/images-inicio/img-card-6_1.svg" alt="" />
@@ -234,14 +225,16 @@
       </section>
     </div>
     <section class="section registrarReportar paddingLast">
-      <h2 class="title w-divider text-center">
-        Participa activamente de la red
-      </h2>
+      <div class="title-box">
+        <h2 class="title w-divider text-center">
+          Participa activamente de la red
+        </h2>
+      </div>
       <div class="container containerIgac">
         <div class="d-flex">
           <div class="containerFaqs typeB">
             <div class="faqs typeC">
-              <div class="title m-0 mb-4">
+              <div class="title m-0">
                 Registra y postula un nuevo vértice a la Red Geodésica
               </div>
               <div
@@ -257,7 +250,7 @@
           </div>
           <div class="containerFaqs typeB">
             <div class="faqs typeD">
-              <div class="title m-0 mb-4">
+              <div class="title m-0">
                 Reporta novedades sobre vértices de la Red
               </div>
               <div
