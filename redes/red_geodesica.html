@@ -648,7 +648,7 @@
             var arr1 = [];
 
             obj.map(function (i, e) {
-              if (i["estado"] == "Activa") {
+              if (i["tipo_estacion"] == "Operación Continua" || i["tipo_estacion"] == "Operación Continua, Nivelación") {
                 i["ir"] =
                   "redes_interna/interna_red_activa.html?estacion=" +
                   i["t_id"] +
