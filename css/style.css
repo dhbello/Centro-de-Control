@@ -84,7 +84,7 @@ select {
 }
 
 .containercolor.typec {
-  background: var(--bg-igac-gris);
+  background: var(--azul-igac-dark);
   position: relative;
   color: #fff;
 }
