@@ -456,26 +456,26 @@
               var img = "https://redgeodesica-cg.igac.gov.co/croquis/" + nombre + "/"+ (i+1);    
               
  
-              console.log(img)
+              
               const datos = await fetch(img, {
                 // headers: {
                 //   'Content-Type': 'application/json'
                 // }
               });
               const res = await datos.text();
-              console.log("bien", img);
+              
               await imagenesValidadas.push(img)
 
            
               
             } catch (error) {
 
-              console.log("se rompio");              
+              
               imagenesValidadas.push("https://mundogeo.com/wp-content/uploads/2014/06/IGAC.jpg");
               
             }
           }
-          console.log(imagenesValidadas)
+          // console.log(imagenesValidadas)
           
 
           var img = document.createElement("img");
