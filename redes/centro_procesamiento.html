@@ -323,7 +323,30 @@
               popupTemplate: {
                 title: "Atributos",
                 outFields: [""],
-                content: popup,
+                content: [
+                  {
+                    "type": "fields",
+                    "fieldInfos": [
+                      {
+                        "fieldName": "numero_domo_iers",
+                        "label": "Número DOMO IERS"
+                      },
+                      {
+                        "fieldName": "identificador",
+                        "label": "Identificador"
+                      },       
+                      {
+                        "fieldName": "orden_precision",
+                        "label": "Órden"
+                      },     
+                      {
+                        "fieldName": "agencia_sigla",
+                        "label": "Procesada Por"
+                      },
+                    
+                    ]
+                  }
+                ],
               },
               definitionExpression:"es_activa_gnss = 1",                  
             },
@@ -535,7 +558,8 @@
 
   <script>
     (async () => setTimeout(() => {
-      console.log(document.querySelector('.esri-legend__layer-body').childNodes[0].childNodes[1])    
+      
+      //console.log(document.querySelector('.esri-legend__layer-body').childNodes[0].childNodes[1])    
       document.querySelector('.esri-legend__layer-body').childNodes[0].childNodes[1].innerHTML = `
       <div class="esri-legend__layer-row"><div class="esri-legend__layer-cell esri-legend__layer-cell--symbols"><img alt="Pertenece a dos redes" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAA2klEQVQ4je2SPwqCcBiGH6HdAwgNLd7gNwkOTrWFqxKdQggihw7QAUSh2ck9EXLyAEGLkeA9GgqSSuGXLVHv9v17eD94B3xYgz/wO4GGbeOrKlUY4gNVH6ARBPiTCVZdg65jeh4zIJcGLhb4QrAS4lprGrguI11nv9mwzDLWMsChpt1hTQkB4zHzLGPLi/fbgFWasptOsV4Nz+frjoxDFIVtUWA9uqxrOByI2u5agXFM6TjP/TSlvL0rBwTyJCE6HjGbzaLgREd0OmNzy92jeuWw8/gdoLR+EHgB++87TAGjkeIAAAAASUVORK5CYII=" border="0" width="20" height="20" class="esri-legend__symbol" style="opacity: 1;"></div><div class="esri-legend__layer-cell esri-legend__layer-cell--info">Estaciones SIRGAS (Órden Cero)</div></div>
       <div class="esri-legend__layer-row"><div class="esri-legend__layer-cell esri-legend__layer-cell--symbols"><img alt="Red Activa GNSS" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAArUlEQVQ4je2Tuw3DMAwFz0AAT8DOG2QJegjPI2keD2Eu4Q3ScYJ0KSjEafKRkSZGWOkDHQ6P1Ikv1+kP/E1gFiX1gl1mAApge4AqyqLLtneDtaBudHuA6Zxi4dVHFFRh7shAbgIOUwDcwMaquMSZKMmtEXh19NldLzsydKMASTTMYDOuzWkDAtnGyFEeXNcCRKebgbgxmpGGKSKo1vnVm3dzaHCfv4/qGF/vYMAbLfQ1irlBsU8AAAAASUVORK5CYII=" border="0" width="20" height="20" class="esri-legend__symbol" style="opacity: 1;"></div><div class="esri-legend__layer-cell esri-legend__layer-cell--info">Estaciones Locales (Órden Uno)</div></div>
@@ -550,7 +574,7 @@
           <div class="esri-legend__layer-row"><div class="esri-legend__layer-cell esri-legend__layer-cell--symbols"><img alt="Red Activa GNSS" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAArUlEQVQ4je2Tuw3DMAwFz0AAT8DOG2QJegjPI2keD2Eu4Q3ScYJ0KSjEafKRkSZGWOkDHQ6P1Ikv1+kP/E1gFiX1gl1mAApge4AqyqLLtneDtaBudHuA6Zxi4dVHFFRh7shAbgIOUwDcwMaquMSZKMmtEXh19NldLzsydKMASTTMYDOuzWkDAtnGyFEeXNcCRKebgbgxmpGGKSKo1vnVm3dzaHCfv4/qGF/vYMAbLfQ1irlBsU8AAAAASUVORK5CYII=" border="0" width="20" height="20" class="esri-legend__symbol" style="opacity: 1;"></div><div class="esri-legend__layer-cell esri-legend__layer-cell--info">Estaciones Locales (Órden Uno)</div></div>
         `;  
       },1000);      
-      console.log('cargo', e.target)
+      //console.log('cargo', e.target)
     });
 
     
