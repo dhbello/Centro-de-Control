@@ -1831,6 +1831,15 @@ a.buttonCem {
   color: #fff;
 }
 
+/*tablero de control*/
+.centroMaestra .escala .escala-content .text .title {
+  color: #fff;
+}
+
+.centroMaestra .escala .tab-pane {
+  color: #fff;
+}
+
 /*Cards generales*/
 .card-component .card {
   border-radius: 5px;

@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-JB8FKBC408"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-JB8FKBC408");
+    </script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Centro de Control Geod&eacute;sico Nacional</title>
+    <link rel="icon" href="images-home/logos/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css"
+    />
+    <link
+    href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+    rel="stylesheet"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link href="../../css/style.css" rel="stylesheet" />
+    <link href="/css/navbar-footer.css" rel="stylesheet">
+    <link href="../../css/maestra.css" rel="stylesheet" />
+  </head>
+  <body class="main redes centroMaestra redActivaPagina">
+    <!-- header -->
+    <div class="barra_gov">
+      <a class="logo-gov" href="https://www.gov.co/home/" target="_blank">
+          <img alt="Logo Gov.co" src="/images/nav/header_govco.png">
+      </a>
+    </div>
+    <div class="navbarIgacContainer origen"></div>
+    <nav class="nav nav-underline"></nav>
+    <section class="portada-igac portadaSub redActiva">
+      <div class="container block-igac">
+        <div class="row contenido-portada m-0">
+          <!-- <div class="col-md-12 position-absolute get-backContainer">
+            <a class="get-back" href="../red_geodesica.html"
+              ><img src="/images/iconos/arrow-back.svg" alt="" />Volver a la Red
+              Geodésica GNSS</a
+            >
+          </div> -->
+          <div class="texto-portada mt-5">
+            <h1>Centro de procesamiento IGAC</h1>
+            <p>
+              El centro de procesamiento IGA - IGAC es uno de los 10 centros de análisis oficiales de
+              SIRGAS, encargado además de apoyar la generación de la red de estaciones GNSS SIRGAS-CON,
+              la generación de coordenadas de las estaciones locales o de órden uno.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- <div class="logosPortada">
+      <div class="logo tipeD">
+        <img
+          src="/images/patrocinadores/Sena_Colombia_logo.png"
+          alt="Servicio Geologico"
+        />
+      </div>      
+      <div class="logo">
+        <img
+          src="/images/patrocinadores/serviciogeologico.svg"
+          alt="Servicio Geologico"
+        />
+      </div>
+      <div class="logo">
+        <img
+          src="/images/patrocinadores/logo_eaab.png"
+          alt="Servicio Geologico"
+        />
+      </div>
+      <div class="logo tipec">
+        <img
+          src="/images/patrocinadores/Galileo_Instruments_logotipo.png"
+          alt="Servicio Geologico"
+        />
+      </div>
+    </div> -->
+    
+    <div id="redActivaPasiva" class="container containerIgac">
+        <section id="acceso" class="section">
+          <div class="row">
+            <div class="col-md-6">
+              <a href="https://www.sirgas.org/es/weekly-solutions" target="_blank">
+                <div class="faqs dobles tipo-a">
+                  <div class="title">Soluciones semanales SIRGAS (Estaciones GNSS de referencia de órden Cero.)</div>
+                </div>
+              </a>
+            </div>
+            <!-- <div class="col-md-6">
+              <a href="redes_interna/red_pasiva_nivelacion.html">
+                <div class="faqs dobles tipo-b">
+                  <div class="title">
+                    Red de Vértices Pasivos y de Control Vertical
+                  </div>
+                </div>
+              </a>
+            </div> -->
+          </div>
+        </section>
+
+
+        <section id="visor" class="section">
+          <h2 class="title">
+            Visor centro de procesamiento IGA - IGAC
+          </h2>
+          <div id="viewDiv"></div>
+        </section>
+  
+        
+      </div>
+
+
+
+
+    <div class="typeB">
+      <div class="container containerIgac">
+        <section class="section pt-0">
+          <div class="m-auto w-100">
+            <div id="table-head">
+              <div id="new-search-area"></div>
+              <div id="head-1">
+                <div id="filtros"></div>
+                <div id="entradas"></div>
+                <div id="resultados">
+                  <p>Ver:</p>
+
+                  <div>
+                    <a id="btn_25">25</a>
+                    <a id="btn_50">50</a>
+                    <a id="btn_100">100</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <table id="tbl1" class="display">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Ubicación</th>
+                  <th>Estado</th>
+                  <th>Contribuyente</th>
+                  <th class="invisible"></th>
+                  <th class="invisible"></th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </section>
+      </div>
+    </div>
+
+ 
+    <!--<section class="section overflow-hidden sectionEstaciones">
+        <div class="resourses-title" style="text-align: center;">
+            <h2>Estaciones de la red</h2>
+        </div>
+
+        <div class="row">
+            <div class="m-auto">
+                <table id="redTable" class="display">
+                    <thead>
+                        <tr class="filterContainer"></tr>
+                        <tr>
+                            <th>ID</th>
+                            <th>municipio</th>
+                            <th>Estado</th>
+                            <th>Nombre de la red</th>
+                            <th>Entidad</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AMTE00BRA</td>
+                            <td>Nari&ntilde;o</td>
+                            <td>Inactivo</td>
+                            <td>IGb14-Core, ITRF2014</td>
+                            <td>EABB</td>
+                            <td><a href="" class="modalButton" data-toggle="modal"
+                                    data-target="#exampleModal">M&aacute;s</a></td>
+                        </tr>
+                        <tr>
+                            <td>AMTE00BRA</td>
+                            <td>Nari&ntilde;o</td>
+                            <td>Activo</td>
+                            <td>IGb14-Core, ITRF2014</td>
+                            <td>EABB</td>
+                            <td><a href="" class="modalButton" data-toggle="modal"
+                                    data-target="#exampleModal">M&aacute;s</a></td>
+                        </tr>
+                        <tr>
+                            <td>AMTE00BRA</td>
+                            <td>Antioquia</td>
+                            <td>Activo</td>
+                            <td>IGb14-Core, ITRF2014</td>
+                            <td>EABB</td>
+                            <td><a href="" class="modalButton" data-toggle="modal"
+                                    data-target="#exampleModal">M&aacute;s</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="m-auto">
+            <table id="tbl" class="display">
+                <thead>
+                    <tr>
+                        <th>Identificador</th>
+                        <th>Municipio, departamento</th>
+                        <th>Estado</th>
+                        <th>Nombre de la red</th>
+                        <th>Entidad</th>
+                        <th>Ver</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        </div>
+    </section>-->
+
+    <footer class="footer origen"></footer>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script src="/index.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://js.arcgis.com/4.24/esri/themes/light/main.css"
+    />
+    <script src="https://js.arcgis.com/4.24/"></script>
+    <script>
+      // (async () => {
+      //   let url = "https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGNSS/MapServer?f=pjson";
+      // const datos = await fetch(url);
+      // const res = await datos.json();
+      // console.log(res)
+      // })();
+      
+      require([
+        "esri/config",
+        "esri/Map",
+        "esri/views/MapView",
+        "esri/widgets/Home",
+        "esri/widgets/ScaleBar",
+        "esri/widgets/LayerList",
+        "esri/widgets/Legend",
+        "esri/widgets/Expand",
+        "esri/widgets/Compass",
+        "esri/geometry/Extent",
+        "esri/layers/MapImageLayer",
+        "esri/layers/VectorTileLayer",
+      ], (
+        esriConfig,
+        Map,
+        MapView,
+        Home,
+        ScaleBar,
+        LayerList,
+        Legend,
+        Expand,
+        Compass,
+        Extent,
+        MapImageLayer,
+        VectorTileLayer
+      ) => {
+        esriConfig.apiKey =
+          "AAPK2a2e861a0c794bfdb29a1b4ce47b1583OBbY7CvHSkUPhQ20FG1hZEbAl5GmTTZcs-cyoy2tw5to5j_pJiiTW6J_KRbBx-qS";
+        const vtlLayer = new VectorTileLayer({
+          url: "https://tiles.arcgis.com/tiles/RVvWzU3lgJISqdke/arcgis/rest/services/Mapa_base_topografico/VectorTileServer",
+        });
+        const layer = new MapImageLayer({
+          url: "https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer",
+          sublayers: [
+            {
+              id: 1,
+              visible: true,
+              popupTemplate: {
+                title: "Atributos",
+                outFields: [""],
+                content: [
+                  {
+                    "type": "fields",
+                    "fieldInfos": [
+                      {
+                        "fieldName": "numero_domo_iers",
+                        "label": "Número DOMO IERS"
+                      },
+                      {
+                        "fieldName": "identificador",
+                        "label": "Identificador"
+                      },       
+                      {
+                        "fieldName": "orden_precision",
+                        "label": "Órden"
+                      },     
+                      {
+                        "fieldName": "agencia_sigla",
+                        "label": "Procesada Por"
+                      },
+                    
+                    ]
+                  }
+                ],
+              },
+              definitionExpression:"es_activa_gnss = 1",                  
+            },
+          ],
+        });
+        const map = new Map({
+          layers: [vtlLayer, layer],
+        });
+        const view = new MapView({
+          container: "viewDiv",
+          map: map,
+          center: [-74, 4], // longitude, latitude
+          zoom: 4.8,
+        });        
+        const homeBtn = new Home({
+          view: view,
+        });
+        const scaleBar = new ScaleBar({
+          view: view,
+          unit: "dual",
+        });
+        const layerList = new LayerList({          
+          view: view,
+        });
+        const legend = new Legend({
+          view: view,          
+        });
+        // console.log(legend)
+        const layerListExpand = new Expand({
+          view: view,
+          content: layerList,
+          expanded: false,
+          expandTooltip: "Expand LayerList",
+          mode: "floating",
+        });
+        // console.log(legend)
+        const legendExpand = new Expand({
+          view: view,
+          content: legend,
+          expandTooltip: "Expand Legend",
+          expanded: true,
+          mode: "floating",
+        });
+        const compass = new Compass({
+          view: view,
+          visible: false,
+        });
+        view.ui.add(homeBtn, "top-left");
+        view.ui.add(scaleBar, "bottom-right");
+        view.ui.add(layerListExpand, "top-right");
+        view.ui.add(legendExpand, "bottom-left");
+        view.ui.add(compass, "top-left");
+        layer.when(() => {
+          const initialExtent = Extent.fromJSON(layer.sourceJSON.initialExtent);
+          view.goTo(initialExtent);          
+        });
+        // load the Compass only when the view is rotated
+        view.watch("rotation", function (rotation) {
+          if (rotation && !compass.visible) {
+            compass.visible = true;
+          }
+        });
+      });
+    </script>
+
+    <script>
+      $("#tbl1 thead tr").clone(true).addClass("filters").appendTo("#filtros");
+
+      $(".filters th:first-child").hide();
+
+      var table = $("#tbl1").DataTable({
+        lengthChange: false,
+        ajax: {
+          url: url_backend + "/json_activa",
+          dataSrc: function (json) {
+            var obj = json;
+
+            var arr1 = [];
+
+            obj.map(function (i, e) {
+              i["ir"] =
+                "interna_red_activa.html?estacion=" +
+                i["t_id"] +
+                "&nombre=" +
+                i["redes"] +
+                "&id=" +
+                i["identificador"];
+              i["rinex"] =
+                "rinex.html?estacion=" +
+                i["identificador"] +
+                "&id=" +
+                i["t_id"];
+
+              arr1.push(i);
+            });
+
+            json.data = arr1;
+
+            return json.data;
+          },
+        },
+        columns: [
+          {
+            data: "identificador",
+          },
+          {
+            data: "municipio",
+          },
+
+          {
+            data: "estado",
+            render: function (dataField) {
+              var clase = "inactivo";
+              var status = "Inactivo";
+              if (dataField == "Activa") {
+                clase = "activo";
+                status = "Activa";
+              } else if (dataField == null) {
+                clase = "vacio";
+                dataField = "";
+                status = "";
+              }
+              return '<span class="' + clase + '">' + status + "</span>";
+            },
+          },
+          {
+            data: "sigla",
+          },
+
+          {
+            data: "rinex",
+            render: function (dataField) {
+              return '<a href="' + dataField + '">Archivo Rinex</a>';
+            },
+          },
+          {
+            data: "ir",
+            render: function (dataField) {
+              return '<a href="' + dataField + '">Ver más</a>';
+            },
+          },
+        ],
+        language: {
+          decimal: "",
+          emptyTable: "No hay información",
+          info: "_TOTAL_ resultados",
+          infoEmpty: "0 resultados",
+          infoFiltered: "",
+          infoPostFix: "",
+          thousands: ",",
+          lengthMenu: "Ver _MENU_",
+          loadingRecords: "Cargando...",
+          processing: "Procesando...",
+          search: "",
+          zeroRecords: "Sin resultados encontrados",
+          searchPlaceholder: "Buscar",
+          paginate: {
+            first: "Primero",
+            last: "Ultimo",
+            next: "Siguiente",
+            previous: "Anterior",
+          },
+        },
+        initComplete: function () {
+          $("#tbl1_filter").detach().appendTo("#new-search-area");
+          $("#tbl1_info").detach().appendTo("#entradas");
+
+          $("#btn_25").on("click", function () {
+            table.page.len(25).draw();
+          });
+
+          $("#btn_50").on("click", function () {
+            table.page.len(50).draw();
+          });
+
+          $("#btn_100").on("click", function () {
+            table.page.len(100).draw();
+          });
+
+          this.api()
+            .columns()
+            .every(function (i) {
+              var column = this;
+
+              var select = $(
+                '<select class="form-select"><option value="">' +
+                  $("#filtros tr").children().eq(i).text() +
+                  "</option></select>"
+              )
+                .appendTo($("#filtros tr").children().eq(i).empty())
+                .on("change", function () {
+                  var val = $.fn.dataTable.util.escapeRegex($(this).val());
+
+                  column.search(val ? "^" + val + "$" : "", true, false).draw();
+                });
+
+              column
+                .data()
+                .unique()
+                .sort()
+                .each(function (d, j) {
+                  select.append('<option value="' + d + '">' + d + "</option>");
+                });
+            });
+        },
+      });
+    </script>
+
+
+  <script>
+    (async () => setTimeout(() => {
+      
+      //console.log(document.querySelector('.esri-legend__layer-body').childNodes[0].childNodes[1])    
+      document.querySelector('.esri-legend__layer-body').childNodes[0].childNodes[1].innerHTML = `
+      <div class="esri-legend__layer-row"><div class="esri-legend__layer-cell esri-legend__layer-cell--symbols"><img alt="Pertenece a dos redes" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAA2klEQVQ4je2SPwqCcBiGH6HdAwgNLd7gNwkOTrWFqxKdQggihw7QAUSh2ck9EXLyAEGLkeA9GgqSSuGXLVHv9v17eD94B3xYgz/wO4GGbeOrKlUY4gNVH6ARBPiTCVZdg65jeh4zIJcGLhb4QrAS4lprGrguI11nv9mwzDLWMsChpt1hTQkB4zHzLGPLi/fbgFWasptOsV4Nz+frjoxDFIVtUWA9uqxrOByI2u5agXFM6TjP/TSlvL0rBwTyJCE6HjGbzaLgREd0OmNzy92jeuWw8/gdoLR+EHgB++87TAGjkeIAAAAASUVORK5CYII=" border="0" width="20" height="20" class="esri-legend__symbol" style="opacity: 1;"></div><div class="esri-legend__layer-cell esri-legend__layer-cell--info">Estaciones SIRGAS (Órden Cero)</div></div>
+      <div class="esri-legend__layer-row"><div class="esri-legend__layer-cell esri-legend__layer-cell--symbols"><img alt="Red Activa GNSS" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAArUlEQVQ4je2Tuw3DMAwFz0AAT8DOG2QJegjPI2keD2Eu4Q3ScYJ0KSjEafKRkSZGWOkDHQ6P1Ikv1+kP/E1gFiX1gl1mAApge4AqyqLLtneDtaBudHuA6Zxi4dVHFFRh7shAbgIOUwDcwMaquMSZKMmtEXh19NldLzsydKMASTTMYDOuzWkDAtnGyFEeXNcCRKebgbgxmpGGKSKo1vnVm3dzaHCfv4/qGF/vYMAbLfQ1irlBsU8AAAAASUVORK5CYII=" border="0" width="20" height="20" class="esri-legend__symbol" style="opacity: 1;"></div><div class="esri-legend__layer-cell esri-legend__layer-cell--info">Estaciones Locales (Órden Uno)</div></div>
+      `;      
+    }, 6000))();
+    
+
+    document.querySelector('#viewDiv').addEventListener('click', (e) => {
+      setTimeout(() => {
+        document.querySelector('.esri-legend__layer-body').childNodes[0].childNodes[1].innerHTML = `
+          <div class="esri-legend__layer-row"><div class="esri-legend__layer-cell esri-legend__layer-cell--symbols"><img alt="Pertenece a dos redes" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAA2klEQVQ4je2SPwqCcBiGH6HdAwgNLd7gNwkOTrWFqxKdQggihw7QAUSh2ck9EXLyAEGLkeA9GgqSSuGXLVHv9v17eD94B3xYgz/wO4GGbeOrKlUY4gNVH6ARBPiTCVZdg65jeh4zIJcGLhb4QrAS4lprGrguI11nv9mwzDLWMsChpt1hTQkB4zHzLGPLi/fbgFWasptOsV4Nz+frjoxDFIVtUWA9uqxrOByI2u5agXFM6TjP/TSlvL0rBwTyJCE6HjGbzaLgREd0OmNzy92jeuWw8/gdoLR+EHgB++87TAGjkeIAAAAASUVORK5CYII=" border="0" width="20" height="20" class="esri-legend__symbol" style="opacity: 1;"></div><div class="esri-legend__layer-cell esri-legend__layer-cell--info">Estaciones SIRGAS (Órden Cero)</div></div>
+          <div class="esri-legend__layer-row"><div class="esri-legend__layer-cell esri-legend__layer-cell--symbols"><img alt="Red Activa GNSS" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAArUlEQVQ4je2Tuw3DMAwFz0AAT8DOG2QJegjPI2keD2Eu4Q3ScYJ0KSjEafKRkSZGWOkDHQ6P1Ikv1+kP/E1gFiX1gl1mAApge4AqyqLLtneDtaBudHuA6Zxi4dVHFFRh7shAbgIOUwDcwMaquMSZKMmtEXh19NldLzsydKMASTTMYDOuzWkDAtnGyFEeXNcCRKebgbgxmpGGKSKo1vnVm3dzaHCfv4/qGF/vYMAbLfQ1irlBsU8AAAAASUVORK5CYII=" border="0" width="20" height="20" class="esri-legend__symbol" style="opacity: 1;"></div><div class="esri-legend__layer-cell esri-legend__layer-cell--info">Estaciones Locales (Órden Uno)</div></div>
+        `;  
+      },1000);      
+      //console.log('cargo', e.target)
+    });
+
+    
+  </script>
+  </body>
+</html>
