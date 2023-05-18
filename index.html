@@ -80,6 +80,20 @@
       </div>
     </section>
     <div class="logosPortada">
+      
+      <div class="logo">
+        <img
+          src="images/patrocinadores/igac_0.jpg"
+          alt="Servicio Geologico"
+        />
+      </div>
+      <div class="logo">
+        <img
+          src="images/patrocinadores/serviciogeologico.svg"
+          alt="Servicio Geologico"
+        />
+      </div>
+      
       <div class="logo tipeD">
         <img
           src="images/patrocinadores/Sena_Colombia_logo.png"
@@ -92,12 +106,7 @@
           alt="Servicio Geologico"
         />
       </div> -->
-      <div class="logo">
-        <img
-          src="images/patrocinadores/serviciogeologico.svg"
-          alt="Servicio Geologico"
-        />
-      </div>
+      
       <div class="logo">
         <img
           src="images/patrocinadores/logo_eaab.png"
@@ -164,7 +173,7 @@
             <h2 class="title">&iquest;Qu&eacute; est&aacute;s buscando?</h2>
           </div>
           <div class="col-md-4 mb-3 card-container" data-toggle="tooltip" data-placement="top" 
-            title="Explora las características y forma de conexión a los servicios NTRIP/VRS.">
+            title="Explora las características y forma de conexión a los servicios PPP, NTRIP Y VRS.">
             <a class="ref" href="https://redgeodesica.igac.gov.co/herramientas/servicios.html">
               <div class="card card-content">
                 <img src="images/images-inicio/img-card-1_1.svg" alt="" />
@@ -326,6 +335,7 @@
             }
         ];
       const cargarMapa = (arreglo) => {
+        
         require([
         "esri/config",
         "esri/Map",
@@ -415,6 +425,10 @@
           }
         });
       });
+      
+      
+
+
       }
 
       cargarMapa(arreglo);
@@ -480,6 +494,7 @@
                                     }
                 ];
                 cargarMapa(arreglo);
+               
 
             } else {
                 const arreglo = [
@@ -498,6 +513,6 @@
         
         });
 
-            </script>
+            </script>           
   </body>
 </html>
