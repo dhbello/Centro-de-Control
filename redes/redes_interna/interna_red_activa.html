@@ -182,7 +182,7 @@
                             <tbody>
                                 <tr>
                                     <th>Coordenadas elipsoidales</th>
-                                    <th>Coordenadas elipsoidales</th>
+                                    <th>Coordenadas geocéntricas</th>
                                 </tr>
                             </tbody>
                             <tbody>
@@ -195,18 +195,18 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td id="altura">
-
-                                    </td>
-                                    <td id="z">
-
-                                    </td>
-                                </tr>
-                                <tr>
                                     <td id="longitud">
 
                                     </td>
                                     <td id="y">
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td id="altura">
+
+                                    </td>
+                                    <td id="z">
 
                                     </td>
                                 </tr>
@@ -218,7 +218,7 @@
                             Informaci&oacute;n de rastreo
                         </div>
                         <div class="item">
-                            Departamento: GPS y GLONASS
+                            Constelaciones: GPS y GLONASS
                         </div>
                         <div class="item">
                             Intervalo de Registro: 1 segundo (Hatanaka.gz) 15 segundos (Observado.gz)
@@ -455,7 +455,9 @@
 
                 document.getElementById('oficina').innerHTML = "Oficina: " + check(obj.agencia_nombre);
                 document.getElementById('direccion').innerHTML = "Dirección: " + check(obj.agencia_direccion);
-                document.getElementById('agencia_correo_electronico').innerHTML = "Email de contacto: " + check(obj.agencia_mail);
+                //document.getElementById('agencia_correo_electronico').innerHTML = "Email de contacto: " + check(obj.agencia_mail);
+                document.getElementById('agencia_correo_electronico').innerHTML = "Email de contacto: " + `<a href="mailto:contactenos@igac.gov.co">contactenos@igac.gov.co</a>`;
+                
 
 
                 document.getElementById('latitud').innerHTML = "Latitud: " + check(obj.estacion_latitud);
