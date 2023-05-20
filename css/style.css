@@ -413,11 +413,9 @@ input[type="time"] {
 }
 
 .get-back {
-  position: absolute;
-  top: 0;
   font-size: 14px;
   font-family: "Gill Sans Std Italic";
-  margin-top: 50px;
+  margin-bottom: 10px;
   opacity: 1;
   color: #58595b;
   display: flex;
