@@ -11,7 +11,9 @@ var popup;
 $.getJSON("/json/popup.json", function (datos) {
   popup = datos.popup;
 });
-
+//  icono y boton para el offcanvas de autenticacion de usuario ==================================
+//  <img id="icono-user"  src="/images/iconos/person-circle.svg"  data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample"></img>
+//================================================================================================
 if (document.querySelector(".navbarIgacContainer")) {
   const navbarIgacContainer = document.querySelector(".navbarIgacContainer");
   navbarIgacContainer.innerHTML = `
@@ -35,7 +37,7 @@ if (document.querySelector(".navbarIgacContainer")) {
               </li>
               <li>
                   
-                 <img id="icono-user"  src="/images/iconos/person-circle.svg"  data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample"></img>
+                
 
               
                 
