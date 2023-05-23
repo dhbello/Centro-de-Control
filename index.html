@@ -49,7 +49,19 @@
           <img alt="Logo Gov.co" src="/images/nav/header_govco.png">
       </a>
     </div>
+    
+
     <div class="navbarIgacContainer origen"></div>
+
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <!-- <form class="d-flex" role="search"> -->
+          <input class="form-control me-2" id="buscar-bar" type="search" placeholder="Buscar..." aria-label="Search">
+          <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+        <!-- </form> -->
+      </div>
+    </nav>
+
     <div class="w-100 advice" style="position: absolute;padding: 10px; color: gray;" class="bg-info">
       <div class="container containerIgac">
         Señor usuario actualmente el IGAC se encuentra haciendo ajustes a la plataforma que se encuentra en construcción y no se han dispuesto los servicios de manera oficial. Recuerde consultar toda la información geodésica actualizada en nuestro portal Colombia en Mapas.
@@ -513,6 +525,16 @@
         
         });
 
-            </script>           
+            </script>    
+            
+        <script>
+          const buscarBar = document.querySelector('#buscar-bar');
+          
+          const buscar = () => {
+            console.log('buscando');
+          }
+          buscarBar.addEventListener('keypress', buscar);
+
+        </script>
   </body>
 </html>
