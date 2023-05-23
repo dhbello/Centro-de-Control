@@ -53,16 +53,6 @@
 
     <div class="navbarIgacContainer origen"></div>
 
-<<<<<<< HEAD
-    <nav class="navbar bg-body-tertiary">
-      <div class="container-fluid">
-        <!-- <form class="d-flex" role="search"> -->
-          <input class="form-control me-2" id="buscar-bar" type="search" placeholder="Buscar..." aria-label="Search">
-          <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
-        <!-- </form> -->
-      </div>
-    </nav>
-=======
     <!-- buscador -->
     <nav class="navbar bg-body-tertiary">
       <div class="container-fluid">        
@@ -74,7 +64,7 @@
 
       </div>
     </div>
->>>>>>> 239d8363e40fe6ef5e00fd611d1605a11390a128
+
 
     <div class="w-100 advice" style="position: absolute;padding: 10px; color: gray;" class="bg-info">
       <div class="container containerIgac">
@@ -343,11 +333,7 @@
     <script src="https://js.arcgis.com/4.24/"></script>
 
 
-    <script>
-
-         
-        
-        
+    <script>       
 
         const arreglo = [
             {
@@ -360,6 +346,7 @@
                 //   definitionExpression:"es_activa_gnss = 1",                  
             }
         ];
+
       const cargarMapa = (arreglo) => {
         
         require([
@@ -540,21 +527,12 @@
         });
 
 
-            </script>    
-            
-        <script>
-          const buscarBar = document.querySelector('#buscar-bar');
-          
-          const buscar = () => {
-            console.log('buscando');
-          }
-          buscarBar.addEventListener('keypress', buscar);
+    </script>               
+        
 
-        </script>
-
-            </script>        
+                   
             
-            <script>
+    <script>
 
               const arregloContenido = [
                 {nombre: 'red geodesica', titulo: 'Red geodésica', url:'/redes/red_geodesica.html', img:'./images/images-redes/red geodesica.png'},
@@ -603,16 +581,13 @@
                 if(resultado == ""){
                   resultadoBusqueda.innerHTML = "";
                 }
-                resultadoBusqueda.innerHTML = resultado;
-
-
-                   
+                resultadoBusqueda.innerHTML = resultado;                  
 
               }
 
               inputBuscar.addEventListener('keyup', buscarContenido);
 
-            </script>
->>>>>>> 239d8363e40fe6ef5e00fd611d1605a11390a128
+    </script>
+
   </body>
 </html>
