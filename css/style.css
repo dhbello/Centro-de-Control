@@ -1856,6 +1856,7 @@ a.buttonCem {
 
 .card-component .card.type-5 .head {
   background: #eb6654;
+  min-height: 11vh;  
 }
 
 .card-component .card.type-6 .head {
@@ -2531,6 +2532,7 @@ label {
   justify-content: center;
   height: 100px;
   padding: 20px;
+  margin-top: 5vh;
 }
 
 .logosPortada .logo {
@@ -2787,6 +2789,23 @@ a {
   color: red;
   font-family:'Times New Roman', Times, serif;
 }
+
+/* card resultado busqueda */
+.col-sm-3.mb-3.mb-sm-0 {    
+  padding: 10px;
+  max-width: 20vw;
+  border: 1px solid rgb(160, 154, 154);
+  border-radius: 10px;  
+  margin-right: 10px;
+  margin-top: 10px;
+  transition-duration: 400ms;
+}
+
+.col-sm-3.mb-3.mb-sm-0:hover {  
+  box-shadow: 5px 5px 10px rgb(159, 162, 162);  
+}
+
+
 
 
 
