@@ -614,6 +614,7 @@ a:hover {
 /*páginas portada inicio y sub sección media querys*/
 @media (max-width: 1192px) {
     .portada {
+        margin-top: 130px;
         padding: 0 30px;
     }
     .portada-igac .contenido-portada {
@@ -652,7 +653,7 @@ a:hover {
     }
     .portada {
         margin-top: 50px;
-        padding: 0 15px;
+        padding: 0 0px;
     }
     .container-portada .text-content {
         width: 100%;
@@ -662,7 +663,7 @@ a:hover {
     }
     /*sub sección media querys*/
     .portada-igac.portadaSub {
-        height: 420px;
+        height: inherit;
     }
     .portada-igac .contenido-portada {
         padding: 0 15px;
@@ -672,7 +673,8 @@ a:hover {
     }
     .portada-igac .texto-portada {
         width: 100%;
-        margin-top: 40px;
+        margin-top: 30px;
+        padding-bottom: 30px;
     }
     .portada-igac.portadaSub.origen.herramientas {
         background-size: 70%;
