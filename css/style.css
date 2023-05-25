@@ -2789,19 +2789,18 @@ a {
   color: var(--azul-igac);
 }
 
-.col-sm-3.mb-3.mb-sm-0 {    
+.unit-cards {
+  height: 210px;    
   position: relative;
   padding: 10px 10px 40px;
-  max-width: 20vw;
   border: 1px solid #D8E3EF !important;
   border-radius: 10px;  
-  margin-right: 10px;
   margin-top: 10px;
   margin-bottom: 10px !important;
   transition-duration: 400ms;  
 }
 
-.col-sm-3.mb-3.mb-sm-0:hover {  
+.unit-cards:hover {  
   border: 1px solid #3366cc !important;
   transition: .3s all;
 }
