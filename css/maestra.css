@@ -125,6 +125,8 @@ a:hover {
 }
 
 .advice {
+    color: gray;
+    padding: 15px 0;
     background: var(--bg-igac-gris);
     border-top: 1px solid #d9d9d9;
 }
@@ -598,7 +600,7 @@ a:hover {
     }
     /*media querys portada secundaria*/
     .portada-igac .texto-portada {
-        width: 50%;
+        width: 70%;
     }
     .portada-igac.portadaSub h1 {
         font-size: 32px;
