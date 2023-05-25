@@ -86,6 +86,12 @@
     font-style: normal;
 }
 
+:root {
+    --azul-igac: #33669e;
+    --azul-igac-dark: #234570;
+    --bg-igac-gris: #eff0f1;    
+}
+
 body {
     line-height: 1.5;
     font-family: 'Gill Sans Std';
@@ -105,10 +111,6 @@ button:focus {
     margin-bottom: 20px;
 }
 
-.divider.w-title {
-    margin-bottom: 60px;
-}
-
 img {
     width: 100%;
     display: block;
@@ -122,6 +124,11 @@ a:hover {
     display: contents;
 }
 
+.advice {
+    background: var(--bg-igac-gris);
+    border-top: 1px solid #d9d9d9;
+}
+
 /*bloque igac*/
 .block-igac {
     max-width: 1170px;
@@ -130,11 +137,9 @@ a:hover {
 }
 
 /*portada*/
-.section-portada {
-    background-color: #f7fdd2;
-}
-.origen .section-portada {
-    background-color: #e4f2eb;
+.origen .section-portada .portada {
+    border-bottom: 6px solid var(--azul-igac);
+    margin-bottom: 60px;
 }
 .container-portada {
     background-repeat: no-repeat;
@@ -145,9 +150,6 @@ a:hover {
     display: flex;
     align-items: center;
 }
-.origen .container-portada {
-    background-image: url('/../images/bg-portada.svg');
-}
 .colombiaMapas .container-portada {
     background-image: url('/../images/home/bg-portada.svg');
 }
@@ -157,7 +159,7 @@ a:hover {
 }
 .container-portada .text-content {
     width: 520px;
-    color: #0052ae;
+    color: var(--azul-igac);
 }
 .container-portada .text-content .title{
     font-size: 40px;
@@ -168,7 +170,7 @@ a:hover {
 .container-portada .text-content .summary {
     line-height: 1.3rem;
     font-size: 18px;
-    color: #3595e0;
+    color: var(--azul-igac);
 }
 
 .colombiaMapas .container-portada .text-content .summary {
@@ -178,7 +180,7 @@ a:hover {
 
 /*páginas portada inicio y sub sección*/
 .portada-igac.portadaSub {    
-    height: 400px;
+    height: 300px;
     display: flex;
 }
 
@@ -201,70 +203,88 @@ a:hover {
 }
 
 /*colores de portadas de subsecciones*/
-.geodesicaMaestra .portada-igac.portadaSub.origen {
+.geodesicaMaestra .portada-igac.portadaSub.origen .contenido-portada {
     background: #fdfbf0;
     background-repeat: no-repeat;
     background-position: right bottom;
     background-size: 45%;
 }
-.guiasMaestra .portada-igac.portadaSub.origen {
+
+.guiasMaestra .portada-igac.portadaSub.origen .contenido-portada {
     background: #d8e8e3;
 }
-.normaMaestra .portada-igac.portadaSub.origen {
+
+.normaMaestra .portada-igac.portadaSub.origen .contenido-portada {
     background: #f2dfd4;
 }
-.datosMaestra .portada-igac.portadaSub.origen {
+.datosMaestra .portada-igac.portadaSub.origen .contenido-portada {
     background: #f3e3de;
 }
-.modelosMaestra .portada-igac.portadaSub.origen {
+.modelosMaestra .portada-igac.portadaSub.origen .contenido-portada {
     background: #e7e3fa;
 }
-.herramientasMaestra .portada-igac.portadaSub.origen {
+
+.aplicacionesMaestra .portada-igac.portadaSub.origen .contenido-portada {
     background: #d3d9e5;
 }
-.aplicacionesMaestra .portada-igac.portadaSub.origen {
-    background: #d3d9e5;
-}
-.serviciosMaestra .portada-igac.portadaSub.origen {
+.serviciosMaestra .portada-igac.portadaSub.origen .contenido-portada {
     background: #dbdfe1;
 }
-.serviciosMaestra .portada-igac.portadaSub.rinex {
+.serviciosMaestra .portada-igac.portadaSub.rinex .contenido-portada {
     background: #d9dfe1;
 }
-.geodesicaMaestra .portada-igac.portadaSub.redActiva{
+.geodesicaMaestra .portada-igac.portadaSub.redActiva .contenido-portada {
     background: #dfdaf7;
 }
-.geodesicaMaestra .portada-igac.portadaSub.redPasiva {
+.geodesicaMaestra .portada-igac.portadaSub.redPasiva .contenido-portada {
     background: #e4f2ec;
 }
-.gavimetricaMaestra .portada-igac.portadaSub.redGavimetrica {
-    background: #eff5fc;
+
+.verde-pasiva {
+    background-color: #e4f2ec;
 }
-.geomagneticaMaestra .portada-igac.portadaSub.redGeomagnetica {
+
+.lila-activa {
+    background-color: #dfdaf7;
+}
+.gavimetricaMaestra .portada-igac.portadaSub.redGavimetrica .contenido-portada {
+    background: #eff5fc;
+    overflow: hidden;
+}
+.geomagneticaMaestra .portada-igac.portadaSub.redGeomagnetica .contenido-portada {
     background: #f9f1f0;
 }
 .geodesicaMaestra .portada-igac.portadaSub.portadaTable.origen {
     background-color: #e4f2ea;
 }
-.tableroMaestra .portada-igac.portadaSub.portadaTable.origen {
+.tableroMaestra .portada-igac.portadaSub.portadaTable.origen .contenido-portada {
     background: #f9ede0;
 }
+
+.portada-igac.portadaSub .contenido-portada {
+    justify-content: center;
+    text-align: center;
+    border: 1px solid #D8E3EF !important;
+    border-radius: 20px;
+}
+
 .portada-igac.portadaSub h1 {
     margin-top: 0;
-    color: #0052ae;
+    color: var(--azul-igac);
     font-size: 40px;
     line-height: 1;
     margin-bottom: 0;
 }
+
 .portada-igac.portadaSub p {
-    color: #3a80c2;
+    color: var(--azul-igac);
     margin-top: 20px;
     margin-bottom: 0;
     font-size: 18px;
     line-height: normal;
 }
 .portada-igac .texto-portada {
-    width: 485px;
+    width: 600px;
 }
 .portada-igac .ilustracion {
     position: absolute;
@@ -276,8 +296,9 @@ a:hover {
 /*tabs*/
 .tabs-hojas {
     background: transparent;
-    padding-top: 110px;
-    padding-bottom: 200px;
+    margin-top: 60px;
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 .container-tabs {
     display: flex;
@@ -293,11 +314,7 @@ a:hover {
 
 .tab-cont {
     width: 20%;
-    background: #fff;
-    box-shadow: 4px 0px 5px #d6d6d647;
     border-radius: 5px;
-    border-left: 5px solid #f1685a;
-    padding: 40px 30px;
 }
 
 .tab-cont .p-sticky {
@@ -310,35 +327,42 @@ a:hover {
     height: -webkit-fill-available;
 }
 .tab-cont label {
-    font-size: 15px;
+    font-size: 1.5rem;
     height: 15px;
-    color: #000;
+    color: #fff;
     margin-bottom: 40px;
     font-family: 'Gill Sans Std semi Bold';
 }
 .tab-cont button {
     width: 100%;
     border: inherit;
-    background: #fff;
+    background: var(--azul-igac);
     text-align: inherit;
-    padding: 20px 4px;
+    padding: 20px 30px;
     border-top: 1px solid #00000038;
 }
-.tab-cont button:last-child {
-    padding-bottom: 0;
+.tab-cont button:last-of-type {
+    border-bottom: 0;
 }
 .tab-cont button p {
     font-size: 15px;
     margin-bottom: 0;
-    color: #58595b;
+    color: #fff;
+    transition: all 0.3s ease;
 }
 .colombiaMapas .tab-cont button p {
     line-height: 23px;
     height: auto;
 }
 .tab-cont button:hover {
-    color: #3595e0;
+    color: #fff;
 }
+
+.tab-cont button p:hover {
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
 .tab-content {
     padding: 0 20px;
     width: 80%;
@@ -373,6 +397,7 @@ a:hover {
     margin: 20px 0 10px 0;    
 }
 .tab-content p {
+    color: #fff;
     font-weight: 100;
     margin-top: 20px
 }
@@ -390,7 +415,7 @@ a:hover {
     margin-right: 15px;
 }
 .tab-cont .but.active p {
-    color: #3595e0;
+    opacity: 0.6;
 }
 .colombiaMapas .tab-cont .but.active .icono {
     filter: saturate(100%);

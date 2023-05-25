@@ -73,7 +73,7 @@ nav a {
     position: sticky;
     top: 0;
     height: 60px;
-    background: #E9EAEB;
+    background: var(--bg-igac-gris);
     display: flex;
     justify-content: space-between;
 }
@@ -142,7 +142,7 @@ nav a {
 }
 
 .navbarigac ul li a.active {
-    color: #3366cc;
+    color: var(--azul-igac);
 }
 
 .nav-bar-toggle-igac {
@@ -236,10 +236,8 @@ footer {
 
 footer > .containerf,
 .gov-co-footer-pie > .containerf {
-    max-width: 1140px;
+    max-width: 1170px;
     width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
 }

@@ -12,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centro de Control Geod&eacute;sico Nacional</title>
-    <link rel="icon" href="images-home/logos/favicon.png">
+    <link rel="icon" href="/images/favicon.png">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
@@ -32,25 +32,34 @@
     <div class="navbarIgacContainer origen"></div>
     <nav class="nav nav-underline">
     </nav>
-    <section class="portada-igac portadaSub redGavimetrica">
+    <section class="portada-igac portadaSub redGavimetrica mt-4">
         <div class="container block-igac">
             <div class="d-flex contenido-portada">
+                <div class="col-md-12 position-absolute get-backContainer">
+                    <a class="get-back" href="/redes/red_geodesica.html"
+                      ><img src="/images/iconos/arrow-back.svg" alt="" />Volver a la Red
+                      Geodésica GNSS</a
+                    >
+                  </div>
                 <div class="texto-portada">
                     <h1>Red Gravim&eacute;trica</h1>
                     <p>
-                        Es la red de v&eacute;rtices materializados y ligadosunos con otros para dar informaci&oacute;n de precisi&oacute;n sobre la gravedad del terreno. Estos datos son necesarios para la generaci&oacute;n del modelo geoidal.
+                        Es la red de vértices materializados y ligados unos con otros para dar información de precisión sobre 
+                        la gravedad del terreno. Estos datos son necesarios para la generación del modelo geoidal.
                     </p>
                 </div>
             </div>
         </div>
     </section>
-    <div class="containercolor indicadoresMaestraRedes">
+    <div class="indicadoresMaestraRedes">
         <div class="container containerIgac borderB">
             <section class="section indicadores">
                 <div class="d-fex">
                     <div class="text">
-                        <div class="title">
-                            Indicadores
+                        <div class="title-box">
+                            <div class="title">
+                                Indicadores
+                            </div>
                         </div>
                         <p>Esta red proporciona indicadores relacionados a las caracter&iacute;sticas de los valores de gravedad: Orden, Tipo de Medida (absoluta, relativa), cantidades v&eacute;rtices medidos, cantidad municipios medidos, Rango de precisi&oacute;n Gravedad, Inter espaciado.</p>
                     </div>
@@ -110,29 +119,24 @@
                 </div>
             </div>
         </div>
-                <div class="container containerIgac">
-				      <section class="section visor row pb-0">
-				        <div class="iframe col-md-12">
-				          <h2 class="title">Visor de la Red Gravimétrica</h2>
-                                                   
-                      
-
-                      
-
-				          <div class="status d-flex position-absolute">
+            <div class="container containerIgac">
+                <section class="section visor row pb-0">
+                    <div class="iframe col-md-12">
+                        <div class="title-box">
+                            <h2 class="title">Visor de la Red Gravimétrica</h2>
+                        </div>
+                        <div class="status d-flex position-absolute">
                             <a href="https://www.colombiaenmapas.gov.co/?e=-81.28977649414276,-0.45841719313507073,-64.62351672852219,10.285446744373395,4686&b=igac&l=479&u=0&t=25&servicio=479" class="btn mb-4 text-center buttonCem">Ver en CEM</a>
-		                  </div>
-                          
-				          <div id="viewDiv"></div>
-				        </div>
-				      </section>
-
+                        </div>
+                        <div id="viewDiv"></div>
+                    </div>
+                </section>
+            </div>
         </div>
-    </div>
     <div class="containercolor">
         <div class="container containerIgac">
             <section class="section sumary">
-                <h2 class="title w-divider">Recursos destacados</h2>
+                <h2 class="title">Recursos destacados</h2>
                 <div class="divider w-title"></div>
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
