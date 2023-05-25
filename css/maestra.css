@@ -239,6 +239,14 @@ a:hover {
 .geodesicaMaestra .portada-igac.portadaSub.redPasiva .contenido-portada {
     background: #e4f2ec;
 }
+
+.verde-pasiva {
+    background-color: #e4f2ec;
+}
+
+.lila-activa {
+    background-color: #dfdaf7;
+}
 .gavimetricaMaestra .portada-igac.portadaSub.redGavimetrica .contenido-portada {
     background: #eff5fc;
     overflow: hidden;

@@ -49,6 +49,8 @@
           <img alt="Logo Gov.co" src="/images/nav/header_govco.png">
       </a>
     </div>
+    
+
     <div class="navbarIgacContainer origen"></div>
 
     <!-- buscador -->
@@ -64,6 +66,8 @@
     </div>
 
     <div class="w-100 advice" style="padding: 10px; color: gray;" class="bg-info">
+
+    <div class="w-100 advice" style="position: absolute;padding: 10px; color: gray;" class="bg-info">
       <div class="container containerIgac">
         Señor usuario actualmente el IGAC se encuentra haciendo ajustes a la plataforma que se encuentra en construcción y no se han dispuesto los servicios de manera oficial. Recuerde consultar toda la información geodésica actualizada en nuestro portal Colombia en Mapas.
       </div>
@@ -330,11 +334,7 @@
     <script src="https://js.arcgis.com/4.24/"></script>
 
 
-    <script>
-
-         
-        
-        
+    <script>       
 
         const arreglo = [
             {
@@ -347,6 +347,7 @@
                 //   definitionExpression:"es_activa_gnss = 1",                  
             }
         ];
+
       const cargarMapa = (arreglo) => {
         
         require([
@@ -526,9 +527,13 @@
         
         });
 
-            </script>        
+
+    </script>               
+        
+
+                   
             
-            <script>
+    <script>
 
               const arregloContenido = [
                 {nombre: 'red geodesica', titulo: 'Red geodésica', url:'/redes/red_geodesica.html', img:'./images/images-redes/red geodesica.png'},
@@ -577,15 +582,13 @@
                 if(resultado == ""){
                   resultadoBusqueda.innerHTML = "";
                 }
-                resultadoBusqueda.innerHTML = resultado;
-
-
-                   
+                resultadoBusqueda.innerHTML = resultado;                  
 
               }
 
               inputBuscar.addEventListener('keyup', buscarContenido);
 
-            </script>
+    </script>
+
   </body>
 </html>
