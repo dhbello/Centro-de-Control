@@ -43,7 +43,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <link href="../../css/style.css" rel="stylesheet" />
     <link href="/css/navbar-footer.css" rel="stylesheet">
-    <link href="../../css/maestra.css" rel="stylesheet" />
+    <link href="../../css/maestra.css" rel="stylesheet" />    
   </head>
   <body class="main redes centroMaestra redActivaPagina">
     <!-- header -->
@@ -56,14 +56,14 @@
     <nav class="nav nav-underline"></nav>
     <section class="portada-igac portadaSub redActiva">
       <div class="container block-igac">
-        <div class="row contenido-portada m-0">
+        <div class="row contenido-portada m-0  mt-4">
           <!-- <div class="col-md-12 position-absolute get-backContainer">
             <a class="get-back" href="../red_geodesica.html"
               ><img src="/images/iconos/arrow-back.svg" alt="" />Volver a la Red
               Geodésica GNSS</a
             >
           </div> -->
-          <div class="texto-portada mt-5">
+          <div class="texto-portada">
             <h1>Centro de procesamiento IGAC</h1>
             <p>
               El centro de procesamiento IGA - IGAC es uno de los 10 centros de análisis oficiales de
@@ -74,32 +74,7 @@
         </div>
       </div>
     </section>
-    <!-- <div class="logosPortada">
-      <div class="logo tipeD">
-        <img
-          src="/images/patrocinadores/Sena_Colombia_logo.png"
-          alt="Servicio Geologico"
-        />
-      </div>      
-      <div class="logo">
-        <img
-          src="/images/patrocinadores/serviciogeologico.svg"
-          alt="Servicio Geologico"
-        />
-      </div>
-      <div class="logo">
-        <img
-          src="/images/patrocinadores/logo_eaab.png"
-          alt="Servicio Geologico"
-        />
-      </div>
-      <div class="logo tipec">
-        <img
-          src="/images/patrocinadores/Galileo_Instruments_logotipo.png"
-          alt="Servicio Geologico"
-        />
-      </div>
-    </div> -->
+   
     
     <div id="redActivaPasiva" class="container containerIgac">
         <section id="acceso" class="section">
@@ -110,16 +85,7 @@
                   <div class="title">Soluciones semanales SIRGAS (Estaciones GNSS de referencia de órden Cero.)</div>
                 </div>
               </a>
-            </div>
-            <!-- <div class="col-md-6">
-              <a href="redes_interna/red_pasiva_nivelacion.html">
-                <div class="faqs dobles tipo-b">
-                  <div class="title">
-                    Red de Vértices Pasivos y de Control Vertical
-                  </div>
-                </div>
-              </a>
-            </div> -->
+            </div>           
           </div>
         </section>
 
@@ -174,6 +140,64 @@
         </section>
       </div>
     </div>
+
+
+    <table id="example" class="display" style="width:100%">
+      <thead>
+          <tr>
+              <th>Name</th>
+              <th>Position</th>
+              <th>Office</th>
+              <th>Age</th>
+              <th>Start date</th>
+              <th>Salary</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>Tiger Nixon</td>
+              <td>System Architect</td>
+              <td>Edinburgh</td>
+              <td>61</td>
+              <td>2011-04-25</td>
+              <td>$320,800</td>
+          </tr>
+          <tr>
+              <td>Garrett Winters</td>
+              <td>Accountant</td>
+              <td>Tokyo</td>
+              <td>63</td>
+              <td>2011-07-25</td>
+              <td>$170,750</td>
+          </tr>
+          <tr>
+              <td>Ashton Cox</td>
+              <td>Junior Technical Author</td>
+              <td>San Francisco</td>
+              <td>66</td>
+              <td>2009-01-12</td>
+              <td>$86,000</td>
+          </tr>
+          <tr>
+              <td>Cedric Kelly</td>
+              <td>Senior Javascript Developer</td>
+              <td>Edinburgh</td>
+              <td>22</td>
+              <td>2012-03-29</td>
+              <td>$433,060</td>
+          </tr>        
+      </tbody>
+      <tfoot>
+          <tr>
+              <th>Name</th>
+              <th>Position</th>
+              <th>Office</th>
+              <th>Age</th>
+              <th>Start date</th>
+              <th>Salary</th>
+          </tr>
+      </tfoot>
+  </table>
 
  
     <!--<section class="section overflow-hidden sectionEstaciones">
@@ -312,13 +336,15 @@
         esriConfig.apiKey =
           "AAPK2a2e861a0c794bfdb29a1b4ce47b1583OBbY7CvHSkUPhQ20FG1hZEbAl5GmTTZcs-cyoy2tw5to5j_pJiiTW6J_KRbBx-qS";
         const vtlLayer = new VectorTileLayer({
-          url: "https://tiles.arcgis.com/tiles/RVvWzU3lgJISqdke/arcgis/rest/services/Mapa_base_topografico/VectorTileServer",
+          url: "https://tiles.arcgis.com/tiles/RVvWzU3lgJISqdke/arcgis/rest/services/Mapa_base_topografico/VectorTileServer",          
         });
         const layer = new MapImageLayer({
           url: "https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer",
+          title:"titulo camil",
           sublayers: [
             {
               id: 1,
+              title:"camil",
               visible: true,
               popupTemplate: {
                 title: "Atributos",
@@ -413,6 +439,18 @@
     </script>
 
     <script>
+
+      $(document).ready(function () {
+          $('#example').DataTable();
+      });
+
+      (async () => {
+        
+        const datos = await fetch('./../../json/cord.json');
+        const res = await datos.json();
+        console.log(typeof res);
+      })();
+
       $("#tbl1 thead tr").clone(true).addClass("filters").appendTo("#filtros");
 
       $(".filters th:first-child").hide();

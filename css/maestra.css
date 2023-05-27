@@ -230,14 +230,22 @@ a:hover {
 .serviciosMaestra .portada-igac.portadaSub.origen .contenido-portada {
     background: #dbdfe1;
 }
-.serviciosMaestra .portada-igac.portadaSub.rinex {
+.serviciosMaestra .portada-igac.portadaSub.rinex .contenido-portada {
     background: #d9dfe1;
 }
-.geodesicaMaestra .portada-igac.portadaSub.redActiva{
+.geodesicaMaestra .portada-igac.portadaSub.redActiva .contenido-portada {
     background: #dfdaf7;
 }
-.geodesicaMaestra .portada-igac.portadaSub.redPasiva {
+.geodesicaMaestra .portada-igac.portadaSub.redPasiva .contenido-portada {
     background: #e4f2ec;
+}
+
+.verde-pasiva {
+    background-color: #e4f2ec;
+}
+
+.lila-activa {
+    background-color: #dfdaf7;
 }
 .gavimetricaMaestra .portada-igac.portadaSub.redGavimetrica .contenido-portada {
     background: #eff5fc;
