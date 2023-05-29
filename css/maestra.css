@@ -249,6 +249,20 @@ a:hover {
 .lila-activa {
     background-color: #dfdaf7;
 }
+
+.amarilla-procesamiento {
+    background-color: rgb(235, 235, 194);
+}
+
+.link-descarga-cord{
+    color: rgb(63, 63, 180);
+    text-decoration: underline;
+}
+
+.link-descarga-cord:hover{
+    cursor: pointer;
+}
+
 .gavimetricaMaestra .portada-igac.portadaSub.redGavimetrica .contenido-portada {
     background: #eff5fc;
     overflow: hidden;
