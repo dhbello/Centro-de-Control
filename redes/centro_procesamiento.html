@@ -13,6 +13,7 @@
       gtag("js", new Date());
       gtag("config", "G-JB8FKBC408");
     </script>
+ 
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -103,173 +104,30 @@
 
 
 
-    <div class="typeB">
-      <div class="container containerIgac">
-        <section class="section pt-0">
-          <div class="m-auto w-100">
-            <div id="table-head">
-              <div id="new-search-area"></div>
-              <div id="head-1">
-                <div id="filtros"></div>
-                <div id="entradas"></div>
-                <div id="resultados">
-                  <p>Ver:</p>
-
-                  <div>
-                    <a id="btn_25">25</a>
-                    <a id="btn_50">50</a>
-                    <a id="btn_100">100</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <table id="tbl1" class="display">
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Ubicación</th>
-                  <th>Estado</th>
-                  <th>Contribuyente</th>
-                  <th class="invisible"></th>
-                  <th class="invisible"></th>
-                </tr>
-              </thead>
-            </table>
-          </div>
-        </section>
-      </div>
-    </div>
+    <div class="typeB"></div>
+    
 
 
-    <table id="example" class="display" style="width:100%">
+    <table id="myTable" class="display" style="width:100%">
       <thead>
           <tr>
-              <th>Name</th>
-              <th>Position</th>
-              <th>Office</th>
-              <th>Age</th>
-              <th>Start date</th>
-              <th>Salary</th>
+              <th>Semana GNSS</th>
+              <th>Fichero</th>
+              <th>Descargar</th>
           </tr>
       </thead>
-      <tbody>
-          <tr>
-              <td>Tiger Nixon</td>
-              <td>System Architect</td>
-              <td>Edinburgh</td>
-              <td>61</td>
-              <td>2011-04-25</td>
-              <td>$320,800</td>
-          </tr>
-          <tr>
-              <td>Garrett Winters</td>
-              <td>Accountant</td>
-              <td>Tokyo</td>
-              <td>63</td>
-              <td>2011-07-25</td>
-              <td>$170,750</td>
-          </tr>
-          <tr>
-              <td>Ashton Cox</td>
-              <td>Junior Technical Author</td>
-              <td>San Francisco</td>
-              <td>66</td>
-              <td>2009-01-12</td>
-              <td>$86,000</td>
-          </tr>
-          <tr>
-              <td>Cedric Kelly</td>
-              <td>Senior Javascript Developer</td>
-              <td>Edinburgh</td>
-              <td>22</td>
-              <td>2012-03-29</td>
-              <td>$433,060</td>
-          </tr>        
-      </tbody>
-      <tfoot>
-          <tr>
-              <th>Name</th>
-              <th>Position</th>
-              <th>Office</th>
-              <th>Age</th>
-              <th>Start date</th>
-              <th>Salary</th>
-          </tr>
-      </tfoot>
+      <tbody id="table-body">
+                          
+      </tbody>      
   </table>
 
  
-    <!--<section class="section overflow-hidden sectionEstaciones">
-        <div class="resourses-title" style="text-align: center;">
-            <h2>Estaciones de la red</h2>
-        </div>
-
-        <div class="row">
-            <div class="m-auto">
-                <table id="redTable" class="display">
-                    <thead>
-                        <tr class="filterContainer"></tr>
-                        <tr>
-                            <th>ID</th>
-                            <th>municipio</th>
-                            <th>Estado</th>
-                            <th>Nombre de la red</th>
-                            <th>Entidad</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>AMTE00BRA</td>
-                            <td>Nari&ntilde;o</td>
-                            <td>Inactivo</td>
-                            <td>IGb14-Core, ITRF2014</td>
-                            <td>EABB</td>
-                            <td><a href="" class="modalButton" data-toggle="modal"
-                                    data-target="#exampleModal">M&aacute;s</a></td>
-                        </tr>
-                        <tr>
-                            <td>AMTE00BRA</td>
-                            <td>Nari&ntilde;o</td>
-                            <td>Activo</td>
-                            <td>IGb14-Core, ITRF2014</td>
-                            <td>EABB</td>
-                            <td><a href="" class="modalButton" data-toggle="modal"
-                                    data-target="#exampleModal">M&aacute;s</a></td>
-                        </tr>
-                        <tr>
-                            <td>AMTE00BRA</td>
-                            <td>Antioquia</td>
-                            <td>Activo</td>
-                            <td>IGb14-Core, ITRF2014</td>
-                            <td>EABB</td>
-                            <td><a href="" class="modalButton" data-toggle="modal"
-                                    data-target="#exampleModal">M&aacute;s</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="row">
-            <div class="m-auto">
-            <table id="tbl" class="display">
-                <thead>
-                    <tr>
-                        <th>Identificador</th>
-                        <th>Municipio, departamento</th>
-                        <th>Estado</th>
-                        <th>Nombre de la red</th>
-                        <th>Entidad</th>
-                        <th>Ver</th>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-        </div>
-    </section>-->
 
     <footer class="footer origen"></footer>
+
+    
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script> 
     <script
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"
@@ -438,162 +296,6 @@
       });
     </script>
 
-    <script>
-
-      $(document).ready(function () {
-          $('#example').DataTable();
-      });
-
-      (async () => {
-        
-        const datos = await fetch('./../../json/cord.json');
-        const res = await datos.json();
-        console.log(typeof res);
-      })();
-
-      $("#tbl1 thead tr").clone(true).addClass("filters").appendTo("#filtros");
-
-      $(".filters th:first-child").hide();
-
-      var table = $("#tbl1").DataTable({
-        lengthChange: false,
-        ajax: {
-          url: url_backend + "/json_activa",
-          dataSrc: function (json) {
-            var obj = json;
-
-            var arr1 = [];
-
-            obj.map(function (i, e) {
-              i["ir"] =
-                "interna_red_activa.html?estacion=" +
-                i["t_id"] +
-                "&nombre=" +
-                i["redes"] +
-                "&id=" +
-                i["identificador"];
-              i["rinex"] =
-                "rinex.html?estacion=" +
-                i["identificador"] +
-                "&id=" +
-                i["t_id"];
-
-              arr1.push(i);
-            });
-
-            json.data = arr1;
-
-            return json.data;
-          },
-        },
-        columns: [
-          {
-            data: "identificador",
-          },
-          {
-            data: "municipio",
-          },
-
-          {
-            data: "estado",
-            render: function (dataField) {
-              var clase = "inactivo";
-              var status = "Inactivo";
-              if (dataField == "Activa") {
-                clase = "activo";
-                status = "Activa";
-              } else if (dataField == null) {
-                clase = "vacio";
-                dataField = "";
-                status = "";
-              }
-              return '<span class="' + clase + '">' + status + "</span>";
-            },
-          },
-          {
-            data: "sigla",
-          },
-
-          {
-            data: "rinex",
-            render: function (dataField) {
-              return '<a href="' + dataField + '">Archivo Rinex</a>';
-            },
-          },
-          {
-            data: "ir",
-            render: function (dataField) {
-              return '<a href="' + dataField + '">Ver más</a>';
-            },
-          },
-        ],
-        language: {
-          decimal: "",
-          emptyTable: "No hay información",
-          info: "_TOTAL_ resultados",
-          infoEmpty: "0 resultados",
-          infoFiltered: "",
-          infoPostFix: "",
-          thousands: ",",
-          lengthMenu: "Ver _MENU_",
-          loadingRecords: "Cargando...",
-          processing: "Procesando...",
-          search: "",
-          zeroRecords: "Sin resultados encontrados",
-          searchPlaceholder: "Buscar",
-          paginate: {
-            first: "Primero",
-            last: "Ultimo",
-            next: "Siguiente",
-            previous: "Anterior",
-          },
-        },
-        initComplete: function () {
-          $("#tbl1_filter").detach().appendTo("#new-search-area");
-          $("#tbl1_info").detach().appendTo("#entradas");
-
-          $("#btn_25").on("click", function () {
-            table.page.len(25).draw();
-          });
-
-          $("#btn_50").on("click", function () {
-            table.page.len(50).draw();
-          });
-
-          $("#btn_100").on("click", function () {
-            table.page.len(100).draw();
-          });
-
-          this.api()
-            .columns()
-            .every(function (i) {
-              var column = this;
-
-              var select = $(
-                '<select class="form-select"><option value="">' +
-                  $("#filtros tr").children().eq(i).text() +
-                  "</option></select>"
-              )
-                .appendTo($("#filtros tr").children().eq(i).empty())
-                .on("change", function () {
-                  var val = $.fn.dataTable.util.escapeRegex($(this).val());
-
-                  column.search(val ? "^" + val + "$" : "", true, false).draw();
-                });
-
-              column
-                .data()
-                .unique()
-                .sort()
-                .each(function (d, j) {
-                  select.append('<option value="' + d + '">' + d + "</option>");
-                });
-            });
-        },
-      });
-    </script>
-
-
   <script>
     (async () => setTimeout(() => {
       
@@ -616,6 +318,140 @@
     });
 
     
+  </script>
+
+
+
+
+
+
+
+    
+
+    <script>    
+
+      // descargar cords
+      const descargarCords = async (coordenada) => {
+        console.log('descargando...', coordenada)
+      }
+
+
+      const firebaseConfig = {
+          apiKey: "AIzaSyBZVqxMK2_yUYSmPkHfUm3cu0Odsk9eJAQ",
+          authDomain: "cords-ed4e2.firebaseapp.com",
+          projectId: "cords-ed4e2",
+          storageBucket: "cords-ed4e2.appspot.com",
+          messagingSenderId: "526557109240",
+          appId: "1:526557109240:web:c244fffd6bfbf067fe540d"
+      };
+
+   // Initialize Firebase
+      const app = firebase.initializeApp(firebaseConfig); 
+      const db = app.firestore();
+      
+      
+      (async () => {
+        
+        // let registros = "";
+        // const datos = await fetch('./../../json/cord.json');
+        // const res = await datos.json();
+        // console.log(res);
+
+
+        try {
+
+          let registros = "";
+          let items = [];
+          const datos = await db.collection("cordenadas").get();      
+
+          datos.forEach(function (item) {
+            items.push(item.data());
+          });
+          console.log(items);
+
+          items.forEach(item => {
+              registros += `
+                  <tr>
+                    <td>${item.semana}</td>
+                    <td>${item.fichero}</td>
+                    <td><a onclick="descargarCords('${item.fichero}')">${item.fichero}</a> </td>              
+                  </tr>
+              `;
+            });
+
+            document.getElementById("table-body").innerHTML = registros;
+        
+        } catch (error) {
+          throw new Error(error);
+        }
+
+        
+
+      })();
+
+      // render the table
+      
+      $(document).ready( function () {
+          $('#myTable').DataTable();
+      } );   
+
+      
+     
+    </script>
+
+
+  
+
+   <!-- ====== DESCARGAR DE CORDS   ================= -->
+  <!-- ================================================ -->
+  <script>
+    // (async() => {
+    //   try {
+    //     const datos = await fetch("https://redgeodesica-cg.igac.gov.co/download_rinex", {
+    //       method:'post',
+    //       headers: {
+    //         "Content-Type": "application/json",            
+    //       },
+    //       xhrFields: {
+    //         responseType: "blob",
+    //       },
+    //       body:JSON.stringify({datos:["./CoordenadasSemanales/IGA2189.CRD"]}),
+    //     });
+
+    //     const resp = await datos.blob();
+    //     console.log(resp);
+        
+
+    //     var link = document.createElement("a");    
+    //     link.href = window.URL.createObjectURL(resp);        
+    //     link.download = "rinex.zip";
+    //     document.body.appendChild(link);
+    //     link.click();
+    //     console.log(datos)
+
+    //     // $.ajax({
+    //     //   type: "POST",
+    //     //   url: "https://redgeodesica-cg.igac.gov.co/download_rinex",
+    //     //   data: JSON.stringify({ datos: ["./CoordenadasSemanales/IGA2189.CRD"] }),
+    //     //   xhrFields: {
+    //     //     responseType: "blob",
+    //     //   },
+    //     //   contentType: "application/json",
+    //     //   processData: false,
+    //     //   success: function (response) {
+    //     //     console.log(response);
+    //     //     $("#spinner").hide();
+    //     //     var link = document.createElement("a");
+    //     //     link.href = window.URL.createObjectURL(response);
+    //     //     link.download = "rinex.zip";
+    //     //     document.body.appendChild(link);
+    //     //     link.click();
+    //     //   },
+    //     // });
+    //   } catch (error) {
+    //     console.log(error)
+    //   }
+    // })();
   </script>
   </body>
 </html>
