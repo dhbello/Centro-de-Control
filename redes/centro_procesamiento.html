@@ -353,7 +353,7 @@
 
     
 
-    <script>    
+    <script type="module" async>    
 
       // buscar cords
       const buscarCord = document.getElementById("buscar-cord");
@@ -410,7 +410,7 @@
       const app = firebase.initializeApp(firebaseConfig); 
       const db = app.firestore();
       
-      // let items = [];
+      
       
       const mostrarCordenadas = async () => {  
 
@@ -443,7 +443,8 @@
 
 
 
-            document.getElementById("table-body").innerHTML = registros;            
+            document.getElementById("table-body").innerHTML = registros;       
+            return arreglo;     
         
         } catch (error) {
           throw new Error(error);
@@ -452,7 +453,12 @@
       }
 
       
-      mostrarCordenadas();
+      let items = await mostrarCordenadas();
+      console.log(items); 
+
+      items.forEach(item => console.log(item));
+      
+      
 
     
 
