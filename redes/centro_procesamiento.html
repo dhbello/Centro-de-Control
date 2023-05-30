@@ -124,6 +124,13 @@
             <tbody id="table-body">
               
             </tbody>
+            <tfoot>
+              <tr>
+                <th scope="col">Semana GNSS</th>
+                <th scope="col">Fichero</th>
+                <th scope="col">Descargar</th>          
+              </tr>
+            </tfoot>
           </table>
 
           <!-- <nav aria-label="...">
@@ -348,22 +355,7 @@
 
 
     
-
-
-
-    
-
-    <script type="module" async>    
-
-      // buscar cords
-      const buscarCord = document.getElementById("buscar-cord");
-
-      buscarCord.addEventListener('keyup', () => {        
-        const buscarCord = document.getElementById("buscar-cord").value;
-        console.log(buscarCord);
-      });
-
-
+  <script>
       // descargar cords
       const descargarCords = async (coordenada) => {
         
@@ -395,6 +387,12 @@
 
 
       }
+  </script>
+
+
+    
+
+    <script type="module" async>        
 
 
       const firebaseConfig = {
@@ -412,39 +410,20 @@
       
       
       
-      const mostrarCordenadas = async () => {  
+      async function mostrarCordenadas(){  
 
 
         try {
 
-          let arreglo = [];
-          let registros = "";
+          let arreglo = [];          
           
           const datos = await db.collection("cordenadas").get();      
 
           datos.forEach(function (item) {
             arreglo.push(item.data());
-          });
-
+          });            
           
-          console.log(arreglo[0]);
-
-          
-          
-          arreglo.forEach(item => {
-              registros += `
-                  <tr>
-                    <td>${item.semana}</td>
-                    <td>${item.fichero}</td>
-                    <td><a class="link-descarga-cord" onclick="descargarCords('${item.fichero}')">${item.fichero}</a> </td>              
-                  </tr>
-              `;
-            });
-
-
-
-            document.getElementById("table-body").innerHTML = registros;       
-            return arreglo;     
+          return arreglo;     
         
         } catch (error) {
           throw new Error(error);
@@ -452,12 +431,52 @@
 
       }
 
+      const tabularCordenadas = (arreglo) => {
+          let registros = "";
+
+          let contador = 1;
+          arreglo.forEach(item => {
+              contador++;
+              if(contador == 11) return;
+              registros += `
+                  <tr>
+                    <td>${item.semana}</td>
+                    <td>${item.fichero}</td>
+                    <td><a id="aDescargaCords" class="link-descarga-cord" onclick="descargarCords('${item.fichero}')">${item.fichero}</a> </td>              
+                  </tr>
+              `;
+            });
+
+
+
+            document.getElementById("table-body").innerHTML = registros;  
+      }
+
       
       let items = await mostrarCordenadas();
-      console.log(items); 
 
-      items.forEach(item => console.log(item));
-      
+      tabularCordenadas(items);
+      //console.log(items); 
+
+      //items.forEach(item => console.log(item));   
+
+
+       // buscar cords
+      const buscarCord = document.getElementById("buscar-cord");
+
+      buscarCord.addEventListener('keyup', () => {        
+        const arregloFiltro = [];
+        const buscarCord = document.getElementById("buscar-cord").value;
+        
+        for(let item of items){
+          if(item.semana.indexOf(buscarCord) !== -1){
+            console.log(item);
+            arregloFiltro.push(item);
+          }
+        }
+
+        tabularCordenadas(arregloFiltro);
+      });
       
 
     

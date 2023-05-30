@@ -565,7 +565,7 @@
                 let resultado = "";
 
                 for(let texto of arregloContenido){    
-                  if(texto.nombre.indexOf(palabraBuscar.value) !== -1){
+                  if(texto.nombre.indexOf(palabraBuscar.value.toLowerCase()) !== -1){
                     resultado += `<div class="col-sm-6 col-md-4">
                                     <div class="unit-cards">
                                       <a href="${texto.url}" class="">
