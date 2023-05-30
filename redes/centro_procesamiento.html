@@ -58,8 +58,8 @@
             <h1>Centro de procesamiento IGAC</h1>
             <p>
               El centro de procesamiento IGA - IGAC es uno de los 10 centros de análisis oficiales de
-              SIRGAS, encargado además de apoyar la generación de la red de estaciones GNSS SIRGAS-CON,
-              la generación de coordenadas de las estaciones locales o de órden uno.
+              SIRGAS, encargado además de apoyar la generación de coordenadas de la red de estaciones GNSS SIRGAS-CON,
+              la generación de coordenadas de las estaciones locales o de orden uno.
             </p>
           </div>
         </div>
@@ -73,7 +73,7 @@
             <div class="col-md-6">
               <a href="https://www.sirgas.org/es/weekly-solutions" target="_blank">
                 <div class="faqs dobles tipo-a">
-                  <div class="title">Soluciones semanales SIRGAS (Estaciones GNSS de referencia de órden Cero.)</div>
+                  <div class="title">Soluciones semanales SIRGAS (Estaciones GNSS de referencia de orden Cero.)</div>
                 </div>
               </a>
             </div>      
@@ -81,7 +81,7 @@
             <div class="col-md-6">
               <a href="#table-body" >
                 <div class="faqs dobles tipo-a">
-                  <div class="title">Soluciones semanales SIRGAS (Estaciones GNSS de referencia de órden Uno.)</div>
+                  <div class="title">Soluciones semanales SIRGAS (Estaciones GNSS de referencia de orden Uno.)</div>
                 </div>
               </a>
             </div> 
@@ -229,11 +229,11 @@
         });
         const layer = new MapImageLayer({
           url: "https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer",
-          title:"titulo camil",
+          title:"",
           sublayers: [
             {
               id: 1,
-              title:"camil",
+              title:"",
               visible: true,
               popupTemplate: {
                 title: "Atributos",
@@ -252,7 +252,7 @@
                       },       
                       {
                         "fieldName": "orden_precision",
-                        "label": "Órden"
+                        "label": "Orden"
                       },     
                       {
                         "fieldName": "agencia_sigla",
@@ -332,8 +332,8 @@
       
       //console.log(document.querySelector('.esri-legend__layer-body').childNodes[0].childNodes[1])    
       document.querySelector('.esri-legend__layer-body').childNodes[0].childNodes[1].innerHTML = `
-      <div class="esri-legend__layer-row"><div class="esri-legend__layer-cell esri-legend__layer-cell--symbols"><img alt="Pertenece a dos redes" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAA2klEQVQ4je2SPwqCcBiGH6HdAwgNLd7gNwkOTrWFqxKdQggihw7QAUSh2ck9EXLyAEGLkeA9GgqSSuGXLVHv9v17eD94B3xYgz/wO4GGbeOrKlUY4gNVH6ARBPiTCVZdg65jeh4zIJcGLhb4QrAS4lprGrguI11nv9mwzDLWMsChpt1hTQkB4zHzLGPLi/fbgFWasptOsV4Nz+frjoxDFIVtUWA9uqxrOByI2u5agXFM6TjP/TSlvL0rBwTyJCE6HjGbzaLgREd0OmNzy92jeuWw8/gdoLR+EHgB++87TAGjkeIAAAAASUVORK5CYII=" border="0" width="20" height="20" class="esri-legend__symbol" style="opacity: 1;"></div><div class="esri-legend__layer-cell esri-legend__layer-cell--info">Estaciones SIRGAS (Órden Cero)</div></div>
-      <div class="esri-legend__layer-row"><div class="esri-legend__layer-cell esri-legend__layer-cell--symbols"><img alt="Red Activa GNSS" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAArUlEQVQ4je2Tuw3DMAwFz0AAT8DOG2QJegjPI2keD2Eu4Q3ScYJ0KSjEafKRkSZGWOkDHQ6P1Ikv1+kP/E1gFiX1gl1mAApge4AqyqLLtneDtaBudHuA6Zxi4dVHFFRh7shAbgIOUwDcwMaquMSZKMmtEXh19NldLzsydKMASTTMYDOuzWkDAtnGyFEeXNcCRKebgbgxmpGGKSKo1vnVm3dzaHCfv4/qGF/vYMAbLfQ1irlBsU8AAAAASUVORK5CYII=" border="0" width="20" height="20" class="esri-legend__symbol" style="opacity: 1;"></div><div class="esri-legend__layer-cell esri-legend__layer-cell--info">Estaciones Locales (Órden Uno)</div></div>
+      <div class="esri-legend__layer-row"><div class="esri-legend__layer-cell esri-legend__layer-cell--symbols"><img alt="Pertenece a dos redes" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAA2klEQVQ4je2SPwqCcBiGH6HdAwgNLd7gNwkOTrWFqxKdQggihw7QAUSh2ck9EXLyAEGLkeA9GgqSSuGXLVHv9v17eD94B3xYgz/wO4GGbeOrKlUY4gNVH6ARBPiTCVZdg65jeh4zIJcGLhb4QrAS4lprGrguI11nv9mwzDLWMsChpt1hTQkB4zHzLGPLi/fbgFWasptOsV4Nz+frjoxDFIVtUWA9uqxrOByI2u5agXFM6TjP/TSlvL0rBwTyJCE6HjGbzaLgREd0OmNzy92jeuWw8/gdoLR+EHgB++87TAGjkeIAAAAASUVORK5CYII=" border="0" width="20" height="20" class="esri-legend__symbol" style="opacity: 1;"></div><div class="esri-legend__layer-cell esri-legend__layer-cell--info">Estaciones SIRGAS (Orden Cero)</div></div>
+      <div class="esri-legend__layer-row"><div class="esri-legend__layer-cell esri-legend__layer-cell--symbols"><img alt="Red Activa GNSS" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAArUlEQVQ4je2Tuw3DMAwFz0AAT8DOG2QJegjPI2keD2Eu4Q3ScYJ0KSjEafKRkSZGWOkDHQ6P1Ikv1+kP/E1gFiX1gl1mAApge4AqyqLLtneDtaBudHuA6Zxi4dVHFFRh7shAbgIOUwDcwMaquMSZKMmtEXh19NldLzsydKMASTTMYDOuzWkDAtnGyFEeXNcCRKebgbgxmpGGKSKo1vnVm3dzaHCfv4/qGF/vYMAbLfQ1irlBsU8AAAAASUVORK5CYII=" border="0" width="20" height="20" class="esri-legend__symbol" style="opacity: 1;"></div><div class="esri-legend__layer-cell esri-legend__layer-cell--info">Estaciones Locales (orden Uno)</div></div>
       `;      
     }, 6000))();
     
@@ -341,8 +341,8 @@
     document.querySelector('#viewDiv').addEventListener('click', (e) => {
       setTimeout(() => {
         document.querySelector('.esri-legend__layer-body').childNodes[0].childNodes[1].innerHTML = `
-          <div class="esri-legend__layer-row"><div class="esri-legend__layer-cell esri-legend__layer-cell--symbols"><img alt="Pertenece a dos redes" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAA2klEQVQ4je2SPwqCcBiGH6HdAwgNLd7gNwkOTrWFqxKdQggihw7QAUSh2ck9EXLyAEGLkeA9GgqSSuGXLVHv9v17eD94B3xYgz/wO4GGbeOrKlUY4gNVH6ARBPiTCVZdg65jeh4zIJcGLhb4QrAS4lprGrguI11nv9mwzDLWMsChpt1hTQkB4zHzLGPLi/fbgFWasptOsV4Nz+frjoxDFIVtUWA9uqxrOByI2u5agXFM6TjP/TSlvL0rBwTyJCE6HjGbzaLgREd0OmNzy92jeuWw8/gdoLR+EHgB++87TAGjkeIAAAAASUVORK5CYII=" border="0" width="20" height="20" class="esri-legend__symbol" style="opacity: 1;"></div><div class="esri-legend__layer-cell esri-legend__layer-cell--info">Estaciones SIRGAS (Órden Cero)</div></div>
-          <div class="esri-legend__layer-row"><div class="esri-legend__layer-cell esri-legend__layer-cell--symbols"><img alt="Red Activa GNSS" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAArUlEQVQ4je2Tuw3DMAwFz0AAT8DOG2QJegjPI2keD2Eu4Q3ScYJ0KSjEafKRkSZGWOkDHQ6P1Ikv1+kP/E1gFiX1gl1mAApge4AqyqLLtneDtaBudHuA6Zxi4dVHFFRh7shAbgIOUwDcwMaquMSZKMmtEXh19NldLzsydKMASTTMYDOuzWkDAtnGyFEeXNcCRKebgbgxmpGGKSKo1vnVm3dzaHCfv4/qGF/vYMAbLfQ1irlBsU8AAAAASUVORK5CYII=" border="0" width="20" height="20" class="esri-legend__symbol" style="opacity: 1;"></div><div class="esri-legend__layer-cell esri-legend__layer-cell--info">Estaciones Locales (Órden Uno)</div></div>
+          <div class="esri-legend__layer-row"><div class="esri-legend__layer-cell esri-legend__layer-cell--symbols"><img alt="Pertenece a dos redes" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAA2klEQVQ4je2SPwqCcBiGH6HdAwgNLd7gNwkOTrWFqxKdQggihw7QAUSh2ck9EXLyAEGLkeA9GgqSSuGXLVHv9v17eD94B3xYgz/wO4GGbeOrKlUY4gNVH6ARBPiTCVZdg65jeh4zIJcGLhb4QrAS4lprGrguI11nv9mwzDLWMsChpt1hTQkB4zHzLGPLi/fbgFWasptOsV4Nz+frjoxDFIVtUWA9uqxrOByI2u5agXFM6TjP/TSlvL0rBwTyJCE6HjGbzaLgREd0OmNzy92jeuWw8/gdoLR+EHgB++87TAGjkeIAAAAASUVORK5CYII=" border="0" width="20" height="20" class="esri-legend__symbol" style="opacity: 1;"></div><div class="esri-legend__layer-cell esri-legend__layer-cell--info">Estaciones SIRGAS (Orden Cero)</div></div>
+          <div class="esri-legend__layer-row"><div class="esri-legend__layer-cell esri-legend__layer-cell--symbols"><img alt="Red Activa GNSS" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAArUlEQVQ4je2Tuw3DMAwFz0AAT8DOG2QJegjPI2keD2Eu4Q3ScYJ0KSjEafKRkSZGWOkDHQ6P1Ikv1+kP/E1gFiX1gl1mAApge4AqyqLLtneDtaBudHuA6Zxi4dVHFFRh7shAbgIOUwDcwMaquMSZKMmtEXh19NldLzsydKMASTTMYDOuzWkDAtnGyFEeXNcCRKebgbgxmpGGKSKo1vnVm3dzaHCfv4/qGF/vYMAbLfQ1irlBsU8AAAAASUVORK5CYII=" border="0" width="20" height="20" class="esri-legend__symbol" style="opacity: 1;"></div><div class="esri-legend__layer-cell esri-legend__layer-cell--info">Estaciones Locales (Orden Uno)</div></div>
         `;  
       },1000);      
       //console.log('cargo', e.target)
