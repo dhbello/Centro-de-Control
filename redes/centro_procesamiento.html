@@ -433,17 +433,29 @@
           let registros = "";
 
           let contador = 1;
-          arreglo.forEach(item => {
-              contador++;
-              if(contador == 11) return;
-              registros += `
+          for(let item of arreglo){
+            contador++;
+            if(contador == 11) break;
+            // console.log(item.semana);
+            registros += `
                   <tr>
                     <td>${item.semana}</td>
                     <td>${item.fichero}</td>
                     <td><a id="aDescargaCords" class="link-descarga-cord" onclick="descargarCords('${item.fichero}')">${item.fichero}</a> </td>              
                   </tr>
               `;
-            });
+          }
+          // arreglo.forEach(item => {
+          //     contador++;
+          //     if(contador >= 11) return;
+          //     registros += `
+          //         <tr>
+          //           <td>${item.semana}</td>
+          //           <td>${item.fichero}</td>
+          //           <td><a id="aDescargaCords" class="link-descarga-cord" onclick="descargarCords('${item.fichero}')">${item.fichero}</a> </td>              
+          //         </tr>
+          //     `;
+          //   });
 
 
 
