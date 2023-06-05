@@ -1584,10 +1584,10 @@ if (document.querySelector(".modalEstaciones")) {
                     <div class='modal-body'>              
                         <div class='sumary modalSection'>
                             <div class='content'>
-                                <div class='form-title mainTitle'>
-                                    <h2>Registrar una nueva estación</h2>
-                                </div>
-                                <div class='row form-row'>
+                            <div class='row form-row'>
+                            <div class='form-title mainTitle'>
+                                <h2>Registrar una nueva estación</h2>
+                            </div>
                                     <div class='form-title col-12'>
                                         <h2>Datos personales</h2>
                                     </div>
