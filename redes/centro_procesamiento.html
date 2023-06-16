@@ -344,6 +344,7 @@
       // descargar cords
       const descargarCords = async (coordenada) => {
         
+            console.log(coordenada);
             try {
             const datos = await fetch("https://redgeodesica-cg.igac.gov.co/download_rinex", {
               method:'post',
@@ -353,7 +354,7 @@
               xhrFields: {
                 responseType: "blob",
               },
-              body:JSON.stringify({datos:[`./CoordenadasSemanales/${coordenada}`]}),
+              body:JSON.stringify({datos:[`./CoordenadasSemanales/${coordenada}`]}),              
             });
 
             const resp = await datos.blob();
