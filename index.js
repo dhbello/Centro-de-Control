@@ -37,7 +37,7 @@ if (document.querySelector(".navbarIgacContainer")) {
               </li>
               <li>
                   
-                
+              <img id="icono-user"  src="/images/iconos/person-circle.svg"  data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample"></img>
 
               
                 
