@@ -1,5 +1,5 @@
 var url_backend = "https://redgeodesica-cg.igac.gov.co";
-const URLAUTHS = "http://localhost:3001";
+const URLAUTHS = "https://auth.homeristicodeath.tech:3001";
 
 
 
