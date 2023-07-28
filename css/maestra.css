@@ -254,6 +254,10 @@ a:hover {
     background-color: rgb(218, 231, 236);
 }
 
+.verde-control-vertical {
+    background-color: rgb(221, 236, 218);
+}
+
 .link-descarga-cord{
     color: rgb(63, 63, 180);
     text-decoration: underline;

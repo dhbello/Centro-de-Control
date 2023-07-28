@@ -1,192 +1,553 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JB8FKBC408"></script>
+  <head>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-JB8FKBC408"
+    ></script>
     <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag() { dataLayer.push(arguments); }
-          gtag('js', new Date());
-          gtag('config', 'G-JB8FKBC408');
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-JB8FKBC408");
     </script>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Centro de Control Geod&eacute;sico Nacional</title>
     <link rel="icon" href="/images/favicon.png">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css"
+  />
+  <script src="./../js/jquery-3.5.1.js"></script>
+ 
+   
+   
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-    <link href="../css/style.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet" />
     <link href="/css/navbar-footer.css" rel="stylesheet">
-    <link href="../css/maestra.css" rel="stylesheet">
-</head>
-<body class="origen">
+    <link href="../../css/maestra.css" rel="stylesheet" />
+  </head>
+  <body class="main redes">
     <!-- header -->
     <div class="barra_gov">
-        <a class="logo-gov" href="https://www.gov.co/home/" target="_blank">
-            <img alt="Logo Gov.co" src="/images/nav/header_govco.png">
-        </a>
+      <a class="logo-gov" href="https://www.gov.co/home/" target="_blank">
+          <img alt="Logo Gov.co" src="/images/nav/header_govco.png">
+      </a>
     </div>
     <div class="navbarIgacContainer origen"></div>
-    <nav class="nav nav-underline">
-    </nav>
-    <section class="portada-igac portadaSub origen herramientas">
-        <div class="container block-igac">
-            <div class="d-flex contenido-portada">
-                <div class="texto-portada">
-                    <h1>Red de V&eacute;rtices y Redes de Nivelaci&oacute;n</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi possimus, voluptatibus, soluta illo similique asperiores cupiditate id hic praesentium eligendi reiciendis esse dignissimos consequuntur laboriosam culpa, nulla ratione sit magni.
-                    </p>
-                </div>
-            </div>
+    <nav class="nav nav-underline"></nav>
+     <section class="portada-igac portadaSub redActiva">
+      <div class="container block-igac">
+        <div class="row contenido-portada m-0  mt-4 verde-control-vertical">
+          <div class="col-md-12 position-absolute get-backContainer">
+            <a class="get-back" href="/redes/red_geodesica.html"
+              ><img src="/images/iconos/arrow-back.svg" alt="" />Volver a la Red
+              Geodésica GNSS</a
+            >
+          </div>
+          <div class="texto-portada">
+            <h1>Red de Control Vertical de Precisión</h1>
+            <p>
+                Las alturas medidas en metros sobre el nivel medio del mar de los vértices geodésicos de referencia, 
+                son de utilidad para el desarrollo de proyectos de ingeniería, cartografía, planeación municipal y regional, 
+                geociencias, gestión del riesgo y prevención de desastres, catastro multipropósito, geodinámica, investigación, 
+                obras civiles y estudios de infraestructura municipal, academia y en general aquellos que requieran de un sistema 
+                vertical de referencia.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
-    <div class="container containerIgac">
-        <section class="section">
-            <div class="resourses-title" style="text-align: center;">
-                <div class="divider"></div>
-                <h2>Indicadores</h2>
-                <div class="divider"></div>
-            </div>
-            <div class="card-deck mb-5">
-                <div class="card mb-6 box-shadow">
-                    <div class="card-header">
-                        <h4 class="my-0 font-weight-normal">Free</h4>
-                    </div>
+    
+  
+    <div id="redActivaPasiva" class="container containerIgac">
+        <section id="acceso" class="section">
+          <div class="row">
+            <div class="col-md-6">
+              <a href="https://www.sirgas.org/es/weekly-solutions" target="_blank">
+                <div class="faqs dobles tipo-a">
+                  <div class="title">Soluciones semanales SIRGAS (Estaciones GNSS de referencia de orden Cero.)</div>
                 </div>
-                <div class="card mb-6 box-shadow">
-                    <div class="card-header">
-                        <h4 class="my-0 font-weight-normal">Free</h4>
-                    </div>
+              </a>
+            </div>      
+            
+            <div class="col-md-6">
+              <a href="#table-body" >
+                <div class="faqs dobles tipo-a">
+                  <div class="title">Soluciones semanales Locales (Estaciones GNSS de referencia de orden Uno.)</div>
                 </div>
-                <div class="card mb-6 box-shadow">
-                    <div class="card-header">
-                        <h4 class="my-0 font-weight-normal">Free</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="card-deck">
-                <div class="card mb-6 box-shadow">
-                    <div class="card-header">
-                        <h4 class="my-0 font-weight-normal">Free</h4>
-                    </div>
-                </div>
-                <div class="card mb-6 box-shadow">
-                    <div class="card-header">
-                        <h4 class="my-0 font-weight-normal">Free</h4>
-                    </div>
-                </div>
-                <div class="card mb-6 box-shadow">
-                    <div class="card-header">
-                        <h4 class="my-0 font-weight-normal">Free</h4>
-                    </div>
-                </div>
-            </div>
+              </a>
+            </div> 
+
+          </div>
         </section>
-        <section class="section">
-            <div class="resourses-title" style="text-align: center;">
-                <div class="divider"></div>
-                <h2>Mapa de la Red</h2>
-                <div class="divider"></div>
-            </div>
-            <div class="iframe">
-                <img src="../images/mapa.png" alt="mapa">
-            </div>
+
+        
+
+
+        <section id="visor" class="section">
+          <h2 class="title">
+            Visor centro de procesamiento IGA - IGAC
+          </h2>
+          <div id="viewDiv"></div>
         </section>
-        <section class="section">
-            <div class="faqs">
-                <div class="title">
-                    CeM
-                </div>
-                <div class="resume">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus fugiat a perferendis deserunt. Aspernatur delectus excepturi expedita beatae nobis tempore magni fugit! Adipisci labore impedit natus placeat atque numquam! Deserunt?
-                </div>
-                <div class="boton-faqs">
-                    <a href="#">CeM</a>
-                </div>
-            </div>
-        </section>
-        <div class="divider"></div>
-        <section class="section">
-            <div class="resourses-title" style="text-align: center;">
-                <div class="divider"></div>
-                <h2>Recursos Relacionados</h2>
-                <div class="divider"></div>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="card shadow-sm">
-                        <img class="card-img-top" src="../images/test-image.svg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card shadow-sm">
-                        <img class="card-img-top" src="../images/test-image.svg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card shadow-sm">
-                        <img class="card-img-top" src="../images/test-image.svg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card shadow-sm">
-                        <img class="card-img-top" src="../images/test-image.svg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+  
+        
+      </div>
+
+        <div class="typeB"></div>
+    
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <input id="buscar-cord" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <table class="table table-striped mt-2">
+            <thead>
+              <tr>
+                <th scope="col">Semana GNSS</th>
+                <th scope="col">Fichero</th>
+                <th scope="col">Descargar</th>          
+              </tr>
+            </thead>
+            <tbody id="table-body">
+              
+            </tbody>
+            <tfoot>
+              <tr>
+                <th scope="col">Semana GNSS</th>
+                <th scope="col">Fichero</th>
+                <th scope="col">Descargar</th>          
+              </tr>
+            </tfoot>
+          </table>
+
+          <nav aria-label="...">
+            <ul class="pagination">              
+              <li class="page-item active">
+                <a id="primera" class="page-link" href="#"><</a>
+              </li>
+              <li class="page-item ">
+                <a id="segunda" class="page-link">1</a>
+              </li>
+              <li class="page-item">
+                <a id="tercera" class="page-link" href="#">></a>
+              </li>              
+            </ul>
+          </nav>
+        </div>
+      </div>
     </div>
 
-    <footer class="footer origen">
+      
 
-    </footer>
+    <footer class="footer origen"></footer>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script> 
+
+  
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+ 
     <script src="/index.js"></script>
-</body>
+    <link
+      rel="stylesheet"
+      href="https://js.arcgis.com/4.24/esri/themes/light/main.css"
+    />
+    <script src="https://js.arcgis.com/4.24/"></script>
+   
+    <link
+      rel="stylesheet"
+      href="https://js.arcgis.com/4.24/esri/themes/light/main.css"
+    />
+    <script src="https://js.arcgis.com/4.24/"></script>
+    <script>
+      // (async () => {
+      //   let url = "https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGNSS/MapServer?f=pjson";
+      // const datos = await fetch(url);
+      // const res = await datos.json();
+      // console.log(res)
+      // })();
+      
+      require([
+        "esri/config",
+        "esri/Map",
+        "esri/views/MapView",
+        "esri/widgets/Home",
+        "esri/widgets/ScaleBar",
+        "esri/widgets/LayerList",
+        "esri/widgets/Legend",
+        "esri/widgets/Expand",
+        "esri/widgets/Compass",
+        "esri/geometry/Extent",
+        "esri/layers/MapImageLayer",
+        "esri/layers/VectorTileLayer",
+      ], (
+        esriConfig,
+        Map,
+        MapView,
+        Home,
+        ScaleBar,
+        LayerList,
+        Legend,
+        Expand,
+        Compass,
+        Extent,
+        MapImageLayer,
+        VectorTileLayer,        
+      ) => {
+        esriConfig.apiKey =
+          "AAPK2a2e861a0c794bfdb29a1b4ce47b1583OBbY7CvHSkUPhQ20FG1hZEbAl5GmTTZcs-cyoy2tw5to5j_pJiiTW6J_KRbBx-qS";
+        const vtlLayer = new VectorTileLayer({
+          url: "https://tiles.arcgis.com/tiles/RVvWzU3lgJISqdke/arcgis/rest/services/Mapa_base_topografico/VectorTileServer",          
+        });
+        const layer = new MapImageLayer({
+        //   url: "https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer",
+          url: "https://mapas.igac.gov.co/server/rest/services/geodesia/redcontrolverticaldeprecision/MapServer/",        
+          title:"",
+          sublayers: [          
+            {
+              id: 0,
+              title:"",
+              visible: true,
+              popupTemplate: {
+                title: "Atributos",
+                outFields: [""],
+                content: [
+                  {
+                    "type": "fields",
+                    "fieldInfos": [
+                      {
+                        "fieldName": "FID",
+                        "label": "FID"
+                      },
+                      {
+                        "fieldName": "Nomenclatu",
+                        "label": "Nomenclatura"
+                      },       
+                      {
+                        "fieldName": "Latitud",
+                        "label": "Latitud"
+                      },     
+                      {
+                        "fieldName": "Longitud",
+                        "label": "Longitud"
+                      },
+                      {
+                        "fieldName": "Altura_m_s",
+                        "label": "Altura"
+                      },
+                      {
+                        "fieldName": "Línea_Niv",
+                        "label": "Línea nivelada"
+                      },
+                      {
+                        "fieldName": "Bloque_Aju",
+                        "label": "Bloque ajustado"
+                      },
+                      {
+                        "fieldName": "Año_Calcu",
+                        "label": "Año calculo"
+                      },
+                      {
+                        "fieldName": "Alt_Elipso",
+                        "label": "Altura elipsoidal"
+                      },
+                      {
+                        "fieldName": "Tipo_Coord",
+                        "label": "Tipo coordenada"
+                      },
+                      {
+                        "fieldName": "Estado_Vé",
+                        "label": "Estado vértice"
+                      },
+                      {
+                        "fieldName": "Código_De",
+                        "label": "Código departamento"
+                      },
+                      {
+                        "fieldName": "Nombre_Dep",
+                        "label": "Nombre departamento"
+                      },
+                      {
+                        "fieldName": "Concatenad",
+                        "label": "Código municipio"
+                      },
+                      {
+                        "fieldName": "Nombre_Mun",
+                        "label": "Nombre municipio"
+                      },
+                    
+                    ]
+                  }
+                ],
+              },
+            //   definitionExpression:"es_activa_gnss = 1",                  
+            },
+          ],
+        });
+        const map = new Map({
+          layers: [vtlLayer, layer],
+        });
+        const view = new MapView({
+          container: "viewDiv",
+          map: map,
+          center: [-74, 4], // longitude, latitude
+          zoom: 4.8,
+        });        
+        const homeBtn = new Home({
+          view: view,
+        });
+        const scaleBar = new ScaleBar({
+          view: view,
+          unit: "dual",
+        });
+        const layerList = new LayerList({          
+          view: view,
+        });
+        const legend = new Legend({
+          view: view,          
+        });
+        // console.log(legend)
+        const layerListExpand = new Expand({
+          view: view,
+          content: layerList,
+          expanded: false,
+          expandTooltip: "Expand LayerList",
+          mode: "floating",
+        });
+        // console.log(legend)
+        const legendExpand = new Expand({
+          view: view,
+          content: legend,
+          expandTooltip: "Expand Legend",
+          expanded: true,
+          mode: "floating",
+        });
+        const compass = new Compass({
+          view: view,
+          visible: false,
+        });
+        view.ui.add(homeBtn, "top-left");
+        view.ui.add(scaleBar, "bottom-right");
+        view.ui.add(layerListExpand, "top-right");
+        view.ui.add(legendExpand, "bottom-left");
+        view.ui.add(compass, "top-left");
+        layer.when(() => {
+          const initialExtent = Extent.fromJSON(layer.sourceJSON.initialExtent);
+          view.goTo(initialExtent);          
+        });
+        // load the Compass only when the view is rotated
+        view.watch("rotation", function (rotation) {
+          if (rotation && !compass.visible) {
+            compass.visible = true;
+          }
+        });
+      });
+    </script>
+
+
+
+     
+  <script>
+      // descargar cords
+      const descargarCords = async (coordenada) => {
+        
+            console.log(coordenada);
+            try {
+            const datos = await fetch("https://redgeodesica-cg.igac.gov.co/download_rinex", {
+              method:'post',
+              headers: {
+                "Content-Type": "application/json",            
+              },
+              xhrFields: {
+                responseType: "blob",
+              },
+              body:JSON.stringify({datos:[`./CoordenadasSemanales/${coordenada}`]}),              
+            });
+
+            const resp = await datos.blob();
+            console.log(resp);
+            
+
+            var link = document.createElement("a");    
+            link.href = window.URL.createObjectURL(resp);        
+            link.download = coordenada+".zip";
+            document.body.appendChild(link);
+            link.click();
+            console.log(datos)
+          } catch (error) {
+            console.log(error)
+          }
+
+
+      }
+  </script>
+
+
+    
+
+    <script type="module" async>        
+
+
+      const firebaseConfig = {
+          apiKey: "AIzaSyBZVqxMK2_yUYSmPkHfUm3cu0Odsk9eJAQ",
+          authDomain: "cords-ed4e2.firebaseapp.com",
+          projectId: "cords-ed4e2",
+          storageBucket: "cords-ed4e2.appspot.com",
+          messagingSenderId: "526557109240",
+          appId: "1:526557109240:web:c244fffd6bfbf067fe540d"
+      };
+
+   // Initialize Firebase
+      const app = firebase.initializeApp(firebaseConfig); 
+      const db = app.firestore();
+      
+      
+      
+      async function obtenerCordenadas(){  
+
+
+        try {
+
+          let arreglo = [];          
+          
+          const datos = await db.collection("cordenadas").get();      
+
+          datos.forEach(function (item) {
+            arreglo.push(item.data());
+          });            
+          
+          return arreglo;     
+        
+        } catch (error) {
+          throw new Error(error);
+        }        
+
+      }
+
+      const tabularCordenadas = (arreglo) => {
+          let registros = "";
+
+          let contador = 1;
+          for(let item of arreglo){
+            contador++;
+            if(contador == 11) break;
+            // console.log(item.semana);
+            registros += `
+                  <tr>
+                    <td>${item.semana}</td>
+                    <td>${item.fichero}</td>
+                    <td><a id="aDescargaCords" class="link-descarga-cord" onclick="descargarCords('${item.fichero}')">${item.fichero}</a> </td>              
+                  </tr>
+              `;
+          }
+          // arreglo.forEach(item => {
+          //     contador++;
+          //     if(contador >= 11) return;
+          //     registros += `
+          //         <tr>
+          //           <td>${item.semana}</td>
+          //           <td>${item.fichero}</td>
+          //           <td><a id="aDescargaCords" class="link-descarga-cord" onclick="descargarCords('${item.fichero}')">${item.fichero}</a> </td>              
+          //         </tr>
+          //     `;
+          //   });
+
+
+
+            document.getElementById("table-body").innerHTML = registros;  
+      }
+
+      
+      let items = await obtenerCordenadas();
+      // console.log(items.slice(0, 10));
+
+      tabularCordenadas(items);
+      // console.log(items); 
+
+      //items.forEach(item => console.log(item));   
+
+
+       // buscar cords
+      const buscarCord = document.getElementById("buscar-cord");
+
+      buscarCord.addEventListener('keyup', () => {        
+        const arregloFiltro = [];
+        const buscarCord = document.getElementById("buscar-cord").value;
+        
+        for(let item of items){
+          if(item.semana.indexOf(buscarCord) !== -1){
+            console.log(item);
+            arregloFiltro.push(item);
+          }
+        }
+
+        tabularCordenadas(arregloFiltro);
+      });
+
+
+
+
+      // =============== paginacion ===========================
+      const primeraPagina = document.querySelector('#primera');
+      const segundaPagina = document.querySelector('#segunda');
+      const terceraPagina = document.querySelector('#tercera');
+
+      primeraPagina.addEventListener('click', paginar);
+      // segundaPagina.addEventListener('click', paginar);
+      terceraPagina.addEventListener('click', paginar);
+
+      function paginar(e){
+
+        e.preventDefault();        
+
+        let pagination = document.querySelector('.pagination').childNodes;
+        pagination.forEach(tag => {
+          if(tag.nodeName == "LI"){        
+            tag.classList.remove('active');
+            if(tag.childNodes[1].innerHTML == e.target.innerHTML ){
+              tag.classList.add('active');        
+            }
+          }
+        });       
+
+
+        const segundaPagina = document.querySelector('#segunda');
+
+        if(e.target.id == 'primera' && segundaPagina.innerHTML > 1){          
+          document.querySelector('#segunda').innerHTML = parseInt(segundaPagina.innerHTML) - 1;
+        }else if(e.target.id == 'tercera'){          
+          document.querySelector('#segunda').innerHTML = parseInt(segundaPagina.innerHTML) + 1;
+        }
+        let pagina = segundaPagina.innerHTML-1;
+        
+        let inicio = pagina * 10;
+        let fin = inicio + 9;
+        // console.log(pagina, inicio, fin);
+        tabularCordenadas(items.slice(inicio, fin));            
+
+        
+      }
+
+      
+     
+    </script>
+  </body>
 </html>
