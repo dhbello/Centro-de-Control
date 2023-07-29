@@ -67,26 +67,7 @@
     
   
     <div id="redActivaPasiva" class="container containerIgac">
-        <section id="acceso" class="section">
-          <div class="row">
-            <div class="col-md-6">
-              <a href="https://www.sirgas.org/es/weekly-solutions" target="_blank">
-                <div class="faqs dobles tipo-a">
-                  <div class="title">Soluciones semanales SIRGAS (Estaciones GNSS de referencia de orden Cero.)</div>
-                </div>
-              </a>
-            </div>      
-            
-            <div class="col-md-6">
-              <a href="#table-body" >
-                <div class="faqs dobles tipo-a">
-                  <div class="title">Soluciones semanales Locales (Estaciones GNSS de referencia de orden Uno.)</div>
-                </div>
-              </a>
-            </div> 
-
-          </div>
-        </section>
+        
 
         
 
@@ -96,6 +77,30 @@
             Visor centro de procesamiento IGA - IGAC
           </h2>
           <div id="viewDiv"></div>
+        </section>
+
+        <section id="acceso" class="section">
+          <div class="row">
+            <div class="col-md-6">
+             
+                <div class="faqs dobles tipo-a">
+                  <div class="title">
+                    La existencia física de los vértices nivelados debe ser verificada por el ciudadano si así lo requiriese, 
+                    ya que no se garantiza la existencia de los mismos a la fecha de uso.
+                  </div>
+                </div>
+             
+            </div>      
+            
+            <div class="col-md-6">
+              
+                <div class="">
+                  <div class="title descargar" onclick="descargarVertices()">Descargar Vértices Nivelción</div>
+                </div>
+              
+            </div> 
+
+          </div>
         </section>
   
         
@@ -107,41 +112,31 @@
 
     <div class="container">
       <div class="row">
-        <div class="col">
-          <input id="buscar-cord" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <div class="col">        
+          <h3 class="azur">Datos Ejemplo</h3>
           <table class="table table-striped mt-2">
             <thead>
-              <tr>
-                <th scope="col">Semana GNSS</th>
-                <th scope="col">Fichero</th>
-                <th scope="col">Descargar</th>          
+              <tr>                
+                <th scope="col">Nomenclatura</th>
+                <th scope="col">Latitud</th>                          
+                <th scope="col">Altura</th>          
+                <th scope="col">Altura elipsoidal</th>          
               </tr>
             </thead>
             <tbody id="table-body">
               
             </tbody>
             <tfoot>
-              <tr>
-                <th scope="col">Semana GNSS</th>
-                <th scope="col">Fichero</th>
-                <th scope="col">Descargar</th>          
+              <tr>                
+                <th scope="col">Nomenclatura</th>
+                <th scope="col">Latitud</th>                           
+                <th scope="col">Altura</th>          
+                <th scope="col">Altura elipsoidal</th>               
               </tr>
             </tfoot>
           </table>
 
-          <nav aria-label="...">
-            <ul class="pagination">              
-              <li class="page-item active">
-                <a id="primera" class="page-link" href="#"><</a>
-              </li>
-              <li class="page-item ">
-                <a id="segunda" class="page-link">1</a>
-              </li>
-              <li class="page-item">
-                <a id="tercera" class="page-link" href="#">></a>
-              </li>              
-            </ul>
-          </nav>
+        
         </div>
       </div>
     </div>
@@ -366,32 +361,24 @@
 
      
   <script>
-      // descargar cords
-      const descargarCords = async (coordenada) => {
+      
+      const descargarVertices = async () => {
         
-            console.log(coordenada);
-            try {
-            const datos = await fetch("https://redgeodesica-cg.igac.gov.co/download_rinex", {
-              method:'post',
-              headers: {
-                "Content-Type": "application/json",            
-              },
-              xhrFields: {
-                responseType: "blob",
-              },
-              body:JSON.stringify({datos:[`./CoordenadasSemanales/${coordenada}`]}),              
-            });
-
-            const resp = await datos.blob();
-            console.log(resp);
             
+            try {
+
+            const datos = await fetch("./../json/VerticesNivelacion2022.csv");
+            const resp = await datos.text();
+            //console.log(resp);            
+            
+            var oMyBlob = new Blob([resp], { type: "text/html" });
 
             var link = document.createElement("a");    
-            link.href = window.URL.createObjectURL(resp);        
-            link.download = coordenada+".zip";
+            link.href = window.URL.createObjectURL(oMyBlob);        
+            link.download = "VerticesNivelacion2022.csv";
             document.body.appendChild(link);
             link.click();
-            console.log(datos)
+            // console.log(datos)
           } catch (error) {
             console.log(error)
           }
@@ -403,46 +390,113 @@
 
     
 
-    <script type="module" async>        
+    <script type="module" async>         
+     
 
+      const tabularCordenadas = () => {
+                const arreglo = [
+                                {
+                                  "OBJECTID": 1,
+                                  "Nomenclatura": "C70-W-2",
+                                  "Altura_m_s_n_m_m": "19,488600000000002",
+                                  "Línea_Nivelación": "Línea No 2 Buenaventura - Bogotá",
+                                  "Bloque_Ajuste": "Circuito 1 y 2",
+                                  "Año_Calculo": 2021,
+                                  "Latitud": "3,881045870795000",
+                                  "Longitud": "-77,012215965549004",
+                                  "Alt_Elipsoidal_m_": "37,329000000000001",
+                                  "Tipo_Coordenada": "CALCULADA",
+                                  "Código_Departamento": 76,
+                                  "Código_Municipio": 109,
+                                  "Concatenado_Depto_Municipio": 76109,
+                                  "Nombre_Departamento": "VALLE DEL CAUCA",
+                                  "Nombre_Municipio": "BUENAVENTURA",
+                                  "Estado_Vértice": "Materializado",
+                                  "Dif_El_Geo": "",
+                                  "ErrDif": ""
+                                },
+                                {
+                                  "OBJECTID": 2,
+                                  "Nomenclatura": 76109037,
+                                  "Altura_m_s_n_m_m": "12,882270000000000",
+                                  "Línea_Nivelación": "Línea No 2 Buenaventura - Bogotá",
+                                  "Bloque_Ajuste": "Circuito 1 y 2",
+                                  "Año_Calculo": 2021,
+                                  "Latitud": "3,887763063000000",
+                                  "Longitud": "-77,073318607000004",
+                                  "Alt_Elipsoidal_m_": "29,786000000000001",
+                                  "Tipo_Coordenada": "CALCULADA",
+                                  "Código_Departamento": 76,
+                                  "Código_Municipio": 109,
+                                  "Concatenado_Depto_Municipio": 76109,
+                                  "Nombre_Departamento": "VALLE DEL CAUCA",
+                                  "Nombre_Municipio": "BUENAVENTURA",
+                                  "Estado_Vértice": "Materializado",
+                                  "Dif_El_Geo": "",
+                                  "ErrDif": ""
+                                },
+                                {
+                                  "OBJECTID": 3,
+                                  "Nomenclatura": 76109002,
+                                  "Altura_m_s_n_m_m": "10,817170000000001",
+                                  "Línea_Nivelación": "Línea No 2 Buenaventura - Bogotá",
+                                  "Bloque_Ajuste": "Circuito 1 y 2",
+                                  "Año_Calculo": 2021,
+                                  "Latitud": "3,883496220000000",
+                                  "Longitud": "-77,065329993999995",
+                                  "Alt_Elipsoidal_m_": "27,986000000000001",
+                                  "Tipo_Coordenada": "CALCULADA",
+                                  "Código_Departamento": 76,
+                                  "Código_Municipio": 109,
+                                  "Concatenado_Depto_Municipio": 76109,
+                                  "Nombre_Departamento": "VALLE DEL CAUCA",
+                                  "Nombre_Municipio": "BUENAVENTURA",
+                                  "Estado_Vértice": "Materializado",
+                                  "Dif_El_Geo": "",
+                                  "ErrDif": ""
+                                },
+                                {
+                                  "OBJECTID": 4,
+                                  "Nomenclatura": 76109038,
+                                  "Altura_m_s_n_m_m": "4,583310000000000",
+                                  "Línea_Nivelación": "Línea No 2 Buenaventura - Bogotá",
+                                  "Bloque_Ajuste": "Circuito 1 y 2",
+                                  "Año_Calculo": 2021,
+                                  "Latitud": "3,882939502000000",
+                                  "Longitud": "-77,054338266000002",
+                                  "Alt_Elipsoidal_m_": "21,795999999999999",
+                                  "Tipo_Coordenada": "CALCULADA",
+                                  "Código_Departamento": 76,
+                                  "Código_Municipio": 109,
+                                  "Concatenado_Depto_Municipio": 76109,
+                                  "Nombre_Departamento": "VALLE DEL CAUCA",
+                                  "Nombre_Municipio": "BUENAVENTURA",
+                                  "Estado_Vértice": "Materializado",
+                                  "Dif_El_Geo": "",
+                                  "ErrDif": ""
+                                },
+                                {
+                                  "OBJECTID": 5,
+                                  "Nomenclatura": 76109024,
+                                  "Altura_m_s_n_m_m": "9,195010000000000",
+                                  "Línea_Nivelación": "Línea No 2 Buenaventura - Bogotá",
+                                  "Bloque_Ajuste": "Circuito 1 y 2",
+                                  "Año_Calculo": 2021,
+                                  "Latitud": "3,882651483000000",
+                                  "Longitud": "-77,046951043999997",
+                                  "Alt_Elipsoidal_m_": "26,498999999999999",
+                                  "Tipo_Coordenada": "CALCULADA",
+                                  "Código_Departamento": 76,
+                                  "Código_Municipio": 109,
+                                  "Concatenado_Depto_Municipio": 76109,
+                                  "Nombre_Departamento": "VALLE DEL CAUCA",
+                                  "Nombre_Municipio": "BUENAVENTURA",
+                                  "Estado_Vértice": "Materializado",
+                                  "Dif_El_Geo": "",
+                                  "ErrDif": ""
+                                },
+                              ]
 
-      const firebaseConfig = {
-          apiKey: "AIzaSyBZVqxMK2_yUYSmPkHfUm3cu0Odsk9eJAQ",
-          authDomain: "cords-ed4e2.firebaseapp.com",
-          projectId: "cords-ed4e2",
-          storageBucket: "cords-ed4e2.appspot.com",
-          messagingSenderId: "526557109240",
-          appId: "1:526557109240:web:c244fffd6bfbf067fe540d"
-      };
-
-   // Initialize Firebase
-      const app = firebase.initializeApp(firebaseConfig); 
-      const db = app.firestore();
-      
-      
-      
-      async function obtenerCordenadas(){  
-
-
-        try {
-
-          let arreglo = [];          
-          
-          const datos = await db.collection("cordenadas").get();      
-
-          datos.forEach(function (item) {
-            arreglo.push(item.data());
-          });            
-          
-          return arreglo;     
-        
-        } catch (error) {
-          throw new Error(error);
-        }        
-
-      }
-
-      const tabularCordenadas = (arreglo) => {
           let registros = "";
 
           let contador = 1;
@@ -451,100 +505,21 @@
             if(contador == 11) break;
             // console.log(item.semana);
             registros += `
-                  <tr>
-                    <td>${item.semana}</td>
-                    <td>${item.fichero}</td>
-                    <td><a id="aDescargaCords" class="link-descarga-cord" onclick="descargarCords('${item.fichero}')">${item.fichero}</a> </td>              
+                  <tr>                    
+                    <td>${item.Nomenclatura}</td>
+                    <td>${item.Latitud}</td>                                  
+                    <td>${item.Altura_m_s_n_m_m}</td>     
+                    <td>${item.Alt_Elipsoidal_m_}</td>     
                   </tr>
               `;
           }
-          // arreglo.forEach(item => {
-          //     contador++;
-          //     if(contador >= 11) return;
-          //     registros += `
-          //         <tr>
-          //           <td>${item.semana}</td>
-          //           <td>${item.fichero}</td>
-          //           <td><a id="aDescargaCords" class="link-descarga-cord" onclick="descargarCords('${item.fichero}')">${item.fichero}</a> </td>              
-          //         </tr>
-          //     `;
-          //   });
-
-
-
             document.getElementById("table-body").innerHTML = registros;  
       }
+      tabularCordenadas();
+
+
 
       
-      let items = await obtenerCordenadas();
-      // console.log(items.slice(0, 10));
-
-      tabularCordenadas(items);
-      // console.log(items); 
-
-      //items.forEach(item => console.log(item));   
-
-
-       // buscar cords
-      const buscarCord = document.getElementById("buscar-cord");
-
-      buscarCord.addEventListener('keyup', () => {        
-        const arregloFiltro = [];
-        const buscarCord = document.getElementById("buscar-cord").value;
-        
-        for(let item of items){
-          if(item.semana.indexOf(buscarCord) !== -1){
-            console.log(item);
-            arregloFiltro.push(item);
-          }
-        }
-
-        tabularCordenadas(arregloFiltro);
-      });
-
-
-
-
-      // =============== paginacion ===========================
-      const primeraPagina = document.querySelector('#primera');
-      const segundaPagina = document.querySelector('#segunda');
-      const terceraPagina = document.querySelector('#tercera');
-
-      primeraPagina.addEventListener('click', paginar);
-      // segundaPagina.addEventListener('click', paginar);
-      terceraPagina.addEventListener('click', paginar);
-
-      function paginar(e){
-
-        e.preventDefault();        
-
-        let pagination = document.querySelector('.pagination').childNodes;
-        pagination.forEach(tag => {
-          if(tag.nodeName == "LI"){        
-            tag.classList.remove('active');
-            if(tag.childNodes[1].innerHTML == e.target.innerHTML ){
-              tag.classList.add('active');        
-            }
-          }
-        });       
-
-
-        const segundaPagina = document.querySelector('#segunda');
-
-        if(e.target.id == 'primera' && segundaPagina.innerHTML > 1){          
-          document.querySelector('#segunda').innerHTML = parseInt(segundaPagina.innerHTML) - 1;
-        }else if(e.target.id == 'tercera'){          
-          document.querySelector('#segunda').innerHTML = parseInt(segundaPagina.innerHTML) + 1;
-        }
-        let pagina = segundaPagina.innerHTML-1;
-        
-        let inicio = pagina * 10;
-        let fin = inicio + 9;
-        // console.log(pagina, inicio, fin);
-        tabularCordenadas(items.slice(inicio, fin));            
-
-        
-      }
 
       
      
