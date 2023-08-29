@@ -347,12 +347,13 @@
 
                 }
             });
-
-            
-
-
-
         }
+
+
+        document.getElementById('img_detallado').addEventListener('click', () => {
+          // console.log('click');          
+          // document.getElementById('img_detallado').style.transform = 'scale(1.9)'
+        });
 
     </script>
 
@@ -429,11 +430,11 @@
             "Localizacion: " + check(obj.agencia_direccion);
 
           document.getElementById("latitud").innerHTML =
-            "Latitud (φ): " + check(obj.latitud);
+            "Latitud (φ): " + check(obj.estacion_latitud);
           document.getElementById("altura").innerHTML =
-            "Altura Elipsoidal (Һ): " + check(obj.altura_elipsoidal);
+            "Altura Elipsoidal (Һ): " + check(obj.estacion_altura_elipsoidal);
           document.getElementById("longitud").innerHTML =
-            "Longitud (ג): " + check(obj.longitud);
+            "Longitud (ג): " + check(obj.estacion_longitud);
 
           document.getElementById("tipo_materializacion").innerHTML =
             "Tipo de Monumento: " + check(obj.tipo_materializacion);
