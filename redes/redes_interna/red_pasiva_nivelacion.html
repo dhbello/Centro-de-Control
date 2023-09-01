@@ -514,17 +514,107 @@
         });
 
         const layer = new MapImageLayer({
-          url: "https://mapas.igac.gov.co/server/rest/services/centrocontrol/EstacionesGeodesicas/MapServer",
+          url: "https://mapas.igac.gov.co/server/rest/services/geodesia/redpasiva/MapServer/",
           sublayers: [
             {
-              id: 1,
-              visible: true,
-              definitionExpression: "es_pasiva_gnss=1",
-              popupTemplate: {
-                title: "Atributos",
-                outFields: ["*"],
-                content: popup,
-              },
+               id: 0,
+               visible: true,
+              //  definitionExpression: "es_pasiva_gnss=0",
+               popupTemplate: {
+                   //title: "Atributos",
+                   outFields: ["*"],
+                   content: [
+    {
+      "type": "fields",
+      "fieldInfos": [
+        {
+          "fieldName": "OBJECTID",
+          "label": "OBJECTID"
+        },
+        {
+          "fieldName": "SHAPE",
+          "label": "SHAPE"
+        },    
+        {
+          "fieldName": "Nomenc",
+          "label": "Nomenclatura"
+        }, 
+        {
+          "fieldName": "Lat",
+          "label": "Latitud"
+        }, 
+        {
+          "fieldName": "Long",
+          "label": "Longitud"
+        }, 
+        {
+          "fieldName": "AltElips",
+          "label": "Altura Elipsoidal"
+        }, 
+        {
+          "fieldName": "CoordX",
+          "label": "Coordenada X"
+        },    
+        {
+          "fieldName": "CoordY",
+          "label": "Coordenada Y"
+        },
+        {
+          "fieldName": "CoordZ",
+          "label": "Coordenada Z"
+        },
+        {
+          "fieldName": "VelX",
+          "label": "Velocidad X"
+        },
+        {
+          "fieldName": "VelY",
+          "label": "Velocidad Y"
+        },
+        {
+          "fieldName": "VelZ",
+          "label": "Velocidad Z"
+        },
+        {
+          "fieldName": "Ondula",
+          "label": "Ondulación"
+        },
+        {
+          "fieldName": "ConcMpio",
+          "label": "Código Municipio"
+        },        
+        {
+          "fieldName": "NomMpio",
+          "label": "Nombre Municipio"
+        },
+        {
+          "fieldName": "NomDpto",
+          "label": "Nombre Departamento"
+        },
+        {
+          "fieldName": "EstPunto",
+          "label": "Estado Punto"
+        },
+        {
+          "fieldName": "DatITRFRef",
+          "label": "Datum / ITRF / Epoca Referencia"
+        },
+        {
+          "fieldName": "Obs",
+          "label": "Observación"
+        }, 
+        {
+          "fieldName": "Tipo_Mat",
+          "label": "Tipo materialización"
+        }, 
+        {
+          "fieldName": "Fech_Mat",
+          "label": "Fecha materilización"
+        }, 
+      ]
+    }
+  ],
+               },
             },
           ],
         });
