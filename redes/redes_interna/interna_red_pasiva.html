@@ -99,6 +99,9 @@
               Localizaci&oacute;n:
             </div>
             <div class="item" id="divipola2"></div>
+
+            
+
           </section>
         </div>
         <div class="col-md-6">
@@ -107,15 +110,15 @@
             <div class="row" id="fotos">
               <div class="col-md-6 mt-4">
                 <div class="title">Croquis General</div>
-                <div class="item" id="img_croquis"></div>
+                <div class="item" onclick="activarImagen(event)" style="cursor: pointer;" id="img_croquis" ></div>
               </div>
               <div class="col-md-6 mt-4">
                 <div class="title">Croquis detallado</div>
-                <div class="item" id="img_detallado"></div>
+                <div class="item" onclick="activarImagen(event)" style="cursor: pointer;" id="img_detallado" ></div>
               </div>
               <div class="col-md-6 mt-4">
                 <div class="title">Perfil</div>
-                <div class="item" id="img_perfil"></div>
+                <div class="item" onclick="activarImagen(event)" style="cursor: pointer;" id="img_perfil" ></div>
               </div>
               <div class="col-md-6 mt-4">
                 <div class="title">Acceso general</div>
@@ -131,11 +134,11 @@
             <div class="row" id="fotos">
               <div class="col-md-6 mt-4">
                 <div class="title">Diagrama de obstaculos</div>
-                <div class="item" id="img_obstaculos"></div>
+                <div class="item" onclick="activarImagen(event)" style="cursor: pointer;" id="img_obstaculos" ></div>
               </div>
               <div class="col-md-6 mt-4">
                 <div class="title">Imagen de la placa</div>
-                <div class="item" id="img_placa"></div>
+                <div class="item" onclick="activarImagen(event)" style="cursor: pointer;" id="img_placa" ></div>
               </div>
             </div>
 
@@ -308,6 +311,14 @@
   </div>
     <div class="container mt-4">
       <div class="row">
+        <!-- ====== json completo de datos ========= -->
+        <div id="jsonpasivadatos">
+
+        </div>
+
+        <!-- ================= -->
+      </div>      
+      <div class="row">
           <div class="col" style="display: flex; justify-content: center; margin-bottom: 4vh;">            
               <button id="imprimir-pagina" class="btn btn-outline-primary" onclick="printDiv()" style="margin-left: 5vw;">Imprimir Pdf</button>
               <!-- <button class="btn btn-outline-success" onclick="printImg()">Imprimir Imagen</button>
@@ -315,6 +326,51 @@
           </div>
       </div>
   </div>
+
+
+  <!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button> -->
+
+  <!-- Modal -->
+  <div class="modal fade" style="background-color: rgba(34,34,34,0.75);" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" style="width:560px; height:600px; background-color:transparent; border: 0;">
+        
+        <div class="modal-body" style="padding: 2rem; color:rgb(78, 73, 73)">
+<!-- ================================ CARRUSEL ================================================================= -->
+
+          <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+              <!-- <div class="carousel-item active">
+                <img src="https://redgeodesica-cg.igac.gov.co/croquis/05001001/2" class="d-block w-100" alt="">
+              </div>
+              <div class="carousel-item">
+                <img src="https://redgeodesica-cg.igac.gov.co/croquis/05001001/4" class="d-block w-100" alt="">
+              </div>
+              <div class="carousel-item">
+                <img src="https://redgeodesica-cg.igac.gov.co/croquis/05001001/1" class="d-block w-100" alt="">
+              </div> -->
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" style="background-color: white;" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" style="background-color: white;" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <!-- ================================================================================================ -->
+
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>    
 
@@ -392,6 +448,40 @@
 
       document.getElementById("titulo").innerHTML = nombre;
 
+      function pintarDatos(data){
+        // console.log(data)
+        let clave = '<table class="table table-dark table-striped"> <thead><tr><th scope="col">key</th><th scope="col">valor</th></tr></thead><tbody>';
+        for (var key in data[0]) {
+            if (data[0].hasOwnProperty(key)) {
+                if(key == "punto_referencia"){
+                  for(let i of data[0][key]){
+                    // console.log(i)
+                    clave += '<tr><td>'+ key + '</td><td><pre style="color:white;"> ' + JSON.stringify( data[0][key])+'</pre></td><tr>';  
+                  }
+                }else{
+                  clave += "<tr><td>"+ key + "</td><td> " + data[0][key]+"</td><tr>";        
+                }
+                
+            }
+        }
+        clave += '</tbody></table>';
+        document.getElementById("jsonpasivadatos").innerHTML = clave;
+
+      }
+
+      function activarImagen(e){                
+        for(let i of document.getElementsByClassName("carousel-item")){
+            i.classList.remove("active");            
+        }   
+        
+        for(let i of document.getElementsByClassName("carousel-item")){            
+            if(i.childNodes[1].id.indexOf(e.target.parentElement.id) !== -1){
+              i.childNodes[1].parentElement.classList.add("active")
+            }
+        }        
+        $('#exampleModal').modal('show');        
+      }
+
       function check(data) {
         if (data == null) {
           return "Sin información";
@@ -409,7 +499,7 @@
         dataType: "json",
         success: async function (result) {
           console.log(result);
-
+          pintarDatos(result);
           var obj = result[0];
 
           document.getElementById("nomenclatura_estandarizada").innerHTML = 
@@ -449,120 +539,154 @@
 
 
 
-          let imagaenes = ["img_perfil","img_detallado","img_croquis","img_placa","img_obstaculos"];
-          let imagenesValidadas = [];
+          // let imagaenes = ["img_perfil","img_detallado","img_croquis","img_placa","img_obstaculos"];
+          // let imagenesValidadas = [];
 
-          for(let i=0; i<imagaenes.length; i++)  {
-            try {
+          // for(let i=0; i<imagaenes.length; i++)  {
+          //   try {
               
-              var img = "https://redgeodesica-cg.igac.gov.co/croquis/" + nombre + "/"+ (i+1);    
+          //     var img = "https://redgeodesica-cg.igac.gov.co/croquis/" + nombre + "/"+ (i+1);    
               
  
               
-              const datos = await fetch(img, {
-                // headers: {
-                //   'Content-Type': 'application/json'
-                // }
-              });
-              const res = await datos.text();
+          //     const datos = await fetch(img, {
+          //       // headers: {
+          //       //   'Content-Type': 'application/json'
+          //       // }
+          //     });
+          //     const res = await datos.text();
               
-              await imagenesValidadas.push(img)
+          //     await imagenesValidadas.push(img)
 
            
               
-            } catch (error) {
+          //   } catch (error) {
 
               
-              imagenesValidadas.push("https://mundogeo.com/wp-content/uploads/2014/06/IGAC.jpg");
+          //     imagenesValidadas.push("https://mundogeo.com/wp-content/uploads/2014/06/IGAC.jpg");
               
-            }
-          }
+          //   }
+          // }
           // console.log(imagenesValidadas)
           
 
-          var img = document.createElement("img");
-          img.src = imagenesValidadas[2];
-          var src = document.getElementById("img_croquis");
-          src.appendChild(img);
-
-          var img = document.createElement("img");
-          img.src = imagenesValidadas[1];
-          var src = document.getElementById("img_detallado");
-          src.appendChild(img);
-
-          var img = document.createElement("img");
-          img.src = imagenesValidadas[0];
-          var src = document.getElementById("img_perfil");
-          src.appendChild(img);
-
-          var img = document.createElement("img");
-          img.src = imagenesValidadas[4];
-          var src = document.getElementById("img_obstaculos");
-          src.appendChild(img);
-
-          var img = document.createElement("img");
-          img.src = imagenesValidadas[3];
-          var src = document.getElementById("img_placa");
-          src.appendChild(img);
-
-
-
-          setTimeout(() => {
-            var img = document.createElement("img");
-          img.src = imagenesValidadas[2];
-          var src = document.getElementById("img_croquis");
-          src.replaceChild(img, src.childNodes[0]);
-
-          var img = document.createElement("img");
-          img.src = imagenesValidadas[1];
-          var src = document.getElementById("img_detallado");
-          src.replaceChild(img, src.childNodes[0]);
-
-          var img = document.createElement("img");
-          img.src = imagenesValidadas[0];
-          var src = document.getElementById("img_perfil");
-          src.replaceChild(img, src.childNodes[0]);
-
-          var img = document.createElement("img");
-          img.src = imagenesValidadas[4];
-          var src = document.getElementById("img_obstaculos");
-          src.replaceChild(img, src.childNodes[0]);
-
-          var img = document.createElement("img");
-          img.src = imagenesValidadas[3];
-          var src = document.getElementById("img_placa");
-          src.replaceChild(img, src.childNodes[0]);
-          console.log('set timeout');
-          }, 2000);
-
-
-
-
-
           // var img = document.createElement("img");
-          // img.src = "https://redgeodesica-cg.igac.gov.co/croquis/" + nombre + "/3";
+          // img.src = imagenesValidadas[2];
           // var src = document.getElementById("img_croquis");
           // src.appendChild(img);
 
           // var img = document.createElement("img");
-          // img.src = "https://redgeodesica-cg.igac.gov.co/croquis/" + nombre + "/2";
+          // img.src = imagenesValidadas[1];
           // var src = document.getElementById("img_detallado");
           // src.appendChild(img);
 
           // var img = document.createElement("img");
-          // img.src = "https://redgeodesica-cg.igac.gov.co/croquis/" + nombre + "/1";
+          // img.src = imagenesValidadas[0];
           // var src = document.getElementById("img_perfil");
           // src.appendChild(img);
 
           // var img = document.createElement("img");
-          // img.src = "https://redgeodesica-cg.igac.gov.co/croquis/" + nombre + "/5";
+          // img.src = imagenesValidadas[4];
           // var src = document.getElementById("img_obstaculos");
           // src.appendChild(img);
 
           // var img = document.createElement("img");
-          // img.src = "https://redgeodesica-cg.igac.gov.co/croquis/" + nombre + "/4";
+          // img.src = imagenesValidadas[3];
           // var src = document.getElementById("img_placa");
           // src.appendChild(img);
+
+
+
+          // setTimeout(() => {
+          //   var img = document.createElement("img");
+          // img.src = imagenesValidadas[2];
+          // var src = document.getElementById("img_croquis");
+          // src.replaceChild(img, src.childNodes[0]);
+
+          // var img = document.createElement("img");
+          // img.src = imagenesValidadas[1];
+          // var src = document.getElementById("img_detallado");
+          // src.replaceChild(img, src.childNodes[0]);
+
+          // var img = document.createElement("img");
+          // img.src = imagenesValidadas[0];
+          // var src = document.getElementById("img_perfil");
+          // src.replaceChild(img, src.childNodes[0]);
+
+          // var img = document.createElement("img");
+          // img.src = imagenesValidadas[4];
+          // var src = document.getElementById("img_obstaculos");
+          // src.replaceChild(img, src.childNodes[0]);
+
+          // var img = document.createElement("img");
+          // img.src = imagenesValidadas[3];
+          // var src = document.getElementById("img_placa");
+          // src.replaceChild(img, src.childNodes[0]);
+          // console.log('set timeout');
+          // }, 2000);
+
+
+
+
+          let contenidoCarrusel = '';
+
+          var img = document.createElement("img");
+          img.src = "https://redgeodesica-cg.igac.gov.co/croquis/" + nombre + "/3";
+          contenidoCarrusel += `
+              <div class="carousel-item active">
+                <img src="${img.src}" id="img_croquis_car"  class="d-block " style="width:500px; height:400px" alt="">
+              </div>
+          `;
+          var src = document.getElementById("img_croquis");
+          src.appendChild(img);
+
+          var img = document.createElement("img");
+          img.src = "https://redgeodesica-cg.igac.gov.co/croquis/" + nombre + "/2";
+          contenidoCarrusel += `
+              <div class="carousel-item">
+                <img src="${img.src}" id="img_detallado_car" class="d-block" style="width:500px; height:400px" alt="">
+              </div>
+          `;
+          var src = document.getElementById("img_detallado");
+          src.appendChild(img);
+
+          var img = document.createElement("img");
+          img.src = "https://redgeodesica-cg.igac.gov.co/croquis/" + nombre + "/1";
+          contenidoCarrusel += `
+              <div class="carousel-item">
+                <img src="${img.src}" id="img_perfil_car" class="d-block " style="width:500px; height:400px" alt="">
+              </div>
+          `;
+          var src = document.getElementById("img_perfil");
+          src.appendChild(img);
+
+          var img = document.createElement("img");
+          img.src = "https://redgeodesica-cg.igac.gov.co/croquis/" + nombre + "/5";
+          contenidoCarrusel += `
+              <div class="carousel-item">
+                <img src="${img.src}" id="img_obstaculos_car" class="d-block" style="width:500px; height:400px" alt="">
+              </div>
+          `;
+          var src = document.getElementById("img_obstaculos");
+          src.appendChild(img);
+
+          var img = document.createElement("img");
+          img.src = "https://redgeodesica-cg.igac.gov.co/croquis/" + nombre + "/4";
+          contenidoCarrusel += `
+              <div class="carousel-item">
+                <img src="${img.src}" id="img_placa_car" class="d-block" style="width:500px; height:400px" alt="">
+              </div>
+          `;
+          var src = document.getElementById("img_placa");
+          src.appendChild(img);
+
+          
+          // ======= CARGAR CARRUSEL ==========
+            document.querySelector(".carousel-inner").innerHTML = contenidoCarrusel;
+          // ===============================
+
+
+
 
           if (obj.fotos_campo) {
             var cols = obj.fotos_campo.length;
