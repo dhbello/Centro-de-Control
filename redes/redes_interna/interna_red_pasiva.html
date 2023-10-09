@@ -759,7 +759,7 @@
         var id = urlParams.get('estacion');
         
         try{
-          const res = await fetch(`https://auth.homeristicodeath.tech:3001/api/pasiva/${id}`);
+          const res = await fetch(`https://karratha-tawny-frogmouth-xngk.1.us-1.fl0.io/api/pasiva/${id}`);
           const datos = await res.json();
           //console.log(datos);
           if(datos) document.querySelector('#acceso_general').innerHTML = datos.acceso_general;
