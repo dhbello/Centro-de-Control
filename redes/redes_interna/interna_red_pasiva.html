@@ -84,6 +84,9 @@
             <div class="item" id="latitud"></div>
             <div class="item" id="longitud"></div>
             <div class="item" id="altura"></div>
+            <div class="divider"></div>
+            <div class="item" id="latitud2"></div>
+            <div class="item" id="longitud2"></div>
           </section>
           <div class="divider"></div>
           <section class="section infoUbicacion pt-0">
@@ -122,11 +125,12 @@
               </div>
               <div class="col-md-6 mt-4">
                 <div class="title">Acceso general</div>
-                <div class="item">
-                  Partiendo del puerto fluvial se toma la v&iacute;a hacia el
+                <div class="item" id="acceso_general">
+                  <!-- Partiendo del puerto fluvial se toma la v&iacute;a hacia el
                   norte en direcci&oacute;n a la escuela del corregimiento hasta
                   encontrar la zona del estadio y cancha de futbol, lugar donde
-                  se determino el v&eacute;rtice 91263001.
+                  se determino el v&eacute;rtice 91263001. -->
+                  Sin información
                 </div>
               </div>
             </div>
@@ -378,6 +382,8 @@
 
     <script>
 
+
+
         const printDiv = () => {
             console.log('click')
             const contenido = document.querySelector('.contenido-imprimir').innerHTML;
@@ -517,7 +523,7 @@
           document.getElementById("barrio").innerHTML =
             "Barrio: " + check(obj.agencia_direccion);
           document.getElementById("localizacion").innerHTML =
-            "Localizacion: " + check(obj.agencia_direccion);
+            "Localizacion: " + check(obj.lugar_materializacion);
 
           document.getElementById("latitud").innerHTML =
             "Latitud (φ): " + check(obj.estacion_latitud);
@@ -525,6 +531,11 @@
             "Altura Elipsoidal (Һ): " + check(obj.estacion_altura_elipsoidal);
           document.getElementById("longitud").innerHTML =
             "Longitud (ג): " + check(obj.estacion_longitud);
+
+            document.getElementById("latitud2").innerHTML =
+            "Latitud (φ): " + check(obj.latitud);          
+          document.getElementById("longitud2").innerHTML =
+            "Longitud (ג): " + check(obj.longitud);
 
           document.getElementById("tipo_materializacion").innerHTML =
             "Tipo de Monumento: " + check(obj.tipo_materializacion);
@@ -739,6 +750,22 @@
           }
         },
       });
+    </script>
+
+    <script>
+      const cargarAccesoGeneral = async () => {
+                
+        const urlParams = new URLSearchParams(window.location.search);        
+        var id = urlParams.get('estacion');
+        
+        try{
+          const res = await fetch(`https://auth.homeristicodeath.tech:3001/api/pasiva/${id}`);
+          const datos = await res.json();
+          //console.log(datos);
+          if(datos) document.querySelector('#acceso_general').innerHTML = datos.acceso_general;
+        } catch(e){console.error(e)}
+      }
+      cargarAccesoGeneral();
     </script>
   </body>
 </html>
