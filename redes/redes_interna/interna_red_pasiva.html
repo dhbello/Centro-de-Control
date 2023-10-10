@@ -84,9 +84,9 @@
             <div class="item" id="latitud"></div>
             <div class="item" id="longitud"></div>
             <div class="item" id="altura"></div>
-            <div class="divider"></div>
+            <!-- <div class="divider"></div>
             <div class="item" id="latitud2"></div>
-            <div class="item" id="longitud2"></div>
+            <div class="item" id="longitud2"></div> -->
           </section>
           <div class="divider"></div>
           <section class="section infoUbicacion pt-0">
@@ -102,9 +102,12 @@
               Localizaci&oacute;n:
             </div>
             <div class="item" id="divipola2"></div>
+          </section>
 
-            
-
+          <div class="divider"></div>
+          <section class="section infoUbicacion pt-0">
+            <div class="title">Descripción Detallada</div>
+            <div class="item" id="descripcion_detallada">Sin información</div>            
           </section>
         </div>
         <div class="col-md-6">
@@ -314,14 +317,14 @@
     </div>
   </div>
     <div class="container mt-4">
-      <div class="row">
+      <!-- <div class="row"> -->
         <!-- ====== json completo de datos ========= -->
-        <div id="jsonpasivadatos">
+        <!-- <div id="jsonpasivadatos">
 
-        </div>
+        </div> -->
 
         <!-- ================= -->
-      </div>      
+      <!-- </div>       -->
       <div class="row">
           <div class="col" style="display: flex; justify-content: center; margin-bottom: 4vh;">            
               <button id="imprimir-pagina" class="btn btn-outline-primary" onclick="printDiv()" style="margin-left: 5vw;">Imprimir Pdf</button>
@@ -454,26 +457,26 @@
 
       document.getElementById("titulo").innerHTML = nombre;
 
-      function pintarDatos(data){
-        // console.log(data)
-        let clave = '<table class="table table-dark table-striped"> <thead><tr><th scope="col">key</th><th scope="col">valor</th></tr></thead><tbody>';
-        for (var key in data[0]) {
-            if (data[0].hasOwnProperty(key)) {
-                if(key == "punto_referencia"){
-                  for(let i of data[0][key]){
-                    // console.log(i)
-                    clave += '<tr><td>'+ key + '</td><td><pre style="color:white;"> ' + JSON.stringify( data[0][key])+'</pre></td><tr>';  
-                  }
-                }else{
-                  clave += "<tr><td>"+ key + "</td><td> " + data[0][key]+"</td><tr>";        
-                }
+      // function pintarDatos(data){
+      //   // console.log(data)
+      //   let clave = '<table class="table table-dark table-striped"> <thead><tr><th scope="col">key</th><th scope="col">valor</th></tr></thead><tbody>';
+      //   for (var key in data[0]) {
+      //       if (data[0].hasOwnProperty(key)) {
+      //           if(key == "punto_referencia"){
+      //             for(let i of data[0][key]){
+      //               // console.log(i)
+      //               clave += '<tr><td>'+ key + '</td><td><pre style="color:white;"> ' + JSON.stringify( data[0][key])+'</pre></td><tr>';  
+      //             }
+      //           }else{
+      //             clave += "<tr><td>"+ key + "</td><td> " + data[0][key]+"</td><tr>";        
+      //           }
                 
-            }
-        }
-        clave += '</tbody></table>';
-        document.getElementById("jsonpasivadatos").innerHTML = clave;
+      //       }
+      //   }
+      //   clave += '</tbody></table>';
+      //   document.getElementById("jsonpasivadatos").innerHTML = clave;
 
-      }
+      // }
 
       function activarImagen(e){                
         for(let i of document.getElementsByClassName("carousel-item")){
@@ -505,7 +508,7 @@
         dataType: "json",
         success: async function (result) {
           console.log(result);
-          pintarDatos(result);
+          // pintarDatos(result);
           var obj = result[0];
 
           document.getElementById("nomenclatura_estandarizada").innerHTML = 
@@ -532,10 +535,10 @@
           document.getElementById("longitud").innerHTML =
             "Longitud (ג): " + check(obj.estacion_longitud);
 
-            document.getElementById("latitud2").innerHTML =
-            "Latitud (φ): " + check(obj.latitud);          
-          document.getElementById("longitud2").innerHTML =
-            "Longitud (ג): " + check(obj.longitud);
+          //   document.getElementById("latitud2").innerHTML =
+          //   "Latitud (φ): " + check(obj.latitud);          
+          // document.getElementById("longitud2").innerHTML =
+          //   "Longitud (ג): " + check(obj.longitud);
 
           document.getElementById("tipo_materializacion").innerHTML =
             "Tipo de Monumento: " + check(obj.tipo_materializacion);
@@ -548,6 +551,9 @@
           document.getElementById("divipola2").innerHTML =
             "Código Municipio: " + check(obj.codigo);
 
+            
+
+            
 
 
           // let imagaenes = ["img_perfil","img_detallado","img_croquis","img_placa","img_obstaculos"];
@@ -762,7 +768,11 @@
           const res = await fetch(`https://karratha-tawny-frogmouth-xngk.1.us-1.fl0.io/api/pasiva/${id}`);
           const datos = await res.json();
           //console.log(datos);
-          if(datos) document.querySelector('#acceso_general').innerHTML = datos.acceso_general;
+          if(datos) {
+            document.querySelector('#acceso_general').innerHTML = datos.acceso_general;
+            document.getElementById("descripcion_detallada").innerHTML =
+            " " + check(datos.descripción_detallada);
+          }
         } catch(e){console.error(e)}
       }
       cargarAccesoGeneral();
