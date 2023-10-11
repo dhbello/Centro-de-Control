@@ -57,7 +57,7 @@
       <div class="container block-igac">
         <a class="get-back" href="../red_geodesica.html">
           <img src="/images/iconos/arrow-back.svg" alt="" />
-          Volver a la Red Pasiva
+          Volver a la Red Geodésica GNSS
         </a>
         <div class="d-flex contenido-portada">
           <div class="texto-portada">
@@ -98,9 +98,9 @@
             <div class="item" id="altura_referencia_antena">
               Altura Instrumental (m):
             </div>
-            <div class="item" id="lugar_materializacion">
+            <!-- <div class="item" id="lugar_materializacion">
               Localizaci&oacute;n:
-            </div>
+            </div> -->
             <div class="item" id="divipola2"></div>
           </section>
 
@@ -524,7 +524,7 @@
           document.getElementById("municipio").innerHTML =
             "Municipio: " + check(obj.municipio);
           document.getElementById("barrio").innerHTML =
-            "Barrio: " + check(obj.agencia_direccion);
+            "Vereda/Barrio: " + check(obj.agencia_direccion);
           document.getElementById("localizacion").innerHTML =
             "Localizacion: " + check(obj.lugar_materializacion);
 
@@ -546,8 +546,8 @@
             "Fecha Monumentación: " + check(obj.fecha_materializacion);
           document.getElementById("altura_referencia_antena").innerHTML =
             "Altura Instrumental (m): " + check(obj.altura_referencia_antena);
-          document.getElementById("lugar_materializacion").innerHTML =
-            "Localización: " + check(obj.lugar_materializacion);
+          // document.getElementById("lugar_materializacion").innerHTML =
+          //   "Localización: " + check(obj.lugar_materializacion);
           document.getElementById("divipola2").innerHTML =
             "Código Municipio: " + check(obj.codigo);
 
@@ -769,9 +769,9 @@
           const datos = await res.json();
           //console.log(datos);
           if(datos) {
-            document.querySelector('#acceso_general').innerHTML = datos.acceso_general;
+            document.querySelector('#acceso_general').innerHTML = datos.acceso_general.charAt(0) + datos.acceso_general.slice(1).toLowerCase();
             document.getElementById("descripcion_detallada").innerHTML =
-            " " + check(datos.descripción_detallada);
+            " " + check(datos.descripción_detallada.charAt(0) + datos.descripción_detallada.slice(1).toLowerCase());
           }
         } catch(e){console.error(e)}
       }
