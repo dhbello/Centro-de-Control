@@ -75,7 +75,7 @@
             <h3 class="h3" id="nomenclatura_estandarizada">Nomenclatura Estandarizada</h3>
             <div class="title" id="departamento"></div>
             <div class="item" id="municipio"></div>
-            <div class="item" id="barrio"></div>
+            <div class="item" id="barrio">Vereda/Barrio: Sin información</div>
             <div class="item" id="localizacion"></div>
           </section>
           <div class="divider"></div>
@@ -499,6 +499,14 @@
         }
       }
 
+      function capitalLetter(data) {
+        if (data != null) {
+          return data.charAt(0) + data.slice(1).toLowerCase();
+        }else{
+          return null;
+        }        
+      }
+
       $.ajax({
         type: "get",
         url: url_backend + "/json_detalle_activa",
@@ -523,8 +531,8 @@
             "Departamento: " + check(obj.departamento);
           document.getElementById("municipio").innerHTML =
             "Municipio: " + check(obj.municipio);
-          document.getElementById("barrio").innerHTML =
-            "Vereda/Barrio: " + check(obj.agencia_direccion);
+          // document.getElementById("barrio").innerHTML =
+          //   "Vereda/Barrio: " + check(obj.agencia_direccion);
           document.getElementById("localizacion").innerHTML =
             "Localizacion: " + check(obj.lugar_materializacion);
 
@@ -767,11 +775,12 @@
         try{
           const res = await fetch(`https://karratha-tawny-frogmouth-xngk.1.us-1.fl0.io/api/pasiva/${id}`);
           const datos = await res.json();
-          //console.log(datos);
+          console.log(datos);
           if(datos) {
-            document.querySelector('#acceso_general').innerHTML = datos.acceso_general.charAt(0) + datos.acceso_general.slice(1).toLowerCase();
+            document.querySelector('#acceso_general').innerHTML = check( capitalLetter(datos.acceso_general) );
             document.getElementById("descripcion_detallada").innerHTML =
-            " " + check(datos.descripción_detallada.charAt(0) + datos.descripción_detallada.slice(1).toLowerCase());
+            " " + check( capitalLetter(datos.descripción_detallada));
+            document.getElementById("barrio").innerHTML = "Vereda/Barrio: " + check(datos.vereda);
           }
         } catch(e){console.error(e)}
       }
