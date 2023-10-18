@@ -84,6 +84,9 @@
             <div class="item" id="latitud"></div>
             <div class="item" id="longitud"></div>
             <div class="item" id="altura"></div>
+            <br>
+            <div class="item" id="latitudGrados"><span style="color: rgb(10, 84, 10);">Latitud (φ):</span> Sin información</div>
+            <div class="item" id="longitudGrados"><span style="color: rgb(10, 84, 10);">Longitud (ג):</span> Sin información</div>
             <!-- <div class="divider"></div>
             <div class="item" id="latitud2"></div>
             <div class="item" id="longitud2"></div> -->
@@ -559,7 +562,7 @@
           document.getElementById("divipola2").innerHTML =
             "Código Municipio: " + check(obj.codigo);
 
-            
+          conversionCoordenadas(obj.estacion_latitud, obj.estacion_longitud);
 
             
 
@@ -785,6 +788,47 @@
         } catch(e){console.error(e)}
       }
       cargarAccesoGeneral();
+
+      const conversionCoordenadas = (latitudDec=null, longitudDec=null) => {
+        if(!latitudDec || !longitudDec) return;
+
+        let latitud = latitudDec > 0 ? latitudDec : latitudDec * -1;
+        let longitud = longitudDec > 0 ? longitudDec : longitudDec * -1;
+        
+
+        const latGrados = Math.trunc(latitud)
+        const latPartDec = latitud - latGrados;
+        let latMin = latPartDec * 60;
+        const latSec = ( (latMin - Math.trunc(latMin)) * 60 ).toFixed(3);
+        latMin = Math.trunc(latMin);
+
+        // console.log(latGrados, latMin, latSec)
+
+
+        const longGrados = Math.trunc(longitud);
+        const lonPartDec = longitud - longGrados;
+        let lonMin = lonPartDec * 60;
+        const lonSec = ( (lonMin - Math.trunc(lonMin)) * 60 ).toFixed(3);
+        lonMin = Math.trunc(lonMin);
+
+        // console.log(longGrados, lonMin, lonSec)
+
+        let latitudFinal  = latGrados+'° '+latMin+"' "+latSec+'" ';
+        let longitudFinal  = longGrados+'° '+lonMin+"' "+lonSec+'" ';
+
+        const latDir = latitudDec > 0 ? 'Norte' : 'Sur';
+        const lonDir = longitudDec > 0 ? 'Este' : 'Oeste';
+
+        latitudFinal += latDir;
+        longitudFinal += lonDir;
+
+        // console.log(latitudFinal)
+        // console.log(longitudFinal)
+
+        document.querySelector('#latitudGrados').innerHTML = `<span style="color: rgb(10, 84, 10);">Latitud:</span> ${latitudFinal}`;
+        document.querySelector('#longitudGrados').innerHTML = `<span style="color: rgb(10, 84, 10);">Longitud:</span>  ${longitudFinal}`;       
+
+      }
     </script>
   </body>
 </html>
