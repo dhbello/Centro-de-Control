@@ -85,8 +85,8 @@
             <div class="item" id="longitud"></div>
             <div class="item" id="altura"></div>
             <br>
-            <div class="item" id="latitudGrados"><span style="color: rgb(10, 84, 10);">Latitud (φ):</span> Sin información</div>
-            <div class="item" id="longitudGrados"><span style="color: rgb(10, 84, 10);">Longitud (ג):</span> Sin información</div>
+            <div class="item" id="latitudGrados">Latitud (φ): Sin información</div>
+            <div class="item" id="longitudGrados">Longitud (ג): Sin información</div>
             <!-- <div class="divider"></div>
             <div class="item" id="latitud2"></div>
             <div class="item" id="longitud2"></div> -->
@@ -799,7 +799,7 @@
         const latGrados = Math.trunc(latitud)
         const latPartDec = latitud - latGrados;
         let latMin = latPartDec * 60;
-        const latSec = ( (latMin - Math.trunc(latMin)) * 60 ).toFixed(3);
+        const latSec = ( (latMin - Math.trunc(latMin)) * 60 ).toFixed(5);
         latMin = Math.trunc(latMin);
 
         // console.log(latGrados, latMin, latSec)
@@ -808,7 +808,7 @@
         const longGrados = Math.trunc(longitud);
         const lonPartDec = longitud - longGrados;
         let lonMin = lonPartDec * 60;
-        const lonSec = ( (lonMin - Math.trunc(lonMin)) * 60 ).toFixed(3);
+        const lonSec = ( (lonMin - Math.trunc(lonMin)) * 60 ).toFixed(5);
         lonMin = Math.trunc(lonMin);
 
         // console.log(longGrados, lonMin, lonSec)
@@ -825,8 +825,8 @@
         // console.log(latitudFinal)
         // console.log(longitudFinal)
 
-        document.querySelector('#latitudGrados').innerHTML = `<span style="color: rgb(10, 84, 10);">Latitud:</span> ${latitudFinal}`;
-        document.querySelector('#longitudGrados').innerHTML = `<span style="color: rgb(10, 84, 10);">Longitud:</span>  ${longitudFinal}`;       
+        document.querySelector('#latitudGrados').innerHTML = `Latitud: ${latitudFinal}`;
+        document.querySelector('#longitudGrados').innerHTML = `Longitud:  ${longitudFinal}`;       
 
       }
     </script>
