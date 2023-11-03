@@ -112,6 +112,13 @@
             <div class="title">Descripción Detallada</div>
             <div class="item" id="descripcion_detallada">Sin información</div>            
           </section>
+
+          <div class="divider"></div>
+          <section class="section infoUbicacion pt-0">
+            <div class="title">Observación</div>
+            <div class="item" id="observacion">Sin información</div>            
+          </section>
+
         </div>
         <div class="col-md-6">
           <section class="section infoUbicacion pb-0">
@@ -780,10 +787,11 @@
           const datos = await res.json();
           console.log(datos);
           if(datos) {
-            document.querySelector('#acceso_general').innerHTML = check( capitalLetter(datos.acceso_general) );
+            document.querySelector('#acceso_general').innerHTML = check( datos.acceso_general) ;
             document.getElementById("descripcion_detallada").innerHTML =
-            " " + check( capitalLetter(datos.descripción_detallada));
+            " " + check( datos.descripción_detallada);
             document.getElementById("barrio").innerHTML = "Vereda/Barrio: " + check(datos.vereda);
+            document.getElementById("observacion").innerHTML = check(datos.observacion);
           }
         } catch(e){console.error(e)}
       }
