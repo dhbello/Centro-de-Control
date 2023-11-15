@@ -1,0 +1,215 @@
+:root {
+    --background: rgb(16, 11, 42);
+    --ripple: rgb(219, 219, 220);
+}
+
+#firstDivChart,
+#secondDivChart,
+#thirdDivChart {
+    width: 500px;
+    height: 300px;
+    background-color: rgb(16, 11, 42);
+}
+
+body {
+    /* background: var(--background); */
+    height: 100%;
+}
+
+.container-fluid {
+    width: 100%;
+    height: 100%;
+    background: url('./../img/wave-haikei.svg') center/cover no-repeat;
+    /* Ajusta la ruta de tu imagen SVG */
+    background-position: center bottom;
+    /* Establece la posición de la imagen en la parte inferior */
+}
+
+.container-fluid {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: var(--background);
+    overflow: hidden;
+    margin-right: 0px;
+    margin-left: 0px;
+    /* background: url('./../img/wave-haikei.svg') center/cover no-repeat; 
+    background-size: 700vh 700vh;
+    background-position: center bottom; /* Establece la posición de la imagen en la parte inferior */
+}
+
+.container-fluid span {
+    pointer-events: none;
+    position: absolute;
+    box-shadow: 0 0 4px var(--ripple),
+        inset 0 0 4px var(--ripple);
+    animation: ripple 8s linear;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.green {
+    color: #1AAB8A;
+}
+
+.aqua {
+    color: rgba(0, 255, 255, 0.556);
+}
+
+
+
+@keyframes ripple {
+    0% {
+        width: 0;
+        height: 0;
+    }
+
+    90% {
+        width: 850px;
+        height: 850px;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.white {
+    color: white;
+}
+
+.label {
+    color: #46c4a6;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.margin-left {
+    margin-left: 6vw;
+}
+
+.subtitle {
+    text-align: center;
+}
+
+
+
+.head p {
+    padding: 20px 100px 0 100px;
+    text-align: justify;
+    height: 10vh;
+}
+
+
+
+/* Estilo del párrafo */
+.maquina-escribir {
+    /* overflow: hidden;
+    white-space: nowrap; */
+    margin: 0 auto;
+    font-size: 18px;
+    display: inline-block;
+}
+
+/* Estilo del cursor */
+.maquina-escribir::after {
+    content: '|';
+    /* Carácter que simula el cursor de la máquina de escribir */
+    display: inline-block;
+    border-right: 2px solid #000;
+    /* Simula el cursor de la máquina de escribir */
+    height: 1em;
+    /* Altura fija del cursor */
+    margin-left: 2px;
+    /* Espacio entre el cursor y el texto */
+    animation: blink 0.7s infinite;
+    /* Animación de parpadeo */
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.texto-completo::after {
+    display: none;
+}
+
+
+button {
+    background: #1AAB8A;
+    color: #fff;
+    border: none;
+    position: relative;
+    height: 40px;
+    font-size: 1.2em;
+    padding: 0 2em;
+    cursor: pointer;
+    transition: 800ms ease all;
+    outline: none;
+    border-radius: 10px;
+}
+
+button:hover {
+    background: #000;
+    color: #1AAB8A;
+}
+
+button:before,
+button:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: #1AAB8A;
+    transition: 400ms ease all;
+}
+
+button:after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+}
+
+button:hover:before,
+button:hover:after {
+    width: 100%;
+    transition: 800ms ease all;
+}
+
+button:active {
+    transition: none;
+    background: whitesmoke;
+}
+
+
+.select {
+    background: transparent;
+    color: whitesmoke;
+    width: 6rem;
+    padding: 6px 10px 5px 10px;
+    /* border-radius: 5px; */
+    font-size: 18px;
+    border-color: rgb(115, 145, 228);
+    outline: 2px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+
+.select:focus {
+    background-color: var(--background);
+}
+
+.iframe {
+    width: 50%;    
+}
