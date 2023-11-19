@@ -27,21 +27,21 @@ const cargarPrimerChart = (datosChartUno) => {
         options: {
             scales: {
                 y: {
-                    beginAtZero: true,
-                    grid: {
-                        color: 'rgb(54, 54, 121)' // Color de las líneas verticales
-                    },
-                    ticks: {
-                        color: 'whitesmoke' // Color del texto en el eje x
-                    }
+                    // beginAtZero: true,
+                    // grid: {
+                    //     color: 'rgb(54, 54, 121)' // Color de las líneas verticales
+                    // },
+                    // ticks: {
+                    //     color: 'whitesmoke' // Color del texto en el eje x
+                    // }
                 },
                 x: {
-                    grid: {
-                        color: 'rgb(54, 54, 121)' // Color de las líneas verticales
-                    },
-                    ticks: {
-                        color: 'whitesmoke' // Color del texto en el eje x
-                    }
+                    // grid: {
+                    //     color: 'rgb(54, 54, 121)' // Color de las líneas verticales
+                    // },
+                    // ticks: {
+                    //     color: 'whitesmoke' // Color del texto en el eje x
+                    // }
                 }
             }
         }
@@ -77,21 +77,21 @@ const cargarSegundoChart = () => {
         options: {
             scales: {
                 y: {
-                    beginAtZero: true,
-                    grid: {
-                        color: 'rgb(54, 54, 121)' // Color de las líneas verticales
-                    },
-                    ticks: {
-                        color: 'whitesmoke' // Color del texto en el eje x
-                    }
+                    // beginAtZero: true,
+                    // grid: {
+                    //     color: 'rgb(54, 54, 121)' // Color de las líneas verticales
+                    // },
+                    // ticks: {
+                    //     color: 'whitesmoke' // Color del texto en el eje x
+                    // }
                 },
                 x: {
-                    grid: {
-                        color: 'rgb(54, 54, 121)' // Color de las líneas verticales
-                    },
-                    ticks: {
-                        color: 'whitesmoke' // Color del texto en el eje x
-                    }
+                    // grid: {
+                    //     color: 'rgb(54, 54, 121)' // Color de las líneas verticales
+                    // },
+                    // ticks: {
+                    //     color: 'whitesmoke' // Color del texto en el eje x
+                    // }
                 }
             }
         }
@@ -119,21 +119,21 @@ const cargarTerceroChart = () => {
         options: {
             scales: {
                 y: {
-                    beginAtZero: true,
-                    grid: {
-                        color: 'rgb(54, 54, 121)' // Color de las líneas verticales
-                    },
-                    ticks: {
-                        color: 'whitesmoke' // Color del texto en el eje x
-                    }
+                    // beginAtZero: true,
+                    // grid: {
+                    //     color: 'rgb(54, 54, 121)' // Color de las líneas verticales
+                    // },
+                    // ticks: {
+                    //     color: 'whitesmoke' // Color del texto en el eje x
+                    // }
                 },
                 x: {
-                    grid: {
-                        color: 'rgb(54, 54, 121)' // Color de las líneas verticales
-                    },
-                    ticks: {
-                        color: 'whitesmoke' // Color del texto en el eje x
-                    }
+                    // grid: {
+                    //     color: 'rgb(54, 54, 121)' // Color de las líneas verticales
+                    // },
+                    // ticks: {
+                    //     color: 'whitesmoke' // Color del texto en el eje x
+                    // }
                 }
             }
         }
