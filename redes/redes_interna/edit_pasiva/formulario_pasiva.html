@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Centro de Control Geod&eacute;sico Nacional</title>
+    <link rel="icon" href="/images/favicon.png">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <link href="../../../css/style.css" rel="stylesheet" />
+    <link href="/css/navbar-footer.css" rel="stylesheet">
+    <link href="../../../css/maestra.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+</head>
+
+<body class="main redes geomagneticaMaestra">
+    <!-- header -->
+    <div class="barra_gov">
+        <a class="logo-gov" href="https://www.gov.co/home/" target="_blank">
+            <img alt="Logo Gov.co" src="/images/nav/header_govco.png">
+        </a>
+    </div>
+    <div class="navbarIgacContainer origen"></div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-sm-12">
+                <h3 id="nomenclatura">Nomenclatura: </h3>   
+                <p class="mt-5">estacion_id: <span id="idEstacion"></span></p>             
+                <p>Latitud:<span id="latitud" class="subtitulo"></span></p>
+                <p>longitud:<span id="longitud" class="subtitulo"></span></p>
+                <p>altura_elipsoidal: <span id="altura_elipsoidal" class="subtitulo"></span></p>
+                <button class="btn btn-primary" onclick="cargarEstacion()" data-bs-toggle="modal" data-bs-target="#modalEstacion">editar</button>
+                <hr>
+                <p>municipio: <span id="municipio" class="subtitulo"></span></p> 
+                <button class="btn btn-primary" onclick="cargarMunicipio()" data-bs-toggle="modal" data-bs-target="#modalMunicipio">editar</button>
+                <hr>
+                <p>vereda/barrio: <span id="vereda" class="subtitulo"></span></p>
+                <button class="btn btn-primary" onclick="cargarVereda()" data-bs-toggle="modal" data-bs-target="#modalVereda">editar</button>
+                <hr>
+                <p>tipo_monumento: <span id="tipo_monumento" class="subtitulo"></span></p>
+                <button class="btn btn-primary" onclick="cargarTipoMonumento()" data-bs-toggle="modal" data-bs-target="#modalTipoMonumento">editar</button>
+                <hr>
+                <p>localizacion: <span id="localizacion" class="subtitulo"></span></p>
+                <p>fecha_monumentacion: <span id="fecha_monumentacion" class="subtitulo"></span></p>
+                <p>fecha_descripcion: <span id="fecha_descripcion" class="subtitulo"></span></p>
+                <p>monumentado_por: <span id="monumentado_por" class="subtitulo"></span></p>
+                <p>altura_mts: <span id="altura_mts" class="subtitulo"></span></p>
+                <p>largo_mts: <span id="largo_mts" class="subtitulo"></span></p>
+                <p>ancho_mts: <span id="ancho_mts" class="subtitulo"></span></p>
+                <p>elaboro: <span id="elaboro" class="subtitulo"></span></p>
+                <p>descripcion_detallada: <span id="descripcion_detallada" class="subtitulo"></span></p>
+                <p>acceso_general: <span id="acceso_general" class="subtitulo"></span></p>
+                <p>observacion: <span id="observacion" class="subtitulo"></span></p>
+                <button class="btn btn-primary" onclick="cargarMaterializacion()" data-bs-toggle="modal" data-bs-target="#modalMaterializacion">editar</button>
+                <hr>
+
+                <h2 class="mt-3">Puntos referencia</h2>
+                <div id="punto_referencia">
+
+                </div>
+
+                <hr>
+                <button 
+                  class="btn btn-success"                 
+                  data-bs-toggle="modal" 
+                  data-bs-target="#modalAgregarPunto">Agregar Punto Referencia
+                </button>
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal Estacion-->
+<div class="modal fade" id="modalEstacion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Actualizar</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+            <form onsubmit="estacionUpdate(event)">
+                <input type="text" class="form-control" name="idUpdate" id="idUpdate" aria-describedby="emailHelp" hidden>                  
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Latitud</label>
+                  <input type="text" class="form-control" name="latitudUpdate" id="latitudUpdate" aria-describedby="emailHelp">                  
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Longitud</label>
+                  <input type="text" class="form-control" name="longitudUpdate" id="longitudUpdate">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Altura Elipsoidal</label>
+                    <input type="text" class="form-control" name="altura_elipsoidalUpdate" id="altura_elipsoidalUpdate">
+                  </div>
+               
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
+              </form>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>          
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <!-- Modal municipio-->
+<div class="modal fade" id="modalMunicipio" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Actualizar</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            
+            <form onsubmit="municipioUpdateFunc(event)">
+                <input type="text" class="form-control" name="idMunicipioUpdate" id="idMunicipioUpdate" aria-describedby="emailHelp" hidden>                  
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Municipio</label>
+                  <input type="text" class="form-control" name="municipioUpdate" id="municipioUpdate" aria-describedby="emailHelp" disabled>                  
+                </div>
+                <div class="mb-3">
+                    <input list="municipiosBrowsers" name="municipioBrowser" id="municipioBrowser">
+                    <datalist id="municipiosBrowsers">
+                        <!-- <option value="COLOMBIA"></option>              -->
+                    </datalist>
+                </div>             
+               
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
+              </form>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>          
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <!-- Modal Vereda-->
+<div class="modal fade" id="modalVereda" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Actualizar</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form onsubmit="veredasUpdateFunc(event)">
+            <input type="text" class="form-control" name="idVeredaUpdate" id="idVeredaUpdate" aria-describedby="emailHelp" hidden>                  
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Vereda</label>
+              <input type="text" class="form-control" name="veredaUpdate" id="veredaUpdate" aria-describedby="emailHelp" disabled>                  
+            </div>
+            <div class="mb-3">
+                <input list="veredasBrowsers" name="veredaBrowser" id="veredaBrowser">
+                <datalist id="veredasBrowsers">
+                    <!-- <option value="COLOMBIA"></option>              -->
+                </datalist>
+            </div>             
+           
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>          
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <!-- Modal Materializacion -->
+<div class="modal fade" id="modalMaterializacion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Actualizar</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <form onsubmit="materializacionUpdateFunc(event)">
+            <input type="text" class="form-control" name="idMaterializacionUpdate" id="idMaterializacionUpdate" aria-describedby="emailHelp" hidden>                  
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Localizacion</label>
+              <input type="text" class="form-control" name="localizacionUpdate" id="localizacionUpdate" aria-describedby="emailHelp" >                  
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Fecha Monumentación</label>
+              <input type="date" class="form-control" name="fecha_monumentacionUpdate" id="fecha_monumentacionUpdate" aria-describedby="emailHelp" >                  
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Fecha descripcion</label>
+              <input type="date" class="form-control" name="fecha_descripcionUpdate" id="fecha_descripcionUpdate" aria-describedby="emailHelp" >                  
+            </div>           
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Monumentado Por</label>
+              <input type="text" class="form-control" name="monumentado_porUpdate" id="monumentado_porUpdate" aria-describedby="emailHelp" >                  
+            </div>          
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Altura mts</label>
+              <input type="text" class="form-control" name="altura_mtsUpdate" id="altura_mtsUpdate" aria-describedby="emailHelp" onkeypress='return event.charCode >= 46 && event.charCode <= 57'>                  
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Largo mts</label>
+              <input type="text" class="form-control" name="largo_mtsUpdate" id="largo_mtsUpdate" aria-describedby="emailHelp" onkeypress='return event.charCode >= 46 && event.charCode <= 57' >                  
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Ancho mts</label>
+              <input type="text" class="form-control" name="ancho_mtsUpdate" id="ancho_mtsUpdate" aria-describedby="emailHelp" onkeypress='return event.charCode >= 46 && event.charCode <= 57' >                  
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Elaboro</label>
+              <input type="text" class="form-control" name="elaboroUpdate" id="elaboroUpdate" aria-describedby="emailHelp" >                  
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Descripción detallada</label>
+              <input type="text" class="form-control" name="descaripcion_detalladaUpdate" id="descaripcion_detalladaUpdate" aria-describedby="emailHelp" >                  
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Acceso general</label>
+              <input type="text" class="form-control" name="acceso_generalUpdate" id="acceso_generalUpdate" aria-describedby="emailHelp" >                  
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Observación</label>
+              <input type="text" class="form-control" name="observacionUpdate" id="observacionUpdate" aria-describedby="emailHelp" >                  
+            </div>                        
+           
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
+          </form>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>          
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <!-- Modal Punto -->
+<div class="modal fade" id="modalPunto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Actualizar</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form onsubmit="puntoUpdateFunc(event)">
+            <input type="text" class="form-control" name="idPuntoUpdate" id="idPuntoUpdate" aria-describedby="emailHelp" hidden>                  
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Azimut</label>
+              <input type="text" class="form-control" name="azimutUpdate" id="azimutUpdate" aria-describedby="emailHelp">                  
+            </div>    
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Distancia</label>
+              <input type="text" class="form-control" name="distaciaUpdate" id="distaciaUpdate" aria-describedby="emailHelp">                  
+            </div>  
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Objeto</label>
+              <input type="text" class="form-control" name="objetoUpdate" id="objetoUpdate" aria-describedby="emailHelp">                  
+            </div>                   
+           
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+        <!-- Modal Agregar Punto -->
+<div class="modal fade" id="modalAgregarPunto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Nuevo Punto</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="AgregarPuntoFunc(event)">          
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Azimut</label>
+            <input type="text" class="form-control" name="agregarAzimut" id="agregarAzimut" aria-describedby="emailHelp" onkeypress='return event.charCode >= 46 && event.charCode <= 57'>                  
+          </div>    
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Distancia</label>
+            <input type="text" class="form-control" name="AgregarDistacia" id="AgregarDistacia" aria-describedby="emailHelp" onkeypress='return event.charCode >= 46 && event.charCode <= 57'>                  
+          </div>  
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Objeto</label>
+            <input type="text" class="form-control" name="AgregarObjeto" id="AgregarObjeto" aria-describedby="emailHelp" >                   
+          </div>                   
+         
+          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Modal Tipo Monumento-->
+  <div class="modal fade" id="modalTipoMonumento" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Actualizar</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form onsubmit="monumentoUpdateFunc(event)">
+            <input type="text" class="form-control" name="idMonumentoUpdate" id="idMonumentoUpdate" aria-describedby="emailHelp" hidden>                  
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Tipo Monumento</label>
+              <input type="text" class="form-control" name="monumentoUpdate" id="monumentoUpdate" aria-describedby="emailHelp" disabled>                  
+            </div>
+            <div class="mb-3">
+                <input list="monumentosBrowsers" name="monumentoBrowser" id="monumentoBrowser">
+                <datalist id="monumentosBrowsers">
+                    <!-- <option value="COLOMBIA"></option>              -->
+                </datalist>
+            </div>             
+           
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>          
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+    <footer class="footer origen mt-5"></footer>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="./../../js/navfooter.js"></script>
+
+</body>
+
+</html>
+
+<script>
+
+  async function monumentoUpdateFunc(e){
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    console.log(formData.get("idMonumentoUpdate"), formData.get("monumentoBrowser"));
+    try {
+            const res = await fetch('http://10.23.13.10:3001/api/pasiva/updateMonumento/'+formData.get("idMonumentoUpdate"), {
+                method: 'PUT',
+                body: JSON.stringify({
+                    monumentoId: formData.get("monumentoBrowser"),                    
+                }),
+                headers: {
+                    "Content-Type": "application/json"     
+                }
+            });
+            const datos = await res.text();
+            console.log(datos)
+            cargarDatos();
+        } catch (error) {
+            console.error(error);
+        }
+
+  }
+
+  async function cargarTipoMonumento(){
+      document.querySelector("#monumentoUpdate").value = document.querySelector("#tipo_monumento").innerHTML;
+      document.querySelector("#idMonumentoUpdate").value = document.querySelector("#idEstacion").innerHTML;
+
+      try {
+            const res = await fetch('http://10.23.13.10:3001/api/tipomaterializacion');
+            const datos = await res.json();
+            console.log(datos);
+            let monumentos = "";
+            datos.forEach((monumento) =>  monumentos += `<option value="${monumento.t_id}">${monumento.dispname}</option>`);
+            document.querySelector("#monumentosBrowsers").innerHTML = monumentos;
+        } catch (error) {
+            console.log(error);
+        }
+
+  }
+
+    async function AgregarPuntoFunc(e){
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const estacion_id = document.querySelector("#idEstacion").innerHTML;
+      console.log(formData.get("agregarAzimut"), formData.get("AgregarDistacia"), formData.get("AgregarObjeto"), estacion_id)
+
+      try {
+            const res = await fetch('http://10.23.13.10:3001/api/pasiva/agregarPunto', {
+                method: 'POST',
+                body: JSON.stringify({
+                    estacionId: estacion_id,
+                    azimut: formData.get("agregarAzimut"),
+                    distancia: formData.get("AgregarDistacia"),
+                    objeto: formData.get("AgregarObjeto")
+                }),
+                headers: {
+                    "Content-Type": "application/json"     
+                }
+            });
+            const datos = await res.text();
+            console.log(datos)
+            cargarDatos();
+        } catch (error) {
+            console.error(error);
+        }
+
+    }
+
+    function cargarPunto(id){
+      console.log("id", id)
+      let punto = document.querySelector(`#p${id}`);      
+
+      document.querySelector("#idPuntoUpdate").value = punto.childNodes[1].childNodes[1].innerHTML;
+      document.querySelector("#azimutUpdate").value = punto.childNodes[3].childNodes[1].innerHTML;
+      document.querySelector("#distaciaUpdate").value = punto.childNodes[5].childNodes[1].innerHTML;
+      document.querySelector("#objetoUpdate").value = punto.childNodes[7].childNodes[1].innerHTML;
+      
+    }
+
+    async function puntoUpdateFunc(e){
+      e.preventDefault();
+      let formData = new FormData(e.target);
+      console.log(formData.get("idPuntoUpdate"), 
+      formData.get("azimutUpdate"), formData.get("distaciaUpdate"), formData.get("objetoUpdate"))
+
+      try {
+            const res = await fetch('http://10.23.13.10:3001/api/pasiva/punto/'+formData.get("idPuntoUpdate"), {
+                method: 'PUT',
+                body: JSON.stringify({
+                    azimut: formData.get("azimutUpdate"),
+                    distancia: formData.get("distaciaUpdate"),
+                    objeto: formData.get("objetoUpdate")
+                }),
+                headers: {
+                    "Content-Type": "application/json"     
+                }
+            });
+            const datos = await res.text();
+            console.log(datos)
+            cargarDatos();
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    async function materializacionUpdateFunc(e){
+      e.preventDefault();
+      let formData = new FormData(e.target);
+
+      console.log('materializacion', 
+      formData.get("idMaterializacionUpdate"), 
+      formData.get("localizacionUpdate"),
+      formData.get("fecha_monumentacionUpdate"),
+      formData.get("fecha_descripcionUpdate"),
+      formData.get("monumentado_porUpdate"),
+      formData.get("altura_mtsUpdate"),
+      formData.get("largo_mtsUpdate"),
+      formData.get("ancho_mtsUpdate"),
+      formData.get("elaboroUpdate"),
+      formData.get("descaripcion_detalladaUpdate"),
+      formData.get("acceso_generalUpdate"),
+      formData.get("observacionUpdate"));
+     
+
+      try {
+            const res = await fetch('http://10.23.13.10:3001/api/pasiva/materializacion/'+formData.get("idMaterializacionUpdate"), {
+                method: 'PUT',
+                body: JSON.stringify({
+                    localizacion: formData.get("localizacionUpdate"),
+                    fecha_materializacion: formData.get("fecha_monumentacionUpdate"),
+                    fecha_descripcion: formData.get("fecha_descripcionUpdate") == '' ? null : formData.get("fecha_descripcionUpdate"),
+                    monumentado: formData.get("monumentado_porUpdate"),
+                    altura: formData.get("altura_mtsUpdate") == '' ? null : formData.get("altura_mtsUpdate"),
+                    largo: formData.get("largo_mtsUpdate") == '' ? null : formData.get("largo_mtsUpdate"),
+                    ancho: formData.get("ancho_mtsUpdate") == '' ? null : formData.get("ancho_mtsUpdate"),
+                    elaboro: formData.get("elaboroUpdate"),
+                    descripcion: formData.get("descaripcion_detalladaUpdate"),
+                    acceso: formData.get("acceso_generalUpdate"),
+                    observacion: formData.get("observacionUpdate")
+                }),
+                headers: {
+                    "Content-Type": "application/json"     
+                }
+            });
+            const datos = await res.text();
+            console.log(datos)
+            cargarDatos();
+        } catch (error) {
+            console.error(error);
+        }
+
+    }
+
+    function cargarMaterializacion(){
+      document.querySelector("#idMaterializacionUpdate").value = document.querySelector("#idEstacion").innerHTML;
+      document.querySelector("#localizacionUpdate").value = document.querySelector("#localizacion").innerHTML;
+      document.querySelector("#fecha_monumentacionUpdate").value = document.querySelector("#fecha_monumentacion").innerHTML;
+      document.querySelector("#fecha_descripcionUpdate").value = document.querySelector("#fecha_descripcion").innerHTML;
+      document.querySelector("#monumentado_porUpdate").value = document.querySelector("#monumentado_por").innerHTML;
+      document.querySelector("#altura_mtsUpdate").value = document.querySelector("#altura_mts").innerHTML;
+      document.querySelector("#largo_mtsUpdate").value = document.querySelector("#largo_mts").innerHTML;
+      document.querySelector("#ancho_mtsUpdate").value = document.querySelector("#ancho_mts").innerHTML;
+      document.querySelector("#elaboroUpdate").value = document.querySelector("#elaboro").innerHTML;
+      document.querySelector("#descaripcion_detalladaUpdate").value = document.querySelector("#descripcion_detallada").innerHTML;
+      document.querySelector("#acceso_generalUpdate").value = document.querySelector("#acceso_general").innerHTML;
+      document.querySelector("#observacionUpdate").value = document.querySelector("#observacion").innerHTML;
+    }
+
+    async function veredasUpdateFunc(e){
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        console.log(formData.get("veredaBrowser"), formData.get("idVeredaUpdate"));
+        // /pasiva/vereda/:id
+
+        try {
+            const res = await fetch('http://10.23.13.10:3001/api/pasiva/vereda/'+formData.get("idVeredaUpdate"), {
+                method: 'PUT',
+                body: JSON.stringify({
+                    vereda: formData.get('veredaBrowser'),                    
+                }),
+                headers: {
+                    "Content-Type": "application/json"     
+                }
+            });
+            const datos = await res.text();
+            console.log(datos)
+            cargarDatos();
+        } catch (error) {
+            console.error(error);
+        }
+
+    }
+
+    async function cargarVereda(){  
+
+      document.querySelector("#veredaUpdate").value = document.querySelector("#vereda").innerHTML;
+      document.querySelector("#idVeredaUpdate").value = document.querySelector("#idEstacion").innerHTML;
+
+      try {
+            const res = await fetch('http://10.23.13.10:3001/api/veredas');
+            const datos = await res.json();
+            console.log(datos);
+            let veredas = "";
+            datos.forEach((vereda) =>  veredas += `<option value="${vereda.codigo}">${vereda.nombre}</option>`);
+            document.querySelector("#veredasBrowsers").innerHTML = veredas;
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    
+
+    
+
+    async function cargarMunicipio(){
+        document.querySelector("#idMunicipioUpdate").value = document.querySelector("#idEstacion").innerHTML;
+        document.querySelector("#municipioUpdate").value = document.querySelector("#municipio").innerHTML;
+
+        try {
+            const res = await fetch('http://10.23.13.10:3001/api/municipios');
+            const datos = await res.json();
+            console.log(datos);
+            let municipios = "";
+            datos.forEach((municipio) =>  municipios += `<option value="${municipio.t_id}">${municipio.nombre}</option>`);
+            document.querySelector("#municipiosBrowsers").innerHTML = municipios;
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+
+    async function municipioUpdateFunc(e){
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        console.log(formData.get("municipioBrowser"), formData.get("idMunicipioUpdate"));
+
+        try {
+            const res = await fetch('http://10.23.13.10:3001/api/pasiva/municipio/'+formData.get("idMunicipioUpdate"), {
+                method: 'PUT',
+                body: JSON.stringify({
+                    municipio: formData.get('municipioBrowser'),                    
+                }),
+                headers: {
+                    "Content-Type": "application/json"     
+                }
+            });
+            const datos = await res.text();
+            console.log(datos)
+            cargarDatos();
+        } catch (error) {
+            console.error(error);
+        }
+
+    }
+
+    function cargarEstacion(){
+        document.querySelector("#idUpdate").value = document.querySelector("#idEstacion").innerHTML;
+        document.querySelector("#latitudUpdate").value = document.querySelector("#latitud").innerHTML;
+        document.querySelector("#longitudUpdate").value = document.querySelector("#longitud").innerHTML;
+        document.querySelector("#altura_elipsoidalUpdate").value = document.querySelector("#altura_elipsoidal").innerHTML;
+        //console.log(document.querySelector("#latitud").innerHTML);     
+
+    }
+
+    async function estacionUpdate(e){
+        e.preventDefault();
+        // console.log(document.querySelector("#latitudUpdate").value ,
+        // document.querySelector("#longitudUpdate").value ,
+        // document.querySelector("#altura_elipsoidalUpdate").value )
+
+         
+        const formData = new FormData(e.target);
+        console.log(formData.get('latitudUpdate'), formData.get('idUpdate'))
+
+
+
+        try {
+            const res = await fetch('http://10.23.13.10:3001/api/pasiva/update/'+formData.get('idUpdate'), {
+                method: 'PUT',
+                body: JSON.stringify({
+                    latitud: formData.get('latitudUpdate'),
+                    longitud: formData.get('longitudUpdate'),
+                    altura_elipsoidal: formData.get('altura_elipsoidalUpdate')
+                }),
+                headers: {
+                    "Content-Type": "application/json"     
+                }
+            });
+            const datos = await res.text();
+            console.log(datos)
+            cargarDatos();
+        } catch (error) {
+            console.error(error);
+        }
+
+
+        
+    }
+
+    // Obtener la URL actual
+    var url = new URL(window.location.href);
+
+    // Obtener parámetros de la URL
+    var params = new URLSearchParams(url.search);
+
+    // Leer valores de las variables
+    var variable1 = params.get('estacion');
+    var variable2 = params.get('nombre');
+
+    // Imprimir en la consola para verificar
+    console.log('estacion:', variable1);
+    console.log('nombre:', variable2);
+    cargarDatos();
+
+    async function cargarDatos(){
+        try {
+            const res = await fetch('http://10.23.13.10:3001/api/pasiva/editar/'+variable1);
+            const datos = await res.json();
+            console.log(datos)
+            document.querySelector('#nomenclatura').innerHTML = datos.estacion.nomenclatura;
+            document.querySelector('#idEstacion').innerHTML = datos.estacion.t_id;
+            document.querySelector('#latitud').innerHTML = datos.estacion.latitud;
+            document.querySelector('#longitud').innerHTML = datos.estacion.longitud;
+            document.querySelector('#altura_elipsoidal').innerHTML = datos.estacion.altura_elipsoidal;
+
+            document.querySelector('#municipio').innerHTML = datos.municipio.nombre;
+            document.querySelector('#vereda').innerHTML = datos.vereda.nombre;
+
+            document.querySelector('#localizacion').innerHTML = datos.materializacion.lugar_materializacion;
+            document.querySelector('#tipo_monumento').innerHTML = datos.tipomaterializacion != null ? datos.tipomaterializacion.dispname : 'Sin información';
+            document.querySelector('#fecha_monumentacion').innerHTML = datos.materializacion.fecha_materializacion != null ? datos.materializacion.fecha_materializacion.substring(0,10) : null;
+            document.querySelector('#fecha_descripcion').innerHTML = datos.materializacion.fecha_descripcion != null ? datos.materializacion.fecha_descripcion.substring(0,10) : null;
+            document.querySelector('#monumentado_por').innerHTML = datos.materializacion.monumentado_por_1;
+            
+            document.querySelector('#altura_mts').innerHTML = datos.materializacion.altura_mts;
+            document.querySelector('#largo_mts').innerHTML = datos.materializacion.largo_mts;
+            document.querySelector('#ancho_mts').innerHTML = datos.materializacion.ancho_mts;
+
+            document.querySelector('#elaboro').innerHTML = datos.materializacion.actualizó;
+            document.querySelector('#descripcion_detallada').innerHTML = datos.materializacion.descripción_detallada;
+            document.querySelector('#acceso_general').innerHTML = datos.materializacion.acceso_general;
+            document.querySelector('#observacion').innerHTML = datos.materializacion.observacion;
+            
+            let mensajePuntos = "";
+            for(const punto of datos.puntos){
+                mensajePuntos += `
+                  <div id="p${punto.t_id}">
+                    <p>id: <span class="subtitulo">${punto.t_id}</span></p>
+                    <p>azimut: <span class="subtitulo">${punto.azimut}</span></p>
+                    <p>distacia: <span class="subtitulo">${punto.distancia}</span></p>
+                    <p>objeto: <span class="subtitulo">${punto.objeto}</span></p>
+                    <p>estacion: <span class="subtitulo">${punto.estacion}</span></p>
+                    <button class="btn btn-primary" onclick="cargarPunto(${punto.t_id})" data-bs-toggle="modal" data-bs-target="#modalPunto">editar</button>
+                    <p>_________________</p>
+                  </div>
+                `;
+            }
+
+            document.querySelector('#punto_referencia').innerHTML = mensajePuntos;
+
+
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    
+</script>
