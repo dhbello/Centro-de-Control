@@ -1,0 +1,12 @@
+
+.titulo_clave {
+    color: rgb(153, 57, 19);
+    text-transform: uppercase;
+    margin-right: 1vw;
+}
+
+#nomenclatura {
+    color: rgb(5, 73, 5);
+    text-decoration: underline;
+    
+}

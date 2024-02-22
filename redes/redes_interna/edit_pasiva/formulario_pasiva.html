@@ -20,6 +20,7 @@
     <link href="../../../css/style.css" rel="stylesheet" />
     <link href="/css/navbar-footer.css" rel="stylesheet">
     <link href="../../../css/maestra.css" rel="stylesheet" />
+    <link href="./../../css/formulario_pasiva.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
@@ -38,32 +39,32 @@
         <div class="row">
             <div class="col-sm-12">
                 <h3 id="nomenclatura">Nomenclatura: </h3>   
-                <p class="mt-5">estacion_id: <span id="idEstacion"></span></p>             
-                <p>Latitud:<span id="latitud" class="subtitulo"></span></p>
-                <p>longitud:<span id="longitud" class="subtitulo"></span></p>
-                <p>altura_elipsoidal: <span id="altura_elipsoidal" class="subtitulo"></span></p>
+                <p class="mt-5"><span class="titulo_clave"> estacion_id: </span><span id="idEstacion"></span></p>             
+                <p> <span class="titulo_clave">Latitud:</span><span id="latitud" class="subtitulo"></span></p>
+                <p><span class="titulo_clave">longitud:</span><span id="longitud" class="subtitulo"></span></p>
+                <p><span class="titulo_clave">altura_elipsoidal: </span><span id="altura_elipsoidal" class="subtitulo"></span></p>
                 <button class="btn btn-primary" onclick="cargarEstacion()" data-bs-toggle="modal" data-bs-target="#modalEstacion">editar</button>
                 <hr>
-                <p>municipio: <span id="municipio" class="subtitulo"></span></p> 
+                <p><span class="titulo_clave">municipio:</span> <span id="municipio" class="subtitulo"></span></p> 
                 <button class="btn btn-primary" onclick="cargarMunicipio()" data-bs-toggle="modal" data-bs-target="#modalMunicipio">editar</button>
                 <hr>
-                <p>vereda/barrio: <span id="vereda" class="subtitulo"></span></p>
+                <p><span class="titulo_clave">vereda/barrio:</span> <span id="vereda" class="subtitulo"></span></p>
                 <button class="btn btn-primary" onclick="cargarVereda()" data-bs-toggle="modal" data-bs-target="#modalVereda">editar</button>
                 <hr>
-                <p>tipo_monumento: <span id="tipo_monumento" class="subtitulo"></span></p>
+                <p><span class="titulo_clave">tipo_monumento:</span> <span id="tipo_monumento" class="subtitulo"></span></p>
                 <button class="btn btn-primary" onclick="cargarTipoMonumento()" data-bs-toggle="modal" data-bs-target="#modalTipoMonumento">editar</button>
                 <hr>
-                <p>localizacion: <span id="localizacion" class="subtitulo"></span></p>
-                <p>fecha_monumentacion: <span id="fecha_monumentacion" class="subtitulo"></span></p>
-                <p>fecha_descripcion: <span id="fecha_descripcion" class="subtitulo"></span></p>
-                <p>monumentado_por: <span id="monumentado_por" class="subtitulo"></span></p>
-                <p>altura_mts: <span id="altura_mts" class="subtitulo"></span></p>
-                <p>largo_mts: <span id="largo_mts" class="subtitulo"></span></p>
-                <p>ancho_mts: <span id="ancho_mts" class="subtitulo"></span></p>
-                <p>elaboro: <span id="elaboro" class="subtitulo"></span></p>
-                <p>descripcion_detallada: <span id="descripcion_detallada" class="subtitulo"></span></p>
-                <p>acceso_general: <span id="acceso_general" class="subtitulo"></span></p>
-                <p>observacion: <span id="observacion" class="subtitulo"></span></p>
+                <p><span class="titulo_clave">localizacion:</span> <span id="localizacion" class="subtitulo"></span></p>
+                <p><span class="titulo_clave">fecha_monumentacion:</span> <span id="fecha_monumentacion" class="subtitulo"></span></p>
+                <p><span class="titulo_clave">fecha_descripcion:</span> <span id="fecha_descripcion" class="subtitulo"></span></p>
+                <p><span class="titulo_clave">monumentado_por: </span><span id="monumentado_por" class="subtitulo"></span></p>
+                <p><span class="titulo_clave">altura_mts:</span> <span id="altura_mts" class="subtitulo"></span></p>
+                <p><span class="titulo_clave">argo_mts:</span> <span id="largo_mts" class="subtitulo"></span></p>
+                <p><span class="titulo_clave">ancho_mts:</span> <span id="ancho_mts" class="subtitulo"></span></p>
+                <p><span class="titulo_clave">elaboro:</span> <span id="elaboro" class="subtitulo"></span></p>
+                <p><span class="titulo_clave">descripcion_detallada:</span> <span id="descripcion_detallada" class="subtitulo"></span></p>
+                <p><span class="titulo_clave">acceso_general:</span> <span id="acceso_general" class="subtitulo"></span></p>
+                <p><span class="titulo_clave">observacion:</span> <span id="observacion" class="subtitulo"></span></p>
                 <button class="btn btn-primary" onclick="cargarMaterializacion()" data-bs-toggle="modal" data-bs-target="#modalMaterializacion">editar</button>
                 <hr>
 
@@ -725,11 +726,11 @@
             for(const punto of datos.puntos){
                 mensajePuntos += `
                   <div id="p${punto.t_id}">
-                    <p>id: <span class="subtitulo">${punto.t_id}</span></p>
-                    <p>azimut: <span class="subtitulo">${punto.azimut}</span></p>
-                    <p>distacia: <span class="subtitulo">${punto.distancia}</span></p>
-                    <p>objeto: <span class="subtitulo">${punto.objeto}</span></p>
-                    <p>estacion: <span class="subtitulo">${punto.estacion}</span></p>
+                    <p>  <span class="titulo_clave"> id:</span> <span class="subtitulo">${punto.t_id}</span></p>
+                    <p>  <span class="titulo_clave"> azimut:</span> <span class="subtitulo">${punto.azimut}</span></p>
+                    <p>  <span class="titulo_clave"> distacia:</span> <span class="subtitulo">${punto.distancia}</span></p>
+                    <p>  <span class="titulo_clave"> objeto:</span> <span class="subtitulo">${punto.objeto}</span></p>
+                    <p>  <span class="titulo_clave"> estacion: </span><span class="subtitulo">${punto.estacion}</span></p>
                     <button class="btn btn-primary" onclick="cargarPunto(${punto.t_id})" data-bs-toggle="modal" data-bs-target="#modalPunto">editar</button>
                     <p>_________________</p>
                   </div>
